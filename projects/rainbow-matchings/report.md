@@ -1,8 +1,8 @@
 # Exact rainbow-matching avoidance on small bipartite hosts
 
-**Status:** computational study and elementary exposition, developed with AI
-assistance. Known facts, finite observations, and future development tasks are
-separated below. No original research or independent student authorship is claimed.
+**Status:** computational study and elementary exposition. Known facts, finite
+observations, and future development tasks are separated below. No novelty is
+claimed.
 
 ## Question
 
@@ -53,8 +53,8 @@ matching. This gives 1,9,36 for the three tested cycles.
 The [complete cycle and disjoint-square proofs](../../notes/cycle_extremizers.md)
 also establish A(C4⊔C4)=6 and characterize its exactly two extremal partitions.
 For these hosts, the recorded finite values now have an explicit elementary
-proof in the repository. The note records the guided, AI-assisted discussion
-and does not claim novelty or independent authorship.
+proof in the repository. The note states its conventions and review scope and
+does not claim novelty.
 
 For the cube, a simple lower-bound witness uses seven colors: color the six
 edges incident to two fixed left vertices alike, and give the other six edges

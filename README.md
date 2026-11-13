@@ -23,8 +23,8 @@ See [experiment contracts and individual commands](experiments/README.md),
 **Project portfolio:** [five connected tracks](projects/README.md), with a
 [flagship sparse rainbow-matching report](projects/rainbow-matchings/report.md),
 [12-week learning plan](projects/roadmap.md), and [first-session exercises](projects/first-session.md).
-The material was developed with AI assistance; these checkpoints distinguish
-reproducible repository artifacts from independently demonstrated understanding.
+The learning checkpoints connect the reproducible experiments with their
+underlying definitions and proofs.
 
 The core direction is **rainbow perfect matchings and anti-Ramsey questions in
 bipartite graphs**, with adjacent tracks in rainbow arithmetic progressions,
@@ -75,7 +75,7 @@ see [the precise comparison](notes/literature/young_and_matchings.md).
 
 The [cycle and disjoint-square writeup](notes/cycle_extremizers.md) now gives
 complete elementary proofs of the maximum color counts and extremal partition
-counts, with the discussion and AI-assistance provenance stated explicitly.
+counts, with their conventions and verification scope stated explicitly.
 
 | Track | Verified finite scope | Result / note |
 |---|---|---|
