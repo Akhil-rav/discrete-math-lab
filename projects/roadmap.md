@@ -4,6 +4,11 @@
 pace, not a promise of papers, awards, admission, or original results. Shorten the
 scope if needed; keep the explanations and checks. No deadlines are scheduled.
 
+**Background:** comfortable with olympiad proofs, new to graph theory. Start with
+[the terminology and proof bridge](graph-theory-bridge.md). The matching track
+uses counting and injections; spectral expansion can wait until linear algebra
+has been learned. Spend extra time on Weeks 1–2 when definitions are unfamiliar.
+
 | Week | Mathematical task | Deliverable | Understanding checkpoint |
 |---|---|---|---|
 | 1 | Hall's condition and augmenting paths | Two-page explanation with one positive and one negative graph | Trace an augmenting path and exhibit a Hall obstruction without running code |
