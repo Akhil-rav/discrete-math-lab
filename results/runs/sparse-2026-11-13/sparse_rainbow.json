@@ -1,0 +1,350 @@
+{
+  "C4": {
+    "n_per_side": 2,
+    "edges": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "perfect_matchings": 2,
+    "total_partitions": 15,
+    "rejected_partitions": 13,
+    "avoiding_histogram": {
+      "1": 1,
+      "2": 1
+    },
+    "maximum_avoiding_colors": 2,
+    "extremal_partitions": 1,
+    "witness": [
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  "C6": {
+    "n_per_side": 3,
+    "edges": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "perfect_matchings": 2,
+    "total_partitions": 203,
+    "rejected_partitions": 120,
+    "avoiding_histogram": {
+      "1": 1,
+      "2": 31,
+      "3": 42,
+      "4": 9
+    },
+    "maximum_avoiding_colors": 4,
+    "extremal_partitions": 9,
+    "witness": [
+      0,
+      1,
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "C8": {
+    "n_per_side": 4,
+    "edges": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "perfect_matchings": 2,
+    "total_partitions": 4140,
+    "rejected_partitions": 1389,
+    "avoiding_histogram": {
+      "1": 1,
+      "2": 127,
+      "3": 966,
+      "4": 1213,
+      "5": 408,
+      "6": 36
+    },
+    "maximum_avoiding_colors": 6,
+    "extremal_partitions": 36,
+    "witness": [
+      0,
+      1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "2C4": {
+    "n_per_side": 4,
+    "edges": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "perfect_matchings": 4,
+    "total_partitions": 4140,
+    "rejected_partitions": 2077,
+    "avoiding_histogram": {
+      "1": 1,
+      "2": 127,
+      "3": 966,
+      "4": 841,
+      "5": 126,
+      "6": 2
+    },
+    "maximum_avoiding_colors": 6,
+    "extremal_partitions": 2,
+    "witness": [
+      0,
+      1,
+      1,
+      0,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "K33": {
+    "n_per_side": 3,
+    "edges": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "perfect_matchings": 6,
+    "total_partitions": 21147,
+    "rejected_partitions": 20324,
+    "avoiding_histogram": {
+      "1": 1,
+      "2": 255,
+      "3": 480,
+      "4": 87
+    },
+    "maximum_avoiding_colors": 4,
+    "extremal_partitions": 87,
+    "witness": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "cube": {
+    "n_per_side": 4,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "perfect_matchings": 9,
+    "total_partitions": 4213597,
+    "rejected_partitions": 3801433,
+    "avoiding_histogram": {
+      "1": 1,
+      "2": 2047,
+      "3": 86526,
+      "4": 214445,
+      "5": 98407,
+      "6": 10564,
+      "7": 174
+    },
+    "maximum_avoiding_colors": 7,
+    "extremal_partitions": 174,
+    "witness": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}
