@@ -1,5 +1,8 @@
 # Combinatorics project portfolio
 
+For an olympiad-proof background with new graph theory, start with
+[the graph-theory bridge](graph-theory-bridge.md).
+
 This index separates implemented computational work from future study. The code
 and prose were developed with AI assistance. Repository outputs are reproducible;
 they are not evidence that the student independently derived or mastered them.
