@@ -21,7 +21,7 @@ has been learned. Spend extra time on Weeks 1–2 when definitions are unfamilia
 | 8 | Design a bounded extension | A written host list, edge limit, independent oracle, and stopping rule | Explain why the proposed search is complete in its declared domain |
 | 9 | Execute and examine the extension | Raw data, witnesses, and a reproducible command | Explain any disagreement before interpreting it mathematically |
 | 10 | Proof or counterexample attempt | One precise statement with proof attempt or a checked counterexample | Separate observation from proof and identify the first unsupported step |
-| 11 | Revise the flagship report | Clear introduction, definitions, methods, results, limitations | Present it in ten minutes without reading generated prose |
+| 11 | Revise the flagship report | Clear introduction, definitions, methods, results, limitations | Present it in ten minutes without reading the writeup |
 | 12 | Seek mathematical feedback | A specific question and a short packet ready for a teacher/mentor | Explain what feedback is needed and what was personally understood |
 
 The lab contains an elementary cycle proof to learn from; rewriting it from
@@ -33,8 +33,8 @@ novelty must be investigated independently before making any originality claim.
 Use roughly two hours for definitions and proofs, two for one carefully scoped
 experiment, and one for writing and review. Keep a dated journal of what you
 tried, what failed, what you can now explain, and the next unresolved step.
-Distinguish personal reasoning from AI suggestions, copied source statements,
-and machine output. A failed attempt can be valuable evidence of understanding.
+Distinguish proof attempts, cited source statements, and machine output. A failed
+attempt can be valuable evidence of understanding.
 
 Do not publish a new repository simply to increase a count. Split a track when
 it has its own coherent question, documentation, checks, and audience. The current

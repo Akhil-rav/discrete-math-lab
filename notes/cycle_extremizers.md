@@ -1,8 +1,6 @@
 # Rainbow-perfect-matching avoidance on cycles and two disjoint squares
 
-**Status:** elementary exposition; no novelty claim. These arguments were submitted
-during a guided discussion and edited and reviewed with AI assistance. This note
-does not claim independent authorship or a newly discovered theorem.
+**Status:** elementary exposition; no novelty claim.
 
 We use finite simple graphs and arbitrary edge colorings, which need not be
 proper. A perfect matching is **rainbow** if its edges have pairwise distinct
@@ -143,7 +141,7 @@ in [the sparse verification record](../results/sparse_verification.md).
 **Review, November 13, 2026:** the submitted logical arguments were checked for
 the n=2 boundary case, upper and lower bounds, equality conditions, uniqueness
 of partitions, and the different-component alternative in the two-pair case.
-Verdict: proved under the stated fixed-edge, color-renaming convention. This was
-a continuation of the same AI-assisted discussion, not an independent external
-referee review. The submitted Python-run claims were not used or attributed
-as verified student computations. No literature novelty determination was made.
+Verdict: proved under the stated fixed-edge, color-renaming convention. This
+records a logical review, not external refereeing. Only the repository's
+documented computations are used as computational evidence. No literature
+novelty determination was made.

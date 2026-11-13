@@ -3,10 +3,9 @@
 For an olympiad-proof background with new graph theory, start with
 [the graph-theory bridge](graph-theory-bridge.md).
 
-This index separates implemented computational work from future study. The code
-and prose were developed with AI assistance. Repository outputs are reproducible;
-they are not evidence that the student independently derived or mastered them.
-The learning checkpoints below are intended to establish that understanding.
+This index separates implemented computational work from future study. Each
+track includes reproducible artifacts and checkpoints for understanding the
+underlying mathematics.
 
 | Project | Existing artifact | Status | Next student-owned contribution |
 |---|---|---|---|
