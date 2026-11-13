@@ -73,6 +73,10 @@ see [the precise comparison](notes/literature/young_and_matchings.md).
 
 ## Completed extensions
 
+The [cycle and disjoint-square writeup](notes/cycle_extremizers.md) now gives
+complete elementary proofs of the maximum color counts and extremal partition
+counts, with the discussion and AI-assistance provenance stated explicitly.
+
 | Track | Verified finite scope | Result / note |
 |---|---|---|
 | Extremal K33 classification | All 87 extremizers, full vertex automorphism action plus color renaming | [Four classes, orbit sizes 6,36,36,9](results/k33_classification.md) |

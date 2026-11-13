@@ -2,6 +2,7 @@
 
 - [Hall's theorem and regular bipartite graphs](halls_theorem.md)
 - [Rainbow matchings and conventions](rainbow_matchings.md)
+- [Complete proofs: even cycles and two disjoint squares](cycle_extremizers.md)
 - [Literature map, researchers, and reading order](literature/README.md)
 - [Young's matching papers and known bipartite thresholds](literature/young_and_matchings.md)
 - [Rainbow arithmetic progressions and groups](rainbow_progressions.md)
