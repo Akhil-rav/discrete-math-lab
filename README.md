@@ -17,8 +17,8 @@ I am building a foundation in graph theory, matchings, extremal combinatorics, a
 
 **Regular bipartite graphs and perfect matchings.**
 
-I exhaustively generated every labeled (d)-regular bipartite graph with
-(n \le 5) vertices on each side and verified computationally that each
+I exhaustively generated every labeled $d$-regular bipartite graph with
+$n \le 5$ vertices on each side and verified computationally that each
 has a perfect matching: **4,477 graphs checked, 0 failures**.
 
 - Proof connection: `notes/halls_theorem.md`
