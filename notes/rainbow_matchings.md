@@ -58,3 +58,11 @@ Only the partition of the edge set into color classes matters.
 The experiment
 `experiments/rainbow_complete_bipartite.py`
 enumerates these partitions using restricted-growth strings.
+
+## Literature comparison
+
+The values A(K22)=2 and A(K33)=4 reproduce Li–Tu–Jin's known results.
+Their forcing threshold rb is A+1 for these perfect-matching hosts;
+see [the hypotheses and exceptional n=2 case](literature/young_and_matchings.md).
+The [four-class K33 computation](../results/k33_classification.md) additionally
+quotients by row/column permutations and transpose, beyond color renaming.
