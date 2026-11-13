@@ -4,7 +4,7 @@ A working notebook for proofs, computational experiments, and research notes in 
 
 ## Current focus
 
-I am building a foundation in graph theory, matchings, extremal combinatorics, and computational exploration. The goal is to reproduce known results on small cases, test conjectures, and develop research questions carefully.
+I am building a foundation in graph theory, matchings, extremal combinatorics, and computational exploration. The current direction is **rainbow perfect matchings and anti-Ramsey-style questions in bipartite graphs**.
 
 ## Repository structure
 
@@ -13,9 +13,7 @@ I am building a foundation in graph theory, matchings, extremal combinatorics, a
 - `experiments/` — scripts for testing small cases and exploring patterns
 - `results/` — tables, observations, failed conjectures, and computational output
 
-## First completed experiment
-
-**Regular bipartite graphs and perfect matchings.**
+## Experiment 1: regular bipartite graphs
 
 I exhaustively generated every labeled $d$-regular bipartite graph with
 $n \le 5$ vertices on each side and verified computationally that each
@@ -25,9 +23,21 @@ has a perfect matching: **4,477 graphs checked, 0 failures**.
 - Experiment: `experiments/regular_bipartite_matchings.py`
 - Results: `results/regular_bipartite_small_cases.md`
 
-This is explicitly a **reproduction of a known theorem**, not a new result.
-The point is to validate the computational toolkit before using it on
-rainbow-matching and anti-Ramsey questions.
+This is a **reproduction of a known theorem**.
+
+## Experiment 2: rainbow perfect matchings
+
+I added edge-coloring tools and exhaustively searched color patterns of
+small complete bipartite graphs, up to color relabeling.
+
+- $K_{2,2}$: 15 patterns checked; maximum of 2 colors while avoiding a rainbow perfect matching
+- $K_{3,3}$: 21,147 patterns checked; maximum of 4 colors while avoiding a rainbow perfect matching
+
+- Definitions: `notes/rainbow_matchings.md`
+- Experiment: `experiments/rainbow_complete_bipartite.py`
+- Results: `results/rainbow_knn_small_cases.md`
+
+These are recorded as **exhaustive computational small cases**, with no novelty claim.
 
 ## Research labels
 
@@ -42,7 +52,8 @@ To keep the notebook precise, I use the following labels:
 
 ## Next milestone
 
-Add edge colors and build tools for detecting rainbow perfect matchings.
+Classify the extremal four-color patterns of $K_{3,3}$ and then move from
+complete bipartite graphs to broader regular bipartite graph families.
 
 ## About
 
