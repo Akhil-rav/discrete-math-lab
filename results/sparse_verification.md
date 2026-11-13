@@ -31,5 +31,5 @@ Recorded result SHA-256:
 Coverage is surviving partition leaves plus exactly counted disjoint rejected
 subtrees, not a claim to visit every full leaf. The new solver is capped at twelve
 edges. Full mathematical novelty, general cubic-graph formulas, and classification
-of cube extremizers up to symmetry are not established. No paper submission or
-claim of independently completed student research is implied.
+of cube extremizers up to symmetry are not established. No paper submission
+is claimed.
