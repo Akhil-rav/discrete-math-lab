@@ -4,12 +4,12 @@
 
 The script
 `experiments/regular_bipartite_matchings.py`
-exhaustively generated every labeled (d)-regular bipartite graph with
-(n\le 5) vertices in each part and tested whether a perfect matching exists.
+exhaustively generated every labeled $d$-regular bipartite graph with
+$n\le 5$ vertices in each part and tested whether a perfect matching exists.
 
 ## Output
 
-| (n) | (d) | labeled graphs checked | failures |
+| $n$ | $d$ | labeled graphs checked | failures |
 |---:|---:|---:|---:|
 | 1 | 1 | 1 | 0 |
 | 2 | 1 | 2 | 0 |
@@ -32,7 +32,7 @@ exhaustively generated every labeled (d)-regular bipartite graph with
 ## Interpretation
 
 This agrees with the standard theorem that every finite
-(d)-regular bipartite graph with (d\ge 1) has a perfect matching.
+$d$-regular bipartite graph with $d\ge 1$ has a perfect matching.
 
 The computation is not a proof. The proof follows from Hall's Marriage
 Theorem and is written in `notes/halls_theorem.md`.
