@@ -2,6 +2,9 @@
 
 This folder records outcomes from experiments.
 
+New extension: [sparse-host report](../projects/rainbow-matchings/report.md),
+[raw data](data/sparse_rainbow.json), [verification](sparse_verification.md).
+
 | Result | Status |
 |---|---|
 | [Regular bipartite graphs](regular_bipartite_small_cases.md) | Reproduction of a known Hall corollary |

@@ -20,6 +20,12 @@ See [experiment contracts and individual commands](experiments/README.md),
 
 ## Current focus
 
+**Project portfolio:** [five connected tracks](projects/README.md), with a
+[flagship sparse rainbow-matching report](projects/rainbow-matchings/report.md),
+[12-week learning plan](projects/roadmap.md), and [first-session exercises](projects/first-session.md).
+The material was developed with AI assistance; these checkpoints distinguish
+reproducible repository artifacts from independently demonstrated understanding.
+
 The core direction is **rainbow perfect matchings and anti-Ramsey questions in
 bipartite graphs**, with adjacent tracks in rainbow arithmetic progressions,
 vertex color-coding, and expansion/random walks.
@@ -91,10 +97,12 @@ To keep the notebook precise, I use the following labels:
 
 ## Next milestone
 
-The K33 classification is complete within its stated finite equivalence model.
-Next development tasks are to read published extremal-coloring classifications,
-design a bounded sparse-host search, and document its symmetry reduction before
-running it. These are development tasks, not assertions of open problems.
+The sparse-host extension now covers six hosts through 12 edges, including all
+4,213,597 cube edge partitions via exact subtree accounting. Its maximum avoiding
+color count is 7, attained by 174 normalized partitions. See the
+[report and limits](projects/rainbow-matchings/report.md). The next steps are
+to understand these witnesses, classify them by cube symmetries, and compare
+with published sparse-host results before proposing any general statement.
 
 See [contribution and claim standards](CONTRIBUTING.md). Automated checks rerun
 the tests and compare regenerated data on Python 3.11 and 3.13 in CI; local run

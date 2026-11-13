@@ -1,0 +1,225 @@
+{
+  "schema_version": 2,
+  "claim_id": "SPARSE_RAINBOW_2026_11_13",
+  "repository": {
+    "commit": "03cc519a6e9198cae05a230e4e5ed4b0a2c772f9",
+    "dirty": true
+  },
+  "command": [
+    "C:\\Users\\sudhe\\.local\\bin\\python.exe",
+    "-m",
+    "experiments.sparse_rainbow",
+    "--output",
+    "results/runs/sparse-2026-11-13/sparse_rainbow.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Exact avoiding-color histograms on C4,C6,C8,2C4,K33,cube, with disjoint rejected-subtree counts covering every edge partition.",
+    "coefficient_domain": "Exact integers",
+    "conventions": "Fixed vertex labels, explicit edge order, colors quotiented by renaming only; no properness assumption.",
+    "inputs": [
+      "The six hosts explicitly constructed in experiments/sparse_rainbow.py"
+    ],
+    "bounds": {
+      "max_edges": 12,
+      "max_vertices_per_side": 4
+    },
+    "non_claims": [
+      "No general cubic-host theorem",
+      "No novelty claim",
+      "No statement of independent student authorship",
+      "Not isomorphism-class counts"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-13T23:15:25.399599+00:00",
+    "runtime_seconds": 1.442895,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 60.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "experiments/classify_k33.py",
+    "experiments/color_coding_small_cases.py",
+    "experiments/expansion_small_cases.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/rainbow_progressions.py",
+    "experiments/regular_bipartite_matchings.py",
+    "experiments/reproduce.py",
+    "experiments/sparse_rainbow.py",
+    "src/__init__.py",
+    "src/arithmetic_progressions.py",
+    "src/bipartite_graph.py",
+    "src/color_coding.py",
+    "src/color_patterns.py",
+    "src/edge_coloring.py",
+    "src/expansion.py",
+    "src/matchings.py",
+    "src/rainbow_constraints.py",
+    "tests/test_algorithms.py",
+    "tests/test_sparse_rainbow.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "experiments/classify_k33.py",
+      "sha256": "47b31c522a1f9f83a4db51178589b1cac1cbaa11dbd739d4c04747a51f82260a",
+      "sha256_after": "47b31c522a1f9f83a4db51178589b1cac1cbaa11dbd739d4c04747a51f82260a"
+    },
+    {
+      "path": "experiments/color_coding_small_cases.py",
+      "sha256": "6be44c555b1fb054807e09ee91543770b2a676fa2dbacbad32a6bd999c9bccb5",
+      "sha256_after": "6be44c555b1fb054807e09ee91543770b2a676fa2dbacbad32a6bd999c9bccb5"
+    },
+    {
+      "path": "experiments/expansion_small_cases.py",
+      "sha256": "81e89edf90c2365dc43b37c57b4195fcb5bfbbb329952a604109655e15984eaf",
+      "sha256_after": "81e89edf90c2365dc43b37c57b4195fcb5bfbbb329952a604109655e15984eaf"
+    },
+    {
+      "path": "experiments/rainbow_complete_bipartite.py",
+      "sha256": "61fda8e8a66041acb06f15bd869e9c4847993e531d1fec10acac1ad908df0a0a",
+      "sha256_after": "61fda8e8a66041acb06f15bd869e9c4847993e531d1fec10acac1ad908df0a0a"
+    },
+    {
+      "path": "experiments/rainbow_progressions.py",
+      "sha256": "3ec03bc1342dcba36ef426a527f743dd82e890e6e584ee8f9388ae3d86bde9dd",
+      "sha256_after": "3ec03bc1342dcba36ef426a527f743dd82e890e6e584ee8f9388ae3d86bde9dd"
+    },
+    {
+      "path": "experiments/regular_bipartite_matchings.py",
+      "sha256": "3ef741e1b0ae7e056f220e340ebb0fcfa83704f515ebd365d461855e326a6d7c",
+      "sha256_after": "3ef741e1b0ae7e056f220e340ebb0fcfa83704f515ebd365d461855e326a6d7c"
+    },
+    {
+      "path": "experiments/reproduce.py",
+      "sha256": "85def371fd8efa296e92568534665a66f0c1117624436f63b23a108d28d1211e",
+      "sha256_after": "85def371fd8efa296e92568534665a66f0c1117624436f63b23a108d28d1211e"
+    },
+    {
+      "path": "experiments/sparse_rainbow.py",
+      "sha256": "2c47ae3d9d1fb8a6e74b790e9b14c615b1d3bcbdaeca3ca27b9d221623a0ca61",
+      "sha256_after": "2c47ae3d9d1fb8a6e74b790e9b14c615b1d3bcbdaeca3ca27b9d221623a0ca61"
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/arithmetic_progressions.py",
+      "sha256": "a4bb9579e0250bdc1150e6ca5f4ed66ef871c29b0442678bb58ff1f2f891606d",
+      "sha256_after": "a4bb9579e0250bdc1150e6ca5f4ed66ef871c29b0442678bb58ff1f2f891606d"
+    },
+    {
+      "path": "src/bipartite_graph.py",
+      "sha256": "4e8c203ee6cf959bb51505c43b432640f3a11115b237159d94a0cd0bc5823427",
+      "sha256_after": "4e8c203ee6cf959bb51505c43b432640f3a11115b237159d94a0cd0bc5823427"
+    },
+    {
+      "path": "src/color_coding.py",
+      "sha256": "9f3d3b8faa8d4b43a3b08cb0b75b9833458d23792bcfed2d574bf4f5fe93aeb9",
+      "sha256_after": "9f3d3b8faa8d4b43a3b08cb0b75b9833458d23792bcfed2d574bf4f5fe93aeb9"
+    },
+    {
+      "path": "src/color_patterns.py",
+      "sha256": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9",
+      "sha256_after": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9"
+    },
+    {
+      "path": "src/edge_coloring.py",
+      "sha256": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0",
+      "sha256_after": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0"
+    },
+    {
+      "path": "src/expansion.py",
+      "sha256": "cb84ec835646dd9ad8d67b425f0b8007bf0b9cadb05c51e6546e879a70793d9d",
+      "sha256_after": "cb84ec835646dd9ad8d67b425f0b8007bf0b9cadb05c51e6546e879a70793d9d"
+    },
+    {
+      "path": "src/matchings.py",
+      "sha256": "734b91bb85b91a802d2644a3231c8da9c4a4942dae2314ee18a0c3115a462c69",
+      "sha256_after": "734b91bb85b91a802d2644a3231c8da9c4a4942dae2314ee18a0c3115a462c69"
+    },
+    {
+      "path": "src/rainbow_constraints.py",
+      "sha256": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce",
+      "sha256_after": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce"
+    },
+    {
+      "path": "tests/test_algorithms.py",
+      "sha256": "57055b7be997300f4f1abb20d7ee48e28d9f168ec6dbcf0ee7ce65ea94a8e035",
+      "sha256_after": "57055b7be997300f4f1abb20d7ee48e28d9f168ec6dbcf0ee7ce65ea94a8e035"
+    },
+    {
+      "path": "tests/test_sparse_rainbow.py",
+      "sha256": "74644dc7b4bf3ee304e6c3b57dbca13a30dc0a79fd1ecd4bf11c70276ef2c0ae",
+      "sha256_after": "74644dc7b4bf3ee304e6c3b57dbca13a30dc0a79fd1ecd4bf11c70276ef2c0ae"
+    }
+  ],
+  "output_directory": "results/runs/sparse-2026-11-13",
+  "declared_results": [
+    "results/runs/sparse-2026-11-13/sparse_rainbow.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/sparse-2026-11-13/stdout.txt",
+      "sha256": "b3b21fee9d94266d834a9e2e1a6ae3749d33ca22d3c9c8d6ec6e9141080cf994",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/sparse-2026-11-13/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/sparse-2026-11-13/sparse_rainbow.json",
+      "sha256": "8e97cd5269e7001bc79461f05e8818cd0efeef43b75cf5ea6c5db4cbeae3d9b0",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

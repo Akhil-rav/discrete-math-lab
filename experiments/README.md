@@ -7,6 +7,7 @@ is required. The suite produces [stable JSON](../results/data/small_cases.json).
 ```sh
 python -m unittest discover -s tests -v
 python -m experiments.reproduce --check results/data/small_cases.json
+python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 ```
 
 To save fresh output without replacing the reference data:
@@ -29,6 +30,11 @@ excluding machine-dependent provenance. A successful finite computation is not
 a universal theorem or a novelty certificate.
 
 ## Conventions and limits
+
+The additional `experiments.sparse_rainbow` command covers six specified hosts
+through 12 edges. It uses exact rejection-subtree counts and independent small-host
+checks; see the [flagship report](../projects/rainbow-matchings/report.md). It is
+separate from the original dataset so the historical run remains reproducible.
 
 - Bipartite edges are ordered left/right pairs; arrays use row-major order.
 - Restricted-growth strings remove color names only. Vertex symmetries are
