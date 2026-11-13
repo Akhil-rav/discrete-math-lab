@@ -10,7 +10,7 @@ The learning checkpoints below are intended to establish that understanding.
 
 | Project | Existing artifact | Status | Next student-owned contribution |
 |---|---|---|---|
-| **Rainbow matchings on sparse hosts** | [Flagship report](rainbow-matchings/report.md), [exact data](../results/data/sparse_rainbow.json), [solver](../src/rainbow_constraints.py) | Implemented; finite computational observations; no novelty claim | Explain pruning; prove the cycle formula without code; analyze one extremal cube coloring |
+| **Rainbow matchings on sparse hosts** | [Flagship report](rainbow-matchings/report.md), [cycle and disjoint-square proofs](../notes/cycle_extremizers.md), [exact data](../results/data/sparse_rainbow.json), [solver](../src/rainbow_constraints.py) | Elementary proofs recorded for cycles and two squares; cube result remains finite computational evidence; no novelty claim | Explain pruning and analyze one extremal cube coloring |
 | Extremal colorings and symmetry | [K33 classification](../results/k33_classification.md) | Implemented exhaustive finite classification | Derive one orbit size by hand; distinguish the last two classes structurally |
 | Additive combinatorics | [Progression note](../notes/rainbow_progressions.md), [data](../results/rainbow_progressions.md) | Known benchmarks reproduced | Explain why interval and cyclic domains differ; verify a witness by hand |
 | Parameterized graph algorithms | [Color-coding](../notes/color_coding.md) | Standard method implemented and checked | Derive the recurrence and success probability; add a directed worked example |

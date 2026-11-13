@@ -50,6 +50,12 @@ The extremal partition count is binomial(n,2)²: equality in the upper bound
 requires disjoint palettes and exactly one merged pair in each alternating
 matching. This gives 1,9,36 for the three tested cycles.
 
+The [complete cycle and disjoint-square proofs](../../notes/cycle_extremizers.md)
+also establish A(C4⊔C4)=6 and characterize its exactly two extremal partitions.
+For these hosts, the recorded finite values now have an explicit elementary
+proof in the repository. The note records the guided, AI-assisted discussion
+and does not claim novelty or independent authorship.
+
 For the cube, a simple lower-bound witness uses seven colors: color the six
 edges incident to two fixed left vertices alike, and give the other six edges
 six distinct fresh colors. Every perfect matching uses two edges in the common
