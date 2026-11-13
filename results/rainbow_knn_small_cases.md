@@ -2,6 +2,10 @@
 
 **Status:** exhaustive computational small-case result; no novelty claim.
 
+**Literature check, 2026-11-13:** these values reproduce Li–Tu–Jin,
+Theorems 2.3 and 2.5, after translating their forcing threshold rb to A=rb−1.
+See [the checked comparison](../notes/literature/young_and_matchings.md).
+
 The experiment enumerates every edge-color equality pattern of $K_{n,n}$
 up to relabeling of colors and asks whether the coloring contains a
 rainbow perfect matching.
@@ -74,6 +78,10 @@ families.
 No statement here is being claimed as a new theorem.
 
 ## Next question
+
+**Completed follow-up, 2026-11-13:** the 87 extremal patterns have
+[four symmetry classes](k33_classification.md) under row/column permutations,
+transpose, and color renaming. The question below is retained as historical context.
 
 What structural features do extremal colorings share?
 

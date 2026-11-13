@@ -35,6 +35,9 @@ def has_rainbow_perfect_matching(
 ) -> bool:
     """Check whether the encoded coloring of K_{n,n} has a rainbow PM."""
 
+    if n < 1 or len(colors) != n * n:
+        raise ValueError("Need n >= 1 and exactly n*n edge colors.")
+
     coloring = EdgeColoring(
         {
             (i, j): colors[i * n + j]
@@ -61,6 +64,8 @@ def normalized_colorings(number_of_edges: int) -> Iterable[tuple[int, ...]]:
     This removes redundant copies caused only by renaming colors.
     """
 
+    if number_of_edges < 0:
+        raise ValueError("Number of positions must be nonnegative.")
     if number_of_edges == 0:
         yield ()
         return
@@ -92,6 +97,8 @@ def exhaustive_search(
         one_extremal_example
     """
 
+    if n not in (2, 3):
+        raise ValueError("This bounded experiment supports n=2 or n=3.")
     patterns_checked = 0
     maximum_colors = -1
     number_of_extremal_patterns = 0
