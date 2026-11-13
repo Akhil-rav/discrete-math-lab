@@ -2,44 +2,44 @@
 
 ## Known theorem: Hall's Marriage Theorem
 
-Let (G=(L,R,E)) be a finite bipartite graph. There is a matching that
-saturates every vertex of (L) if and only if
+Let $G=(L,R,E)$ be a finite bipartite graph. There is a matching that
+saturates every vertex of $L$ if and only if
 
-[
+$$
 |N(S)| \ge |S|
-]
+$$
 
-for every subset (S \subseteq L), where (N(S)) is the set of neighbors
-of vertices in (S).
+for every subset $S \subseteq L$, where $N(S)$ is the set of neighbors
+of vertices in $S$.
 
-## Corollary: every (d)-regular bipartite graph has a perfect matching
+## Corollary: every $d$-regular bipartite graph has a perfect matching
 
-Assume (G=(L,R,E)) is finite, bipartite, and (d)-regular with (d\ge 1).
+Assume $G=(L,R,E)$ is finite, bipartite, and $d$-regular with $d\ge 1$.
 
 First, counting edges from the two sides gives
 
-[
+$$
 d|L| = |E| = d|R|,
-]
+$$
 
-so (|L|=|R|).
+so $|L|=|R|$.
 
-Now take any (S\subseteq L). Exactly (d|S|) edges leave (S).
-Every vertex of (N(S)) has total degree (d), so at most (d|N(S)|)
-edges can run from (S) into (N(S)). Therefore
+Now take any $S\subseteq L$. Exactly $d|S|$ edges leave $S$.
+Every vertex of $N(S)$ has total degree $d$, so at most $d|N(S)|$
+edges can run from $S$ into $N(S)$. Therefore
 
-[
+$$
 d|S| \le d|N(S)|.
-]
+$$
 
-Since (d>0),
+Since $d>0$,
 
-[
+$$
 |S| \le |N(S)|.
-]
+$$
 
-Hall's condition holds, so there is a matching saturating (L). Because
-(|L|=|R|), this matching is perfect.
+Hall's condition holds, so there is a matching saturating $L$. Because
+$|L|=|R|$, this matching is perfect.
 
 ## Why run a computation if the theorem is already proved?
 
@@ -51,4 +51,4 @@ for the theorem. It serves three purposes:
 3. practices the research workflow of moving between proof and computation.
 
 The accompanying experiment exhaustively checks all labeled
-(d)-regular bipartite graphs with (n\le 5) vertices on each side.
+$d$-regular bipartite graphs with $n\le 5$ vertices on each side.
