@@ -1,5 +1,17 @@
 # Projects
 
+## Where to start
+
+| Interest | Reading route |
+|---|---|
+| Proofs | Start with the [cycle and disjoint-square paper](../papers/cycle_extremizers.pdf), then the [cube incidence proof](../notes/cube_upper_bound.md). The first uses only perfect matchings and counting; the second develops a bound from matching incidences. |
+| Computation | Open the [nine-class cube atlas](../results/cube_classification.md), then follow its [implementation](../src/README.md) and [verification record](../results/cube_verification.md). Distinguish fixed-edge partitions from classes under graph symmetry. |
+| Probability and TCS | Read the [random-coloring study](random-colorings/report.md) for exact counting and moment bounds, or the [walk paper](../papers/expansion_walks.pdf) for elementary expansion and mixing examples. |
+
+Each project links its mathematical argument, source code, finite data, and
+checks. The [paper collection](../papers/README.md) is a separate entry point
+for readers who prefer PDFs.
+
 ## Rainbow perfect matchings
 
 The main project studies how many colors a fixed bipartite graph can use while

@@ -1,11 +1,20 @@
 name: Mathematical checks
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   reproduce:
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: ['3.11', '3.13']
+        include:
+          - os: ubuntu-latest
+            python-version: '3.11'
+          - os: ubuntu-latest
+            python-version: '3.13'
+          - os: windows-latest
+            python-version: '3.13'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

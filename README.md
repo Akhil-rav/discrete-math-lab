@@ -1,5 +1,7 @@
 # Discrete Math Lab
 
+[![Mathematical checks](https://github.com/Akhil-rav/discrete-math-lab/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/Akhil-rav/discrete-math-lab/actions/workflows/checks.yml)
+
 Proofs and reproducible experiments in extremal combinatorics, graph theory,
 and algorithms. The main thread studies rainbow perfect matchings, from
 small-case searches to structural proofs and exact probabilities.
@@ -35,7 +37,8 @@ presentation of the saved data.
 | Graph algorithms | [Vertex color-coding](notes/color_coding.md) and [finite algorithm checks](results/algorithm_demos.md) |
 
 [Project guide](projects/README.md) · [Literature and source scope](notes/literature/README.md)
-· [References](references.bib) · [All results](results/README.md)
+· [Implementation guide](src/README.md) · [References](references.bib)
+· [All results](results/README.md)
 
 The writeups distinguish elementary proofs, reproductions of published results,
 and exhaustive finite computations. No originality or publication is claimed.
@@ -45,11 +48,16 @@ Review limitations and the exact tested ranges appear in the individual reports.
 
 Python **3.11+**; mathematical computations use the standard library. From the
 repository root, one command runs the integrity checks, tests, and all five
-reference-data reproductions:
+reference-data reproductions. To start from a fresh clone:
 
 ```sh
+git clone https://github.com/Akhil-rav/discrete-math-lab.git
+cd discrete-math-lab
 python -m tools.verify_repository
 ```
+
+Automated checks run on Linux with Python 3.11 and 3.13, and on Windows with
+Python 3.13. No package installation is required for this sequence.
 
 Use `--static-only` for links, JSON, recorded output hashes, and reviewed source
 checks without mathematical reruns. See [individual commands](experiments/README.md)
