@@ -1,5 +1,11 @@
 # Edge expansion and exact random-walk examples
 
+[Read the expository paper](../papers/expansion_walks.pdf) for complete-graph
+and cycle cut formulas, exact walk formulas on complete bipartite graphs,
+and a disconnection obstruction on unions of cliques. The
+[verification record](../results/walk_paper_verification.md) distinguishes
+the proofs from the bounded implementation checks.
+
 **Status:** finite educational reproductions, inspired by
 [Hoory–Linial–Wigderson](https://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/HLW06/hlw06.pdf).
 
