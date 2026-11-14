@@ -31,7 +31,7 @@ def generate_regular_bipartite_graphs(
     for which every right vertex also has degree d.
     """
 
-    if not 0 <= d <= n:
+    if n < 0 or not 0 <= d <= n:
         raise ValueError("Need 0 <= d <= n.")
 
     left = set(range(n))

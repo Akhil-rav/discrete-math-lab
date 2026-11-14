@@ -36,7 +36,7 @@ def maximum_matching(graph: BipartiteGraph) -> Dict[Vertex, Vertex]:
 
 
 def has_perfect_matching(graph: BipartiteGraph) -> bool:
-    """Check whether every left vertex can be matched to a distinct right vertex."""
+    """Check for a matching covering both vertex classes (which must be equal)."""
 
     if len(graph.left) != len(graph.right):
         return False
