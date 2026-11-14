@@ -77,14 +77,8 @@ families.
 
 No statement here is being claimed as a new theorem.
 
-## Next question
+## Extremal classification
 
-**Completed follow-up, 2026-11-13:** the 87 extremal patterns have
-[four symmetry classes](k33_classification.md) under row/column permutations,
-transpose, and color renaming. The question below is retained as historical context.
-
-What structural features do extremal colorings share?
-
-For $K_{3,3}$ there are multiple four-color patterns avoiding a rainbow
-perfect matching. Classifying those patterns, even computationally, is a
-natural next step before moving to broader regular bipartite graphs.
+The 87 extremal four-color patterns of $K_{3,3}$ fall into
+[four symmetry classes](k33_classification.md) under row and column permutations,
+transpose, and color renaming.

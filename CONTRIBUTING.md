@@ -5,6 +5,7 @@ Use Python 3.11+ and the standard library. Run from the root:
 ```sh
 python -m unittest discover -s tests -v
 python -m experiments.reproduce --check results/data/small_cases.json
+python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 ```
 
 State each mathematical change's exact domain, conventions, finite bound, and
@@ -25,3 +26,9 @@ extraction, proof audits, and implementations.
 Do not replace historical results silently. Add a dated correction and update
 dependent summaries when an interpretation changes. Preserve old experiments
 as regression checks when extending the code.
+
+Keep the public presentation focused on mathematical writeups, implementations,
+data, and reproducibility. The main README should provide a short route to the
+paper, project report, and experiments. Keep personal study plans and editorial
+conversation notes outside the public repository; avoid duplicating result
+summaries or retaining completed tasks as future work.

@@ -37,8 +37,7 @@ $d$-regular bipartite graph with $d\ge 1$ has a perfect matching.
 The computation is not a proof. The proof follows from Hall's Marriage
 Theorem and is written in `notes/halls_theorem.md`.
 
-## Next question
+## Related study
 
-The next experiments will add **edge colors** and ask when a perfect matching
-can be chosen whose edges have pairwise distinct colors. That moves from
-ordinary matching theory toward rainbow and anti-Ramsey problems.
+The [rainbow-matching project](../projects/rainbow-matchings/report.md) adds edge
+colors and studies when perfect matchings can have pairwise distinct colors.
