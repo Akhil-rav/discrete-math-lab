@@ -3,6 +3,12 @@
 Use Python 3.11+ and the standard library. Run from the root:
 
 ```sh
+python -m tools.verify_repository
+```
+
+This includes integrity checks and the following mathematical commands:
+
+```sh
 python -m unittest discover -s tests -v
 python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json

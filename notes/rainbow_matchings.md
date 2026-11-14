@@ -33,7 +33,8 @@ still avoiding a rainbow copy of $H$.
 
 For the experiments in this repository, the target is a perfect matching.
 
-I will use the computational quantity
+For a finite host admitting a coloring that avoids all rainbow perfect matchings,
+use the quantity
 
 $$
 A(G)=\max\{|c(E(G))|: c \text{ has no rainbow perfect matching}\}.
@@ -42,6 +43,11 @@ $$
 This notation is local to these notes. Before comparing with a paper, the
 paper's exact anti-Ramsey convention must be checked because authors may
 package the threshold differently.
+
+The existence condition matters: a maximum over an empty set of avoiding
+colorings is not assigned a value here. Every rainbow host tested in this
+repository has perfect matchings with at least two edges, so a one-color
+assignment is an avoiding coloring and the maximum is defined.
 
 ## Why color relabeling can be removed
 

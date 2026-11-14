@@ -12,6 +12,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m unittest discover -s tests -v
+      - run: python -m tools.verify_repository --static-only
       - run: python -m experiments.reproduce --check results/data/small_cases.json
       - run: python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
       - run: python -m experiments.classify_cube --check results/data/cube_classification.json

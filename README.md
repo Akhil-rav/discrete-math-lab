@@ -1,107 +1,63 @@
 # Discrete Math Lab
 
-Proofs and reproducible experiments in graph theory, extremal combinatorics,
-and algorithms. The main project studies edge colorings that avoid rainbow
-perfect matchings.
+Proofs and reproducible experiments in extremal combinatorics, graph theory,
+and algorithms. The main thread studies rainbow perfect matchings, from
+small-case searches to structural proofs and exact probabilities.
 
-## Featured work
+## Selected work
 
-**Nine symmetry classes of extremal cube colorings**
-
-[Read the report](results/cube_classification.md) · [Typeset PDF](papers/cube_classification.pdf) · [Diagram atlas](results/figures/cube_classes.svg) · [Complete data](results/data/cube_classification.json)
-
-All 174 extremal seven-color cube partitions split into nine classes under
-the 48 graph automorphisms and color renaming. The report gives every
-representative, explains structural differences, and records exhaustive
-coverage and separate verification algorithms.
-
-An [elementary incidence proof](notes/cube_upper_bound.md) now establishes the
-seven-color maximum without search. Its equality analysis explains a
-[150/24 capacity-and-overlap split](results/cube_collisions.md) of the extremizers.
-
-**Rainbow perfect matchings on even cycles and two disjoint squares**
-
-[Read the paper](papers/cycle_extremizers.pdf) · [LaTeX source](papers/cycle_extremizers.tex) · [Web version](notes/cycle_extremizers.md)
-
-Elementary proofs determine the maximum color count and all extremal color
-partitions for even cycles and two disjoint squares.
-
-**Exact searches on sparse bipartite graphs**
-
-[Project report](projects/rainbow-matchings/report.md) · [Data](results/data/sparse_rainbow.json) · [Implementation](src/rainbow_constraints.py)
-
-An exact partition search covers six hosts through 12 edges. For the cube,
-it accounts for 4,213,597 color partitions and finds a maximum avoiding count
-of seven colors, attained by 174 normalized partitions. Vertex labels remain
-fixed; the report explains the pruning and coverage argument.
-
-**Extremal colorings of $K_{3,3}$**
-
-[Classification](results/k33_classification.md) · [Experiment](experiments/classify_k33.py)
-
-The 87 extremal four-color partitions form four classes under graph
-automorphisms and color renaming, with orbit sizes 6, 36, 36, and 9.
-
-## Related studies
-
-**Exact probabilities under random edge colors**
-
-[Project report and plot](projects/random-colorings/report.md) · [Counting proofs](notes/random_rainbow.md) · [Exact data](results/data/random_rainbow.json)
-
-An exact six-host study converts avoiding-partition histograms into rainbow
-matching probabilities under independent uniform colors. It compares moment
-bounds and connects the cube's 174 extremizers to its large-palette limit.
-
-**Expansion and random walks: exact examples**
-
-[Read the paper](papers/expansion_walks.pdf) · [LaTeX source](papers/expansion_walks.tex)
-
-Self-contained proofs explain edge expansion, exact mixing on complete bipartite
-graphs, and the difference between periodicity and disconnection. Closed-form
-oracles check the rational walk implementation on bounded graph families.
-
-[Research guide](projects/research-guide.md) explains the connections between
-projects, their evidence, and concrete next development tasks.
-
-| Topic | Notes | Results |
+| Study | Main outcome | Read |
 |---|---|---|
-| Hall's theorem and regular bipartite graphs | [Proof](notes/halls_theorem.md) | [4,477 small regular graphs](results/regular_bipartite_small_cases.md) |
-| Rainbow arithmetic progressions | [Definitions and groups](notes/rainbow_progressions.md) | [Exact small thresholds](results/rainbow_progressions.md) |
-| Vertex color-coding | [Subset dynamic programming](notes/color_coding.md) | [Algorithm checks](results/algorithm_demos.md) |
-| Expansion and random walks | [Project report](projects/expansion-and-walks/report.md) | [Exact rational computations](results/algorithm_demos.md) |
+| **Extremal cube colorings** | A proof of the seven-color maximum; all 174 extremizers classified into nine symmetry classes | [Report](results/cube_classification.md) · [Four-page paper](papers/cube_classification.pdf) · [Labeled atlas](results/figures/cube_classes.svg) |
+| **Independent random edge colors** | Exact rainbow-matching probabilities on six hosts, moment bounds, and a large-palette limit linked to the 174 extremizers | [Report and plot](projects/random-colorings/report.md) · [Counting proofs](notes/random_rainbow.md) · [Exact data](results/data/random_rainbow.json) |
+| **Expansion and random walks** | Elementary cut formulas and exact examples separating periodicity from disconnection | [Three-page paper](papers/expansion_walks.pdf) · [Project report](projects/expansion-and-walks/report.md) |
 
-[Literature guide](notes/literature/README.md) · [References](references.bib) · [All results](results/README.md)
+The cube study combines an [incidence proof](notes/cube_upper_bound.md), an
+exhaustive [symmetry classification](results/cube_classification.md), and a
+[capacity-and-overlap analysis](results/cube_collisions.md). Color names and
+graph symmetries are distinguished throughout.
 
-The repository contains elementary exposition, reproductions of published
-results, and exhaustive finite computations. Each writeup states its scope;
-no novelty is claimed.
+![Exact probabilities under independent uniform edge colors](results/figures/random_rainbow.svg)
+
+The plot compares three eight-vertex hosts and the cube's analytic moment
+bounds. The underlying probabilities are exact rationals; the curves are a
+presentation of the saved data.
+
+## Foundations and supporting studies
+
+| Topic | Artifact |
+|---|---|
+| Even cycles and two disjoint squares | [Elementary extremizer proofs](papers/cycle_extremizers.pdf) |
+| Sparse bipartite hosts | [Six exact searches through twelve edges](projects/rainbow-matchings/report.md) |
+| Complete bipartite symmetry | [Four classes among 87 extremal K3,3 partitions](results/k33_classification.md) |
+| Matching theory | [Hall's theorem](notes/halls_theorem.md) and [4,477 regular-graph checks](results/regular_bipartite_small_cases.md) |
+| Additive combinatorics | [Rainbow arithmetic progressions](results/rainbow_progressions.md) |
+| Graph algorithms | [Vertex color-coding](notes/color_coding.md) and [finite algorithm checks](results/algorithm_demos.md) |
+
+[Project guide](projects/README.md) · [Literature and source scope](notes/literature/README.md)
+· [References](references.bib) · [All results](results/README.md)
+
+The writeups distinguish elementary proofs, reproductions of published results,
+and exhaustive finite computations. No originality or publication is claimed.
+Review limitations and the exact tested ranges appear in the individual reports.
 
 ## Reproduce
 
-Python **3.11+**, standard library only. Run from the repository root:
+Python **3.11+**; mathematical computations use the standard library. From the
+repository root, one command runs the integrity checks, tests, and all five
+reference-data reproductions:
 
 ```sh
-python -m unittest discover -s tests -v
-python -m experiments.reproduce --check results/data/small_cases.json
-python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
-python -m experiments.classify_cube --check results/data/cube_classification.json
-python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
-python -m experiments.random_rainbow --check results/data/random_rainbow.json
+python -m tools.verify_repository
 ```
 
-See [individual experiments](experiments/README.md) for bounds and conventions,
-[verification records](results/verification.md) for execution details, and
-[paper build instructions](papers/README.md) for LaTeX.
+Use `--static-only` for links, JSON, recorded output hashes, and reviewed source
+checks without mathematical reruns. See [individual commands](experiments/README.md)
+and the [verification index](results/verification_index.md) for historical records
+and the limits of these checks.
 
-Regenerating the probability plot uses optional
-[Matplotlib requirements](requirements-figures.txt). Core computations and tests
-remain standard-library-only; LaTeX is needed only to rebuild typeset notes.
-
-## Contents
-
-`papers/` typeset notes and LaTeX · `projects/` project reports · `notes/`
-mathematical background and literature · `src/` algorithms · `experiments/`
-bounded computations · `results/` tables, data, and run records · `tests/`
-independent checks.
+Plots need optional [Matplotlib requirements](requirements-figures.txt) only to
+regenerate their images. [Typeset notes](papers/README.md) include LaTeX sources
+and build instructions. Reading the committed figures and PDFs needs neither.
 
 Akhil Ravuri

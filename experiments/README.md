@@ -1,5 +1,15 @@
 # Reproducing the experiments
 
+For the complete integrity, test, and reproduction sequence from a clean clone:
+
+```sh
+python -m tools.verify_repository
+```
+
+The [verification index](../results/verification_index.md) explains the exact
+scope of the portable checker and how historical input hashes are interpreted.
+The individual mathematical commands below remain available.
+
 Python **3.11+**, standard library only. Run from the repository root.
 All defaults are bounded and deterministic; no RNG, network, or optional solver
 is required. The suite produces [stable JSON](../results/data/small_cases.json).
