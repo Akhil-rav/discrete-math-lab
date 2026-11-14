@@ -2,6 +2,7 @@
 
 | Study | Result | Evidence |
 |---|---|---|
+| Expansion and random walks | Exact family formulas for cuts, periodicity, lazy mixing, and disconnection | [Expository paper](../papers/expansion_walks.pdf), [verification](walk_paper_verification.md) |
 | Cycles and two disjoint squares | Maximum color counts and complete extremal partition counts | [Elementary proofs](../papers/cycle_extremizers.pdf) |
 | Sparse bipartite hosts | Six exact searches through 12 edges, including the cube | [Report](../projects/rainbow-matchings/report.md), [data](data/sparse_rainbow.json) |
 | Complete bipartite hosts | A(K22)=2 and A(K33)=4 | [Reproduction of published thresholds](rainbow_knn_small_cases.md) |
