@@ -36,6 +36,10 @@ endorsement.
 See [source records](source_records.md) for versions, locators, hypotheses,
 and limitations; [BibTeX](../../references.bib) records only verified metadata.
 
+The [cube-classification source check](cube_classification.md) separately records
+adjacent cubic-bipartite literature, a full-text access limit, and why the finite
+orbit classification carries no novelty claim.
+
 ## Suggested order
 
 1. [Hall's theorem](../halls_theorem.md), then [rainbow conventions](../rainbow_matchings.md).

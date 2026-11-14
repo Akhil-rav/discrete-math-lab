@@ -1,5 +1,23 @@
 # Typeset notes
 
+## Nine symmetry classes of extremal cube colorings
+
+[Read the paper](cube_classification.pdf) · [LaTeX source](cube_classification.tex)
+· [Web report and diagram atlas](../results/cube_classification.md)
+
+A three-page finite classification gives all nine canonical representatives,
+orbit sizes, stabilizers, and labeled diagrams. The full dataset saves every
+one of the 174 fixed-edge partitions. No novelty is claimed.
+
+```sh
+python -m experiments.render_cube_atlas
+tectonic --outdir papers papers/cube_classification.tex
+```
+
+The renderer deterministically regenerates the SVG and LaTeX from the checked
+dataset. Mathematical verification belongs to the classification and its tests,
+not to the renderer.
+
 ## Expansion and random walks: exact examples
 
 [Read the paper](expansion_walks.pdf) · [LaTeX source](expansion_walks.tex)

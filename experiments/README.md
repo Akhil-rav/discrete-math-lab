@@ -8,6 +8,7 @@ is required. The suite produces [stable JSON](../results/data/small_cases.json).
 python -m unittest discover -s tests -v
 python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
+python -m experiments.classify_cube --check results/data/cube_classification.json
 ```
 
 To save fresh output without replacing the reference data:
@@ -22,6 +23,7 @@ python -m experiments.reproduce --output results/local-run.json
 | `experiments.rainbow_complete_bipartite` | Maximum avoiding colors for K22 and K33 | B4=15 and B9=21,147 partitions; independent edge-subset oracle |
 | `experiments.sparse_rainbow` | Exact avoidance histograms on six hosts through 12 edges | Counted rejected subtrees; independent small-host partition oracle |
 | `experiments.classify_k33` | Group the 87 extremizers by Aut(K33) and color renaming | Full 72-element vertex action; closure and orbit/stabilizer checks |
+| `experiments.classify_cube` | All S(12,7)=627,396 seven-color cube partitions, then all 174 avoiding partitions modulo graph symmetry | Nine classes; full 48-element action checked against all 8! vertex maps; matching-subset oracle |
 | `experiments.rainbow_progressions` | Exact aw for intervals/cyclic orders 3..9 and three specified products | All Bn partitions; independent equations for interval/cyclic/product AP generators |
 | `experiments.color_coding_small_cases` | Color-mask DP on every graph of order ≤4 and every k-color assignment, 1≤k≤n | 22,955 permutation-oracle comparisons; exact probability and witness checks |
 | `experiments.expansion_small_cases` | Exact cuts and walks on K4, C6, K33, 2K3 | All nonempty subsets up to half order; rational arithmetic; complete/cycle benchmarks |
