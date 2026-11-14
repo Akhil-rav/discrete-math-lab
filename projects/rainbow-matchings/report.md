@@ -110,10 +110,9 @@ python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 The original suite and its historical evidence record remain unchanged.
 The new execution provenance is linked from [the sparse verification record](../../results/sparse_verification.md).
 
-## Next questions for this project
+## Further work
 
 Describe the 174 cube extremizers under its automorphism group; find an elementary
 explanation for the cube upper bound; compare with precise published sparse-host
-results before proposing general statements. These are project tasks, not claims
-of currently open problems. A student should first complete the
-[ownership exercises](../first-session.md) and explain the method independently.
+results before proposing general statements. These are project-development directions; their current status in the
+literature has not been established here.
