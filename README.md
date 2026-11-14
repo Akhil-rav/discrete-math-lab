@@ -31,12 +31,23 @@ automorphisms and color renaming, with orbit sizes 6, 36, 36, and 9.
 
 ## Related studies
 
+**Expansion and random walks: exact examples**
+
+[Read the paper](papers/expansion_walks.pdf) · [LaTeX source](papers/expansion_walks.tex)
+
+Self-contained proofs explain edge expansion, exact mixing on complete bipartite
+graphs, and the difference between periodicity and disconnection. Closed-form
+oracles check the rational walk implementation on bounded graph families.
+
+[Research guide](projects/research-guide.md) explains the connections between
+projects, their evidence, and concrete next development tasks.
+
 | Topic | Notes | Results |
 |---|---|---|
 | Hall's theorem and regular bipartite graphs | [Proof](notes/halls_theorem.md) | [4,477 small regular graphs](results/regular_bipartite_small_cases.md) |
 | Rainbow arithmetic progressions | [Definitions and groups](notes/rainbow_progressions.md) | [Exact small thresholds](results/rainbow_progressions.md) |
 | Vertex color-coding | [Subset dynamic programming](notes/color_coding.md) | [Algorithm checks](results/algorithm_demos.md) |
-| Expansion and random walks | [Definitions and examples](notes/expansion_and_walks.md) | [Exact rational computations](results/algorithm_demos.md) |
+| Expansion and random walks | [Project report](projects/expansion-and-walks/report.md) | [Exact rational computations](results/algorithm_demos.md) |
 
 [Literature guide](notes/literature/README.md) · [References](references.bib) · [All results](results/README.md)
 

@@ -1,0 +1,187 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,xcolor,fancyhdr}
+\definecolor{ink}{HTML}{19354A}
+\usepackage[colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink]{hyperref}
+\hypersetup{pdftitle={Expansion and random walks: exact examples},pdfauthor={Akhil Ravuri}}
+\newtheorem{proposition}{Proposition}
+\newcommand{\TV}{\operatorname{TV}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\textsc{Expansion and random walks}}
+\fancyhead[R]{\small Akhil Ravuri}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parskip}{0.25em}\setlength{\emergencystretch}{1em}
+\title{\vspace{-1.5em}\LARGE\bfseries Expansion and random walks:\\ exact examples}
+\author{Akhil Ravuri}\date{}
+\begin{document}
+\maketitle\vspace{-1.5em}
+\begin{abstract}
+We give elementary proofs of edge-expansion formulas for complete graphs and
+cycles, and exact total-variation formulas for ordinary and lazy random walks
+on complete bipartite graphs. Disjoint cliques show why laziness cannot repair
+disconnection. Rational computations in the accompanying repository provide
+finite implementation checks. This is an expository note; no novelty is claimed.
+\end{abstract}
+
+\section{Cuts and stationary distributions}
+Let $G=(V,E)$ be a finite simple graph on $n\ge2$ vertices. Write
+$\partial S=E(S,V\setminus S)$ and use the unnormalized edge expansion
+\[
+ h(G)=\min_{0<|S|\le n/2}\frac{|\partial S|}{|S|}.
+\]
+This is the convention of Hoory, Linial, and Wigderson~\cite[Definition 2.1]{HLW}.
+It differs from degree-normalized conductance.
+
+\begin{proposition}\label{prop:cuts}
+For $n\ge2$, $h(K_n)=\lceil n/2\rceil$. For $n\ge3$,
+$h(C_n)=2/\lfloor n/2\rfloor$.
+\end{proposition}
+\begin{proof}
+A set of $s$ vertices in $K_n$ has $s(n-s)$ boundary edges. Its ratio is
+$n-s$, minimized at $s=\lfloor n/2\rfloor$. In a cycle every nonempty proper
+vertex set has at least two boundary edges, so every eligible set has ratio
+at least $2/\lfloor n/2\rfloor$. A consecutive block of
+$\lfloor n/2\rfloor$ vertices attains this bound.
+\end{proof}
+
+Now assume $G$ is $d$-regular with $d\ge1$. The ordinary transition matrix is
+$P=A/d$, where $A$ is the adjacency matrix. The lazy transition is
+$L=(I+P)/2$. Distributions are row vectors, so $p_{t+1}=p_tP$ or $p_tL$.
+The uniform distribution $\pi(v)=1/n$ is stationary for both walks: every
+column of each transition matrix sums to one. This remains true when the
+graph is disconnected.
+
+For distributions $p,q$ on $V$, define
+\[
+ \TV(p,q)=\frac12\sum_{v\in V}|p(v)-q(v)|.
+\]
+Stationarity says that a walk \emph{started} uniformly remains uniform.
+It does not say that a walk started at one vertex converges to uniform.
+The next examples separate periodicity from disconnection.
+
+\newpage
+\section{A bipartite example with an exact mixing formula}
+Let $G=K_{d,d}$, $d\ge1$, with parts $U,W$, and start at a vertex $x\in U$.
+Let $u_U,u_W$ denote the uniform distributions supported on the respective
+parts, extended by zero elsewhere. Put
+$\pi=(u_U+u_W)/2$ and $\delta_x(x)=1$.
+
+\begin{proposition}\label{prop:bipartite}
+For the ordinary walk on $K_{d,d}$,
+\[
+ \TV(\delta_xP^t,\pi)=\frac12 \qquad(t\ge1).
+\]
+For the lazy walk, $\TV(\delta_x,\pi)=1-1/(2d)$, and
+\[
+ \TV(\delta_xL^t,\pi)=\frac{d-1}{d}\,2^{-t}
+ \qquad(t\ge1).
+\]
+\end{proposition}
+\begin{proof}
+After one ordinary step the distribution is $u_W$. Later steps alternate
+between $u_U$ and $u_W$. Either distribution differs from $\pi$ by
+$1/(2d)$ at each of $2d$ vertices, giving distance $1/2$.
+
+For the lazy walk, decompose the initial distribution as
+\[
+ \delta_x=\pi+\frac12(u_U-u_W)+(\delta_x-u_U).
+\]
+Multiplication by $P$ swaps $u_U$ and $u_W$, so
+$(u_U-u_W)L=0$. Also $(\delta_x-u_U)P=0$: both $\delta_xP$
+and $u_UP$ equal $u_W$. Hence
+\[
+ \delta_xL^t=\pi+2^{-t}(\delta_x-u_U),\qquad t\ge1.
+\]
+The sum of absolute values of $\delta_x-u_U$ is $2(d-1)/d$.
+Taking half the absolute sum proves the formula. At time zero, the distance
+from a point mass to uniform on $2d$ vertices is $1-1/(2d)$.
+\end{proof}
+
+The restriction $t\ge1$ matters: the imbalance between the two parts
+disappears in the first lazy step, whereas the remaining imbalance within
+$U$ decays by a factor of two per step. For $d=1$ the latter imbalance is
+zero, so the lazy walk is uniform after one step.
+
+For $K_{3,3}$, the time-eight lazy distance is
+$(2/3)2^{-8}=1/384$, while the ordinary distance stays $1/2$.
+More generally, for $d\ge2$ and a tolerance $0<\varepsilon<1/2$, the first
+integer time at which the lazy distance is at most $\varepsilon$ is
+\[
+ t_\varepsilon=\left\lceil\log_2\frac{d-1}{d\varepsilon}\right\rceil.
+\]
+Indeed, the time-zero distance exceeds $1/2$, and for $t\ge1$ the desired
+inequality is equivalent to $2^t\ge(d-1)/(d\varepsilon)$.
+On $K_{3,3}$, tolerance $1/100$ is first reached at time seven:
+the distances at times six and seven are $1/96$ and $1/192$, respectively.
+
+On a general regular bipartite graph the ordinary walk still remains on
+one part at each time, giving distance \emph{at least} $1/2$ from uniform;
+the exact equality above uses the complete bipartite structure.
+
+These examples show why a positive edge-expansion value alone cannot force
+an ordinary walk to converge. For example $K_{2,2}=C_4$ has expansion one,
+yet its ordinary walk alternates between the two parts forever.
+
+\newpage
+\section{What laziness cannot fix}
+Let $G$ be the disjoint union of $r\ge2$ copies of $K_d$, with $d\ge2$.
+Start at $x$ in one component $H$. Here the graph degree is $d-1$.
+Write $u_H$ for uniform measure on that component and let $\pi$ be uniform
+on all $rd$ vertices.
+
+\begin{proposition}\label{prop:disconnected}
+The graph $G$ has $h(G)=0$. Any walk that stays in its starting component
+has distance at least $1-1/r$ from $\pi$. For the lazy random walk,
+\[
+ \delta_xL^t=u_H+
+ \left(\frac{d-2}{2(d-1)}\right)^t(\delta_x-u_H),\qquad t\ge1,
+\]
+and therefore $\lim_{t\to\infty}\TV(\delta_xL^t,\pi)=1-1/r$.
+\end{proposition}
+\begin{proof}
+The set $V(H)$ has size $d\le rd/2$ and no boundary edges, proving
+$h(G)=0$. If a distribution $p$ is supported on $H$, the absolute
+differences outside $H$ sum to $1-1/r$. Inside $H$, their sum is at least
+$|p(H)-\pi(H)|=1-1/r$. Thus $\TV(p,\pi)\ge1-1/r$.
+
+On $H$, $P=(J-I)/(d-1)$, where $J$ is the all-ones matrix.
+Since $(\delta_x-u_H)J=0$, multiplication by $L$ scales
+$\delta_x-u_H$ by $(d-2)/(2(d-1))$, while fixing $u_H$.
+Iteration proves the displayed formula. This factor belongs to $[0,1)$,
+so the distribution converges to $u_H$. Finally,
+$\TV(u_H,\pi)=1-1/r$ by direct summation.
+\end{proof}
+
+\subsection*{Exact computations and scope}
+The existing experiment enumerates all eligible cuts and evolves walk
+probabilities using rational arithmetic. Walks start at vertex 0.
+The following entries are the repository's recorded time-eight values.
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Graph & $h(G)$ & Lazy TV & Ordinary TV\\
+\midrule
+$K_4$ & $2$ & $1/8748$ & $1/8748$\\
+$C_6$ & $2/3$ & $2187/32768$ & $1/2$\\
+$K_{3,3}$ & $5/3$ & $1/384$ & $1/2$\\
+$2K_3$ & $0$ & $1/2$ & $1/2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Reproduce from the repository root with
+\texttt{python -m experiments.expansion\_small\_cases}.
+Formula checks are in \texttt{tests/test\_walk\_formulas.py}.
+The propositions have proofs independent of these finite checks.
+No infinite expander family, spectral inequality, or high-dimensional
+expansion result is established here. For broader context see~\cite[Sections 2--3]{HLW}.
+
+\begin{thebibliography}{1}
+\bibitem{HLW} S. Hoory, N. Linial, and A. Wigderson,
+\emph{Expander graphs and their applications}, Bull. Amer. Math. Soc.
+\textbf{43} (2006), 439--561.
+\href{https://doi.org/10.1090/S0273-0979-06-01126-8}{doi:10.1090/S0273-0979-06-01126-8}.
+\end{thebibliography}
+\end{document}
