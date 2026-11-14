@@ -66,8 +66,11 @@ proofs and a diagram of the six-color construction.
 For the cube, a simple lower-bound witness uses seven colors: color the six
 edges incident to two fixed left vertices alike, and give the other six edges
 six distinct fresh colors. Every perfect matching uses two edges in the common
-color. The matching upper bound A=7 here is certified by the finite search,
-not by an asserted general theorem for all cubic bipartite graphs.
+color. The [incidence proof](../../notes/cube_upper_bound.md) now supplies the
+matching upper bound without search. Its scope is the fixed cube, not an
+asserted theorem for all cubic bipartite graphs. The equality analysis and
+finite [collision audit](../../results/cube_collisions.md) further explain
+the obstruction structure of the 174 extremizers.
 
 ## Search method and coverage argument
 
@@ -117,8 +120,8 @@ The new execution provenance is linked from [the sparse verification record](../
 
 ## Further work
 
-Find an elementary explanation for the cube upper bound, and compare with precise
-published sparse-host results before proposing general statements. The finite
-cube symmetry classification is complete in the linked report. The remaining
-tasks are project-development directions; their current status in the
+Compare the fixed-host proof and classification with precise published
+sparse-host results before proposing general statements. The cube upper bound
+and finite symmetry classification are complete in the linked notes. Further
+host comparisons are project-development directions; their current status in the
 literature has not been established here.

@@ -14,6 +14,11 @@ automorphisms and color renaming. The orbit sizes are
 
 ## Model and equivalence
 
+The [incidence proof](../notes/cube_upper_bound.md) now establishes the maximum
+of seven independently of search. Its [capacity balance](cube_collisions.md)
+also explains a 150/24 split of the extremal population. The nine-orbit list
+and these population counts remain finite computational classifications.
+
 Use left vertices L0,...,L3 and right vertices R0,...,R3, with LiRj an edge
 exactly when i differs from j. This is K4,4 minus its diagonal matching, hence
 the cube. In binary-cube coordinates, the left vertices are 000,011,101,110;
