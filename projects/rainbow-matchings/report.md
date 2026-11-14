@@ -55,6 +55,8 @@ also establish A(C4⊔C4)=6 and characterize its exactly two extremal partitions
 For these hosts, the recorded finite values now have an explicit elementary
 proof in the repository. The note states its conventions and review scope and
 does not claim novelty.
+The [typeset version](../../papers/cycle_extremizers.pdf) includes the complete
+proofs and a diagram of the six-color construction.
 
 For the cube, a simple lower-bound witness uses seven colors: color the six
 edges incident to two fixed left vertices alike, and give the other six edges
