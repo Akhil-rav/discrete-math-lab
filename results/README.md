@@ -2,6 +2,7 @@
 
 | Study | Result | Evidence |
 |---|---|---|
+| Cube extremal colorings | Nine symmetry classes among all 174 seven-color extremizers | [Classification and atlas](cube_classification.md), [complete data](data/cube_classification.json) |
 | Expansion and random walks | Exact family formulas for cuts, periodicity, lazy mixing, and disconnection | [Expository paper](../papers/expansion_walks.pdf), [verification](walk_paper_verification.md) |
 | Cycles and two disjoint squares | Maximum color counts and complete extremal partition counts | [Elementary proofs](../papers/cycle_extremizers.pdf) |
 | Sparse bipartite hosts | Six exact searches through 12 edges, including the cube | [Report](../projects/rainbow-matchings/report.md), [data](data/sparse_rainbow.json) |

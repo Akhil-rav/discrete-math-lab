@@ -1,0 +1,42 @@
+{
+  "claim_id": "CUBE_SEVEN_COLOR_ORBITS_2026_11_14",
+  "mathematics": {
+    "assertion_tested": "Enumerate all partitions of the twelve cube edges into seven colors, retain those avoiding all perfect matchings, and quotient by the complete 48-element cube automorphism action.",
+    "coefficient_domain": "Exact integers and finite set partitions",
+    "conventions": "K4,4 minus diagonal; lexicographic (left,right) edge order; restricted-growth colors; source-index to image-index edge actions; color names ignored; all orbit members saved.",
+    "inputs": [
+      "One fixed cube Q3 with 12 edges, nine perfect matchings",
+      "All S(12,7) partitions and all 48 cube automorphisms"
+    ],
+    "bounds": {
+      "edge_count": 12,
+      "colors": 7,
+      "partitions": 627396,
+      "automorphisms": 48
+    },
+    "non_claims": [
+      "No new theorem or literature novelty claim",
+      "This seven-color pass alone does not exclude avoiding colorings with eight or more colors; the existing full sparse search and separate tests supply that comparison",
+      "No random sampling or numerical approximation",
+      "Tests are run separately; this manifest records classification execution only"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/color_patterns.py",
+    "src/cube_symmetry.py",
+    "src/rainbow_constraints.py",
+    "experiments/classify_cube.py"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

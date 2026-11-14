@@ -6,7 +6,7 @@ Proposed tasks are not certified open problems.
 
 | Direction | What is implemented | Evidence | Next bounded task |
 |---|---|---|---|
-| Rainbow perfect matchings | Partition searches, sparse-host constraints, K3,3 symmetry classification | [Report](rainbow-matchings/report.md), [elementary cycle proofs](../notes/cycle_extremizers.md) | Classify extremizers of one specified sparse host under its automorphism group |
+| Rainbow perfect matchings | Sparse-host searches, K3,3 classification, nine cube classes | [Report](rainbow-matchings/report.md), [cube atlas](../results/cube_classification.md), [cycle proofs](../notes/cycle_extremizers.md) | Seek an elementary explanation for the cube upper bound after comparing precise literature statements |
 | Expansion and walks | Exact cuts and rational walk evolution on four regular graphs | [Report](expansion-and-walks/report.md), benchmark tests | Add an independent transition-matrix oracle before extending the graph domain |
 | Rainbow arithmetic progressions | Exact searches on small intervals and specified finite groups | [Results](../results/rainbow_progressions.md), [definitions](../notes/rainbow_progressions.md) | Compare one published theorem with its precise hypotheses and small examples |
 | Color-coding | Colorful-path subset dynamic programming | [22,955 finite comparisons](../results/algorithm_demos.md) | Document runtime and memory scaling without confusing experiments with asymptotic proofs |

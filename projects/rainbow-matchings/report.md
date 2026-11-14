@@ -36,6 +36,11 @@ against every published regular-bipartite theorem.
 [Machine-readable results](../../results/data/sparse_rainbow.json) contain the
 edge order, full avoiding histograms, rejected counts, and an extremal witness.
 
+The [cube classification](../../results/cube_classification.md) now partitions
+the 174 extremizers into nine classes under all 48 cube automorphisms. It includes
+a labeled atlas, every orbit member, explicit stabilizers, and independent
+matching and automorphism oracles.
+
 ## Elementary known fact: even cycles
 
 For n≥2, A(C2n)=2n−2. This is an elementary calculation, not a new theorem.
@@ -112,7 +117,8 @@ The new execution provenance is linked from [the sparse verification record](../
 
 ## Further work
 
-Describe the 174 cube extremizers under its automorphism group; find an elementary
-explanation for the cube upper bound; compare with precise published sparse-host
-results before proposing general statements. These are project-development directions; their current status in the
+Find an elementary explanation for the cube upper bound, and compare with precise
+published sparse-host results before proposing general statements. The finite
+cube symmetry classification is complete in the linked report. The remaining
+tasks are project-development directions; their current status in the
 literature has not been established here.
