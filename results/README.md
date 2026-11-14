@@ -2,6 +2,7 @@
 
 | Study | Result | Evidence |
 |---|---|---|
+| Cube incidence bound | A(Q3)=7 by proof; capacity balance U+O=1; 150/24 extremal split checked | [Proof](../notes/cube_upper_bound.md), [collision audit](cube_collisions.md) |
 | Cube extremal colorings | Nine symmetry classes among all 174 seven-color extremizers | [Classification and atlas](cube_classification.md), [complete data](data/cube_classification.json) |
 | Expansion and random walks | Exact family formulas for cuts, periodicity, lazy mixing, and disconnection | [Expository paper](../papers/expansion_walks.pdf), [verification](walk_paper_verification.md) |
 | Cycles and two disjoint squares | Maximum color counts and complete extremal partition counts | [Elementary proofs](../papers/cycle_extremizers.pdf) |

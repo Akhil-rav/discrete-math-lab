@@ -1,0 +1,43 @@
+{
+  "claim_id": "CUBE_COLLISION_CAPACITY_2026_11_14",
+  "mathematics": {
+    "assertion_tested": "On every nonempty cube edge subset, compute obstruction counts and check b(B)<=2(|B|-1); on all 174 saved extremizers, check nonnegative unused capacity U and overlap O with U+O=1.",
+    "coefficient_domain": "Exact integers and finite sets",
+    "conventions": "K4,4 minus diagonal; lexicographic edges; nine matching constraints; one obstruction per color class using at least two edges in a matching; U=sum(2(s-1)-b); O=sum(max(q-1,0)).",
+    "inputs": [
+      "All 4095 nonempty subsets of the cube edge set",
+      "All 174 members of the saved nine-class classification"
+    ],
+    "bounds": {
+      "edges": 12,
+      "subsets": 4095,
+      "extremizers": 174,
+      "perfect_matchings": 9
+    },
+    "non_claims": [
+      "The elementary proof in notes/cube_upper_bound.md does not rely on computation",
+      "The sharp per-size maxima are finite observations, not additional non-enumerative proofs",
+      "No novelty claim or external refereeing",
+      "Unit tests run separately from this classification audit"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/cube_symmetry.py",
+    "src/color_patterns.py",
+    "src/rainbow_constraints.py",
+    "experiments/cube_collision_audit.py",
+    "results/data/cube_classification.json"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}
