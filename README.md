@@ -76,6 +76,7 @@ see [the precise comparison](notes/literature/young_and_matchings.md).
 The [cycle and disjoint-square writeup](notes/cycle_extremizers.md) now gives
 complete elementary proofs of the maximum color counts and extremal partition
 counts, with their conventions and verification scope stated explicitly.
+It is also available as a [typeset paper](papers/cycle_extremizers.pdf).
 
 | Track | Verified finite scope | Result / note |
 |---|---|---|

@@ -1,3 +1,4 @@
 * text=auto eol=lf
 # Historical evidence hashes refer to exact bytes, including log newlines.
 results/runs/** -text whitespace=cr-at-eol
+papers/*.pdf binary
