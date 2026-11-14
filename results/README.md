@@ -16,6 +16,9 @@
 
 ## Data and verification
 
+[Verification index](verification_index.md) collects the proof reviews, run
+records, reference datasets, and the portable integrity/reproduction command.
+
 - [Original deterministic dataset](data/small_cases.json)
 - [Sparse-host dataset](data/sparse_rainbow.json)
 - [Original execution record](verification.md)

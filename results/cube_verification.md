@@ -8,8 +8,9 @@ No novelty is claimed.
 [incidence argument](../notes/cube_upper_bound.md) now proves the maximum of
 seven without enumeration. Its [proof review](cube_bound_review.md) and
 [collision audit](cube_collision_verification.md) are separate from the unchanged
-classification evidence below. The current full suite has 22 passing tests;
-the original classification validation below had 20.
+classification evidence below. The proof-extension checkpoint had 22 passing
+tests; the original classification checkpoint below had 20. The current suite
+is run by the [portable verification command](verification_index.md).
 
 ## Exact contract and result
 

@@ -54,7 +54,9 @@ SHA-256: `f32bf992bfada4300413a440a3e73aec1d17609d450051bd1be4756c33e80ccb`.
 - Every main-grid row satisfies lower <= exact <= upper within [0,1], using
   fractions rather than tolerances. Palettes below matching size have probability zero.
 - The reported cube limit coefficient equals its saved extremal-partition count.
-- The full project suite has 26 passing tests. All four earlier reference datasets
+- At the probability-study checkpoint, the project suite had 26 passing tests.
+  The [verification index](verification_index.md) describes current checks.
+  All four earlier reference datasets
   regenerate unchanged; the new probability dataset matches the recorded run.
 
 ## Provenance
