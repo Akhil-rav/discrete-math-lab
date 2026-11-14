@@ -1,30 +1,20 @@
-# Combinatorics project portfolio
+# Projects
 
-For an olympiad-proof background with new graph theory, start with
-[the graph-theory bridge](graph-theory-bridge.md).
+## Rainbow perfect matchings
 
-This index separates implemented computational work from future study. Each
-track includes reproducible artifacts and checkpoints for understanding the
-underlying mathematics.
+The main project studies how many colors a fixed bipartite graph can use while
+avoiding every rainbow perfect matching.
 
-| Project | Existing artifact | Status | Next student-owned contribution |
-|---|---|---|---|
-| **Rainbow matchings on sparse hosts** | [Flagship report](rainbow-matchings/report.md), [cycle and disjoint-square proofs](../notes/cycle_extremizers.md), [exact data](../results/data/sparse_rainbow.json), [solver](../src/rainbow_constraints.py) | Elementary proofs recorded for cycles and two squares; cube result remains finite computational evidence; no novelty claim | Explain pruning and analyze one extremal cube coloring |
-| Extremal colorings and symmetry | [K33 classification](../results/k33_classification.md) | Implemented exhaustive finite classification | Derive one orbit size by hand; distinguish the last two classes structurally |
-| Additive combinatorics | [Progression note](../notes/rainbow_progressions.md), [data](../results/rainbow_progressions.md) | Known benchmarks reproduced | Explain why interval and cyclic domains differ; verify a witness by hand |
-| Parameterized graph algorithms | [Color-coding](../notes/color_coding.md) | Standard method implemented and checked | Derive the recurrence and success probability; add a directed worked example |
-| Expansion and discrete probability | [Walk note](../notes/expansion_and_walks.md), [results](../results/algorithm_demos.md) | Exact finite demonstrations | Derive a transition matrix and explain the parity obstruction |
+- [Project report: exact searches on small hosts](rainbow-matchings/report.md)
+- [Paper: even cycles and two disjoint squares](../papers/cycle_extremizers.pdf)
+- [LaTeX source](../papers/cycle_extremizers.tex)
+- [Extremal K33 classification](../results/k33_classification.md)
+- [Sparse-host data](../results/data/sparse_rainbow.json)
+- [Search implementation](../src/rainbow_constraints.py)
 
-These are five tracks within one lab, not five claimed publications. Future
-hypergraph experiments should reuse the exact-search and witness-checking habits
-established here after their definitions and source results have been studied.
+The cycle and disjoint-square statements have elementary proofs. The cube
+result is an exhaustive finite computation. Detailed conventions, checks,
+and limits appear in the report.
 
-## What makes a project ready to show
-
-A reader should be able to identify its precise question, see what is already
-known, reproduce the computation, inspect a witness, and tell which reasoning
-the student can explain independently. The [first-session worksheet](first-session.md)
-and [12-week plan](roadmap.md) give concrete ways to progress toward that standard.
-
-The working changes are reviewed in [PR #1](https://github.com/Akhil-rav/discrete-math-lab/pull/1).
-An open pull request is not part of the default branch until merged.
+Related experiments in additive combinatorics, color-coding, and random walks
+are indexed in [the notes](../notes/README.md) and [results](../results/README.md).

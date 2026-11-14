@@ -3,7 +3,6 @@
 - [Rainbow perfect matchings on even cycles and two disjoint squares](cycle_extremizers.pdf)
 - [Editable LaTeX source](cycle_extremizers.tex)
 - [Markdown reading copy](../notes/cycle_extremizers.md)
-- [Review scope](../notes/reviews/cycle_extremizers_2026-11-13.md)
 
 The three-page paper contains the complete elementary proofs, a diagram of an
 avoiding six-coloring, and the small-case table. No novelty or publication is

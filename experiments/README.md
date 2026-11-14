@@ -20,6 +20,7 @@ python -m experiments.reproduce --output results/local-run.json
 |---|---|---|
 | `experiments.regular_bipartite_matchings` | Every labeled d-regular bipartite graph, 1≤n≤5 and 1≤d≤n, has a perfect matching | 4,477 graphs; independent generator/matching checks through n=3 |
 | `experiments.rainbow_complete_bipartite` | Maximum avoiding colors for K22 and K33 | B4=15 and B9=21,147 partitions; independent edge-subset oracle |
+| `experiments.sparse_rainbow` | Exact avoidance histograms on six hosts through 12 edges | Counted rejected subtrees; independent small-host partition oracle |
 | `experiments.classify_k33` | Group the 87 extremizers by Aut(K33) and color renaming | Full 72-element vertex action; closure and orbit/stabilizer checks |
 | `experiments.rainbow_progressions` | Exact aw for intervals/cyclic orders 3..9 and three specified products | All Bn partitions; independent equations for interval/cyclic/product AP generators |
 | `experiments.color_coding_small_cases` | Color-mask DP on every graph of order ≤4 and every k-color assignment, 1≤k≤n | 22,955 permutation-oracle comparisons; exact probability and witness checks |
@@ -33,7 +34,7 @@ a universal theorem or a novelty certificate.
 
 The additional `experiments.sparse_rainbow` command covers six specified hosts
 through 12 edges. It uses exact rejection-subtree counts and independent small-host
-checks; see the [flagship report](../projects/rainbow-matchings/report.md). It is
+checks; see the [project report](../projects/rainbow-matchings/report.md). It is
 separate from the original dataset so the historical run remains reproducible.
 
 - Bipartite edges are ordered left/right pairs; arrays use row-major order.
