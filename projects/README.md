@@ -13,9 +13,16 @@ avoiding every rainbow perfect matching.
 - [Cube classification: nine symmetry classes and labeled atlas](../results/cube_classification.md)
 - [Search implementation](../src/rainbow_constraints.py)
 
-The cycle and disjoint-square statements have elementary proofs. The cube
-result is an exhaustive finite computation. Detailed conventions, checks,
-and limits appear in the report.
+The cycle, disjoint-square, and cube maximum-color statements have elementary
+proofs. The cube's complete extremal classification is an exhaustive finite
+computation. Detailed conventions, checks, and limits appear in the report.
+
+## Random edge colors
+
+[Exact probability study](random-colorings/report.md) derives rainbow-matching
+probabilities from exhaustive partition histograms on six hosts. It includes
+moment bounds, direct named-color checks, a scientific plot, and the cube's
+large-palette limit. Only the plotting step needs an optional dependency.
 
 ## Expansion and random walks
 
