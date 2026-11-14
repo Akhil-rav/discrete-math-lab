@@ -1,0 +1,1241 @@
+{
+  "model": "Each edge independently receives one of q equally likely labeled colors.",
+  "palette_min": 1,
+  "palette_max": 24,
+  "hosts": {
+    "C4": {
+      "edges": 4,
+      "matching_size": 2,
+      "perfect_matchings": 2,
+      "maximum_avoiding_colors": 2,
+      "extremal_partitions": 1,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "3/4",
+          "expected_rainbow_matchings": "1",
+          "second_moment": "3/2",
+          "second_moment_lower": "2/3",
+          "union_upper": "1"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "8/9",
+          "expected_rainbow_matchings": "4/3",
+          "second_moment": "20/9",
+          "second_moment_lower": "4/5",
+          "union_upper": "1"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "15/16",
+          "expected_rainbow_matchings": "3/2",
+          "second_moment": "21/8",
+          "second_moment_lower": "6/7",
+          "union_upper": "1"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "24/25",
+          "expected_rainbow_matchings": "8/5",
+          "second_moment": "72/25",
+          "second_moment_lower": "8/9",
+          "union_upper": "1"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "35/36",
+          "expected_rainbow_matchings": "5/3",
+          "second_moment": "55/18",
+          "second_moment_lower": "10/11",
+          "union_upper": "1"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "48/49",
+          "expected_rainbow_matchings": "12/7",
+          "second_moment": "156/49",
+          "second_moment_lower": "12/13",
+          "union_upper": "1"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "63/64",
+          "expected_rainbow_matchings": "7/4",
+          "second_moment": "105/32",
+          "second_moment_lower": "14/15",
+          "union_upper": "1"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "80/81",
+          "expected_rainbow_matchings": "16/9",
+          "second_moment": "272/81",
+          "second_moment_lower": "16/17",
+          "union_upper": "1"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "99/100",
+          "expected_rainbow_matchings": "9/5",
+          "second_moment": "171/50",
+          "second_moment_lower": "18/19",
+          "union_upper": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "120/121",
+          "expected_rainbow_matchings": "20/11",
+          "second_moment": "420/121",
+          "second_moment_lower": "20/21",
+          "union_upper": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "143/144",
+          "expected_rainbow_matchings": "11/6",
+          "second_moment": "253/72",
+          "second_moment_lower": "22/23",
+          "union_upper": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "168/169",
+          "expected_rainbow_matchings": "24/13",
+          "second_moment": "600/169",
+          "second_moment_lower": "24/25",
+          "union_upper": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "195/196",
+          "expected_rainbow_matchings": "13/7",
+          "second_moment": "351/98",
+          "second_moment_lower": "26/27",
+          "union_upper": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "224/225",
+          "expected_rainbow_matchings": "28/15",
+          "second_moment": "812/225",
+          "second_moment_lower": "28/29",
+          "union_upper": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "255/256",
+          "expected_rainbow_matchings": "15/8",
+          "second_moment": "465/128",
+          "second_moment_lower": "30/31",
+          "union_upper": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "288/289",
+          "expected_rainbow_matchings": "32/17",
+          "second_moment": "1056/289",
+          "second_moment_lower": "32/33",
+          "union_upper": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "323/324",
+          "expected_rainbow_matchings": "17/9",
+          "second_moment": "595/162",
+          "second_moment_lower": "34/35",
+          "union_upper": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "360/361",
+          "expected_rainbow_matchings": "36/19",
+          "second_moment": "1332/361",
+          "second_moment_lower": "36/37",
+          "union_upper": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "399/400",
+          "expected_rainbow_matchings": "19/10",
+          "second_moment": "741/200",
+          "second_moment_lower": "38/39",
+          "union_upper": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "440/441",
+          "expected_rainbow_matchings": "40/21",
+          "second_moment": "1640/441",
+          "second_moment_lower": "40/41",
+          "union_upper": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "483/484",
+          "expected_rainbow_matchings": "21/11",
+          "second_moment": "903/242",
+          "second_moment_lower": "42/43",
+          "union_upper": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "528/529",
+          "expected_rainbow_matchings": "44/23",
+          "second_moment": "1980/529",
+          "second_moment_lower": "44/45",
+          "union_upper": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "575/576",
+          "expected_rainbow_matchings": "23/12",
+          "second_moment": "1081/288",
+          "second_moment_lower": "46/47",
+          "union_upper": "1"
+        }
+      ]
+    },
+    "C6": {
+      "edges": 6,
+      "matching_size": 3,
+      "perfect_matchings": 2,
+      "maximum_avoiding_colors": 4,
+      "extremal_partitions": 9,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "32/81",
+          "expected_rainbow_matchings": "4/9",
+          "second_moment": "44/81",
+          "second_moment_lower": "4/11",
+          "union_upper": "4/9"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "39/64",
+          "expected_rainbow_matchings": "3/4",
+          "second_moment": "33/32",
+          "second_moment_lower": "6/11",
+          "union_upper": "3/4"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "456/625",
+          "expected_rainbow_matchings": "24/25",
+          "second_moment": "888/625",
+          "second_moment_lower": "24/37",
+          "union_upper": "24/25"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "65/81",
+          "expected_rainbow_matchings": "10/9",
+          "second_moment": "140/81",
+          "second_moment_lower": "5/7",
+          "union_upper": "1"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "2040/2401",
+          "expected_rainbow_matchings": "60/49",
+          "second_moment": "4740/2401",
+          "second_moment_lower": "60/79",
+          "union_upper": "1"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "903/1024",
+          "expected_rainbow_matchings": "21/16",
+          "second_moment": "1113/512",
+          "second_moment_lower": "42/53",
+          "union_upper": "1"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "5936/6561",
+          "expected_rainbow_matchings": "112/81",
+          "second_moment": "15344/6561",
+          "second_moment_lower": "112/137",
+          "union_upper": "1"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "576/625",
+          "expected_rainbow_matchings": "36/25",
+          "second_moment": "1548/625",
+          "second_moment_lower": "36/43",
+          "union_upper": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "13680/14641",
+          "expected_rainbow_matchings": "180/121",
+          "second_moment": "37980/14641",
+          "second_moment_lower": "180/211",
+          "union_upper": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "4895/5184",
+          "expected_rainbow_matchings": "55/36",
+          "second_moment": "6985/2592",
+          "second_moment_lower": "110/127",
+          "union_upper": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "27192/28561",
+          "expected_rainbow_matchings": "264/169",
+          "second_moment": "79464/28561",
+          "second_moment_lower": "264/301",
+          "union_upper": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "2301/2401",
+          "expected_rainbow_matchings": "78/49",
+          "second_moment": "6864/2401",
+          "second_moment_lower": "39/44",
+          "union_upper": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "48776/50625",
+          "expected_rainbow_matchings": "364/225",
+          "second_moment": "148148/50625",
+          "second_moment_lower": "364/407",
+          "union_upper": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "15855/16384",
+          "expected_rainbow_matchings": "105/64",
+          "second_moment": "24465/8192",
+          "second_moment_lower": "210/233",
+          "union_upper": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "81120/83521",
+          "expected_rainbow_matchings": "480/289",
+          "second_moment": "253920/83521",
+          "second_moment_lower": "480/529",
+          "union_upper": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "6392/6561",
+          "expected_rainbow_matchings": "136/81",
+          "second_moment": "20264/6561",
+          "second_moment_lower": "136/149",
+          "union_upper": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "127296/130321",
+          "expected_rainbow_matchings": "612/361",
+          "second_moment": "408204/130321",
+          "second_moment_lower": "612/667",
+          "union_upper": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "39159/40000",
+          "expected_rainbow_matchings": "171/100",
+          "second_moment": "63441/20000",
+          "second_moment_lower": "342/371",
+          "union_upper": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "190760/194481",
+          "expected_rainbow_matchings": "760/441",
+          "second_moment": "623960/194481",
+          "second_moment_lower": "760/821",
+          "union_upper": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "14385/14641",
+          "expected_rainbow_matchings": "210/121",
+          "second_moment": "47460/14641",
+          "second_moment_lower": "105/113",
+          "union_upper": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "275352/279841",
+          "expected_rainbow_matchings": "924/529",
+          "second_moment": "915684/279841",
+          "second_moment_lower": "924/991",
+          "union_upper": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "81719/82944",
+          "expected_rainbow_matchings": "253/144",
+          "second_moment": "136873/41472",
+          "second_moment_lower": "506/541",
+          "union_upper": "1"
+        }
+      ]
+    },
+    "C8": {
+      "edges": 8,
+      "matching_size": 4,
+      "perfect_matchings": 2,
+      "maximum_avoiding_colors": 6,
+      "extremal_partitions": 36,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "183/1024",
+          "expected_rainbow_matchings": "3/16",
+          "second_moment": "105/512",
+          "second_moment_lower": "6/35",
+          "union_upper": "3/16"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "5424/15625",
+          "expected_rainbow_matchings": "48/125",
+          "second_moment": "7152/15625",
+          "second_moment_lower": "48/149",
+          "union_upper": "48/125"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "155/324",
+          "expected_rainbow_matchings": "5/9",
+          "second_moment": "115/162",
+          "second_moment_lower": "10/23",
+          "union_upper": "5/9"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "67920/117649",
+          "expected_rainbow_matchings": "240/343",
+          "second_moment": "111120/117649",
+          "second_moment_lower": "240/463",
+          "union_upper": "240/343"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "42735/65536",
+          "expected_rainbow_matchings": "105/128",
+          "second_moment": "37905/32768",
+          "second_moment_lower": "210/361",
+          "union_upper": "105/128"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "41888/59049",
+          "expected_rainbow_matchings": "224/243",
+          "second_moment": "79520/59049",
+          "second_moment_lower": "224/355",
+          "union_upper": "224/243"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "11781/15625",
+          "expected_rainbow_matchings": "126/125",
+          "second_moment": "23688/15625",
+          "second_moment_lower": "63/94",
+          "union_upper": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "1398240/1771561",
+          "expected_rainbow_matchings": "1440/1331",
+          "second_moment": "2953440/1771561",
+          "second_moment_lower": "1440/2051",
+          "union_upper": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "7535/9216",
+          "expected_rainbow_matchings": "55/48",
+          "second_moment": "8305/4608",
+          "second_moment_lower": "110/151",
+          "union_upper": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "4057680/4826809",
+          "expected_rainbow_matchings": "2640/2197",
+          "second_moment": "9284880/4826809",
+          "second_moment_lower": "2640/3517",
+          "union_upper": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "404547/470596",
+          "expected_rainbow_matchings": "429/343",
+          "second_moment": "478335/235298",
+          "second_moment_lower": "858/1115",
+          "union_upper": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "1108016/1265625",
+          "expected_rainbow_matchings": "1456/1125",
+          "second_moment": "2697968/1265625",
+          "second_moment_lower": "1456/1853",
+          "union_upper": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "3727815/4194304",
+          "expected_rainbow_matchings": "1365/1024",
+          "second_moment": "4658745/2097152",
+          "second_moment_lower": "2730/3413",
+          "union_upper": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "21725760/24137569",
+          "expected_rainbow_matchings": "6720/4913",
+          "second_moment": "55594560/24137569",
+          "second_moment_lower": "6720/8273",
+          "union_upper": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "53720/59049",
+          "expected_rainbow_matchings": "340/243",
+          "second_moment": "140420/59049",
+          "second_moment_lower": "340/413",
+          "union_upper": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "43192512/47045881",
+          "expected_rainbow_matchings": "9792/6859",
+          "second_moment": "115104960/47045881",
+          "second_moment_lower": "9792/11755",
+          "union_upper": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "14805351/16000000",
+          "expected_rainbow_matchings": "2907/2000",
+          "second_moment": "20078649/8000000",
+          "second_moment_lower": "5814/6907",
+          "union_upper": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "986480/1058841",
+          "expected_rainbow_matchings": "1520/1029",
+          "second_moment": "2719280/1058841",
+          "second_moment_lower": "1520/1789",
+          "union_upper": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "6641355/7086244",
+          "expected_rainbow_matchings": "1995/1331",
+          "second_moment": "9290715/3543122",
+          "second_moment_lower": "3990/4657",
+          "union_upper": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "139468560/148035889",
+          "expected_rainbow_matchings": "18480/12167",
+          "second_moment": "395601360/148035889",
+          "second_moment_lower": "18480/21407",
+          "union_upper": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "5024327/5308416",
+          "expected_rainbow_matchings": "1771/1152",
+          "second_moment": "7216825/2654208",
+          "second_moment_lower": "3542/4075",
+          "union_upper": "1"
+        }
+      ]
+    },
+    "2C4": {
+      "edges": 8,
+      "matching_size": 4,
+      "perfect_matchings": 4,
+      "maximum_avoiding_colors": 6,
+      "extremal_partitions": 2,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "645/2048",
+          "expected_rainbow_matchings": "3/8",
+          "second_moment": "129/256",
+          "second_moment_lower": "12/43",
+          "union_upper": "3/8"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "42816/78125",
+          "expected_rainbow_matchings": "96/125",
+          "second_moment": "20064/15625",
+          "second_moment_lower": "96/209",
+          "union_upper": "96/125"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "4045/5832",
+          "expected_rainbow_matchings": "10/9",
+          "second_moment": "175/81",
+          "second_moment_lower": "4/7",
+          "union_upper": "1"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "646080/823543",
+          "expected_rainbow_matchings": "480/343",
+          "second_moment": "356640/117649",
+          "second_moment_lower": "480/743",
+          "union_upper": "1"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "221025/262144",
+          "expected_rainbow_matchings": "105/64",
+          "second_moment": "63105/16384",
+          "second_moment_lower": "420/601",
+          "union_upper": "1"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "1406720/1594323",
+          "expected_rainbow_matchings": "448/243",
+          "second_moment": "271936/59049",
+          "second_moment_lower": "448/607",
+          "union_upper": "1"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "284193/312500",
+          "expected_rainbow_matchings": "252/125",
+          "second_moment": "82656/15625",
+          "second_moment_lower": "63/82",
+          "union_upper": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "18097920/19487171",
+          "expected_rainbow_matchings": "2880/1331",
+          "second_moment": "10468800/1771561",
+          "second_moment_lower": "576/727",
+          "union_upper": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "469205/497664",
+          "expected_rainbow_matchings": "55/24",
+          "second_moment": "14905/2304",
+          "second_moment_lower": "220/271",
+          "union_upper": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "59822400/62748517",
+          "expected_rainbow_matchings": "5280/2197",
+          "second_moment": "33670560/4826809",
+          "second_moment_lower": "5280/6377",
+          "union_upper": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "6334185/6588344",
+          "expected_rainbow_matchings": "858/343",
+          "second_moment": "874731/117649",
+          "second_moment_lower": "1716/2039",
+          "union_upper": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "55112512/56953125",
+          "expected_rainbow_matchings": "2912/1125",
+          "second_moment": "9938656/1265625",
+          "second_moment_lower": "2912/3413",
+          "union_upper": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "32635785/33554432",
+          "expected_rainbow_matchings": "1365/512",
+          "second_moment": "8633625/1048576",
+          "second_moment_lower": "1092/1265",
+          "union_upper": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "400727040/410338673",
+          "expected_rainbow_matchings": "13440/4913",
+          "second_moment": "207150720/24137569",
+          "second_moment_lower": "13440/15413",
+          "union_upper": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "3124175/3188646",
+          "expected_rainbow_matchings": "680/243",
+          "second_moment": "525640/59049",
+          "second_moment_lower": "680/773",
+          "union_upper": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "46218240/47045881",
+          "expected_rainbow_matchings": "19584/6859",
+          "second_moment": "432630144/47045881",
+          "second_moment_lower": "19584/22091",
+          "union_upper": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "157533237/160000000",
+          "expected_rainbow_matchings": "2907/1000",
+          "second_moment": "37869489/4000000",
+          "second_moment_lower": "11628/13027",
+          "union_upper": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "197399360/200120949",
+          "expected_rainbow_matchings": "3040/1029",
+          "second_moment": "10290400/1058841",
+          "second_moment_lower": "608/677",
+          "union_upper": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "154015995/155897368",
+          "expected_rainbow_matchings": "3990/1331",
+          "second_moment": "17629815/1771561",
+          "second_moment_lower": "7980/8837",
+          "union_upper": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "3368164800/3404825447",
+          "expected_rainbow_matchings": "36960/12167",
+          "second_moment": "1505269920/148035889",
+          "second_moment_lower": "36960/40727",
+          "union_upper": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "189257915/191102976",
+          "expected_rainbow_matchings": "1771/576",
+          "second_moment": "13762441/1327104",
+          "second_moment_lower": "7084/7771",
+          "union_upper": "1"
+        }
+      ]
+    },
+    "K33": {
+      "edges": 9,
+      "matching_size": 3,
+      "perfect_matchings": 6,
+      "maximum_avoiding_colors": 4,
+      "extremal_partitions": 87,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "5090/6561",
+          "expected_rainbow_matchings": "4/3",
+          "second_moment": "76/27",
+          "second_moment_lower": "12/19",
+          "union_upper": "1"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "7671/8192",
+          "expected_rainbow_matchings": "9/4",
+          "second_moment": "207/32",
+          "second_moment_lower": "18/23",
+          "union_upper": "1"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "381756/390625",
+          "expected_rainbow_matchings": "72/25",
+          "second_moment": "1224/125",
+          "second_moment_lower": "72/85",
+          "union_upper": "1"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "51985/52488",
+          "expected_rainbow_matchings": "10/3",
+          "second_moment": "340/27",
+          "second_moment_lower": "15/17",
+          "union_upper": "1"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "5738430/5764801",
+          "expected_rainbow_matchings": "180/49",
+          "second_moment": "35820/2401",
+          "second_moment_lower": "180/199",
+          "union_upper": "1"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "2092125/2097152",
+          "expected_rainbow_matchings": "63/16",
+          "second_moment": "8631/512",
+          "second_moment_lower": "126/137",
+          "union_upper": "1"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "42988568/43046721",
+          "expected_rainbow_matchings": "112/27",
+          "second_moment": "40432/2187",
+          "second_moment_lower": "336/361",
+          "union_upper": "1"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "1561239/1562500",
+          "expected_rainbow_matchings": "108/25",
+          "second_moment": "2484/125",
+          "second_moment_lower": "108/115",
+          "union_upper": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "214250490/214358881",
+          "expected_rainbow_matchings": "540/121",
+          "second_moment": "308340/14641",
+          "second_moment_lower": "540/571",
+          "union_upper": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "53729995/53747712",
+          "expected_rainbow_matchings": "55/12",
+          "second_moment": "19085/864",
+          "second_moment_lower": "330/347",
+          "union_upper": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "815549460/815730721",
+          "expected_rainbow_matchings": "792/169",
+          "second_moment": "656568/28561",
+          "second_moment_lower": "792/829",
+          "union_upper": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "46111299/46118408",
+          "expected_rainbow_matchings": "234/49",
+          "second_moment": "57096/2401",
+          "second_moment_lower": "117/122",
+          "union_upper": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "2562609686/2562890625",
+          "expected_rainbow_matchings": "364/75",
+          "second_moment": "82628/3375",
+          "second_moment_lower": "1092/1135",
+          "union_upper": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "536828145/536870912",
+          "expected_rainbow_matchings": "315/64",
+          "second_moment": "205695/8192",
+          "second_moment_lower": "630/653",
+          "union_upper": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "6975345840/6975757441",
+          "expected_rainbow_matchings": "1440/289",
+          "second_moment": "2144160/83521",
+          "second_moment_lower": "1440/1489",
+          "union_upper": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "86089615/86093442",
+          "expected_rainbow_matchings": "136/27",
+          "second_moment": "57256/2187",
+          "second_moment_lower": "408/421",
+          "union_upper": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "16982985618/16983563041",
+          "expected_rainbow_matchings": "1836/361",
+          "second_moment": "3471876/130321",
+          "second_moment_lower": "1836/1891",
+          "union_upper": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "3199915647/3200000000",
+          "expected_rainbow_matchings": "513/100",
+          "second_moment": "108243/4000",
+          "second_moment_lower": "1026/1055",
+          "union_upper": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "37822076780/37822859361",
+          "expected_rainbow_matchings": "760/147",
+          "second_moment": "1779160/64827",
+          "second_moment_lower": "2280/2341",
+          "union_upper": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "1714842885/1714871048",
+          "expected_rainbow_matchings": "630/121",
+          "second_moment": "406980/14641",
+          "second_moment_lower": "315/323",
+          "union_upper": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "3404780610/3404825447",
+          "expected_rainbow_matchings": "2772/529",
+          "second_moment": "7869708/279841",
+          "second_moment_lower": "2772/2839",
+          "union_upper": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "13759267621/13759414272",
+          "expected_rainbow_matchings": "253/48",
+          "second_moment": "392909/13824",
+          "second_moment_lower": "1518/1553",
+          "union_upper": "1"
+        }
+      ]
+    },
+    "cube": {
+      "edges": 12,
+      "matching_size": 4,
+      "perfect_matchings": 9,
+      "maximum_avoiding_colors": 7,
+      "extremal_partitions": 174,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "0",
+          "expected_rainbow_matchings": "0",
+          "second_moment": "0",
+          "second_moment_lower": "0",
+          "union_upper": "0"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "4653/8192",
+          "expected_rainbow_matchings": "27/32",
+          "second_moment": "99/64",
+          "second_moment_lower": "81/176",
+          "union_upper": "27/32"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "40273176/48828125",
+          "expected_rainbow_matchings": "216/125",
+          "second_moment": "71928/15625",
+          "second_moment_lower": "24/37",
+          "union_upper": "1"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "13963045/15116544",
+          "expected_rainbow_matchings": "5/2",
+          "second_moment": "455/54",
+          "second_moment_lower": "135/182",
+          "union_upper": "1"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "1905827400/1977326743",
+          "expected_rainbow_matchings": "1080/343",
+          "second_moment": "1464840/117649",
+          "second_moment_lower": "3240/4069",
+          "union_upper": "1"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "1053886575/1073741824",
+          "expected_rainbow_matchings": "945/256",
+          "second_moment": "67095/4096",
+          "second_moment_lower": "945/1136",
+          "union_upper": "1"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "10354774192/10460353203",
+          "expected_rainbow_matchings": "112/27",
+          "second_moment": "395248/19683",
+          "second_moment_lower": "3024/3529",
+          "union_upper": "1"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "6213614841/6250000000",
+          "expected_rainbow_matchings": "567/125",
+          "second_moment": "367227/15625",
+          "second_moment_lower": "1701/1943",
+          "union_upper": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "284307726960/285311670611",
+          "expected_rainbow_matchings": "6480/1331",
+          "second_moment": "47193840/1771561",
+          "second_moment_lower": "6480/7283",
+          "union_upper": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "5148358325/5159780352",
+          "expected_rainbow_matchings": "165/32",
+          "second_moment": "5665/192",
+          "second_moment_lower": "1485/1648",
+          "union_upper": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "1789577044200/1792160394037",
+          "expected_rainbow_matchings": "11880/2197",
+          "second_moment": "155037960/4826809",
+          "second_moment_lower": "35640/39151",
+          "union_upper": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "505706063577/506195646208",
+          "expected_rainbow_matchings": "3861/686",
+          "second_moment": "8119683/235298",
+          "second_moment_lower": "1287/1402",
+          "union_upper": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "2881331164712/2883251953125",
+          "expected_rainbow_matchings": "728/125",
+          "second_moment": "15479464/421875",
+          "second_moment_lower": "19656/21263",
+          "union_upper": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "2197990590705/2199023255552",
+          "expected_rainbow_matchings": "12285/2048",
+          "second_moment": "10143315/262144",
+          "second_moment_lower": "36855/39632",
+          "union_upper": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "34260316087200/34271896307633",
+          "expected_rainbow_matchings": "30240/4913",
+          "second_moment": "978354720/24137569",
+          "second_moment_lower": "30240/32353",
+          "union_upper": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "669296830175/669462604992",
+          "expected_rainbow_matchings": "170/27",
+          "second_moment": "831130/19683",
+          "second_moment_lower": "4590/4889",
+          "union_upper": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "116468768271456/116490258898219",
+          "expected_rainbow_matchings": "44064/6859",
+          "second_moment": "2060094816/47045881",
+          "second_moment_lower": "132192/140257",
+          "union_upper": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "6399107177913/6400000000000",
+          "expected_rainbow_matchings": "26163/4000",
+          "second_moment": "45235827/1000000",
+          "second_moment_lower": "1377/1456",
+          "union_upper": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "38915560898680/38919722282469",
+          "expected_rainbow_matchings": "2280/343",
+          "second_moment": "16439560/352947",
+          "second_moment_lower": "20520/21631",
+          "union_upper": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "73033728045075/73039787676416",
+          "expected_rainbow_matchings": "17955/2662",
+          "second_moment": "169453305/3543122",
+          "second_moment_lower": "53865/56626",
+          "union_upper": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "952747729487400/952809757913927",
+          "expected_rainbow_matchings": "83160/12167",
+          "second_moment": "7252134120/148035889",
+          "second_moment_lower": "27720/29069",
+          "union_upper": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "63400108516129/63403380965376",
+          "expected_rainbow_matchings": "1771/256",
+          "second_moment": "5537917/110592",
+          "second_moment_lower": "47817/50032",
+          "union_upper": "1"
+        }
+      ]
+    }
+  },
+  "cube_large_palette_limit": 174,
+  "cube_large_palette_examples": [
+    {
+      "q": 32,
+      "avoiding_probability": "48476400571/4503599627370496",
+      "q5_times_avoiding": "48476400571/134217728"
+    },
+    {
+      "q": 64,
+      "avoiding_probability": "2360099902931/9223372036854775808",
+      "q5_times_avoiding": "2360099902931/8589934592"
+    },
+    {
+      "q": 128,
+      "avoiding_probability": "124342838246659/18889465931478580854784",
+      "q5_times_avoiding": "124342838246659/549755813888"
+    },
+    {
+      "q": 256,
+      "avoiding_probability": "7055893033211747/38685626227668133590597632",
+      "q5_times_avoiding": "7055893033211747/35184372088832"
+    },
+    {
+      "q": 1024,
+      "avoiding_probability": "26044470241039107491/162259276829213363391578010288128",
+      "q5_times_avoiding": "26044470241039107491/144115188075855872"
+    }
+  ]
+}

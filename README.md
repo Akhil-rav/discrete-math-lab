@@ -44,6 +44,14 @@ automorphisms and color renaming, with orbit sizes 6, 36, 36, and 9.
 
 ## Related studies
 
+**Exact probabilities under random edge colors**
+
+[Project report and plot](projects/random-colorings/report.md) · [Counting proofs](notes/random_rainbow.md) · [Exact data](results/data/random_rainbow.json)
+
+An exact six-host study converts avoiding-partition histograms into rainbow
+matching probabilities under independent uniform colors. It compares moment
+bounds and connects the cube's 174 extremizers to its large-palette limit.
+
 **Expansion and random walks: exact examples**
 
 [Read the paper](papers/expansion_walks.pdf) · [LaTeX source](papers/expansion_walks.tex)
@@ -78,11 +86,16 @@ python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 python -m experiments.classify_cube --check results/data/cube_classification.json
 python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
+python -m experiments.random_rainbow --check results/data/random_rainbow.json
 ```
 
 See [individual experiments](experiments/README.md) for bounds and conventions,
 [verification records](results/verification.md) for execution details, and
 [paper build instructions](papers/README.md) for LaTeX.
+
+Regenerating the probability plot uses optional
+[Matplotlib requirements](requirements-figures.txt). Core computations and tests
+remain standard-library-only; LaTeX is needed only to rebuild typeset notes.
 
 ## Contents
 
