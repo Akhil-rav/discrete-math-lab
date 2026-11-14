@@ -2,6 +2,10 @@
 
 **Status:** exhaustive computational small-case result; no novelty claim.
 
+**Literature check, 2026-11-13:** these values reproduce Li–Tu–Jin,
+Theorems 2.3 and 2.5, after translating their forcing threshold rb to A=rb−1.
+See [the checked comparison](../notes/literature/young_and_matchings.md).
+
 The experiment enumerates every edge-color equality pattern of $K_{n,n}$
 up to relabeling of colors and asks whether the coloring contains a
 rainbow perfect matching.
@@ -73,10 +77,8 @@ families.
 
 No statement here is being claimed as a new theorem.
 
-## Next question
+## Extremal classification
 
-What structural features do extremal colorings share?
-
-For $K_{3,3}$ there are multiple four-color patterns avoiding a rainbow
-perfect matching. Classifying those patterns, even computationally, is a
-natural next step before moving to broader regular bipartite graphs.
+The 87 extremal four-color patterns of $K_{3,3}$ fall into
+[four symmetry classes](k33_classification.md) under row and column permutations,
+transpose, and color renaming.

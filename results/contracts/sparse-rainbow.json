@@ -1,0 +1,53 @@
+{
+  "claim_id": "SPARSE_RAINBOW_2026_11_13",
+  "mathematics": {
+    "assertion_tested": "Exact avoiding-color histograms on C4,C6,C8,2C4,K33,cube, with disjoint rejected-subtree counts covering every edge partition.",
+    "coefficient_domain": "Exact integers",
+    "conventions": "Fixed vertex labels, explicit edge order, colors quotiented by renaming only; no properness assumption.",
+    "inputs": [
+      "The six hosts explicitly constructed in experiments/sparse_rainbow.py"
+    ],
+    "bounds": {
+      "max_edges": 12,
+      "max_vertices_per_side": 4
+    },
+    "non_claims": [
+      "No general cubic-host theorem",
+      "No novelty claim",
+      "No statement of independent student authorship",
+      "Not isomorphism-class counts"
+    ]
+  },
+  "execution_artifacts": [
+    "experiments/classify_k33.py",
+    "experiments/color_coding_small_cases.py",
+    "experiments/expansion_small_cases.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/rainbow_progressions.py",
+    "experiments/regular_bipartite_matchings.py",
+    "experiments/reproduce.py",
+    "experiments/sparse_rainbow.py",
+    "src/__init__.py",
+    "src/arithmetic_progressions.py",
+    "src/bipartite_graph.py",
+    "src/color_coding.py",
+    "src/color_patterns.py",
+    "src/edge_coloring.py",
+    "src/expansion.py",
+    "src/matchings.py",
+    "src/rainbow_constraints.py",
+    "tests/test_algorithms.py",
+    "tests/test_sparse_rainbow.py"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}
