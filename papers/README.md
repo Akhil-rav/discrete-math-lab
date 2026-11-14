@@ -5,7 +5,8 @@
 [Read the paper](cube_classification.pdf) · [LaTeX source](cube_classification.tex)
 · [Web report and diagram atlas](../results/cube_classification.md)
 
-A three-page finite classification gives all nine canonical representatives,
+A four-page report gives an elementary proof of the seven-color maximum,
+a necessary equality condition, and all nine computed canonical representatives,
 orbit sizes, stabilizers, and labeled diagrams. The full dataset saves every
 one of the 174 fixed-edge partitions. No novelty is claimed.
 

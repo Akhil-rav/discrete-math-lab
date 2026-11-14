@@ -1,0 +1,150 @@
+{
+  "schema_version": 2,
+  "claim_id": "CUBE_COLLISION_CAPACITY_2026_11_14",
+  "repository": {
+    "commit": "299725aaef357c39d4748fa1285b5577a2c4f76b",
+    "dirty": true
+  },
+  "command": [
+    "C:\\Users\\sudhe\\.local\\bin\\python.exe",
+    "-m",
+    "experiments.cube_collision_audit",
+    "--output",
+    "results/runs/cube-collisions-2026-11-14/audit.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "On every nonempty cube edge subset, compute obstruction counts and check b(B)<=2(|B|-1); on all 174 saved extremizers, check nonnegative unused capacity U and overlap O with U+O=1.",
+    "coefficient_domain": "Exact integers and finite sets",
+    "conventions": "K4,4 minus diagonal; lexicographic edges; nine matching constraints; one obstruction per color class using at least two edges in a matching; U=sum(2(s-1)-b); O=sum(max(q-1,0)).",
+    "inputs": [
+      "All 4095 nonempty subsets of the cube edge set",
+      "All 174 members of the saved nine-class classification"
+    ],
+    "bounds": {
+      "edges": 12,
+      "subsets": 4095,
+      "extremizers": 174,
+      "perfect_matchings": 9
+    },
+    "non_claims": [
+      "The elementary proof in notes/cube_upper_bound.md does not rely on computation",
+      "The sharp per-size maxima are finite observations, not additional non-enumerative proofs",
+      "No novelty claim or external refereeing",
+      "Unit tests run separately from this classification audit"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-14T16:00:18.541475+00:00",
+    "runtime_seconds": 0.164701,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 30.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/cube_symmetry.py",
+    "src/color_patterns.py",
+    "src/rainbow_constraints.py",
+    "experiments/cube_collision_audit.py",
+    "results/data/cube_classification.json"
+  ],
+  "input_artifacts": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/cube_symmetry.py",
+      "sha256": "6d6ea4b671207b738357b6358c766caf17f2b0035aa27786be8d590e03612dc7",
+      "sha256_after": "6d6ea4b671207b738357b6358c766caf17f2b0035aa27786be8d590e03612dc7"
+    },
+    {
+      "path": "src/color_patterns.py",
+      "sha256": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9",
+      "sha256_after": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9"
+    },
+    {
+      "path": "src/rainbow_constraints.py",
+      "sha256": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce",
+      "sha256_after": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce"
+    },
+    {
+      "path": "experiments/cube_collision_audit.py",
+      "sha256": "50b384c12a17ade86dec15dbaf35d62a8a0910a54c208e27f85f48a69eb7db93",
+      "sha256_after": "50b384c12a17ade86dec15dbaf35d62a8a0910a54c208e27f85f48a69eb7db93"
+    },
+    {
+      "path": "results/data/cube_classification.json",
+      "sha256": "52e6ff5f890e9069187277125ac1b1dfb1cfdd9a2cbb796ef30d7578829b9c5d",
+      "sha256_after": "52e6ff5f890e9069187277125ac1b1dfb1cfdd9a2cbb796ef30d7578829b9c5d"
+    }
+  ],
+  "output_directory": "results/runs/cube-collisions-2026-11-14",
+  "declared_results": [
+    "results/runs/cube-collisions-2026-11-14/audit.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/cube-collisions-2026-11-14/stdout.txt",
+      "sha256": "9ad3cea8adab78162a84ca4a77f97b36a4175c8f3b357d5c7c394c34b47765e6",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/cube-collisions-2026-11-14/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/cube-collisions-2026-11-14/audit.json",
+      "sha256": "7ca06de67ddd47618875c06cea6815b1cd03a3227db66e504e38b62b9ae3a088",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

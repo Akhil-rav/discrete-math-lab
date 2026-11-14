@@ -37,3 +37,8 @@ MathSciNet, zbMATH, and systematic forward/backward citation coverage were not
 completed. No material claim of apparent novelty is made. The computation and
 its internal coverage argument are the evidence for the finite classification;
 literature searches are not part of that proof.
+
+The repository now also includes an internal [incidence proof](../cube_upper_bound.md)
+of the fixed cube's seven-color bound and an extremal capacity identity. Neither
+uses this external paper as a premise. Their originality has not been determined
+by this limited search, and no novelty claim is made.

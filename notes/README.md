@@ -2,6 +2,7 @@
 
 | Topic | Writeup |
 |---|---|
+| Cube matching incidences | [Elementary seven-color bound and extremal capacity balance](cube_upper_bound.md) |
 | Matching theory | [Hall's theorem and regular bipartite graphs](halls_theorem.md) |
 | Rainbow matchings | [Definitions and anti-Ramsey conventions](rainbow_matchings.md) |
 | Extremal partitions | [Even cycles and two disjoint squares](cycle_extremizers.md) |

@@ -1,0 +1,912 @@
+{
+  "edge_appearances": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "maximum_pair_appearances": 2,
+  "nonempty_subsets_checked": 4095,
+  "subset_sizes": [
+    {
+      "size": 1,
+      "subsets": 12,
+      "maximum_obstructed": 0,
+      "coverage_histogram": {
+        "0": 12
+      }
+    },
+    {
+      "size": 2,
+      "subsets": 66,
+      "maximum_obstructed": 2,
+      "coverage_histogram": {
+        "0": 24,
+        "1": 30,
+        "2": 12
+      }
+    },
+    {
+      "size": 3,
+      "subsets": 220,
+      "maximum_obstructed": 3,
+      "coverage_histogram": {
+        "0": 8,
+        "1": 24,
+        "2": 120,
+        "3": 68
+      }
+    },
+    {
+      "size": 4,
+      "subsets": 495,
+      "maximum_obstructed": 6,
+      "coverage_histogram": {
+        "3": 222,
+        "4": 234,
+        "5": 27,
+        "6": 12
+      }
+    },
+    {
+      "size": 5,
+      "subsets": 792,
+      "maximum_obstructed": 6,
+      "coverage_histogram": {
+        "3": 24,
+        "4": 96,
+        "5": 384,
+        "6": 288
+      }
+    },
+    {
+      "size": 6,
+      "subsets": 924,
+      "maximum_obstructed": 9,
+      "coverage_histogram": {
+        "5": 72,
+        "6": 400,
+        "7": 348,
+        "8": 84,
+        "9": 20
+      }
+    },
+    {
+      "size": 7,
+      "subsets": 792,
+      "maximum_obstructed": 9,
+      "coverage_histogram": {
+        "6": 48,
+        "7": 324,
+        "8": 288,
+        "9": 132
+      }
+    },
+    {
+      "size": 8,
+      "subsets": 495,
+      "maximum_obstructed": 9,
+      "coverage_histogram": {
+        "7": 48,
+        "8": 201,
+        "9": 246
+      }
+    },
+    {
+      "size": 9,
+      "subsets": 220,
+      "maximum_obstructed": 9,
+      "coverage_histogram": {
+        "8": 36,
+        "9": 184
+      }
+    },
+    {
+      "size": 10,
+      "subsets": 66,
+      "maximum_obstructed": 9,
+      "coverage_histogram": {
+        "9": 66
+      }
+    },
+    {
+      "size": 11,
+      "subsets": 12,
+      "maximum_obstructed": 9,
+      "coverage_histogram": {
+        "9": 12
+      }
+    },
+    {
+      "size": 12,
+      "subsets": 1,
+      "maximum_obstructed": 9,
+      "coverage_histogram": {
+        "9": 1
+      }
+    }
+  ],
+  "extremizers_checked": 174,
+  "extremal_balances": {
+    "U=0,O=1": 24,
+    "U=1,O=0": 150
+  },
+  "classes": [
+    {
+      "class_id": 1,
+      "members_checked": 12,
+      "balances": {
+        "U=1,O=0": 12
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 6,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "capacity": 10,
+            "unused_capacity": 1
+          },
+          {
+            "color": 1,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 2,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 2,
+      "members_checked": 4,
+      "balances": {
+        "U=1,O=0": 4
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 6,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "capacity": 10,
+            "unused_capacity": 1
+          },
+          {
+            "color": 1,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 2,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 3,
+      "members_checked": 4,
+      "balances": {
+        "U=1,O=0": 4
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 6,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "capacity": 10,
+            "unused_capacity": 1
+          },
+          {
+            "color": 1,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 2,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 4,
+      "members_checked": 48,
+      "balances": {
+        "U=1,O=0": 48
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 4,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "capacity": 6,
+            "unused_capacity": 0
+          },
+          {
+            "color": 1,
+            "size": 3,
+            "obstructed_matchings": [
+              6,
+              7,
+              8
+            ],
+            "capacity": 4,
+            "unused_capacity": 1
+          },
+          {
+            "color": 2,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 5,
+      "members_checked": 12,
+      "balances": {
+        "U=1,O=0": 12
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 4,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "capacity": 6,
+            "unused_capacity": 0
+          },
+          {
+            "color": 1,
+            "size": 3,
+            "obstructed_matchings": [
+              6,
+              7,
+              8
+            ],
+            "capacity": 4,
+            "unused_capacity": 1
+          },
+          {
+            "color": 2,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 6,
+      "members_checked": 48,
+      "balances": {
+        "U=1,O=0": 48
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 4,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "capacity": 6,
+            "unused_capacity": 0
+          },
+          {
+            "color": 1,
+            "size": 2,
+            "obstructed_matchings": [
+              7,
+              8
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 2,
+            "size": 2,
+            "obstructed_matchings": [
+              6
+            ],
+            "capacity": 2,
+            "unused_capacity": 1
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 7,
+      "members_checked": 24,
+      "balances": {
+        "U=0,O=1": 24
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 4,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "capacity": 6,
+            "unused_capacity": 0
+          },
+          {
+            "color": 1,
+            "size": 2,
+            "obstructed_matchings": [
+              7,
+              8
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 2,
+            "size": 2,
+            "obstructed_matchings": [
+              0,
+              6
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 0,
+        "overlap": 1,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 8,
+      "members_checked": 6,
+      "balances": {
+        "U=1,O=0": 6
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 4,
+            "obstructed_matchings": [
+              0,
+              1,
+              2,
+              3,
+              6
+            ],
+            "capacity": 6,
+            "unused_capacity": 1
+          },
+          {
+            "color": 1,
+            "size": 2,
+            "obstructed_matchings": [
+              4,
+              5
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 2,
+            "size": 2,
+            "obstructed_matchings": [
+              7,
+              8
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    },
+    {
+      "class_id": 9,
+      "members_checked": 16,
+      "balances": {
+        "U=1,O=0": 16
+      },
+      "representative_certificate": {
+        "blocks": [
+          {
+            "color": 0,
+            "size": 2,
+            "obstructed_matchings": [
+              0,
+              1
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 1,
+            "size": 3,
+            "obstructed_matchings": [
+              3,
+              5,
+              6
+            ],
+            "capacity": 4,
+            "unused_capacity": 1
+          },
+          {
+            "color": 2,
+            "size": 2,
+            "obstructed_matchings": [
+              7,
+              8
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 3,
+            "size": 2,
+            "obstructed_matchings": [
+              2,
+              4
+            ],
+            "capacity": 2,
+            "unused_capacity": 0
+          },
+          {
+            "color": 4,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 5,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          },
+          {
+            "color": 6,
+            "size": 1,
+            "obstructed_matchings": [],
+            "capacity": 0,
+            "unused_capacity": 0
+          }
+        ],
+        "matching_obstruction_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "unused_capacity": 1,
+        "overlap": 0,
+        "rainbow_matchings": 0
+      }
+    }
+  ]
+}
