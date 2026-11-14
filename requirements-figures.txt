@@ -1,0 +1,2 @@
+# Optional: only for regenerating scientific plots; not needed for computations.
+matplotlib==3.10.7

@@ -1,0 +1,46 @@
+{
+  "claim_id": "EXACT_RANDOM_RAINBOW_PROBABILITIES_2026_11_14",
+  "mathematics": {
+    "assertion_tested": "Compute exact independent-uniform-color rainbow perfect matching probabilities for six fixed hosts from exhaustive avoiding-partition histograms, and verify first/second moment bounds on every main-grid row.",
+    "coefficient_domain": "Exact integers and rational arithmetic over Q",
+    "conventions": "q available labeled colors, not exactly q used colors; fixed host; independent uniform edge colors; falling factorial weights for color partitions; unordered matching pairs for second moments.",
+    "inputs": [
+      "Existing exhaustive histograms for C4,C6,C8,2C4,K33,cube",
+      "All integer palettes q=1..24",
+      "Cube tail examples q=32,64,128,256,1024"
+    ],
+    "bounds": {
+      "hosts": 6,
+      "main_palette_min": 1,
+      "main_palette_max": 24,
+      "main_rows": 144,
+      "tail_examples": 5,
+      "maximum_edges": 12
+    },
+    "non_claims": [
+      "No Monte Carlo sampling or floating-point probability calculation",
+      "These are fixed-host color-palette probabilities, not an asymptotic random-graph threshold result",
+      "Existing histogram enumeration is not repeated inside this command; prior runs and tests validate the inputs",
+      "The large-palette limit follows from the polynomial argument, not from the five examples",
+      "No novelty claim or independent external review"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_constraints.py",
+    "experiments/random_rainbow.py",
+    "results/data/sparse_rainbow.json"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}
