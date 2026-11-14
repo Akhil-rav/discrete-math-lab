@@ -1,5 +1,21 @@
 # Typeset notes
 
+## Expansion and random walks: exact examples
+
+[Read the paper](expansion_walks.pdf) · [LaTeX source](expansion_walks.tex)
+
+A three-page expository note proves complete-graph and cycle expansion formulas,
+exact ordinary/lazy walk formulas on K(d,d), and a disconnection obstruction on
+unions of cliques. No novelty is claimed. Formula checks and a scoped
+[self-review record](../results/walk_paper_verification.md) accompany the proofs.
+
+```sh
+tectonic --outdir papers papers/expansion_walks.tex
+python -m unittest discover -s tests -p test_walk_formulas.py -v
+```
+
+## Rainbow perfect matchings
+
 - [Rainbow perfect matchings on even cycles and two disjoint squares](cycle_extremizers.pdf)
 - [Editable LaTeX source](cycle_extremizers.tex)
 - [Markdown reading copy](../notes/cycle_extremizers.md)

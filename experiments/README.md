@@ -30,6 +30,12 @@ The suite composes these modules. `--check` compares the mathematical JSON,
 excluding machine-dependent provenance. A successful finite computation is not
 a universal theorem or a novelty certificate.
 
+The additional `tests/test_walk_formulas.py` compares rational walk evolution
+with the closed formulas proved in the [walk paper](../papers/expansion_walks.pdf).
+It checks K(d,d) for d=1..8 (ordinary and lazy), and r disjoint K_d for
+r=2..4 and d=2..6 (lazy), at every time 0..12. Run it with
+`python -m unittest discover -s tests -p test_walk_formulas.py -v`.
+
 ## Conventions and limits
 
 The additional `experiments.sparse_rainbow` command covers six specified hosts

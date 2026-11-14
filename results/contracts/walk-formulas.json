@@ -1,0 +1,40 @@
+{
+  "claim_id": "EXACT_WALK_FORMULA_CHECKS_2026_11_14",
+  "mathematics": {
+    "assertion_tested": "The exact walk routine agrees with the proved closed total-variation formulas on K(d,d) and unions of equal cliques at every specified time.",
+    "coefficient_domain": "Q, exact rational arithmetic",
+    "conventions": "Start at vertex 0; compare with uniform on all vertices; ordinary and half-lazy K(d,d) walks, half-lazy disjoint-clique walks.",
+    "inputs": [
+      "K(d,d) for d=1..8",
+      "r disjoint K_d for r=2..4 and d=2..6"
+    ],
+    "bounds": {
+      "time_min": 0,
+      "time_max": 12,
+      "bipartite_d_max": 8,
+      "clique_d_max": 6,
+      "components_max": 4
+    },
+    "non_claims": [
+      "Finite agreement is not a universal proof",
+      "No new theorem or infinite expander construction",
+      "No independent human review"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/expansion.py",
+    "tests/test_walk_formulas.py"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}
