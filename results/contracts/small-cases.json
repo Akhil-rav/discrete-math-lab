@@ -1,0 +1,57 @@
+{
+  "claim_id": "SMALL_COMBINATORICS_REPRODUCTIONS_2026_11_13",
+  "mathematics": {
+    "assertion_tested": "Bounded enumeration and algorithm comparisons described in experiments/README.md; output is the exact finite dataset, not a general theorem or novelty claim.",
+    "coefficient_domain": "Exact integers and fractions over Q",
+    "conventions": "Row-major bipartite arrays; edge partitions via restricted-growth strings; distinct-term 3-AP sets; k vertices for color-coding; unnormalized edge expansion; walks start at vertex 0.",
+    "inputs": [
+      "All labeled d-regular bipartite graphs for 1<=n<=5, 1<=d<=n",
+      "All partitions of K22 and K33 edges; full Aut(K33) action",
+      "All partitions of interval/cyclic domains of orders 3..9 and products (2,2),(2,4),(2,2,2)",
+      "All simple undirected graphs of orders 1..4 and all k^n vertex colorings for 1<=k<=n",
+      "K4, C6, K33, two disjoint triangles: cuts and walk times 0..8"
+    ],
+    "bounds": {
+      "regular_n_max": 5,
+      "rainbow_n_max": 3,
+      "ap_order_max": 9,
+      "color_coding_n_max": 4,
+      "walk_steps_max": 8
+    },
+    "non_claims": [
+      "No asymptotic proof",
+      "No novelty or current open-problem claim",
+      "No infinite expander construction",
+      "No general group formula implementation"
+    ]
+  },
+  "execution_artifacts": [
+    "experiments/classify_k33.py",
+    "experiments/color_coding_small_cases.py",
+    "experiments/expansion_small_cases.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/rainbow_progressions.py",
+    "experiments/regular_bipartite_matchings.py",
+    "experiments/reproduce.py",
+    "src/__init__.py",
+    "src/arithmetic_progressions.py",
+    "src/bipartite_graph.py",
+    "src/color_coding.py",
+    "src/color_patterns.py",
+    "src/edge_coloring.py",
+    "src/expansion.py",
+    "src/matchings.py",
+    "tests/test_algorithms.py"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

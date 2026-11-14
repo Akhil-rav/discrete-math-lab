@@ -1,60 +1,68 @@
 # Discrete Math Lab
 
-A working notebook for proofs, computational experiments, and research notes in combinatorics and discrete mathematics.
+Proofs and reproducible experiments in graph theory, extremal combinatorics,
+and algorithms. The main project studies edge colorings that avoid rainbow
+perfect matchings.
 
-## Current focus
+## Featured work
 
-I am building a foundation in graph theory, matchings, extremal combinatorics, and computational exploration. The current direction is **rainbow perfect matchings and anti-Ramsey-style questions in bipartite graphs**.
+**Rainbow perfect matchings on even cycles and two disjoint squares**
 
-## Repository structure
+[Read the paper](papers/cycle_extremizers.pdf) · [LaTeX source](papers/cycle_extremizers.tex) · [Web version](notes/cycle_extremizers.md)
 
-- `notes/` — definitions, theorem summaries, proof sketches, and literature notes
-- `src/` — reusable implementations of discrete-math objects and algorithms
-- `experiments/` — scripts for testing small cases and exploring patterns
-- `results/` — tables, observations, failed conjectures, and computational output
+Elementary proofs determine the maximum color count and all extremal color
+partitions for even cycles and two disjoint squares.
 
-## Experiment 1: regular bipartite graphs
+**Exact searches on sparse bipartite graphs**
 
-I exhaustively generated every labeled $d$-regular bipartite graph with
-$n \le 5$ vertices on each side and verified computationally that each
-has a perfect matching: **4,477 graphs checked, 0 failures**.
+[Project report](projects/rainbow-matchings/report.md) · [Data](results/data/sparse_rainbow.json) · [Implementation](src/rainbow_constraints.py)
 
-- Proof connection: `notes/halls_theorem.md`
-- Experiment: `experiments/regular_bipartite_matchings.py`
-- Results: `results/regular_bipartite_small_cases.md`
+An exact partition search covers six hosts through 12 edges. For the cube,
+it accounts for 4,213,597 color partitions and finds a maximum avoiding count
+of seven colors, attained by 174 normalized partitions. Vertex labels remain
+fixed; the report explains the pruning and coverage argument.
 
-This is a **reproduction of a known theorem**.
+**Extremal colorings of $K_{3,3}$**
 
-## Experiment 2: rainbow perfect matchings
+[Classification](results/k33_classification.md) · [Experiment](experiments/classify_k33.py)
 
-I added edge-coloring tools and exhaustively searched color patterns of
-small complete bipartite graphs, up to color relabeling.
+The 87 extremal four-color partitions form four classes under graph
+automorphisms and color renaming, with orbit sizes 6, 36, 36, and 9.
 
-- $K_{2,2}$: 15 patterns checked; maximum of 2 colors while avoiding a rainbow perfect matching
-- $K_{3,3}$: 21,147 patterns checked; maximum of 4 colors while avoiding a rainbow perfect matching
+## Related studies
 
-- Definitions: `notes/rainbow_matchings.md`
-- Experiment: `experiments/rainbow_complete_bipartite.py`
-- Results: `results/rainbow_knn_small_cases.md`
+| Topic | Notes | Results |
+|---|---|---|
+| Hall's theorem and regular bipartite graphs | [Proof](notes/halls_theorem.md) | [4,477 small regular graphs](results/regular_bipartite_small_cases.md) |
+| Rainbow arithmetic progressions | [Definitions and groups](notes/rainbow_progressions.md) | [Exact small thresholds](results/rainbow_progressions.md) |
+| Vertex color-coding | [Subset dynamic programming](notes/color_coding.md) | [Algorithm checks](results/algorithm_demos.md) |
+| Expansion and random walks | [Definitions and examples](notes/expansion_and_walks.md) | [Exact rational computations](results/algorithm_demos.md) |
 
-These are recorded as **exhaustive computational small cases**, with no novelty claim.
+[Literature guide](notes/literature/README.md) · [References](references.bib) · [All results](results/README.md)
 
-## Research labels
+The repository contains elementary exposition, reproductions of published
+results, and exhaustive finite computations. Each writeup states its scope;
+no novelty is claimed.
 
-To keep the notebook precise, I use the following labels:
+## Reproduce
 
-- **Known theorem** — established result with a citation
-- **Reproduction** — my own verification or implementation of a known result
-- **Experimental observation** — pattern seen in computation, not proved
-- **Conjecture** — statement suggested by evidence, not proved
-- **Counterexample** — explicit example disproving a conjecture
-- **New result** — reserved for claims that have been proved and checked against the literature
+Python **3.11+**, standard library only. Run from the repository root:
 
-## Next milestone
+```sh
+python -m unittest discover -s tests -v
+python -m experiments.reproduce --check results/data/small_cases.json
+python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
+```
 
-Classify the extremal four-color patterns of $K_{3,3}$ and then move from
-complete bipartite graphs to broader regular bipartite graph families.
+See [individual experiments](experiments/README.md) for bounds and conventions,
+[verification records](results/verification.md) for execution details, and
+[paper build instructions](papers/README.md) for LaTeX.
 
-## About
+## Contents
 
-Akhil Ravuri — high school student interested in combinatorics, discrete mathematics, and theoretical computer science.
+`papers/` typeset notes and LaTeX · `projects/` project reports · `notes/`
+mathematical background and literature · `src/` algorithms · `experiments/`
+bounded computations · `results/` tables, data, and run records · `tests/`
+independent checks.
+
+Akhil Ravuri

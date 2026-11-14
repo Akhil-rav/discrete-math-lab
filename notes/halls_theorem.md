@@ -12,6 +12,12 @@ $$
 for every subset $S \subseteq L$, where $N(S)$ is the set of neighbors
 of vertices in $S$.
 
+A primary-paper formulation equivalent to this statement is the matching
+deficiency formula in Li–Tu–Jin, [Lemma 2.1](https://arxiv.org/pdf/math/0610910v1).
+Their formula says the largest matching saturates L exactly when every subset
+has nonpositive deficiency |S|−|N(S)|. The empty subset has deficiency zero.
+The regular-graph argument below is the standard elementary corollary.
+
 ## Corollary: every $d$-regular bipartite graph has a perfect matching
 
 Assume $G=(L,R,E)$ is finite, bipartite, and $d$-regular with $d\ge 1$.
