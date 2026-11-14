@@ -4,6 +4,13 @@
 Review is a self-review with independent algorithms, not external refereeing.
 No novelty is claimed.
 
+**Proof extension, November 14, 2026:** the
+[incidence argument](../notes/cube_upper_bound.md) now proves the maximum of
+seven without enumeration. Its [proof review](cube_bound_review.md) and
+[collision audit](cube_collision_verification.md) are separate from the unchanged
+classification evidence below. The current full suite has 22 passing tests;
+the original classification validation below had 20.
+
 ## Exact contract and result
 
 Host: the single cube Q3 represented by K4,4 minus the diagonal, with edge order
@@ -44,7 +51,7 @@ python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 ```
 
-All 20 tests passed. Both earlier datasets reproduced exactly. The new complete
+At the original classification checkpoint, all 20 tests passed. Both earlier datasets reproduced exactly. The complete
 classification equals the bounded run's saved JSON byte for byte.
 
 ## Execution provenance
@@ -74,7 +81,8 @@ statement. The literature comparison remains limited as documented in the
 
 ## Presentation
 
-The three-page note and labeled SVG atlas are generated from the same dataset.
+The revised four-page note and labeled SVG atlas use the same classification
+dataset; the added incidence proof is written out independently of that data.
 The renderer only presents data; it is not part of the classification oracle.
 Numerical labels on all edges make color equality readable independently of
 palette. Nested-square drawings have no crossing edges. The drawing's binary

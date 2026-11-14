@@ -15,6 +15,10 @@ the 48 graph automorphisms and color renaming. The report gives every
 representative, explains structural differences, and records exhaustive
 coverage and separate verification algorithms.
 
+An [elementary incidence proof](notes/cube_upper_bound.md) now establishes the
+seven-color maximum without search. Its equality analysis explains a
+[150/24 capacity-and-overlap split](results/cube_collisions.md) of the extremizers.
+
 **Rainbow perfect matchings on even cycles and two disjoint squares**
 
 [Read the paper](papers/cycle_extremizers.pdf) · [LaTeX source](papers/cycle_extremizers.tex) · [Web version](notes/cycle_extremizers.md)
@@ -73,6 +77,7 @@ python -m unittest discover -s tests -v
 python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 python -m experiments.classify_cube --check results/data/cube_classification.json
+python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
 ```
 
 See [individual experiments](experiments/README.md) for bounds and conventions,
