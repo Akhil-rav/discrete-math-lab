@@ -6,6 +6,15 @@ perfect matchings.
 
 ## Featured work
 
+**Nine symmetry classes of extremal cube colorings**
+
+[Read the report](results/cube_classification.md) · [Typeset PDF](papers/cube_classification.pdf) · [Diagram atlas](results/figures/cube_classes.svg) · [Complete data](results/data/cube_classification.json)
+
+All 174 extremal seven-color cube partitions split into nine classes under
+the 48 graph automorphisms and color renaming. The report gives every
+representative, explains structural differences, and records exhaustive
+coverage and separate verification algorithms.
+
 **Rainbow perfect matchings on even cycles and two disjoint squares**
 
 [Read the paper](papers/cycle_extremizers.pdf) · [LaTeX source](papers/cycle_extremizers.tex) · [Web version](notes/cycle_extremizers.md)
@@ -63,6 +72,7 @@ Python **3.11+**, standard library only. Run from the repository root:
 python -m unittest discover -s tests -v
 python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
+python -m experiments.classify_cube --check results/data/cube_classification.json
 ```
 
 See [individual experiments](experiments/README.md) for bounds and conventions,
