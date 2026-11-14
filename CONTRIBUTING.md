@@ -8,6 +8,7 @@ python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 python -m experiments.classify_cube --check results/data/cube_classification.json
 python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
+python -m experiments.random_rainbow --check results/data/random_rainbow.json
 ```
 
 State each mathematical change's exact domain, conventions, finite bound, and

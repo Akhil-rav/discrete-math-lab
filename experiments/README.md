@@ -10,6 +10,7 @@ python -m experiments.reproduce --check results/data/small_cases.json
 python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 python -m experiments.classify_cube --check results/data/cube_classification.json
 python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
+python -m experiments.random_rainbow --check results/data/random_rainbow.json
 ```
 
 To save fresh output without replacing the reference data:
@@ -26,6 +27,7 @@ python -m experiments.reproduce --output results/local-run.json
 | `experiments.classify_k33` | Group the 87 extremizers by Aut(K33) and color renaming | Full 72-element vertex action; closure and orbit/stabilizer checks |
 | `experiments.classify_cube` | All S(12,7)=627,396 seven-color cube partitions, then all 174 avoiding partitions modulo graph symmetry | Nine classes; full 48-element action checked against all 8! vertex maps; matching-subset oracle |
 | `experiments.cube_collision_audit` | Every nonempty cube edge subset and all 174 extremizers | 4,095 subset checks, incidence constants, and the proved extremal balance U+O=1; separate bit-mask and color-counter oracles |
+| `experiments.random_rainbow` | Exact probabilities and moment bounds on six hosts for palettes 1..24, plus five cube tail examples | Weighted partition counts; direct named-color, cycle-formula, and overlap-event oracles |
 | `experiments.rainbow_progressions` | Exact aw for intervals/cyclic orders 3..9 and three specified products | All Bn partitions; independent equations for interval/cyclic/product AP generators |
 | `experiments.color_coding_small_cases` | Color-mask DP on every graph of order ≤4 and every k-color assignment, 1≤k≤n | 22,955 permutation-oracle comparisons; exact probability and witness checks |
 | `experiments.expansion_small_cases` | Exact cuts and walks on K4, C6, K33, 2K3 | All nonempty subsets up to half order; rational arithmetic; complete/cycle benchmarks |
@@ -41,6 +43,12 @@ r=2..4 and d=2..6 (lazy), at every time 0..12. Run it with
 `python -m unittest discover -s tests -p test_walk_formulas.py -v`.
 
 ## Conventions and limits
+
+The probability figure is a separate optional presentation step:
+`python -m pip install -r requirements-figures.txt`, then
+`python -m experiments.plot_random_rainbow`. This uses Matplotlib; all commands
+in the main reproduction block and all mathematical checks remain
+standard-library-only. Fractions are converted to floats only for plotting.
 
 The additional `experiments.sparse_rainbow` command covers six specified hosts
 through 12 edges. It uses exact rejection-subtree counts and independent small-host

@@ -1,0 +1,148 @@
+{
+  "schema_version": 2,
+  "claim_id": "EXACT_RANDOM_RAINBOW_PROBABILITIES_2026_11_14",
+  "repository": {
+    "commit": "24b380d6b0f3fd1837a10772e292f5110b5e7b40",
+    "dirty": true
+  },
+  "command": [
+    "C:\\Users\\sudhe\\.local\\bin\\python.exe",
+    "-m",
+    "experiments.random_rainbow",
+    "--output",
+    "results/runs/random-rainbow-2026-11-14/probabilities.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Compute exact independent-uniform-color rainbow perfect matching probabilities for six fixed hosts from exhaustive avoiding-partition histograms, and verify first/second moment bounds on every main-grid row.",
+    "coefficient_domain": "Exact integers and rational arithmetic over Q",
+    "conventions": "q available labeled colors, not exactly q used colors; fixed host; independent uniform edge colors; falling factorial weights for color partitions; unordered matching pairs for second moments.",
+    "inputs": [
+      "Existing exhaustive histograms for C4,C6,C8,2C4,K33,cube",
+      "All integer palettes q=1..24",
+      "Cube tail examples q=32,64,128,256,1024"
+    ],
+    "bounds": {
+      "hosts": 6,
+      "main_palette_min": 1,
+      "main_palette_max": 24,
+      "main_rows": 144,
+      "tail_examples": 5,
+      "maximum_edges": 12
+    },
+    "non_claims": [
+      "No Monte Carlo sampling or floating-point probability calculation",
+      "These are fixed-host color-palette probabilities, not an asymptotic random-graph threshold result",
+      "Existing histogram enumeration is not repeated inside this command; prior runs and tests validate the inputs",
+      "The large-palette limit follows from the polynomial argument, not from the five examples",
+      "No novelty claim or independent external review"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-14T17:09:16.530437+00:00",
+    "runtime_seconds": 0.139785,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 30.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_constraints.py",
+    "experiments/random_rainbow.py",
+    "results/data/sparse_rainbow.json"
+  ],
+  "input_artifacts": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/rainbow_probability.py",
+      "sha256": "427baffcc997c434e91d54b66291eee8fc7fb88fe8dcb571a65b7d16c47bd11a",
+      "sha256_after": "427baffcc997c434e91d54b66291eee8fc7fb88fe8dcb571a65b7d16c47bd11a"
+    },
+    {
+      "path": "src/rainbow_constraints.py",
+      "sha256": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce",
+      "sha256_after": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce"
+    },
+    {
+      "path": "experiments/random_rainbow.py",
+      "sha256": "ac8e51895e7dea98b647840d38c0534b917ff3323da274a9376a3f03ea506826",
+      "sha256_after": "ac8e51895e7dea98b647840d38c0534b917ff3323da274a9376a3f03ea506826"
+    },
+    {
+      "path": "results/data/sparse_rainbow.json",
+      "sha256": "8e97cd5269e7001bc79461f05e8818cd0efeef43b75cf5ea6c5db4cbeae3d9b0",
+      "sha256_after": "8e97cd5269e7001bc79461f05e8818cd0efeef43b75cf5ea6c5db4cbeae3d9b0"
+    }
+  ],
+  "output_directory": "results/runs/random-rainbow-2026-11-14",
+  "declared_results": [
+    "results/runs/random-rainbow-2026-11-14/probabilities.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/random-rainbow-2026-11-14/stdout.txt",
+      "sha256": "161b4fa554da13892b21bfd302d024d51449b8ec5b25aa85f9edae20b837a9fc",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/random-rainbow-2026-11-14/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/random-rainbow-2026-11-14/probabilities.json",
+      "sha256": "30abaca850f8408fcc1a6c5b032822f3e295ebd6b52e27d9387676b27036df26",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

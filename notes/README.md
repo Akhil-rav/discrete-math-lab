@@ -2,6 +2,7 @@
 
 | Topic | Writeup |
 |---|---|
+| Random edge colors | [Partition weights, matching overlap, moment bounds, and large palettes](random_rainbow.md) |
 | Cube matching incidences | [Elementary seven-color bound and extremal capacity balance](cube_upper_bound.md) |
 | Matching theory | [Hall's theorem and regular bipartite graphs](halls_theorem.md) |
 | Rainbow matchings | [Definitions and anti-Ramsey conventions](rainbow_matchings.md) |
