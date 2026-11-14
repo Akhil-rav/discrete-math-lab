@@ -11,10 +11,11 @@ two extremal partitions. The arguments are elementary and self-contained.
 **Status:** elementary exposition; no novelty claim.
 
 [Download the typeset paper](../papers/cycle_extremizers.pdf).
+[Edit the LaTeX source](../papers/cycle_extremizers.tex).
 
 We use finite simple graphs and arbitrary edge colorings, which need not be
 proper. A perfect matching is **rainbow** if its edges have pairwise distinct
-colors. Write $A(G)$ for the maximum number of colors in a coloring avoiding every
+colors. For a graph $G$ admitting an avoiding coloring, write $A(G)$ for the maximum number of colors in a coloring avoiding every
 rainbow perfect matching. Write $N_{\mathrm{ext}}(G)$ for the number of such colorings using
 $A(G)$ colors, viewed as partitions of the **fixed edge set** into color classes.
 Color names are ignored; graph automorphisms are not quotiented out.

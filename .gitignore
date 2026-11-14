@@ -2,3 +2,8 @@ __pycache__/
 *.py[cod]
 .venv/
 results/local-run.json
+papers/*.aux
+papers/*.log
+papers/*.out
+papers/*.synctex.gz
+papers/*.xdv

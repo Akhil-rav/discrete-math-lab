@@ -1,5 +1,20 @@
 # Review of the cycle and disjoint-square note
 
+**LaTeX conversion, November 13, 2026:** replaced the earlier PDF renderer with
+the self-contained source `papers/cycle_extremizers.tex`. The PDF now uses native
+Latin Modern mathematics, AMS theorem/proof environments, booktabs tables, and
+a TikZ construction diagram. The maximum and extremal-count statements and
+their proof dependencies are unchanged. The definition of A explicitly requires
+an avoiding coloring, so its maximum is defined; all hosts in the note satisfy
+this requirement. The native binomial expression replaces the equivalent
+expanded expression used by the earlier PDF.
+
+Validated with Tectonic 0.17.0 and the official `tlextras-2022.0r0` bundle. The
+final compile log contains no overfull/underfull boxes, undefined-reference
+warnings, or missing-character warnings. All three final pages were rendered
+and visually inspected. The earlier Python rendering script has been removed;
+it remains available in Git history.
+
 **Presentation review, November 13, 2026:** standardized mathematical subscripts,
 set notation, theorem numbering, and the squared binomial coefficient; added
 an abstract and typeset PDF. These are notation and presentation changes, not
