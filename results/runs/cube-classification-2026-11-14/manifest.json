@@ -1,0 +1,144 @@
+{
+  "schema_version": 2,
+  "claim_id": "CUBE_SEVEN_COLOR_ORBITS_2026_11_14",
+  "repository": {
+    "commit": "837a83258be14fbfc651506dcbd37212693b3a94",
+    "dirty": true
+  },
+  "command": [
+    "C:\\Users\\sudhe\\.local\\bin\\python.exe",
+    "-m",
+    "experiments.classify_cube",
+    "--output",
+    "results/runs/cube-classification-2026-11-14/classification.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Enumerate all partitions of the twelve cube edges into seven colors, retain those avoiding all perfect matchings, and quotient by the complete 48-element cube automorphism action.",
+    "coefficient_domain": "Exact integers and finite set partitions",
+    "conventions": "K4,4 minus diagonal; lexicographic (left,right) edge order; restricted-growth colors; source-index to image-index edge actions; color names ignored; all orbit members saved.",
+    "inputs": [
+      "One fixed cube Q3 with 12 edges, nine perfect matchings",
+      "All S(12,7) partitions and all 48 cube automorphisms"
+    ],
+    "bounds": {
+      "edge_count": 12,
+      "colors": 7,
+      "partitions": 627396,
+      "automorphisms": 48
+    },
+    "non_claims": [
+      "No new theorem or literature novelty claim",
+      "This seven-color pass alone does not exclude avoiding colorings with eight or more colors; the existing full sparse search and separate tests supply that comparison",
+      "No random sampling or numerical approximation",
+      "Tests are run separately; this manifest records classification execution only"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-14T15:36:22.777954+00:00",
+    "runtime_seconds": 1.247629,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 30.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/color_patterns.py",
+    "src/cube_symmetry.py",
+    "src/rainbow_constraints.py",
+    "experiments/classify_cube.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/color_patterns.py",
+      "sha256": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9",
+      "sha256_after": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9"
+    },
+    {
+      "path": "src/cube_symmetry.py",
+      "sha256": "6d6ea4b671207b738357b6358c766caf17f2b0035aa27786be8d590e03612dc7",
+      "sha256_after": "6d6ea4b671207b738357b6358c766caf17f2b0035aa27786be8d590e03612dc7"
+    },
+    {
+      "path": "src/rainbow_constraints.py",
+      "sha256": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce",
+      "sha256_after": "679f205876cf919c7552c2dfbe9b2413b5be1da9a5dfea6380e705386c36f2ce"
+    },
+    {
+      "path": "experiments/classify_cube.py",
+      "sha256": "06f5126dadcb62a695bbb5c6b82875d33c72d0e5a8c34ca926018b362fc0a0b7",
+      "sha256_after": "06f5126dadcb62a695bbb5c6b82875d33c72d0e5a8c34ca926018b362fc0a0b7"
+    }
+  ],
+  "output_directory": "results/runs/cube-classification-2026-11-14",
+  "declared_results": [
+    "results/runs/cube-classification-2026-11-14/classification.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/cube-classification-2026-11-14/stdout.txt",
+      "sha256": "d3deb4ea57f1f5137e16b4c62ee5b084942aa8f1c1e09f1f443a2dd6a4d2b567",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/cube-classification-2026-11-14/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/cube-classification-2026-11-14/classification.json",
+      "sha256": "52e6ff5f890e9069187277125ac1b1dfb1cfdd9a2cbb796ef30d7578829b9c5d",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

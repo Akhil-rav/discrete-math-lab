@@ -10,6 +10,7 @@ avoiding every rainbow perfect matching.
 - [LaTeX source](../papers/cycle_extremizers.tex)
 - [Extremal K33 classification](../results/k33_classification.md)
 - [Sparse-host data](../results/data/sparse_rainbow.json)
+- [Cube classification: nine symmetry classes and labeled atlas](../results/cube_classification.md)
 - [Search implementation](../src/rainbow_constraints.py)
 
 The cycle and disjoint-square statements have elementary proofs. The cube
