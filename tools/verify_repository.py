@@ -24,6 +24,7 @@ DATASETS = {
     "results/data/cube_collisions.json": "results/runs/cube-collisions-2026-11-14/audit.json",
     "results/data/random_rainbow.json": "results/runs/random-rainbow-2026-11-14/probabilities.json",
     "results/data/cycle_unions.json": "results/runs/cycle-unions-2026-11-15/cycle_unions.json",
+    "results/data/rainbow_inclusion_exclusion.json": "results/runs/inclusion-exclusion-2026-11-15/counts.json",
 }
 PROOF_REVIEWS = {
     "notes/cube_upper_bound.md": "results/cube_bound_review.md",
@@ -38,6 +39,10 @@ REPRODUCTIONS = (
     ("experiments.cube_collision_audit", "results/data/cube_collisions.json"),
     ("experiments.random_rainbow", "results/data/random_rainbow.json"),
     ("experiments.cycle_unions", "results/data/cycle_unions.json"),
+    (
+        "experiments.rainbow_inclusion_exclusion",
+        "results/data/rainbow_inclusion_exclusion.json",
+    ),
 )
 
 

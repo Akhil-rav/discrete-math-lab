@@ -3,6 +3,7 @@
 | Study | Result | Evidence |
 |---|---|---|
 | Independent random edge colors | Exact probabilities on six hosts, moment bounds, and a cube tail coefficient | [Report and plot](../projects/random-colorings/report.md), [data](data/random_rainbow.json), [verification](random_rainbow_verification.md) |
+| Inclusion-exclusion comparison | A second exact polynomial method, higher-order bounds, and measured timings on six hosts | [Methods and timings](inclusion_exclusion.md), [polynomials and bounds](data/rainbow_inclusion_exclusion.json) |
 | Cube incidence bound | A(Q3)=7 by proof; capacity balance U+O=1; 150/24 extremal split checked | [Proof](../notes/cube_upper_bound.md), [collision audit](cube_collisions.md) |
 | Cube extremal colorings | Nine symmetry classes among all 174 seven-color extremizers | [Classification and atlas](cube_classification.md), [complete data](data/cube_classification.json) |
 | Expansion and random walks | Exact family formulas for cuts, periodicity, lazy mixing, and disconnection | [Expository paper](../papers/expansion_walks.pdf), [verification](walk_paper_verification.md) |

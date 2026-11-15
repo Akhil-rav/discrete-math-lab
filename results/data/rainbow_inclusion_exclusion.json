@@ -1,0 +1,1307 @@
+{
+  "coefficient_order": "ascending powers of q",
+  "palette_min": 1,
+  "palette_max": 24,
+  "hosts": {
+    "C4": {
+      "edges": 4,
+      "perfect_matchings": 2,
+      "union_coefficients": [
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "intersection_sums": [
+        [
+          0,
+          0,
+          0,
+          -2,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          -2,
+          1
+        ]
+      ],
+      "event_subsets": 3,
+      "distinct_conflict_graphs": 3,
+      "chromatic_subproblems": 5,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "3/4",
+          "bonferroni_lower_2": "3/4",
+          "bonferroni_upper_3": "3/4"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "8/9",
+          "bonferroni_lower_2": "8/9",
+          "bonferroni_upper_3": "8/9"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "15/16",
+          "bonferroni_lower_2": "15/16",
+          "bonferroni_upper_3": "15/16"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "24/25",
+          "bonferroni_lower_2": "24/25",
+          "bonferroni_upper_3": "24/25"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "35/36",
+          "bonferroni_lower_2": "35/36",
+          "bonferroni_upper_3": "35/36"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "48/49",
+          "bonferroni_lower_2": "48/49",
+          "bonferroni_upper_3": "48/49"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "63/64",
+          "bonferroni_lower_2": "63/64",
+          "bonferroni_upper_3": "63/64"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "80/81",
+          "bonferroni_lower_2": "80/81",
+          "bonferroni_upper_3": "80/81"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "99/100",
+          "bonferroni_lower_2": "99/100",
+          "bonferroni_upper_3": "99/100"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "120/121",
+          "bonferroni_lower_2": "120/121",
+          "bonferroni_upper_3": "120/121"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "143/144",
+          "bonferroni_lower_2": "143/144",
+          "bonferroni_upper_3": "143/144"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "168/169",
+          "bonferroni_lower_2": "168/169",
+          "bonferroni_upper_3": "168/169"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "195/196",
+          "bonferroni_lower_2": "195/196",
+          "bonferroni_upper_3": "195/196"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "224/225",
+          "bonferroni_lower_2": "224/225",
+          "bonferroni_upper_3": "224/225"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "255/256",
+          "bonferroni_lower_2": "255/256",
+          "bonferroni_upper_3": "255/256"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "288/289",
+          "bonferroni_lower_2": "288/289",
+          "bonferroni_upper_3": "288/289"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "323/324",
+          "bonferroni_lower_2": "323/324",
+          "bonferroni_upper_3": "323/324"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "360/361",
+          "bonferroni_lower_2": "360/361",
+          "bonferroni_upper_3": "360/361"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "399/400",
+          "bonferroni_lower_2": "399/400",
+          "bonferroni_upper_3": "399/400"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "440/441",
+          "bonferroni_lower_2": "440/441",
+          "bonferroni_upper_3": "440/441"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "483/484",
+          "bonferroni_lower_2": "483/484",
+          "bonferroni_upper_3": "483/484"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "528/529",
+          "bonferroni_lower_2": "528/529",
+          "bonferroni_upper_3": "528/529"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "575/576",
+          "bonferroni_lower_2": "575/576",
+          "bonferroni_upper_3": "575/576"
+        }
+      ]
+    },
+    "C6": {
+      "edges": 6,
+      "perfect_matchings": 2,
+      "union_coefficients": [
+        0,
+        0,
+        -4,
+        12,
+        -9,
+        0,
+        1
+      ],
+      "intersection_sums": [
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          -6,
+          2
+        ],
+        [
+          0,
+          0,
+          4,
+          -12,
+          13,
+          -6,
+          1
+        ]
+      ],
+      "event_subsets": 3,
+      "distinct_conflict_graphs": 3,
+      "chromatic_subproblems": 5,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "32/81",
+          "bonferroni_lower_2": "32/81",
+          "bonferroni_upper_3": "32/81"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "39/64",
+          "bonferroni_lower_2": "39/64",
+          "bonferroni_upper_3": "39/64"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "456/625",
+          "bonferroni_lower_2": "456/625",
+          "bonferroni_upper_3": "456/625"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "65/81",
+          "bonferroni_lower_2": "65/81",
+          "bonferroni_upper_3": "65/81"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "2040/2401",
+          "bonferroni_lower_2": "2040/2401",
+          "bonferroni_upper_3": "2040/2401"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "903/1024",
+          "bonferroni_lower_2": "903/1024",
+          "bonferroni_upper_3": "903/1024"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "5936/6561",
+          "bonferroni_lower_2": "5936/6561",
+          "bonferroni_upper_3": "5936/6561"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "576/625",
+          "bonferroni_lower_2": "576/625",
+          "bonferroni_upper_3": "576/625"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "13680/14641",
+          "bonferroni_lower_2": "13680/14641",
+          "bonferroni_upper_3": "13680/14641"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "4895/5184",
+          "bonferroni_lower_2": "4895/5184",
+          "bonferroni_upper_3": "4895/5184"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "27192/28561",
+          "bonferroni_lower_2": "27192/28561",
+          "bonferroni_upper_3": "27192/28561"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "2301/2401",
+          "bonferroni_lower_2": "2301/2401",
+          "bonferroni_upper_3": "2301/2401"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "48776/50625",
+          "bonferroni_lower_2": "48776/50625",
+          "bonferroni_upper_3": "48776/50625"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "15855/16384",
+          "bonferroni_lower_2": "15855/16384",
+          "bonferroni_upper_3": "15855/16384"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "81120/83521",
+          "bonferroni_lower_2": "81120/83521",
+          "bonferroni_upper_3": "81120/83521"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "6392/6561",
+          "bonferroni_lower_2": "6392/6561",
+          "bonferroni_upper_3": "6392/6561"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "127296/130321",
+          "bonferroni_lower_2": "127296/130321",
+          "bonferroni_upper_3": "127296/130321"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "39159/40000",
+          "bonferroni_lower_2": "39159/40000",
+          "bonferroni_upper_3": "39159/40000"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "190760/194481",
+          "bonferroni_lower_2": "190760/194481",
+          "bonferroni_upper_3": "190760/194481"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "14385/14641",
+          "bonferroni_lower_2": "14385/14641",
+          "bonferroni_upper_3": "14385/14641"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "275352/279841",
+          "bonferroni_lower_2": "275352/279841",
+          "bonferroni_upper_3": "275352/279841"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "81719/82944",
+          "bonferroni_lower_2": "81719/82944",
+          "bonferroni_upper_3": "81719/82944"
+        }
+      ]
+    },
+    "C8": {
+      "edges": 8,
+      "perfect_matchings": 2,
+      "union_coefficients": [
+        0,
+        0,
+        -36,
+        132,
+        -193,
+        132,
+        -36,
+        0,
+        1
+      ],
+      "intersection_sums": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -12,
+          22,
+          -12,
+          2
+        ],
+        [
+          0,
+          0,
+          36,
+          -132,
+          193,
+          -144,
+          58,
+          -12,
+          1
+        ]
+      ],
+      "event_subsets": 3,
+      "distinct_conflict_graphs": 3,
+      "chromatic_subproblems": 5,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "183/1024",
+          "bonferroni_lower_2": "183/1024",
+          "bonferroni_upper_3": "183/1024"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "5424/15625",
+          "bonferroni_lower_2": "5424/15625",
+          "bonferroni_upper_3": "5424/15625"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "155/324",
+          "bonferroni_lower_2": "155/324",
+          "bonferroni_upper_3": "155/324"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "67920/117649",
+          "bonferroni_lower_2": "67920/117649",
+          "bonferroni_upper_3": "67920/117649"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "42735/65536",
+          "bonferroni_lower_2": "42735/65536",
+          "bonferroni_upper_3": "42735/65536"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "41888/59049",
+          "bonferroni_lower_2": "41888/59049",
+          "bonferroni_upper_3": "41888/59049"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "11781/15625",
+          "bonferroni_lower_2": "11781/15625",
+          "bonferroni_upper_3": "11781/15625"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "1398240/1771561",
+          "bonferroni_lower_2": "1398240/1771561",
+          "bonferroni_upper_3": "1398240/1771561"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "7535/9216",
+          "bonferroni_lower_2": "7535/9216",
+          "bonferroni_upper_3": "7535/9216"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "4057680/4826809",
+          "bonferroni_lower_2": "4057680/4826809",
+          "bonferroni_upper_3": "4057680/4826809"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "404547/470596",
+          "bonferroni_lower_2": "404547/470596",
+          "bonferroni_upper_3": "404547/470596"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "1108016/1265625",
+          "bonferroni_lower_2": "1108016/1265625",
+          "bonferroni_upper_3": "1108016/1265625"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "3727815/4194304",
+          "bonferroni_lower_2": "3727815/4194304",
+          "bonferroni_upper_3": "3727815/4194304"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "21725760/24137569",
+          "bonferroni_lower_2": "21725760/24137569",
+          "bonferroni_upper_3": "21725760/24137569"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "53720/59049",
+          "bonferroni_lower_2": "53720/59049",
+          "bonferroni_upper_3": "53720/59049"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "43192512/47045881",
+          "bonferroni_lower_2": "43192512/47045881",
+          "bonferroni_upper_3": "43192512/47045881"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "14805351/16000000",
+          "bonferroni_lower_2": "14805351/16000000",
+          "bonferroni_upper_3": "14805351/16000000"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "986480/1058841",
+          "bonferroni_lower_2": "986480/1058841",
+          "bonferroni_upper_3": "986480/1058841"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "6641355/7086244",
+          "bonferroni_lower_2": "6641355/7086244",
+          "bonferroni_upper_3": "6641355/7086244"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "139468560/148035889",
+          "bonferroni_lower_2": "139468560/148035889",
+          "bonferroni_upper_3": "139468560/148035889"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "5024327/5308416",
+          "bonferroni_lower_2": "5024327/5308416",
+          "bonferroni_upper_3": "5024327/5308416"
+        }
+      ]
+    },
+    "2C4": {
+      "edges": 8,
+      "perfect_matchings": 4,
+      "union_coefficients": [
+        0,
+        456,
+        -728,
+        120,
+        249,
+        -96,
+        -2,
+        0,
+        1
+      ],
+      "intersection_sums": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -24,
+          44,
+          -24,
+          4
+        ],
+        [
+          0,
+          0,
+          72,
+          -408,
+          770,
+          -676,
+          304,
+          -68,
+          6
+        ],
+        [
+          0,
+          -864,
+          3024,
+          -4392,
+          3452,
+          -1592,
+          432,
+          -64,
+          4
+        ],
+        [
+          0,
+          -1320,
+          3680,
+          -4104,
+          2433,
+          -844,
+          174,
+          -20,
+          1
+        ]
+      ],
+      "event_subsets": 15,
+      "distinct_conflict_graphs": 15,
+      "chromatic_subproblems": 101,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "645/2048",
+          "bonferroni_lower_2": "159/512",
+          "bonferroni_upper_3": "81/256"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "42816/78125",
+          "bonferroni_lower_2": "7968/15625",
+          "bonferroni_upper_3": "43296/78125"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "4045/5832",
+          "bonferroni_lower_2": "95/162",
+          "bonferroni_upper_3": "115/162"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "646080/823543",
+          "bonferroni_lower_2": "68640/117649",
+          "bonferroni_upper_3": "672480/823543"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "221025/262144",
+          "bonferroni_lower_2": "17535/32768",
+          "bonferroni_upper_3": "58695/65536"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "1406720/1594323",
+          "bonferroni_lower_2": "27328/59049",
+          "bonferroni_upper_3": "169792/177147"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "284193/312500",
+          "bonferroni_lower_2": "5922/15625",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "18097920/19487171",
+          "bonferroni_lower_2": "515520/1771561",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "469205/497664",
+          "bonferroni_lower_2": "935/4608",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "59822400/62748517",
+          "bonferroni_lower_2": "564960/4826809",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "6334185/6588344",
+          "bonferroni_lower_2": "8151/235298",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "55112512/56953125",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "32635785/33554432",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "400727040/410338673",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "3124175/3188646",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "46218240/47045881",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "157533237/160000000",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "197399360/200120949",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "154015995/155897368",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "3368164800/3404825447",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "189257915/191102976",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        }
+      ]
+    },
+    "K33": {
+      "edges": 9,
+      "perfect_matchings": 6,
+      "union_coefficients": [
+        0,
+        -184,
+        228,
+        42,
+        -87,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "intersection_sums": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12,
+          -18,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          60,
+          -180,
+          195,
+          -90,
+          15
+        ],
+        [
+          0,
+          0,
+          0,
+          160,
+          -720,
+          1320,
+          -1260,
+          660,
+          -180,
+          20
+        ],
+        [
+          0,
+          96,
+          -1008,
+          3216,
+          -5112,
+          4734,
+          -2691,
+          930,
+          -180,
+          15
+        ],
+        [
+          0,
+          1248,
+          -5088,
+          8976,
+          -9024,
+          5694,
+          -2322,
+          600,
+          -90,
+          6
+        ],
+        [
+          0,
+          1336,
+          -4308,
+          5878,
+          -4545,
+          2220,
+          -711,
+          147,
+          -18,
+          1
+        ]
+      ],
+      "event_subsets": 63,
+      "distinct_conflict_graphs": 63,
+      "chromatic_subproblems": 2652,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "5090/6561",
+          "bonferroni_lower_2": "16/27",
+          "bonferroni_upper_3": "592/729"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "7671/8192",
+          "bonferroni_lower_2": "9/64",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "381756/390625",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "51985/52488",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "5738430/5764801",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "2092125/2097152",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "42988568/43046721",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "1561239/1562500",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "214250490/214358881",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "53729995/53747712",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "815549460/815730721",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "46111299/46118408",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "2562609686/2562890625",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "536828145/536870912",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "6975345840/6975757441",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "86089615/86093442",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "16982985618/16983563041",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "3199915647/3200000000",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "37822076780/37822859361",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "1714842885/1714871048",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "3404780610/3404825447",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "13759267621/13759414272",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        }
+      ]
+    },
+    "cube": {
+      "edges": 12,
+      "perfect_matchings": 9,
+      "union_coefficients": [
+        0,
+        -103704,
+        231386,
+        -149777,
+        -425,
+        29603,
+        -6910,
+        -174,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "intersection_sums": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -54,
+          99,
+          -54,
+          9
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          864,
+          -3600,
+          5784,
+          -4620,
+          1956,
+          -420,
+          36
+        ],
+        [
+          0,
+          0,
+          0,
+          -3456,
+          30240,
+          -99216,
+          169544,
+          -171092,
+          107652,
+          -42760,
+          10432,
+          -1428,
+          84
+        ],
+        [
+          0,
+          -27216,
+          246240,
+          -972648,
+          2104848,
+          -2793369,
+          2425470,
+          -1424802,
+          571878,
+          -154857,
+          27102,
+          -2772,
+          126
+        ],
+        [
+          0,
+          -1194264,
+          6254280,
+          -14504958,
+          19717416,
+          -17505420,
+          10687500,
+          -4590822,
+          1390998,
+          -292056,
+          40560,
+          -3360,
+          126
+        ],
+        [
+          0,
+          -7446732,
+          30616808,
+          -55729961,
+          59799798,
+          -42278387,
+          20768593,
+          -7257790,
+          1809373,
+          -316126,
+          36944,
+          -2604,
+          84
+        ],
+        [
+          0,
+          -13986684,
+          51305466,
+          -82109280,
+          76754241,
+          -47031060,
+          19983102,
+          -6042684,
+          1306527,
+          -198720,
+          20316,
+          -1260,
+          36
+        ],
+        [
+          0,
+          -9995724,
+          34385886,
+          -50953260,
+          43658634,
+          -24330681,
+          9348480,
+          -2546550,
+          494985,
+          -67653,
+          6222,
+          -348,
+          9
+        ],
+        [
+          0,
+          -2392428,
+          7920574,
+          -11187952,
+          9060958,
+          -4737138,
+          1696351,
+          -428318,
+          76843,
+          -9666,
+          817,
+          -42,
+          1
+        ]
+      ],
+      "event_subsets": 511,
+      "distinct_conflict_graphs": 511,
+      "chromatic_subproblems": 156885,
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "0",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "0"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "4653/8192",
+          "bonferroni_lower_2": "63/128",
+          "bonferroni_upper_3": "75/128"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "40273176/48828125",
+          "bonferroni_lower_2": "4536/15625",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "13963045/15116544",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "1905827400/1977326743",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "1053886575/1073741824",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "10354774192/10460353203",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "6213614841/6250000000",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "284307726960/285311670611",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "5148358325/5159780352",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "1789577044200/1792160394037",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "505706063577/506195646208",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "2881331164712/2883251953125",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "2197990590705/2199023255552",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "34260316087200/34271896307633",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "669296830175/669462604992",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "116468768271456/116490258898219",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "6399107177913/6400000000000",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "38915560898680/38919722282469",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "73033728045075/73039787676416",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "952747729487400/952809757913927",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "63400108516129/63403380965376",
+          "bonferroni_lower_2": "0",
+          "bonferroni_upper_3": "1"
+        }
+      ]
+    }
+  }
+}
