@@ -1,0 +1,158 @@
+{
+  "schema_version": 2,
+  "claim_id": "RAINBOW_METHOD_BENCHMARK_2026_11_15",
+  "repository": {
+    "commit": "53cb443c72d46a18fa56c280fc3b866802d727a4",
+    "dirty": true
+  },
+  "command": [
+    "python",
+    "-m",
+    "experiments.benchmark_rainbow_methods",
+    "--repeat",
+    "3",
+    "--output",
+    "results/runs/rainbow-method-benchmark-2026-11-15/benchmark.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Measure three alternating-order trials of both counting methods on the six hosts, including matching generation, count construction with fresh caches, and 24 exact probability evaluations; verify equality of every timed answer.",
+    "coefficient_domain": "Exact integer polynomials and rational probabilities; floating-point seconds only in benchmark measurements",
+    "conventions": "Independent uniform colors from q available labels; arbitrary edge colorings; fixed edge order; conflict graphs include unused positions as isolated vertices; polynomial coefficients in ascending powers of q.",
+    "inputs": [
+      "C4, C6, C8, two disjoint C4, K3,3, and the cube"
+    ],
+    "bounds": {
+      "hosts": 6,
+      "repetitions": 3,
+      "palettes": [
+        1,
+        24
+      ]
+    },
+    "non_claims": [
+      "Timings depend on this machine and run",
+      "Three repetitions do not establish a statistical confidence interval or an asymptotic runtime theorem",
+      "Host definitions, imports, and I/O are excluded from the timed region"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-15T17:52:51.743876+00:00",
+    "runtime_seconds": 12.070865,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 120.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/rainbow_constraints.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_inclusion_exclusion.py",
+    "experiments/sparse_rainbow.py",
+    "experiments/rainbow_inclusion_exclusion.py",
+    "experiments/benchmark_rainbow_methods.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/rainbow_constraints.py",
+      "sha256": "a7ad45e0a273196491b71ec2eb2fa330b024c27f3f8fddcad8ceeed27293e5cc",
+      "sha256_after": "a7ad45e0a273196491b71ec2eb2fa330b024c27f3f8fddcad8ceeed27293e5cc"
+    },
+    {
+      "path": "src/rainbow_probability.py",
+      "sha256": "c65184702a9bd34a8dd70fb6853a5d59c0bda52a29db94a6db9458439039674e",
+      "sha256_after": "c65184702a9bd34a8dd70fb6853a5d59c0bda52a29db94a6db9458439039674e"
+    },
+    {
+      "path": "src/rainbow_inclusion_exclusion.py",
+      "sha256": "699876151048f54ee7ce98f9c76f3ffec1a56bc90ed618a9bb2e3cd672551491",
+      "sha256_after": "699876151048f54ee7ce98f9c76f3ffec1a56bc90ed618a9bb2e3cd672551491"
+    },
+    {
+      "path": "experiments/sparse_rainbow.py",
+      "sha256": "7f727c192e0379dd99bb7566421529f50559a332fa1e8e5fe9efaf71c92118d6",
+      "sha256_after": "7f727c192e0379dd99bb7566421529f50559a332fa1e8e5fe9efaf71c92118d6"
+    },
+    {
+      "path": "experiments/rainbow_inclusion_exclusion.py",
+      "sha256": "1bdfbcd534e872bd051a33a2ae276e98ad5f33df1937b41320db95cb954756e8",
+      "sha256_after": "1bdfbcd534e872bd051a33a2ae276e98ad5f33df1937b41320db95cb954756e8"
+    },
+    {
+      "path": "experiments/benchmark_rainbow_methods.py",
+      "sha256": "8f58e7d4560d87eef4d01134d1fdc73d547aaadfd382b95046fb16a96a85a69c",
+      "sha256_after": "8f58e7d4560d87eef4d01134d1fdc73d547aaadfd382b95046fb16a96a85a69c"
+    }
+  ],
+  "output_directory": "results/runs/rainbow-method-benchmark-2026-11-15",
+  "declared_results": [
+    "results/runs/rainbow-method-benchmark-2026-11-15/benchmark.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/rainbow-method-benchmark-2026-11-15/stdout.txt",
+      "sha256": "fdd5e410baccdb42e6f89386503dba004b6b077107d1a1cc9bfa29967dd155fa",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/rainbow-method-benchmark-2026-11-15/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/rainbow-method-benchmark-2026-11-15/benchmark.json",
+      "sha256": "21bbb869866a4cc3908210eaf2a0265416b04032196aebcf7ca0827fe9aa4ec4",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

@@ -11,7 +11,7 @@ small-case searches to structural proofs and exact probabilities.
 | Study | Main outcome | Read |
 |---|---|---|
 | **Extremal cube colorings** | A proof of the seven-color maximum; all 174 extremizers classified into nine symmetry classes | [Report](results/cube_classification.md) · [Four-page paper](papers/cube_classification.pdf) · [Labeled atlas](results/figures/cube_classes.svg) |
-| **Independent random edge colors** | Exact rainbow-matching probabilities on six hosts, moment bounds, and a large-palette limit linked to the 174 extremizers | [Three-page paper](papers/random_rainbow.pdf) · [Report and plot](projects/random-colorings/report.md) · [Exact data](results/data/random_rainbow.json) |
+| **Independent random edge colors** | Two exact counting methods on six hosts, moment and Bonferroni bounds, and a measured runtime comparison | [Five-page paper](papers/random_rainbow.pdf) · [Methods and timings](results/inclusion_exclusion.md) · [Report and plot](projects/random-colorings/report.md) |
 | **Expansion and random walks** | Elementary cut formulas and exact examples separating periodicity from disconnection | [Three-page paper](papers/expansion_walks.pdf) · [Project report](projects/expansion-and-walks/report.md) |
 
 The cube study combines an [incidence proof](notes/cube_upper_bound.md), an
@@ -46,7 +46,7 @@ the reports and literature notes; computational results include their tested ran
 ## Reproduce
 
 Python **3.11+**; mathematical computations use the standard library. From the
-repository root, one command runs the integrity checks, tests, and all six
+repository root, one command runs the integrity checks, tests, and all seven
 reference-data reproductions. To start from a fresh clone:
 
 ```sh
@@ -72,12 +72,6 @@ for public release in November 2026 and continue to extend the work here.
 
 Akhil Ravuri
 
-## Authorship and Mathematical Originality
-
-**Author: Akhil Ravuri**
-
-I am the sole author of the mathematical research, proofs, computational experiments, and written reports presented in this repository.
-
-I claim mathematical originality for my independently developed derivations, proof arguments, computational analyses, and classifications documented in this project. These claims are made with reference to the cited mathematical literature and do not imply that every underlying theorem or technique is new.
-
-The research manuscripts in this repository are publicly released as part of my independent mathematical research. Public release does not imply peer-reviewed journal publication.
+The repository develops elementary matching proofs, finite coloring
+classifications, and exact probability computations. Each report identifies
+the cited results, arguments, and finite computations supporting its conclusions.

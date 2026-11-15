@@ -88,6 +88,79 @@ $$\Pr(\text{at least one rainbow matching in }C_{2n})=1-(1-p)^2.$$
 This identity is independent of the partition-histogram implementation and
 checks the saved probabilities on C4, C6, and C8 for all q=1,...,24.
 
+## Inclusion-exclusion through conflict graphs
+
+There is a second way to count the same event without an avoiding histogram.
+Let $\mathcal M$ be the perfect-matching family. For a nonempty subfamily
+$F\subseteq\mathcal M$, form a simple graph $H_F$ whose vertex set is the
+**entire edge set of the host**. Join two of these positions when they occur
+together in some matching in $F$. A proper $q$-coloring of $H_F$ is exactly
+an edge coloring making every matching in $F$ rainbow. If $P_H(q)$ is the
+chromatic polynomial, inclusion-exclusion gives the counting polynomial
+
+$$
+U_G(q)=\sum_{\varnothing\ne F\subseteq\mathcal M}
+(-1)^{|F|+1}P_{H_F}(q),\qquad
+\Pr(X>0)=\frac{U_G(q)}{q^m}.
+$$
+
+To justify the alternating sum directly, a coloring with $x$ rainbow matchings
+is counted $\sum_{j=1}^{x}(-1)^{j+1}\binom{x}{j}=1$ times if $x>0$, and zero
+times otherwise. Edge positions unused by $F$ remain isolated vertices of
+$H_F$, so their free color choices are included. The denominator is always
+$q^m$, even when the selected matchings use only part of the host.
+
+The implementation counts proper colorings by **addition and contraction**.
+For two nonadjacent vertices $u,v$ of a simple graph $H$,
+
+$$P_H(q)=P_{H+uv}(q)+P_{H/uv}(q).$$
+
+Indeed, proper colorings split into those giving $u,v$ different colors and
+those giving them the same color. The first are colorings of $H+uv$; the
+second correspond bijectively to colorings after identifying $u,v$ and
+removing duplicate edges. Since $u,v$ were nonadjacent, no loop is introduced.
+Each step either adds an edge at the same order or reduces the order, so the
+recursion terminates. Its complete-graph terminal value is $(q)_{|V(H)|}$,
+with $P_{K_0}=1$; disconnected components multiply because their color
+choices are independent and may reuse labels. Memoization reuses identical
+labeled conflict subproblems. This is an exact counting recurrence, not
+sampling or numerical interpolation.
+
+Consequently, both methods give the identity
+
+$$U_G(q)=q^m-\sum_k a_k(q)_k.$$
+
+The experiment checks **every coefficient** of this polynomial equality on
+all six hosts. This checks the polynomial identity directly, alongside the
+palette-grid comparisons. The new engine uses only the target family; saved partition counts
+are loaded solely for the comparison. Its matching lists are independently
+recovered from edge subsets and compared with permutation generation.
+
+## Bounds from the first three intersection sums
+
+Put $T_j=\sum_{|F|=j}\Pr(\bigcap_{M\in F}\{M\text{ is rainbow}\})$, with
+$T_j=0$ when $j>N$. Then $T_j=\mathbb E\binom{X}{j}$. The usual second- and
+third-order Bonferroni bounds are
+
+$$\max(0,T_1-T_2)\le\Pr(X>0)\le\min(1,T_1-T_2+T_3).$$
+
+For completeness, when $x\ge1$ the lower partial sum satisfies
+$x-\binom{x}{2}-1=-\binom{x-1}{2}\le0$, and the upper partial sum satisfies
+$x-\binom{x}{2}+\binom{x}{3}-1=\binom{x-1}{3}\ge0$. For $x=0$, both are
+zero. Taking expectations proves the bounds; no independence assumption is
+used. Also $T_1=\mathbb E[X]$ and $2T_2=\mathbb E[X^2]-\mathbb E[X]$,
+which supply checks against the earlier matching-overlap formulas.
+
+On the cube at $q=4$, the computation gives
+$T_1=27/32$, $T_2=45/128$, and $T_3=3/32$, hence
+
+$$\frac{63}{128}\le\frac{4653}{8192}\le\frac{75}{128}.$$
+
+These are finite applications of standard counting identities. The engine
+is limited to twelve edge positions and nine targets, and is not a general
+polynomial-time algorithm. The [method comparison](../results/inclusion_exclusion.md)
+records its exact checks and separate machine-dependent timings.
+
 ## Large palettes
 
 Assume an avoiding coloring exists, and let $A=\max\{k:a_k>0\}$. Each $(q)_k$ is

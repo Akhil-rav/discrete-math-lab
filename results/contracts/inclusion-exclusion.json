@@ -1,0 +1,46 @@
+{
+  "claim_id": "INCLUSION_EXCLUSION_2026_11_15",
+  "mathematics": {
+    "assertion_tested": "Build the rainbow-union polynomial from matching-event conflict graphs on all six hosts; compare every coefficient with the saved avoiding histograms, and compare all 144 probabilities, moments, and order-two/order-three Bonferroni bounds.",
+    "coefficient_domain": "Exact integer polynomials and rational probabilities; floating-point seconds only in benchmark measurements",
+    "conventions": "Independent uniform colors from q available labels; arbitrary edge colorings; fixed edge order; conflict graphs include unused positions as isolated vertices; polynomial coefficients in ascending powers of q.",
+    "inputs": [
+      "C4, C6, C8, two disjoint C4, K3,3, and the cube"
+    ],
+    "bounds": {
+      "hosts": 6,
+      "max_edges": 12,
+      "max_matchings": 9,
+      "palettes": [
+        1,
+        24
+      ]
+    },
+    "non_claims": [
+      "No new theorem or originality claim",
+      "The counting engine does not read partition histograms; they are used only by the comparison experiment",
+      "No external peer review claim"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/rainbow_constraints.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_inclusion_exclusion.py",
+    "experiments/sparse_rainbow.py",
+    "experiments/rainbow_inclusion_exclusion.py",
+    "results/data/sparse_rainbow.json",
+    "results/data/random_rainbow.json"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

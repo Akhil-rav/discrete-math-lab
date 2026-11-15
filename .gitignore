@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 .venv/
 results/local-run.json
+results/local-benchmark.json
 papers/*.aux
 papers/*.log
 papers/*.out
