@@ -71,3 +71,13 @@ These projects grew out of several months of study. I organized the repository
 for public release in November 2026 and continue to extend the work here.
 
 Akhil Ravuri
+
+## Authorship and Mathematical Originality
+
+**Author: Akhil Ravuri**
+
+I am the sole author of the mathematical research, proofs, computational experiments, and written reports presented in this repository.
+
+I claim mathematical originality for my independently developed derivations, proof arguments, computational analyses, and classifications documented in this project. These claims are made with reference to the cited mathematical literature and do not imply that every underlying theorem or technique is new.
+
+The research manuscripts in this repository are publicly released as part of my independent mathematical research. Public release does not imply peer-reviewed journal publication.
