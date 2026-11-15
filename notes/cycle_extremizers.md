@@ -1,12 +1,11 @@
-# Rainbow perfect matchings on even cycles and two disjoint squares
+# Rainbow perfect matchings on disjoint unions of even cycles
 
 **Akhil Ravuri**
 
-**Abstract.** We determine the maximum number of colors in an edge coloring of
-an even cycle that avoids a rainbow perfect matching and count all extremal
-partitions of its fixed edge set. We also prove that two disjoint squares admit
-at most six colors under the same restriction and characterize their exactly
-two extremal partitions. The arguments are elementary and self-contained.
+**Abstract.** For every nonempty disjoint union of even cycles, we determine
+the maximum number of colors avoiding a rainbow perfect matching and classify
+every extremal partition of the fixed edge set. The cycle and two-square cases
+introduce the general argument. The proofs are elementary and self-contained.
 
 **Status:** elementary exposition; no novelty claim.
 
@@ -59,8 +58,8 @@ rotations, reflections, or color permutations is needed. ∎
 
 For $C_4$, $C_6$, $C_8$, and $C_{10}$, the formulas give maximum color counts 2,4,6,8 and
 extremal partition counts 1,9,36,100. These are consequences of the proof. The
-repository's sparse computation checks $C_4$, $C_6$, and $C_8$; no additional $C_{10}$ run is
-claimed by this note.
+original sparse computation checks $C_4$, $C_6$, and $C_8$. The cycle-union
+experiment below additionally checks $C_{10}$ and disconnected hosts.
 
 ## 2. Maximum color count on two disjoint squares
 
@@ -139,12 +138,96 @@ classes. Conversely, each such partition avoids a rainbow perfect matching.
 The two partitions are distinct on the fixed edge set. Interchanging color
 names gives no further partitions. Hence $N_{\mathrm{ext}}(G)=2$. ∎
 
+## 4. Arbitrary disjoint unions of even cycles
+
+**Theorem 4.** Let
+
+$$G=\bigsqcup_{i=1}^{r}C_{2n_i},\qquad r\ge1,\quad n_i\ge2,$$
+
+where $r,n_1,\ldots,n_r$ are integers, with fixed components and edge
+positions. Put $m=2\sum_i n_i$. Then
+
+$$
+A(G)=m-2,\qquad
+N_{\mathrm{ext}}(G)=\sum_{i=1}^{r}\binom{n_i}{2}^{2}.
+$$
+
+Every extremal partition has exactly two doubleton color classes. They lie
+in a single component, with one pair inside each of that component's two
+alternating perfect matchings. All remaining edges are singleton classes.
+
+**Proof of the maximum.** Choose any component. In each of its alternating
+matchings, merge one pair of edges into a color class; make every other edge
+of $G$ a singleton class. There are $m-2$ classes. Every global perfect
+matching chooses one of the two local matchings in that component and hence
+contains one repeated pair. Thus $A(G)\ge m-2$.
+
+With $m$ colors every edge has its own color. With $m-1$ colors there is
+exactly one repeated pair, say $\{e,f\}$. Choose the alternating local
+matching omitting $e$ in its component and any local matching in each other
+component. Their union omits $e$ and cannot contain the only repeated pair,
+so it is rainbow. Therefore $A(G)\le m-2$.
+
+**Proof of the classification.** In a partition into $m-2$ classes, the total
+excess $\sum_B(|B|-1)$ is two. Its nonsingleton classes are therefore either
+one triple or two disjoint pairs.
+
+There are $2^r$ global perfect matchings, from independent alternating choices
+in each component. Every edge appears in exactly $2^{r-1}$ of them. If a
+triple were the only nonsingleton class, its total appearances across the
+global matchings would be $3\cdot2^{r-1}$. Obstructing every matching would
+require at least $2\cdot2^r$ appearances, since each would need two edges of
+that triple. This is impossible because $3<4$.
+
+Now let $P,Q$ be the two repeated pairs. A pair lies in:
+
+| Pair position | Global perfect matchings containing the pair |
+|---|---:|
+| One component, one alternating matching | $2^{r-1}$ |
+| One component, different alternating matchings | $0$ |
+| Two different components (only possible for $r\ge2$) | $2^{r-2}$ |
+
+The first case fixes one local choice. The second demands incompatible local
+choices. The third independently fixes two local choices. These exhaust all
+pair positions, including nonadjacent edges of opposite parity in a long cycle.
+
+Thus each pair obstructs at most half the global matchings. To cover all
+$2^r$, both must attain that bound and their obstructed sets must be disjoint.
+Each pair is consequently inside one alternating matching of a component.
+If the pairs belonged to different components, choosing the other local
+matching in each would omit both pairs and give a rainbow global matching.
+If both belonged to the same alternating matching of one component, choosing
+the other local matching there would do the same. Hence they must belong to
+the two different alternating matchings of one component, as claimed.
+
+**Counting.** In component $i$, each alternating matching has $n_i$ edges, so
+there are $\binom{n_i}{2}^2$ choices of the two repeated pairs. The component
+and the pair inside each alternating set are uniquely recoverable from the
+partition. We therefore sum over components. There is no division by two,
+color permutations, or permutations of equal-length components: the edge set
+is fixed. Conversely every such choice is avoiding by the lower-bound
+construction, completing the proof. ∎
+
+In particular, $r$ fixed disjoint squares have $A(G)=4r-2$ and
+$N_{\mathrm{ext}}(G)=r$. For $C_4\sqcup C_6$, the values are eight and ten;
+for $C_6\sqcup C_6$, they are ten and eighteen. These are consequences of
+the general proof, not new results established by the finite check.
+
 ## Verification and interpretation
 
-The proofs above are self-contained. Their dependencies are the two local
-matchings of $C_4$, independent component choices, class-size counting, and
-double counting of edge appearances. Computation is not a premise.
+The proofs are self-contained: their dependencies are the two alternating
+matchings of each even cycle, independent component choices, class-size
+counting, and double counting of edge appearances. Computation is not a premise.
 
 The [existing sparse dataset](../results/data/sparse_rainbow.json)
 agrees with $A(G)=6$ and $N_{\mathrm{ext}}(G)=2$. Its execution and coverage limits are documented
 in [the sparse verification record](../results/sparse_verification.md).
+
+The [cycle-union experiment](../experiments/cycle_unions.py) checks ten
+specified hosts through twelve edges. Six hosts through ten edges receive
+full partition enumeration; all ten receive complete searches in the
+$m-2$, $m-1$, and $m$ color bands. The twelve-edge cases do **not** claim
+full Bell-number coverage. Matching constraints are independently recovered
+from edge subsets. See the [data](../results/data/cycle_unions.json) and
+[proof and computation review](../results/cycle_union_verification.md) for
+precise coverage, conventions, and self-review limits. No novelty is claimed.

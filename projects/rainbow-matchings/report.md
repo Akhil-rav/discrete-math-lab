@@ -66,6 +66,14 @@ does not claim novelty.
 The [typeset version](../../papers/cycle_extremizers.pdf) includes the complete
 proofs and a diagram of the six-color construction.
 
+The paper now extends this to every nonempty union G of even cycles C(2n_i),
+with n_i>=2: A(G)=|E(G)|-2, and the fixed-edge extremal count is
+sum_i binomial(n_i,2)^2. Every extremizer repeats one pair in each alternating
+matching of a single component and gives all other edges distinct colors.
+The [general proof and review](../../results/cycle_union_verification.md)
+separate the universal argument from ten-host finite checks. The original
+six-host dataset above remains unchanged.
+
 For the cube, a simple lower-bound witness uses seven colors: color the six
 edges incident to two fixed left vertices alike, and give the other six edges
 six distinct fresh colors. Every perfect matching uses two edges in the common
