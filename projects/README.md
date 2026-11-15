@@ -23,7 +23,8 @@ avoiding every rainbow perfect matching.
 - [Extremal K33 classification](../results/k33_classification.md)
 - [Sparse-host data](../results/data/sparse_rainbow.json)
 - [Cube classification: nine symmetry classes and labeled atlas](../results/cube_classification.md)
-- [Ladder family formula, weighted covers, and all 15 L5 extremizers](../results/matching_covers.md)
+- [Ladder family formula and weighted covers](../results/matching_covers.md)
+- [Direct count of the 15 L5 extremizers and six symmetry classes](../notes/l5_extremizers.md)
 - [Search implementation](../src/rainbow_constraints.py)
 
 The cycle-union, cube, and ladder maximum-color statements have elementary
