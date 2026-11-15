@@ -1,0 +1,190 @@
+{
+  "schema_version": 2,
+  "claim_id": "LADDER_MATCHINGS_2026_11_15",
+  "repository": {
+    "commit": "f09fd9e3b679f892a37a523e1b6b38d8c28fe5ba",
+    "dirty": true
+  },
+  "command": [
+    "python",
+    "-m",
+    "experiments.ladder_matchings",
+    "--output",
+    "results/runs/ladder-matchings-2026-11-15/ladder_matchings.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Exhaust all edge partitions of L2, L3, L4; compare avoiding histograms with the pruned solver; save every extremizer and complete symmetry quotient; compare all rainbow-count polynomial coefficients by partition weighting and matching-event inclusion-exclusion, and 72 exact palette probabilities.",
+    "coefficient_domain": "Exact integers and rational numbers",
+    "conventions": "Lk = Pk square K2, with k columns; rungs, top rail, bottom rail edge order; fixed edges and color renaming for partition counts; full graph automorphisms only in orbit classification; arbitrary edge colors; independent uniform q-label colors for probabilities.",
+    "inputs": [
+      "The explicitly labeled ladders with k=2,3,4"
+    ],
+    "bounds": {
+      "columns": [
+        2,
+        3,
+        4
+      ],
+      "max_edges": 10,
+      "max_perfect_matchings": 5,
+      "palette_min": 1,
+      "palette_max": 24,
+      "partitions_visited": 116867
+    },
+    "non_claims": [
+      "No statement for arbitrary ladder length",
+      "No novelty or external refereeing claim",
+      "Maximum-color proofs are separate from this finite computation"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-15T18:24:06.776654+00:00",
+    "runtime_seconds": 0.443692,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 60.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/ladders.py",
+    "src/color_patterns.py",
+    "src/cube_symmetry.py",
+    "src/edge_coloring.py",
+    "src/rainbow_constraints.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_inclusion_exclusion.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/sparse_rainbow.py",
+    "experiments/rainbow_inclusion_exclusion.py",
+    "experiments/ladder_matchings.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/ladders.py",
+      "sha256": "5d3b8fa15551b0add51441fd0dc180e0a1eaa374f79944a687617279e9b96eee",
+      "sha256_after": "5d3b8fa15551b0add51441fd0dc180e0a1eaa374f79944a687617279e9b96eee"
+    },
+    {
+      "path": "src/color_patterns.py",
+      "sha256": "c0c7daf037775a521eea24512f2f73713736d0bca8262390d1b77ac49e5a8553",
+      "sha256_after": "c0c7daf037775a521eea24512f2f73713736d0bca8262390d1b77ac49e5a8553"
+    },
+    {
+      "path": "src/cube_symmetry.py",
+      "sha256": "288e0ceccffdf65b065e5856c43ced65d32041e4c34939c24610adfda333f624",
+      "sha256_after": "288e0ceccffdf65b065e5856c43ced65d32041e4c34939c24610adfda333f624"
+    },
+    {
+      "path": "src/edge_coloring.py",
+      "sha256": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0",
+      "sha256_after": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0"
+    },
+    {
+      "path": "src/rainbow_constraints.py",
+      "sha256": "a7ad45e0a273196491b71ec2eb2fa330b024c27f3f8fddcad8ceeed27293e5cc",
+      "sha256_after": "a7ad45e0a273196491b71ec2eb2fa330b024c27f3f8fddcad8ceeed27293e5cc"
+    },
+    {
+      "path": "src/rainbow_probability.py",
+      "sha256": "c65184702a9bd34a8dd70fb6853a5d59c0bda52a29db94a6db9458439039674e",
+      "sha256_after": "c65184702a9bd34a8dd70fb6853a5d59c0bda52a29db94a6db9458439039674e"
+    },
+    {
+      "path": "src/rainbow_inclusion_exclusion.py",
+      "sha256": "699876151048f54ee7ce98f9c76f3ffec1a56bc90ed618a9bb2e3cd672551491",
+      "sha256_after": "699876151048f54ee7ce98f9c76f3ffec1a56bc90ed618a9bb2e3cd672551491"
+    },
+    {
+      "path": "experiments/rainbow_complete_bipartite.py",
+      "sha256": "b42444c2a1205561184dbc2ad17941a25654f7e6a924d726c8a72230db7d417c",
+      "sha256_after": "b42444c2a1205561184dbc2ad17941a25654f7e6a924d726c8a72230db7d417c"
+    },
+    {
+      "path": "experiments/sparse_rainbow.py",
+      "sha256": "7f727c192e0379dd99bb7566421529f50559a332fa1e8e5fe9efaf71c92118d6",
+      "sha256_after": "7f727c192e0379dd99bb7566421529f50559a332fa1e8e5fe9efaf71c92118d6"
+    },
+    {
+      "path": "experiments/rainbow_inclusion_exclusion.py",
+      "sha256": "1bdfbcd534e872bd051a33a2ae276e98ad5f33df1937b41320db95cb954756e8",
+      "sha256_after": "1bdfbcd534e872bd051a33a2ae276e98ad5f33df1937b41320db95cb954756e8"
+    },
+    {
+      "path": "experiments/ladder_matchings.py",
+      "sha256": "da7f453d0135d8beb9297ec430337ee58310d0562e0cd12313519e7c2b0fe07e",
+      "sha256_after": "da7f453d0135d8beb9297ec430337ee58310d0562e0cd12313519e7c2b0fe07e"
+    }
+  ],
+  "output_directory": "results/runs/ladder-matchings-2026-11-15",
+  "declared_results": [
+    "results/runs/ladder-matchings-2026-11-15/ladder_matchings.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/ladder-matchings-2026-11-15/stdout.txt",
+      "sha256": "b1a8906e07873a105592d686922b7c044144ceb3b8cd9e3aa1bfbe724a2817f5",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/ladder-matchings-2026-11-15/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/ladder-matchings-2026-11-15/ladder_matchings.json",
+      "sha256": "2f0dc53b7fc2cb3513b1aaf5ce24dc0606c132c84f4e795e4bb0ae9881ab9917",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

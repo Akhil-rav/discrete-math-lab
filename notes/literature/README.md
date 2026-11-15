@@ -40,6 +40,10 @@ The [cube-classification source check](cube_classification.md) separately record
 adjacent cubic-bipartite literature, a full-text access limit, and why the finite
 orbit classification carries no novelty claim.
 
+The [ladder source comparison](ladders.md), checked November 15, records the
+fixed-host question, adjacent regular-bipartite literature, and access limits.
+It does not authenticate an external ladder classification or assert novelty.
+
 ## Suggested order
 
 1. [Hall's theorem](../halls_theorem.md), then [rainbow conventions](../rainbow_matchings.md).
