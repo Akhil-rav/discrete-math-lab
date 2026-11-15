@@ -7,7 +7,7 @@ The current implementation can be checked from a clean clone using Python
 python -m tools.verify_repository
 ```
 
-This checks saved files, runs the tests, and reproduces all eight datasets.
+This checks saved files, runs the tests, and reproduces all nine datasets.
 It uses Python's standard library and works offline.
 
 ## Results and test records
@@ -21,6 +21,7 @@ It uses Python's standard library and works offline.
 | Cube incidence proof and collision audit | [Incidence counts](cube_bound_review.md), [subset checks](cube_collision_verification.md) | [Collision certificates](data/cube_collisions.json) |
 | Independent random edge colors | [Proof scope and exact computation](random_rainbow_verification.md) | [Exact probabilities](data/random_rainbow.json) |
 | Matching-event inclusion-exclusion | [Coefficient checks and benchmark protocol](inclusion_exclusion.md) | [Counting polynomials and Bonferroni bounds](data/rainbow_inclusion_exclusion.json) |
+| Weighted matching covers | [Reduction, general ladder proof, and certificate checks](matching_cover_verification.md) | [Nine certificates and all L5 extremizers](data/matching_covers.json) |
 | Small ladders | [Proof checks and exhaustive classification](ladder_verification.md) | [All extremizers and two probability methods](data/ladder_matchings.json) |
 | Random-walk formulas | [Proof and finite formula checks](walk_paper_verification.md) | [Walk examples](algorithm_demos.md) |
 
@@ -33,7 +34,7 @@ runs the current code.
 
 - Local Markdown links and images.
 - JSON syntax, duplicate keys, and non-finite constants.
-- Recorded output hashes and the eight reference datasets.
+- Recorded output hashes and the nine reference datasets.
 - Source hashes attached to the proof notes.
 
 Recorded paths must stay inside the repository. External URLs and Markdown

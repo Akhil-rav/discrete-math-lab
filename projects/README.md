@@ -23,11 +23,12 @@ avoiding every rainbow perfect matching.
 - [Extremal K33 classification](../results/k33_classification.md)
 - [Sparse-host data](../results/data/sparse_rainbow.json)
 - [Cube classification: nine symmetry classes and labeled atlas](../results/cube_classification.md)
+- [Ladder family formula, weighted covers, and all 15 L5 extremizers](../results/matching_covers.md)
 - [Search implementation](../src/rainbow_constraints.py)
 
-The cycle, disjoint-square, and cube maximum-color statements have elementary
-proofs. The cube's complete extremal classification is an exhaustive finite
-computation. Detailed conventions, checks, and limits appear in the report.
+The cycle-union, cube, and ladder maximum-color statements have elementary
+proofs. The finite symmetry classifications retain all extremizers and their
+orbits. Each report states its conventions and links the computations.
 
 ## Random edge colors
 
@@ -36,8 +37,8 @@ probabilities from exhaustive partition histograms on six hosts. It includes
 moment bounds, direct named-color checks, a scientific plot, and the cube's
 large-palette limit. Only the plotting step needs an optional dependency.
 [Read the typeset report](../papers/random_rainbow.pdf).
-An [inclusion-exclusion implementation](../results/inclusion_exclusion.md)
-now independently checks every polynomial coefficient, adds Bonferroni bounds,
+The [inclusion-exclusion implementation](../results/inclusion_exclusion.md)
+independently checks every polynomial coefficient, adds Bonferroni bounds,
 and compares construction time with the partition search.
 
 ## Expansion and random walks
