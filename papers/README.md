@@ -2,8 +2,8 @@
 
 All seven completed mathematical reports have editable LaTeX sources and
 compiled PDFs. The web reports, code, and evidence records remain linked below.
-These are expository notes and finite computational studies; no originality or
-publication is claimed.
+The reports contain mathematical exposition, exact computations, and references
+to the published results used.
 
 | Report | PDF | LaTeX | Web report / evidence |
 |---|---|---|---|
@@ -54,8 +54,9 @@ The cube source and SVG are generated from the checked classification data:
 python -m experiments.render_cube_atlas
 ```
 
-Edit that renderer when changing generated cube prose or diagrams. The other
-six `.tex` files are edited directly. Keep their corresponding Markdown
+The cube paper text is in [its LaTeX template](templates/cube_classification.tex.in);
+the renderer fills in the data table, colors, and diagrams. The other six
+`.tex` files are edited directly. Keep their corresponding Markdown
 arguments and saved-data summaries consistent. Figure regeneration has its own
 optional [Matplotlib dependency](../requirements-figures.txt); the mathematical
 checks remain standard-library-only.

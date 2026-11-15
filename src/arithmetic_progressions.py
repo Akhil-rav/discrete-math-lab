@@ -6,8 +6,9 @@ from itertools import product
 def interval_three_aps(n):
     if n < 1:
         raise ValueError("Need n >= 1.")
-    return tuple((a, a+d, a+2*d) for a in range(n)
-                 for d in range(1, (n-1-a)//2 + 1))
+    return tuple(
+        (a, a + d, a + 2 * d) for a in range(n) for d in range(1, (n - 1 - a) // 2 + 1)
+    )
 
 
 def group_three_aps(moduli):
@@ -23,8 +24,10 @@ def group_three_aps(moduli):
     progressions = set()
     for a in elements:
         for d in elements:
-            terms = {tuple((x+t*y) % m for x, y, m in zip(a, d, moduli))
-                     for t in range(3)}
+            terms = {
+                tuple((x + t * y) % m for x, y, m in zip(a, d, moduli))
+                for t in range(3)
+            }
             if len(terms) == 3:
                 progressions.add(tuple(sorted(index[x] for x in terms)))
     return elements, tuple(sorted(progressions))

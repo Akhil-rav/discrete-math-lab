@@ -1,9 +1,4 @@
-"""Matching algorithms for small bipartite graphs.
-
-The first routine uses augmenting paths to compute a maximum matching.
-It is written directly rather than delegating to a graph package so the
-algorithm can be studied and modified in later experiments.
-"""
+"""Bipartite maximum matching by augmenting paths."""
 
 from __future__ import annotations
 

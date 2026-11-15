@@ -3,7 +3,7 @@
 **Outcome:** implementation and finite assertion verified in the stated range.
 This is a new bounded extension; the original dataset and historical manifest
 remain unchanged. The [report](../projects/rainbow-matchings/report.md) defines
-the hosts, equality-pattern convention, pruning proof, counts, and non-claims.
+the hosts, equality-pattern convention, pruning proof, counts, and tested range.
 
 - Python 3.13.7 on Windows 11; exact integers; no dependencies or RNG.
 - `python -m unittest discover -s tests -v`: **15 tests passed**. New tests compare
@@ -30,6 +30,5 @@ Recorded result SHA-256:
 
 Coverage is surviving partition leaves plus exactly counted disjoint rejected
 subtrees, not a claim to visit every full leaf. The new solver is capped at twelve
-edges. Full mathematical novelty, general cubic-graph formulas, and classification
-of cube extremizers up to symmetry are not established. No paper submission
-is claimed.
+edges. This run covers six fixed hosts; cube symmetry classes are computed
+by the separate classification experiment.

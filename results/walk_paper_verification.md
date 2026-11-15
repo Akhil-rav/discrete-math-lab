@@ -1,12 +1,11 @@
-# Walk paper: scoped self-review and verification
+# Random-walk formula checks
 
-Reviewed November 14, 2026. **Self-review**, not independent refereeing.
+Recorded November 14, 2026.
 
-## Proof obligations
+## Formulas
 
-Primary verdict for each proposition: **proved as written**, under the stated
-hypotheses. All proof dependencies are elementary internal arguments; the
-computation is a separate implementation check, not a proof premise.
+The paper gives elementary proofs of the following formulas. The computations
+compare their finite instances with rational walk evolution.
 
 | Claim | Domain / conclusion | Decisive check |
 |---|---|---|
@@ -51,19 +50,14 @@ No novelty or complete literature search is claimed.
 - [Contract](contracts/walk-formulas.json),
   [manifest](runs/walk-formulas-2026-11-14/manifest.json),
   [test output](runs/walk-formulas-2026-11-14/stderr.txt).
-- Recorded run status: **completed**; manifest validation passed with current
-  input hashes. Test inputs were unchanged during the recorded run.
+- Recorded run status: **completed**; manifest validation passed at that
+  checkpoint. Test inputs were unchanged during the recorded run.
 
 ## Typesetting and proofreading
 
-All new source prose, symbols, parameter ranges, proof environments,
-references, and table entries were self-reviewed. No unresolved local
-notation or proofreading issue was found. The desktop LaTeX compiler
-reported success. The exported three-page PDF was also compiled using
+The three-page PDF was compiled using
 Tectonic 0.17.0 with the official tlextras-2022.0r0 bundle; compilation
 reported no overfull boxes, undefined references, or missing characters.
 Every rendered page was visually inspected for layout and legibility.
-
-These checks do not substitute for independent mathematical review.
 
 Reviewed source SHA-256: `69c0aa20c8711cf09b6cb41072ca83636a1d6cf8e375525f1489b371c115e8ac`.

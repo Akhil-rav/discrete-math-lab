@@ -18,8 +18,8 @@ python -m experiments.random_rainbow --check results/data/random_rainbow.json
 python -m experiments.cycle_unions --check results/data/cycle_unions.json
 ```
 
-State each mathematical change's exact domain, conventions, finite bound, and
-non-claims. Record the command, raw data or digest, revision, interpreter version,
+State each mathematical change's domain, conventions, and tested range.
+Record the command, raw data or digest, revision, interpreter version,
 and whether inputs changed during execution. Separate machine-dependent run
 provenance from deterministic result data.
 

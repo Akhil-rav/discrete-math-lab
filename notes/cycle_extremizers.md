@@ -230,4 +230,4 @@ $m-2$, $m-1$, and $m$ color bands. The twelve-edge cases do **not** claim
 full Bell-number coverage. Matching constraints are independently recovered
 from edge subsets. See the [data](../results/data/cycle_unions.json) and
 [proof and computation review](../results/cycle_union_verification.md) for
-precise coverage, conventions, and self-review limits. No novelty is claimed.
+the exact coverage and conventions.
