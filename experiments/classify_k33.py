@@ -7,7 +7,8 @@ import json
 from collections import Counter
 
 from experiments.rainbow_complete_bipartite import (
-    has_rainbow_perfect_matching, normalized_colorings,
+    has_rainbow_perfect_matching,
+    normalized_colorings,
 )
 from src.color_patterns import canonical_square, square_orbit
 
@@ -34,13 +35,20 @@ def run():
             raise RuntimeError("Orbit closure or size check failed.")
         if 72 % size:
             raise RuntimeError("Orbit size must divide |Aut(K33)| = 72.")
-        records.append({
-            "representative": list(representative), "orbit_size": size,
-            "stabilizer_size": 72 // size,
-            "color_class_sizes": sorted(Counter(representative).values()),
-        })
-    return {"patterns_checked": checked, "maximum_avoiding_colors": best,
-            "extremal_patterns": len(extremal), "symmetry_classes": records}
+        records.append(
+            {
+                "representative": list(representative),
+                "orbit_size": size,
+                "stabilizer_size": 72 // size,
+                "color_class_sizes": sorted(Counter(representative).values()),
+            }
+        )
+    return {
+        "patterns_checked": checked,
+        "maximum_avoiding_colors": best,
+        "extremal_patterns": len(extremal),
+        "symmetry_classes": records,
+    }
 
 
 if __name__ == "__main__":

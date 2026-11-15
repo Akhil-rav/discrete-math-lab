@@ -39,11 +39,7 @@ def has_rainbow_perfect_matching(
         raise ValueError("Need n >= 1 and exactly n*n edge colors.")
 
     coloring = EdgeColoring(
-        {
-            (i, j): colors[i * n + j]
-            for i in range(n)
-            for j in range(n)
-        }
+        {(i, j): colors[i * n + j] for i in range(n) for j in range(n)}
     )
 
     return any(
@@ -156,10 +152,7 @@ def main() -> None:
 
         print(f"K_{{{n},{n}}}")
         print(f"  color patterns checked: {checked}")
-        print(
-            "  maximum colors with no rainbow perfect matching: "
-            f"{maximum_colors}"
-        )
+        print("  maximum colors with no rainbow perfect matching: " f"{maximum_colors}")
         print(f"  extremal patterns: {extremal_count}")
         print(f"  avoiding patterns by color count: {avoiding_by_colors}")
         print("  one extremal pattern:")

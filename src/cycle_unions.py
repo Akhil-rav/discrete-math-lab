@@ -1,4 +1,5 @@
 """Fixed-edge models and the proved extremal construction for even-cycle unions."""
+
 from itertools import combinations
 
 from src.color_patterns import normalize
@@ -13,14 +14,18 @@ def cycle_union(half_lengths):
     """
     half_lengths = tuple(half_lengths)
     if not half_lengths or any(type(n) is not int or n < 2 for n in half_lengths):
-        raise ValueError('Need a nonempty tuple of integer half-lengths >= 2.')
+        raise ValueError("Need a nonempty tuple of integer half-lengths >= 2.")
     edges, alternating = [], []
     offset = 0
     for n in half_lengths:
-        length = 2*n
-        edges.extend((offset+j, offset+(j+1) % length) for j in range(length))
-        alternating.append((tuple(range(offset, offset+length, 2)),
-                            tuple(range(offset+1, offset+length, 2))))
+        length = 2 * n
+        edges.extend((offset + j, offset + (j + 1) % length) for j in range(length))
+        alternating.append(
+            (
+                tuple(range(offset, offset + length, 2)),
+                tuple(range(offset + 1, offset + length, 2)),
+            )
+        )
         offset += length
     return tuple(edges), tuple(alternating)
 
