@@ -1,0 +1,1617 @@
+{
+  "conventions": "Fixed edges; color names ignored. Lk = Pk square K2.",
+  "coefficient_order": "ascending powers of q",
+  "hosts": {
+    "L2": {
+      "columns": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "matchings": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "total_partitions": 15,
+      "avoiding_histogram": {
+        "1": 1,
+        "2": 1
+      },
+      "maximum_avoiding_colors": 2,
+      "extremal_partitions": [
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "automorphism_order": 8,
+      "symmetry_classes": [
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "orbit_size": 1,
+          "stabilizer_size": 8,
+          "color_class_sizes": [
+            2,
+            2
+          ]
+        }
+      ],
+      "inclusion_exclusion": {
+        "union_coefficients": [
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "intersection_sums": [
+          [
+            0,
+            0,
+            0,
+            -2,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            -2,
+            1
+          ]
+        ],
+        "event_subsets": 3,
+        "distinct_conflict_graphs": 3,
+        "chromatic_subproblems": 5
+      },
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "3/4"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "8/9"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "15/16"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "24/25"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "35/36"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "48/49"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "63/64"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "80/81"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "99/100"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "120/121"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "143/144"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "168/169"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "195/196"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "224/225"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "255/256"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "288/289"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "323/324"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "360/361"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "399/400"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "440/441"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "483/484"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "528/529"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "575/576"
+        }
+      ]
+    },
+    "L3": {
+      "columns": 3,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "matchings": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          4,
+          6
+        ],
+        [
+          2,
+          3,
+          5
+        ]
+      ],
+      "total_partitions": 877,
+      "avoiding_histogram": {
+        "1": 1,
+        "2": 63,
+        "3": 108,
+        "4": 27
+      },
+      "maximum_avoiding_colors": 4,
+      "extremal_partitions": [
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          2,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          2,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          2,
+          3,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          2,
+          3,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          2,
+          3,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          3,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          3,
+          2,
+          3
+        ]
+      ],
+      "automorphism_order": 4,
+      "symmetry_classes": [
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            2,
+            3
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            0
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            1,
+            2,
+            3,
+            2
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            2,
+            0,
+            2,
+            3
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            2,
+            3
+          ],
+          "orbit_size": 2,
+          "stabilizer_size": 2,
+          "color_class_sizes": [
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            2,
+            3
+          ],
+          "orbit_size": 2,
+          "stabilizer_size": 2,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            4
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            0,
+            2,
+            3,
+            0
+          ],
+          "orbit_size": 2,
+          "stabilizer_size": 2,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            4
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            0,
+            2,
+            3,
+            2
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            3
+          ],
+          "orbit_size": 1,
+          "stabilizer_size": 4,
+          "color_class_sizes": [
+            1,
+            2,
+            2,
+            2
+          ]
+        }
+      ],
+      "inclusion_exclusion": {
+        "union_coefficients": [
+          0,
+          8,
+          -36,
+          54,
+          -27,
+          0,
+          0,
+          1
+        ],
+        "intersection_sums": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            -9,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            -36,
+            39,
+            -18,
+            3
+          ],
+          [
+            0,
+            8,
+            -36,
+            66,
+            -63,
+            33,
+            -9,
+            1
+          ]
+        ],
+        "event_subsets": 7,
+        "distinct_conflict_graphs": 7,
+        "chromatic_subproblems": 59
+      },
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "386/729"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "387/512"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "13428/15625"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "665/729"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "110790/117649"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "31437/32768"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "515816/531441"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "15282/15625"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "1741770/1771561"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "368335/373248"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "4776156/4826809"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "116649/117649"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "11311118/11390625"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "2084985/2097152"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "24019920/24137569"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "529244/531441"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "46879506/47045881"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "7975611/8000000"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "85539140/85766121"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "1767465/1771561"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "147735126/148035889"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "23844997/23887872"
+        }
+      ]
+    },
+    "L4": {
+      "columns": 4,
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "matchings": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          6,
+          9
+        ],
+        [
+          0,
+          3,
+          5,
+          8
+        ],
+        [
+          2,
+          3,
+          4,
+          7
+        ],
+        [
+          4,
+          6,
+          7,
+          9
+        ]
+      ],
+      "total_partitions": 115975,
+      "avoiding_histogram": {
+        "1": 1,
+        "2": 511,
+        "3": 9330,
+        "4": 17629,
+        "5": 7710,
+        "6": 948,
+        "7": 25
+      },
+      "maximum_avoiding_colors": 7,
+      "extremal_partitions": [
+        [
+          0,
+          0,
+          1,
+          0,
+          2,
+          3,
+          4,
+          2,
+          5,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0,
+          4,
+          3,
+          5,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          2,
+          4,
+          3,
+          5,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          3,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          3,
+          2,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          3,
+          4,
+          6
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0,
+          3,
+          0,
+          4,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0,
+          3,
+          4,
+          5,
+          6,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0,
+          3,
+          4,
+          5,
+          6,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          0,
+          0,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          0,
+          3,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          1,
+          3,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          0,
+          6,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          2,
+          6,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          3,
+          6,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          3,
+          6,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          3,
+          4,
+          5,
+          3,
+          6,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          3,
+          0,
+          4,
+          5,
+          6,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          3,
+          2,
+          4,
+          5,
+          6,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          3,
+          4,
+          5,
+          6,
+          2,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          3,
+          4,
+          5,
+          6,
+          4,
+          5
+        ]
+      ],
+      "automorphism_order": 4,
+      "symmetry_classes": [
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            0,
+            2,
+            3,
+            4,
+            2,
+            5,
+            6
+          ],
+          "orbit_size": 2,
+          "stabilizer_size": 2,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            0,
+            4,
+            3,
+            5,
+            6
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            2,
+            4,
+            3,
+            5,
+            6
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "representative": [
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            3,
+            4,
+            6
+          ],
+          "orbit_size": 2,
+          "stabilizer_size": 2,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            0,
+            3,
+            0,
+            4,
+            5,
+            6
+          ],
+          "orbit_size": 2,
+          "stabilizer_size": 2,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            4
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            0,
+            3,
+            4,
+            5,
+            6,
+            0
+          ],
+          "orbit_size": 2,
+          "stabilizer_size": 2,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            4
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            0,
+            3,
+            4,
+            5,
+            6,
+            4
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            4
+          ],
+          "orbit_size": 4,
+          "stabilizer_size": 1,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "representative": [
+            0,
+            1,
+            2,
+            0,
+            3,
+            4,
+            5,
+            3,
+            6,
+            5
+          ],
+          "orbit_size": 1,
+          "stabilizer_size": 4,
+          "color_class_sizes": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ]
+        }
+      ],
+      "inclusion_exclusion": {
+        "union_coefficients": [
+          0,
+          -1656,
+          3408,
+          -706,
+          -2734,
+          2135,
+          -423,
+          -25,
+          0,
+          0,
+          1
+        ],
+        "intersection_sums": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -30,
+            55,
+            -30,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            180,
+            -840,
+            1445,
+            -1205,
+            525,
+            -115,
+            10
+          ],
+          [
+            0,
+            -216,
+            1836,
+            -7038,
+            13913,
+            -15693,
+            10728,
+            -4536,
+            1161,
+            -165,
+            10
+          ],
+          [
+            0,
+            -6480,
+            27108,
+            -50676,
+            55265,
+            -38321,
+            17403,
+            -5170,
+            971,
+            -105,
+            5
+          ],
+          [
+            0,
+            -7920,
+            28680,
+            -44344,
+            38798,
+            -21333,
+            7697,
+            -1834,
+            280,
+            -25,
+            1
+          ]
+        ],
+        "event_subsets": 31,
+        "distinct_conflict_graphs": 31,
+        "chromatic_subproblems": 1459
+      },
+      "palettes": [
+        {
+          "q": 1,
+          "rainbow_probability": "0"
+        },
+        {
+          "q": 2,
+          "rainbow_probability": "0"
+        },
+        {
+          "q": 3,
+          "rainbow_probability": "0"
+        },
+        {
+          "q": 4,
+          "rainbow_probability": "12357/32768"
+        },
+        {
+          "q": 5,
+          "rainbow_probability": "1230984/1953125"
+        },
+        {
+          "q": 6,
+          "rainbow_probability": "27055/34992"
+        },
+        {
+          "q": 7,
+          "rainbow_probability": "34479000/40353607"
+        },
+        {
+          "q": 8,
+          "rainbow_probability": "15141105/16777216"
+        },
+        {
+          "q": 9,
+          "rainbow_probability": "40127024/43046721"
+        },
+        {
+          "q": 10,
+          "rainbow_probability": "3715929/3906250"
+        },
+        {
+          "q": 11,
+          "rainbow_probability": "2273104080/2357947691"
+        },
+        {
+          "q": 12,
+          "rainbow_probability": "2581975/2654208"
+        },
+        {
+          "q": 13,
+          "rainbow_probability": "10381666680/10604499373"
+        },
+        {
+          "q": 14,
+          "rainbow_probability": "634991643/645657712"
+        },
+        {
+          "q": 15,
+          "rainbow_probability": "4215125096/4271484375"
+        },
+        {
+          "q": 16,
+          "rainbow_probability": "8498136465/8589934592"
+        },
+        {
+          "q": 17,
+          "rainbow_probability": "117548575200/118587876497"
+        },
+        {
+          "q": 18,
+          "rainbow_probability": "85467755/86093442"
+        },
+        {
+          "q": 19,
+          "rainbow_probability": "320723451936/322687697779"
+        },
+        {
+          "q": 20,
+          "rainbow_probability": "63670739013/64000000000"
+        },
+        {
+          "q": 21,
+          "rainbow_probability": "9762937960/9805926501"
+        },
+        {
+          "q": 22,
+          "rainbow_probability": "37585171575/37727163056"
+        },
+        {
+          "q": 23,
+          "rainbow_probability": "78056221320/78310985281"
+        },
+        {
+          "q": 24,
+          "rainbow_probability": "36587944393/36691771392"
+        }
+      ]
+    }
+  }
+}

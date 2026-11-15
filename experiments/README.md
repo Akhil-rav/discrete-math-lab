@@ -23,6 +23,7 @@ python -m experiments.cube_collision_audit --check results/data/cube_collisions.
 python -m experiments.random_rainbow --check results/data/random_rainbow.json
 python -m experiments.cycle_unions --check results/data/cycle_unions.json
 python -m experiments.rainbow_inclusion_exclusion --check results/data/rainbow_inclusion_exclusion.json
+python -m experiments.ladder_matchings --check results/data/ladder_matchings.json
 ```
 
 To save fresh output without replacing the reference data:
@@ -40,6 +41,7 @@ python -m experiments.reproduce --output results/local-run.json
 | `experiments.classify_k33` | Group the 87 extremizers by Aut(K33) and color renaming | Full 72-element vertex action; closure and orbit/stabilizer checks |
 | `experiments.classify_cube` | All S(12,7)=627,396 seven-color cube partitions, then all 174 avoiding partitions modulo graph symmetry | Nine classes; full 48-element action checked against all 8! vertex maps; matching-subset oracle |
 | `experiments.cube_collision_audit` | Every nonempty cube edge subset and all 174 extremizers | 4,095 subset checks, incidence constants, and the proved extremal balance U+O=1; separate bit-mask and color-counter oracles |
+| `experiments.ladder_matchings` | All partitions on L2, L3, L4; every extremizer and exact probabilities for palettes 1..24 | 116,867 unpruned partitions; separate pruned solver; full vertex-automorphism and named-color oracles; coefficientwise polynomial agreement |
 | `experiments.random_rainbow` | Exact probabilities and moment bounds on six hosts for palettes 1..24, plus five cube tail examples | Weighted partition counts; direct named-color, cycle-formula, and overlap-event oracles |
 | `experiments.rainbow_inclusion_exclusion` | Exact counting polynomials and order-two/order-three Bonferroni bounds on the same six hosts | All coefficients agree with the histograms; 144 palette rows agree; matching families checked by edge subsets |
 | `experiments.rainbow_progressions` | Exact aw for intervals/cyclic orders 3..9 and three specified products | All Bn partitions; independent equations for interval/cyclic/product AP generators |

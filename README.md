@@ -30,6 +30,7 @@ presentation of the saved data.
 | Topic | Artifact |
 |---|---|
 | Disjoint unions of even cycles | [General maximum and complete extremal classification](papers/cycle_extremizers.pdf) · [Proof and finite checks](results/cycle_union_verification.md) |
+| Small ladder graphs | [Proved bounds, 53 extremizers, and exact probabilities](results/ladder_matchings.md) · [Six-page matching report](papers/matching_foundations.pdf) |
 | Sparse bipartite hosts | [Six exact searches through twelve edges](projects/rainbow-matchings/report.md) |
 | Complete bipartite symmetry | [Four classes among 87 extremal K3,3 partitions](results/k33_classification.md) · [Typeset report](papers/matching_foundations.pdf) |
 | Matching theory | [Hall's theorem and 4,477 regular-graph checks](papers/matching_foundations.pdf) |
@@ -46,7 +47,7 @@ the reports and literature notes; computational results include their tested ran
 ## Reproduce
 
 Python **3.11+**; mathematical computations use the standard library. From the
-repository root, one command runs the integrity checks, tests, and all seven
+repository root, one command runs the integrity checks, tests, and all eight
 reference-data reproductions. To start from a fresh clone:
 
 ```sh

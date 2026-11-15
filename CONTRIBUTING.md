@@ -17,6 +17,7 @@ python -m experiments.cube_collision_audit --check results/data/cube_collisions.
 python -m experiments.random_rainbow --check results/data/random_rainbow.json
 python -m experiments.cycle_unions --check results/data/cycle_unions.json
 python -m experiments.rainbow_inclusion_exclusion --check results/data/rainbow_inclusion_exclusion.json
+python -m experiments.ladder_matchings --check results/data/ladder_matchings.json
 ```
 
 State each mathematical change's domain, conventions, and tested range.
