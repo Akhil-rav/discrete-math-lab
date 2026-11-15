@@ -23,11 +23,11 @@ We record the standard regular-bipartite corollary of Hall's theorem, its
 finite algorithm checks, and small rainbow-perfect-matching searches. The
 $K_{3,3}$ experiment classifies 87 extremal fixed-edge partitions into four
 symmetry classes. General matching thresholds quoted here are known results;
-the classifications are finite computations, without a novelty claim.
+the $K_{3,3}$ classification is a finite computation.
 For the first three ladders, we prove the maximum color counts and compute
 all extremizers and their exact random-coloring probabilities by two methods.
 We then give a weighted-cover formulation of color deficit, prove
-$A(P_k\square K_2)=3k-5$ for every $k\ge3$, and classify all fifteen
+$A(P_k\square K_2)=3k-5$ for every $k\ge3$, and directly count all fifteen
 extremizers of the five-column ladder.
 \end{abstract}
 
@@ -455,8 +455,179 @@ The tiling counts $2,3,5,8$ for $k=2,3,4,5$ give
 \end{array}
 \]
 Only the maximum-color row has been established for all lengths.
-The extremizer row records the four computed populations; no all-length
-classification or novelty claim is made.
+The extremizer row records finite populations; the five-column count is
+proved directly in Section~\ref{sec:l5-count}. No all-length classification
+or novelty claim is made.
+
+\newpage
+\section{A direct count on the five-column ladder}\label{sec:l5-count}
+Write $H_i=\{t_i,b_i\}$ for the rail pair across gap $i$.
+Since $A(L_5)=10$, an extremizer has deficit three. Its nonsingleton
+classes have sizes four, three and two, or two and two and two.
+\begin{theorem}
+The five-column ladder has exactly fifteen extremal fixed-edge partitions:
+four with a quadruple, eight with a triple and a pair, and three with
+three pairs. They form six classes under graph automorphisms and color renaming.
+\end{theorem}
+\begin{proof}
+A perfect matching is specified by its nonadjacent horizontal gaps.
+These are the empty set, four single gaps, and the pairs $02,03,13$.
+Let $A$ be the all-rung matching, $S_i$ the matching using $H_i$, and
+$D_{ij}$ the matching using $H_i,H_j$. The complete list is
+\begin{center}\small
+\begin{tabular}{cll}
+\toprule
+Matching & Rung columns & Rail pairs\\
+\midrule
+$A$ & $0,1,2,3,4$ & none\\
+$S_0$ & $2,3,4$ & $H_0$\\
+$S_1$ & $0,3,4$ & $H_1$\\
+$S_2$ & $0,1,4$ & $H_2$\\
+$S_3$ & $0,1,2$ & $H_3$\\
+$D_{02}$ & $4$ & $H_0,H_2$\\
+$D_{03}$ & $2$ & $H_0,H_3$\\
+$D_{13}$ & $0$ & $H_1,H_3$\\
+\bottomrule
+\end{tabular}
+\end{center}
+A class \emph{blocks} a matching if they share at least two edges.
+In particular, $D_{02}$ and $D_{13}$ are disjoint edge sets.
+
+\medskip\noindent\emph{One quadruple.}
+Let $Q$ be the repeated class. To block both disjoint matchings
+$D_{02},D_{13}$, it must have exactly two edges in each. Blocking
+$A$ also requires two rungs; the only available rungs are $r_4,r_0$.
+Hence
+\[
+ Q=\{r_0,r_4,x,y\},\qquad
+ x\in H_0\cup H_2,\quad y\in H_1\cup H_3 .
+\]
+Since $D_{03}$ contains neither end rung, it must contain both $x,y$.
+This forces $x\in H_0$ and $y\in H_3$. Conversely, each such choice
+blocks all eight matchings. The two independent rail choices give
+$2\cdot2=4$ partitions.
+
+\medskip
+We will use the fact that a pair blocks at most three matchings.
+Different-gap rails occur together only in their unique double-gap
+matching. A rung and a rail occur together at most twice: an interior
+gap occurs only twice, while the three matchings using an end gap have
+no common rung. A whole rail pair occurs at most three times.
+Two rungs occur in $A$ and in at most two single-gap matchings, since
+two distinct rung columns are incident to at least two of the four gaps.
+
+\newpage
+\noindent\emph{A triple and a pair.}
+The triple $T$ must block at least five matchings, because the pair
+blocks at most three.
+
+If $T$ has at most one rung, it misses $A$ and blocks at most two
+single-gap matchings. With one rung it has only two rails; with no
+rung it needs a complete rail pair for each such matching.
+It blocks at most two double-gap matchings, since a triple cannot
+meet both disjoint sets $D_{02},D_{13}$ twice. Thus it blocks at most four.
+
+If $T$ has three rungs, it blocks no double-gap matching.
+Blocking five requires blocking $A$ and all four $S_i$. No two chosen
+rung columns can be adjacent, so the only possibility is
+$T=\{r_0,r_2,r_4\}$. The three remaining double-gap matchings have
+empty intersection; no pair can block them all.
+
+Now let $T=\{r_a,r_b,x\}$ with $x\in H_j$.
+The following counts follow from the eight displayed matchings.
+Both rails of $H_j$ have identical matching incidences. Reversal sends
+$(a,b,j)$ to $(4-b,4-a,3-j)$, supplying the four omitted rung pairs.
+\begin{center}\small
+\begin{tabular}{crrrr}
+\toprule
+Rung columns & $j=0$ & $j=1$ & $j=2$ & $j=3$\\
+\midrule
+$(0,1)$ & 3 & 5 & 3 & 4\\
+$(0,2)$ & 4 & 4 & 3 & 4\\
+$(0,3)$ & 3 & 3 & 3 & 4\\
+$(0,4)$ & 5 & 4 & 4 & 5\\
+$(1,2)$ & 4 & 2 & 3 & 3\\
+$(1,3)$ & 2 & 2 & 2 & 2\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example, $\{r_0,r_1,t_1\}$ blocks exactly
+$A,S_1,S_2,S_3,D_{13}$. Only the following four forms reach five:
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+Triple & Rail choice & Forced pair\\
+\midrule
+$\{r_0,r_1,x\}$ & $x\in H_1$ & $H_0$\\
+$\{r_3,r_4,x\}$ & $x\in H_2$ & $H_3$\\
+$\{r_0,r_4,x\}$ & $x\in H_0$ & $H_3$\\
+$\{r_0,r_4,x\}$ & $x\in H_3$ & $H_0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+In the first and fourth rows, the unblocked matchings are
+$S_0,D_{02},D_{03}$, whose intersection is exactly $H_0$.
+In the other rows they are $S_3,D_{03},D_{13}$, with intersection $H_3$.
+Thus the pair is forced, is disjoint from the triple, and blocks every
+remaining matching. Four forms, each with two rail choices, give eight
+distinct partitions.
+
+\newpage
+\noindent\emph{Three pairs.}
+At least two pairs must each block three matchings, or the total coverage
+is at most $3+2+2=7$. Exactly five pairs block three:
+\[
+ U=\{r_0,r_1\},\quad V=\{r_0,r_4\},\quad W=\{r_3,r_4\},
+ \quad X=H_0,\quad Y=H_3 .
+\]
+For rung pairs, exactly $U,V,W$ leave two gaps incident to neither rung.
+The rail-pair and rung--rail cases follow from the earlier pair bounds.
+Choose two of these five pairs, $P,Q$, as color classes; they must be
+disjoint. Every matching not blocked by either must contain the third
+pair. That pair must lie in
+\[
+ K(P,Q)=
+ \left(\bigcap_{\substack{M:\,P\nsubseteq M\\Q\nsubseteq M}}M\right)
+ \setminus(P\cup Q).
+\]
+All eight disjoint choices give
+\begin{center}\small
+\begin{tabular}{cl@{\qquad}cl}
+\toprule
+$P,Q$ & $K(P,Q)$ & $P,Q$ & $K(P,Q)$\\
+\midrule
+$U,W$ & $\varnothing$ & $V,Y$ & $H_0$\\
+$U,X$ & $H_1$ & $W,X$ & $\{r_0\}$\\
+$U,Y$ & $\{r_4\}$ & $W,Y$ & $H_2$\\
+$V,X$ & $H_3$ & $X,Y$ & $V$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The only distinct three-pair families are therefore
+\[
+ \{U,H_0,H_1\},\qquad
+ \{V,H_0,H_3\},\qquad
+ \{W,H_2,H_3\}.
+\]
+The middle family arises from three choices of $P,Q$ and is counted only
+once. Each listed family consists of disjoint pairs and blocks all eight
+matchings. This completes the count $4+8+3=15$.
+
+\medskip\noindent\emph{The symmetry classes.}
+The full automorphism group has order four, generated by rail exchange
+$\sigma$ and column reversal $\rho$. An automorphism sends a degree-two
+corner to one of four corners. Its degree-two and degree-three neighbors
+then have forced images; continuing along the rails forces every vertex.
+The four geometric maps realize all four corner choices.
+
+The quadruples split into two orbits of size two: their selected end rails
+are on the same or opposite rails. The first two triple-and-pair forms
+give one orbit of size four, and the last two give another.
+For the three-pair families, $\sigma$ fixes each and $\rho$ exchanges
+the first and third while fixing the middle. These give orbits of sizes
+two and one. In the saved representative order the sizes are
+$4,2,2,2,4,1$, with stabilizers $1,2,2,2,1,4$.
+\end{proof}
 
 \newpage
 \section{Five-column classification and cover certificates}
@@ -467,8 +638,9 @@ and gives $F(0)=3$, independently reproducing the ten-color maximum.
 The eight other saved host maxima are also reproduced by the cover method:
 the original six sparse hosts and the three- and four-column ladders.
 
-The full deficit-three partition band contains 39,325 candidates. Exactly
-fifteen avoid a rainbow perfect matching. Exchanging the rails and reversing columns generate
+The independent deficit-three partition search contains 39,325 candidates.
+Exactly fifteen avoid a rainbow perfect matching, agreeing with the direct
+proof in Section~\ref{sec:l5-count}. Exchanging the rails and reversing columns generate
 the four-element automorphism group, recovered independently by checking
 all degree-preserving vertex bijections. The six complete orbit classes are
 \begin{center}\small

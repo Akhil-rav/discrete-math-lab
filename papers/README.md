@@ -21,9 +21,9 @@ the six-host comparison, higher-order bounds, measured timings, the figure,
 and the large-palette limit. The matching
 foundations report collects the Hall corollary, 4,477 graph checks, known
 complete-bipartite thresholds, four K33 classes, sparse-host searches, and the
-ladder studies. Its nine pages include the general ladder bound, weighted-cover
-reduction and certificates, four finite ladder symmetry classifications, and exact
-probabilities for the first three ladders.
+ladder studies. Its twelve pages include the general ladder bound, weighted-cover
+reduction and certificates, a direct proof of the fifteen five-column extremizers and six symmetry classes,
+and exact probabilities for the first three ladders.
 The cycle paper proves A(G)=|E(G)|-2 for every nonempty union of even cycles
 and counts all fixed-edge extremizers as the sum of binomial(n_i,2)^2 over
 its components. It retains the cycle and two-square proofs as introductory cases.

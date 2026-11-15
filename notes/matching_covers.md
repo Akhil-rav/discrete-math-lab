@@ -133,8 +133,9 @@ not a premise of the theorem.
 ## The five-column classification
 
 For $L_5$, the theorem gives $A(L_5)=10$. The
-[finite report](../results/matching_covers.md) records all 15 extremal
-partitions and their six symmetry classes. This enumeration covers every
+[direct counting proof](l5_extremizers.md) now derives all fifteen extremal
+partitions and their six symmetry classes. The
+[finite report](../results/matching_covers.md) retains the computational check. This enumeration covers every
 partition of deficit at most three, not the full Bell number $B_{13}$.
 The [source comparison](literature/ladders.md) records the literature limits.
 The formula and reduction are presented as self-contained elementary
