@@ -35,6 +35,7 @@ PROOF_REVIEWS = {
     "notes/cycle_extremizers.md": "results/cycle_union_verification.md",
     "notes/ladders.md": "results/ladder_verification.md",
     "notes/matching_covers.md": "results/matching_cover_verification.md",
+    "notes/l5_extremizers.md": "results/l5_extremizer_proof.md",
 }
 REPRODUCTIONS = (
     ("experiments.reproduce", "results/data/small_cases.json"),

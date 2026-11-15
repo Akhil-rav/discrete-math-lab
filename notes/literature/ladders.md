@@ -33,6 +33,10 @@ The [new note](../matching_covers.md) supplies its own elementary proofs of
 both the cover reduction and $A(L_k)=3k-5$ for $k\ge3$. The earlier cubic-host
 access limits remain; absence from these searches does not establish novelty.
 
+The later [direct five-column count](../l5_extremizers.md) uses only the
+explicit eight matching sets and elementary case analysis. It does not import
+an external classification theorem or change this search's novelty limits.
+
 **Comparison status:** adjacent literature only; exact prior overlap is
 unverified. The bounds are supported by the self-contained elementary proof,
 and the classifications by the explicitly bounded computations. Systematic

@@ -7,6 +7,7 @@ These Markdown notes remain convenient reading copies and links to evidence.
 |---|---|
 | Random edge colors | [Partition weights, matching overlap, moment bounds, and large palettes](random_rainbow.md) |
 | Cube matching incidences | [Elementary seven-color bound and extremal capacity balance](cube_upper_bound.md) |
+| Five-column equality cases | [Direct count of fifteen extremizers and six symmetry classes](l5_extremizers.md) |
 | Weighted covers and ladders | [Minimum color deficit, cover certificates, and the formula for every ladder](matching_covers.md) |
 | Matching theory | [Hall's theorem and regular bipartite graphs](halls_theorem.md) |
 | Rainbow matchings | [Definitions and anti-Ramsey conventions](rainbow_matchings.md) |
