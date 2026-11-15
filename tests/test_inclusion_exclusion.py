@@ -36,6 +36,10 @@ class InclusionExclusionTests(unittest.TestCase):
         self.assertEqual(chromatic_polynomial(4, [(0, 1)]), (0, 0, 0, -1, 1))
         counts = rainbow_union_polynomial(4, ((0,),))
         self.assertEqual(counts["union_coefficients"], [0, 0, 0, 0, 1])
+        contained = rainbow_union_polynomial(4, ((0,), (0, 1)))
+        self.assertEqual(contained["union_coefficients"], [0, 0, 0, 0, 1])
+        self.assertEqual(contained["event_subsets"], 3)
+        self.assertEqual(contained["distinct_conflict_graphs"], 2)
         self.assertEqual(
             rainbow_union_polynomial(4, ((0, 1),))["union_coefficients"],
             [0, 0, 0, -1, 1],
