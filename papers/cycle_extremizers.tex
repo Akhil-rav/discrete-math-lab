@@ -12,7 +12,7 @@
 \definecolor{slate}{HTML}{647F9B}
 \usepackage[colorlinks=true,linkcolor=ink,urlcolor=ink]{hyperref}
 \hypersetup{
-  pdftitle={Rainbow perfect matchings on even cycles and two disjoint squares},
+  pdftitle={Rainbow perfect matchings on disjoint unions of even cycles},
   pdfauthor={Akhil Ravuri},
   pdfsubject={Elementary combinatorics exposition}
 }
@@ -29,7 +29,7 @@
 \setlength{\emergencystretch}{1em}
 \allowdisplaybreaks[1]
 \title{\vspace{-1.5em}\LARGE\bfseries Rainbow perfect matchings\par
-  \Large on even cycles and two disjoint squares}
+  \Large on disjoint unions of even cycles}
 \author{Akhil Ravuri}
 \date{}
 
@@ -37,10 +37,10 @@
 \maketitle
 \vspace{-1.5em}
 \begin{abstract}
-We determine the maximum number of colors in an edge coloring of an even
-cycle that avoids a rainbow perfect matching, and count all extremal
-partitions of its fixed edge set. For two disjoint squares, we prove that
-the maximum is six and that exactly two extremal partitions occur.
+For every nonempty disjoint union of even cycles, we determine the maximum
+number of colors avoiding a rainbow perfect matching and classify every
+extremal partition of the fixed edge set. The cycle and two-square cases
+introduce the general argument.
 The arguments are elementary and self-contained; no novelty is claimed.
 \end{abstract}
 
@@ -189,6 +189,76 @@ fixed-edge partitions. Renaming or interchanging colors adds no further
 partitions, so the count is two.
 \end{proof}
 
+\newpage
+\section{Arbitrary disjoint unions of even cycles}
+\begin{theorem}\label{thm:unions}
+Let $G=\bigsqcup_{i=1}^{r}C_{2n_i}$, for integers $r\ge1$ and $n_i\ge2$, and put
+$m=2\sum_i n_i$. Then
+\[
+ A(G)=m-2,\qquad \Next(G)=\sum_{i=1}^{r}\binom{n_i}{2}^{\!2}.
+\]
+Every extremal partition has two doubleton classes in one component, with
+one pair inside each of its alternating perfect matchings. Every other edge
+is a singleton class.
+\end{theorem}
+\begin{proof}
+\emph{The maximum.} Choose a component and merge one pair of edges in each
+of its alternating matchings. Make every other edge a singleton. This uses
+$m-2$ colors, and every global perfect matching contains one repeated pair.
+
+With $m$ colors all edges are distinct. With $m-1$ colors there is exactly
+one repeated pair $\{e,f\}$. Choose the local matching omitting $e$ in its
+component, and any local matching in every other component. The union omits
+the only repeated pair and is rainbow. This proves $A(G)=m-2$.
+
+\emph{The equality cases.} A partition into $m-2$ classes has
+$\sum_B(|B|-1)=2$, so its nonsingleton classes are one triple or two pairs.
+There are $2^r$ global perfect matchings. Every edge appears in $2^{r-1}$
+of them. A triple has $3\cdot2^{r-1}$ total appearances, whereas obstructing
+all matchings would require at least $2\cdot2^r$. Since $3<4$, a triple
+cannot be the only nonsingleton class of an avoiding partition.
+
+For two repeated pairs $P,Q$, a global matching is obstructed precisely
+when it contains at least one pair in full. The number containing a pair is
+\begin{center}\small
+\begin{tabular}{@{}lc@{}}
+\toprule
+Pair position & Matchings containing the pair\\
+\midrule
+One component, one alternating matching & $2^{r-1}$\\
+One component, different alternating matchings & $0$\\
+Two components (possible only for $r\ge2$) & $2^{r-2}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The first case fixes one local choice, the second requires incompatible
+choices, and the third fixes two independent choices. This includes
+nonadjacent edges of opposite parity in a long cycle.
+
+Each pair obstructs at most half the matchings. To cover all $2^r$, both
+must attain this bound and their obstructed sets must be disjoint. Thus
+each pair is inside one alternating matching of a component. If their
+components differed, choosing the other local matching in each would omit
+both pairs and produce a rainbow global matching. If they were in the same
+alternating matching of one component, choosing the other local matching
+there would also omit both. They therefore lie in the two different
+alternating matchings of one component.
+
+\emph{Counting.} In component $i$, each alternating set has $n_i$ edges,
+so there are $\binom{n_i}{2}^2$ choices. The chosen component and the pair
+inside each alternating set are uniquely recovered from the partition.
+Summing over components gives the count. There is no division by two or
+by permutations of equal-length components: edges are fixed and colors
+are already unnamed. Conversely every such choice avoids a rainbow
+matching by the construction above.
+\end{proof}
+
+For $r$ fixed disjoint squares, the formulas give $A(G)=4r-2$ and
+$\Next(G)=r$. For a single cycle they recover Theorem~\ref{thm:cycles},
+and for two squares they recover Theorems~\ref{thm:squares-bound}
+and~\ref{thm:squares-count}.
+
+\newpage
 \section{Small cases and computational checks}
 The preceding proofs give the following values.
 \begin{center}
@@ -202,21 +272,33 @@ $C_6$ & $4$ & $9$ \\
 $C_8$ & $6$ & $36$ \\
 $C_{10}$ & $8$ & $100$ \\
 $C_4\sqcup C_4$ & $6$ & $2$ \\
+$C_4\sqcup C_6$ & $8$ & $10$ \\
+$C_{12}$ & $10$ & $225$ \\
+$C_4\sqcup C_8$ & $10$ & $37$ \\
+$C_6\sqcup C_6$ & $10$ & $18$ \\
+$C_4\sqcup C_4\sqcup C_4$ & $10$ & $3$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-The repository's documented sparse search also checks $C_4$, $C_6$, $C_8$,
-and the disjoint squares, agreeing with these formulas. The $C_{10}$ row
-is a consequence of the proof; no additional computation is claimed here.
+The cycle-union experiment checks all ten hosts above. Through ten edges,
+all partitions are enumerated. On all ten hosts, every partition with
+$m-2$, $m-1$, or $m$ classes is separately checked. The twelve-edge hosts
+do not claim full Bell-number coverage. Perfect matchings are independently
+recovered from edge subsets; the lower-edge full search uses a separate
+partition iterator and an equal-color-pair predicate. All computed
+extremizers agree exactly with Theorem~\ref{thm:unions}'s construction.
 Computation is not a premise of any theorem in this note.
 
 For the edge order, raw data, reproduction commands, and execution limits,
-see \href{https://github.com/Akhil-rav/discrete-math-lab/pull/1}{Discrete Math
-Lab, PR~\#1}, especially the following files:
+see the \href{https://github.com/Akhil-rav/discrete-math-lab}{repository},
+especially the following files:
 \begin{quote}\small
-\nolinkurl{results/data/sparse_rainbow.json}\\
-\nolinkurl{results/sparse_verification.md}
+\nolinkurl{results/data/cycle_unions.json}\\
+\nolinkurl{results/cycle_union_verification.md}
 \end{quote}
+Run \texttt{python -m experiments.cycle\_unions} from the repository root
+with Python 3.11+ and its standard library. The original sparse-host data
+and its execution record remain unchanged.
 These counts concern color partitions on fixed edges, not graph
 isomorphism classes.
 \end{document}
