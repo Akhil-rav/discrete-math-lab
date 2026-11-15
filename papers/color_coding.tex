@@ -1,0 +1,127 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=1in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,xcolor,fancyhdr}
+\definecolor{ink}{HTML}{19354A}
+\usepackage[colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink]{hyperref}
+\hypersetup{pdftitle={Vertex color-coding for simple paths},pdfauthor={Akhil Ravuri}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\textsc{Vertex color-coding}}
+\fancyhead[R]{\small Akhil Ravuri}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parskip}{0.2em}\setlength{\emergencystretch}{1em}
+\title{\vspace{-1.5em}\LARGE\bfseries Vertex color-coding\\for simple paths}
+\author{Akhil Ravuri}\date{}
+\begin{document}
+\maketitle\vspace{-1.5em}
+\begin{abstract}
+We describe a teaching implementation of the standard color-coding dynamic
+program for colorful simple paths. A fixed-path counting argument gives the
+one-trial success guarantee. Exhaustive checks on every labeled simple graph
+of order at most four compare the implementation with ordered-vertex path
+enumeration. This is an exposition and implementation reproduction of a known
+method, without a novelty claim.
+\end{abstract}
+
+\section{Paths and color sets}
+Let $G=(V,E)$ be a finite simple undirected graph with $|V|=n$, and let
+$1\le k\le n$. Assign each \emph{vertex} a color in $\{0,\ldots,k-1\}$.
+A colorful path uses distinct colors. A $k$-vertex colorful path consequently
+uses every color and has $k-1$ edges. These vertex colors differ from the edge
+colors in the repository's rainbow-matching experiments.
+
+The method follows Alon, Yuster, and Zwick~\cite[Section 3 and Lemma 3.1]{AYZ}.
+For a fixed coloring $c$, define $D[S,v]$ to mean that a colorful path ending
+at $v$ uses exactly the color set $S$. Initialize
+\[
+ D[\{c(v)\},v]=\mathrm{true}\qquad(v\in V).
+\]
+For every reachable state and neighbor $w$ of $v$ with $c(w)\notin S$, set
+\[
+ D[S\cup\{c(w)\},w]=\mathrm{true}.
+\]
+The implementation represents $S$ by a bit mask and stores one explicit path
+for each reachable state. Adding a missing bit strictly increases the mask,
+so processing masks in increasing numerical order is valid.
+
+\section{Why the dynamic program is correct}
+Every initialized state is a one-vertex path. Every transition appends an
+adjacent vertex with a new color. Such a vertex cannot already occur in the
+stored path, since its color is absent. Inductively, each stored witness is a
+simple colorful path with the claimed endpoint and color set.
+
+Conversely, removing the last vertex of any colorful path leaves a shorter
+colorful path whose state precedes it. Applying the corresponding extension
+recovers its endpoint and color set. Storing only one witness for a state
+does not lose future possibilities: any neighbor whose color is new is
+absent from every witness with that color set, regardless of which vertices
+the witnesses otherwise use. Thus equal endpoint and color-set states admit
+the same extensions. A full-mask state exists exactly when a colorful
+$k$-vertex path exists.
+
+With explicit tuple copying, the teaching implementation takes
+\[
+ O\bigl(k2^k(n+|E|)\bigr)\text{ time},\qquad
+ O(k2^k n)\text{ space}.
+\]
+There are at most $2^k n$ states, each holding at most $k$ vertices. Copying a
+witness costs $O(k)$ when extending it. These bounds describe the current
+implementation, rather than every optimized variant of color-coding.
+
+\section{Success probability for an uncolored path}
+Now color vertices independently and uniformly from $k$ colors. For a fixed
+$k$-vertex path, exactly $k!$ of its $k^k$ color assignments are injective.
+Its colorful probability is therefore
+\[
+ p_k=\frac{k!}{k^k}.
+\]
+If the uncolored graph contains such a path, the dynamic program finds some
+path with probability at least $p_k$: making that one fixed path colorful
+already suffices. Other paths can increase the success probability.
+A failed trial does not certify the absence of an uncolored path. The
+experiment below computes exact success fractions by enumerating assignments;
+it does not estimate probabilities by random trials.
+
+\section{Exhaustive finite verification}
+For every $n=1,\ldots,4$, the experiment enumerates all
+$2^{\binom n2}$ labeled simple undirected graphs. For each $k=1,\ldots,n$,
+it tests every one of the $k^n$ assignments. The total is
+\[
+ \sum_{n=1}^{4}2^{\binom n2}\sum_{k=1}^{n}k^n=22{,}955.
+\]
+For each assignment, an independent oracle enumerates ordered $k$-tuples of
+distinct vertices, checks adjacency, and tests colorfulness. It agrees with
+the dynamic program in all 22,955 cases. Every returned witness is checked
+for its vertex count, distinct vertices, adjacency, and distinct colors.
+
+For each tested graph containing a $k$-vertex path, the number of successful
+assignments divided by $k^n$ is checked to be at least $k!/k^k$ using exact
+fractions. This tests the implementation on its stated finite domain; the
+general correctness and fixed-path arguments are separate from the audit.
+The code also accepts directed adjacency, but this exhaustive experiment
+covers simple undirected graphs only.
+
+\subsection*{Reproduction and scope}
+From the repository root, with Python 3.11+ and its standard library, run
+\begin{quote}\small\ttfamily
+python -m experiments.color\_coding\_small\_cases\par
+python -m experiments.reproduce --check results/data/small\_cases.json
+\end{quote}
+The routine is \path{src/color_coding.py}; the experiment and saved JSON
+record exact assignment counts and success fractions. This is not an
+implementation of the cited paper's full algorithm collection or its
+perfect-hash derandomization. No new path algorithm or general empirical
+performance claim is made. The
+\href{https://github.com/Akhil-rav/discrete-math-lab/blob/main/notes/literature/source_records.md}{source records}
+identify the author manuscript consulted.
+
+\begin{thebibliography}{1}
+\bibitem{AYZ} N. Alon, R. Yuster, and U. Zwick, \emph{Color-coding},
+author manuscript, revised March 9, 1995.
+\href{https://www.math.tau.ac.il/~nogaa/PDFS/col5.pdf}{Author-hosted manuscript}.
+Section 3 and Lemma 3.1 supply the colorful-path method and fixed-path
+probability argument used here.
+\end{thebibliography}
+\end{document}

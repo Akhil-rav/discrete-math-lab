@@ -4,6 +4,9 @@
 observations, and future development tasks are separated below. No novelty is
 claimed.
 
+[Typeset small-host and matching-foundations report](../../papers/matching_foundations.pdf)
+· [LaTeX source](../../papers/matching_foundations.tex)
+
 ## Question
 
 Given a fixed bipartite graph G with n vertices in each class and at least one

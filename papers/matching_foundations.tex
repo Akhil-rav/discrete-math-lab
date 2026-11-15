@@ -1,0 +1,178 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,xcolor,fancyhdr}
+\definecolor{ink}{HTML}{19354A}
+\usepackage[colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink]{hyperref}
+\hypersetup{pdftitle={Matching foundations and exact small-host studies},pdfauthor={Akhil Ravuri}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\textsc{Matching foundations}}
+\fancyhead[R]{\small Akhil Ravuri}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parskip}{0.2em}\setlength{\emergencystretch}{1em}
+\title{\vspace{-1.5em}\LARGE\bfseries Matching foundations\\and exact small-host studies}
+\author{Akhil Ravuri}\date{}
+\begin{document}
+\maketitle\vspace{-1.5em}
+\begin{abstract}
+We record the standard regular-bipartite corollary of Hall's theorem, its
+finite algorithm checks, and small rainbow-perfect-matching searches. The
+$K_{3,3}$ experiment classifies 87 extremal fixed-edge partitions into four
+symmetry classes. General matching thresholds quoted here are known results;
+the classifications are finite computations, without a novelty claim.
+\end{abstract}
+
+\section{Hall's theorem and a regular-graph corollary}
+Let $G=(L,R,E)$ be a finite bipartite graph. For $S\subseteq L$, let $N(S)$
+be the set of its neighbors. Hall's marriage theorem states that a matching
+saturating $L$ exists if and only if $|N(S)|\ge|S|$ for every $S\subseteq L$.
+The matching-deficiency formulation in~\cite[Lemma 2.1]{LTJ} is equivalent.
+We use this known theorem, rather than prove it here.
+
+\begin{corollary}
+Every finite $d$-regular bipartite graph with $d\ge1$ has a perfect matching.
+\end{corollary}
+\begin{proof}
+Counting edges from the two sides gives $d|L|=|E|=d|R|$, hence $|L|=|R|$.
+For any $S\subseteq L$, exactly $d|S|$ edges run from $S$ into $N(S)$, while
+at most $d|N(S)|$ edges can enter those neighbors. Since $d>0$,
+$d|S|\le d|N(S)|$ implies $|S|\le|N(S)|$. Hall's theorem gives a matching
+saturating $L$; equal part sizes make it perfect.
+\end{proof}
+
+The generator chooses a $d$-element neighbor set for each left vertex and
+retains exactly those choices giving every right vertex degree $d$. Thus each
+labeled graph appears once. For $1\le n\le5$ and $1\le d\le n$, the row
+counts, ordered by increasing $d$, are
+\begin{center}
+\begin{tabular}{crr}
+\toprule
+Part size $n$ & Counts for $d=1,\ldots,n$ & Total\\
+\midrule
+1 & $1$ & 1\\
+2 & $2,1$ & 3\\
+3 & $6,6,1$ & 13\\
+4 & $24,90,24,1$ & 139\\
+5 & $120,2040,2040,120,1$ & 4321\\
+\midrule
+ & & 4477\\
+\bottomrule
+\end{tabular}
+\end{center}
+An augmenting-path routine finds a perfect matching in all 4,477 cases.
+Independent full-mask generation and partial-injection matching oracles check
+the implementation through part size three. The computation tests the code;
+the corollary's proof does not depend on it.
+
+\section{Rainbow conventions and known thresholds}
+For a fixed graph $G$ with a perfect matching of at least two edges, define
+\[
+ A(G)=\max\{|c(E(G))|:\text{$c$ has no rainbow perfect matching}\}.
+\]
+Here colorings need not be proper. An \emph{exact} $r$-coloring uses all $r$
+colors. In the feasible cases considered here, the minimum exact-color
+forcing threshold is $A(G)+1$: merging classes preserves avoidance, so an
+extremal avoiding coloring supplies every smaller positive color count.
+
+Li, Tu, and Jin~\cite[Theorem 2.5]{LTJ} prove that, for $m\ge n\ge k\ge3$,
+\[
+ \operatorname{rb}(K_{m,n},kK_2)=m(k-2)+2.
+\]
+Their $\operatorname{rb}$ is a minimum forcing number. Consequently
+$A(K_{n,n})=n(n-2)+1$ for $n\ge3$. The case $n=2$ uses their separate
+Theorem 2.3, giving $A(K_{2,2})=2$. In particular, the repository's values
+$2$ and $4$ are reproductions of known results, not conjectures.
+
+For the lower-bound construction when $n\ge3$, assign distinct colors to all
+edges incident to $n-2$ left vertices and one fresh common color to all
+remaining edges. This uses $n(n-2)+1$ colors, and every perfect matching uses
+two edges of the common color. The cited theorem supplies the upper bound.
+
+\section{Four symmetry classes on \texorpdfstring{$K_{3,3}$}{K3,3}}
+The search examines all $B_9=21{,}147$ partitions of nine row-major edge
+positions. Exactly 87 avoiding partitions use the maximum of four colors.
+These counts keep edge positions fixed and ignore only color names.
+
+For the symmetry quotient, independently permute rows and columns and allow
+matrix transpose, giving the full automorphism group of order
+$2(3!)^2=72$. Normalize color names by first appearance after each action;
+the lexicographically least normalized array is the representative.
+\begin{center}\small
+\begin{tabular}{clrr}
+\toprule
+Class & Representative rows & Orbit & Stabilizer\\
+\midrule
+1 & \texttt{000 / 000 / 123} & 6 & 12\\
+2 & \texttt{001 / 110 / 230} & 36 & 2\\
+3 & \texttt{001 / 120 / 230} & 36 & 2\\
+4 & \texttt{001 / 230 / 320} & 9 & 8\\
+\bottomrule
+\end{tabular}
+\end{center}
+The orbit sizes sum to 87; each orbit-stabilizer product equals 72. The last
+two classes have the same color-class size multiset $\{1,2,2,4\}$, so that
+multiset alone does not classify the partitions. Stabilizers fix the partition
+and may permute color names. Every transformed partition is checked to remain
+inside the enumerated extremal population, and every canonical bucket is
+compared with its explicit orbit. This does not certify absence from prior
+literature or classify larger hosts.
+
+\newpage
+\section{Sparse-host comparison and exact coverage}
+The separate sparse-host search gives the following fixed-edge counts.
+\begin{center}\small
+\begin{tabular}{lrrrrr}
+\toprule
+Host & Edges & Matchings & Partitions covered & $A(G)$ & Extremizers\\
+\midrule
+$C_4$ & 4 & 2 & 15 & 2 & 1\\
+$C_6$ & 6 & 2 & 203 & 4 & 9\\
+$C_8$ & 8 & 2 & 4140 & 6 & 36\\
+$C_4\sqcup C_4$ & 8 & 4 & 4140 & 6 & 2\\
+$K_{3,3}$ & 9 & 6 & 21147 & 4 & 87\\
+$Q_3$ & 12 & 9 & 4213597 & 7 & 174\\
+\bottomrule
+\end{tabular}
+\end{center}
+The cycle and disjoint-square companion paper gives elementary extremal
+proofs. The cube companion paper proves its maximum and records the nine
+computed symmetry classes; 174 counts fixed-edge partitions, not classes.
+
+The solver enumerates restricted-growth strings. When a completed perfect
+matching is rainbow in a prefix, every continuation remains forbidden.
+If $T(r,b)$ counts completions of $r$ positions with $b$ existing classes, then
+\[
+ T(0,b)=1,\qquad T(r,b)=bT(r-1,b)+T(r-1,b+1).
+\]
+Rejected subtrees are counted by this recurrence. Surviving leaves plus
+disjoint rejected subtrees equal $B_m=T(m-1,1)$ for $m$ edges. Thus coverage
+does not mean visiting every leaf individually. An independent unpruned
+partition oracle checks every balanced bipartite host of part size two or
+three with a perfect matching; edge-subset oracles check matching constraints.
+
+\subsection*{Reproduction and records}
+From the repository root, use Python 3.11+ and its standard library:
+\begin{quote}\small\ttfamily
+python -m experiments.reproduce\par
+python -m experiments.sparse\_rainbow\par
+python -m experiments.classify\_k33
+\end{quote}
+Reference datasets are \path{results/data/small_cases.json} and
+\path{results/data/sparse_rainbow.json}. The
+\href{https://github.com/Akhil-rav/discrete-math-lab/blob/main/results/verification_index.md}{verification index}
+links execution records, independent checks, and precise ranges. These
+finite searches and elementary reproductions make no novelty claim.
+
+\begin{thebibliography}{1}
+\bibitem{LTJ} X. Li, J. Tu, and Z. Jin,
+\emph{Bipartite rainbow numbers of matchings}, Discrete Math.
+\textbf{309} (2009), 2575--2578.
+\href{https://arxiv.org/abs/math/0610910v1}{arXiv:math/0610910v1}.
+Definitions and Lemma 2.1, Theorems 2.3 and 2.5 checked in this preprint;
+see the repository's source records for notation translation.
+\end{thebibliography}
+\end{document}
