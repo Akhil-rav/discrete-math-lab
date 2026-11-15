@@ -9,7 +9,7 @@ the tiling description of perfect matchings. The square has maximum two.
 A separate weighted-cover method supplies finite optimum certificates,
 and the five-column study classifies every ten-color extremizer.
 
-[Nine-page LaTeX report](../papers/matching_foundations.pdf) ·
+[Twelve-page LaTeX report](../papers/matching_foundations.pdf) ·
 [LaTeX source](../papers/matching_foundations.tex) ·
 [Complete data](data/matching_covers.json) ·
 [Verification](matching_cover_verification.md)
@@ -45,8 +45,11 @@ edges. The method is exponential and is not presented as a scalable graph librar
 
 ## All five-column extremizers
 
-L5 has thirteen edges and eight perfect matchings. Deficit-three enumeration
-finds 15 extremizers, forming the following six symmetry classes.
+L5 has thirteen edges and eight perfect matchings. The
+[direct counting proof](../notes/l5_extremizers.md) gives fifteen extremizers:
+four quadruples, eight triple-and-pair forms, and three three-pair forms.
+It also explains the following six symmetry classes. The older deficit-band
+search independently recovers the same partitions.
 
 | Representative | Orbit | Stabilizer |
 |---|---:|---:|
@@ -65,8 +68,9 @@ pairwise disjoint, and their sizes sum to 15.
 
 There are four quadruple-class patterns, eight triple-and-pair patterns,
 and three patterns with three pairs; all remaining classes are singletons.
-The cover optimizer does not claim to enumerate these. A separate partition
-iterator finds them, and a block-shape enumerator independently recovers them.
+The [construction module](../src/l5_extremizers.py) lists these proved
+families directly. The older partition and block-shape enumerators remain
+separate checks of the complete population.
 
 | Deficit | Partitions visited | Avoiding |
 |---|---:|---:|

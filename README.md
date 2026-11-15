@@ -12,7 +12,7 @@ small-case searches to structural proofs and exact probabilities.
 |---|---|---|
 | **Extremal cube colorings** | A proof of the seven-color maximum; all 174 extremizers classified into nine symmetry classes | [Report](results/cube_classification.md) · [Four-page paper](papers/cube_classification.pdf) · [Labeled atlas](results/figures/cube_classes.svg) |
 | **Independent random edge colors** | Two exact counting methods on six hosts, moment and Bonferroni bounds, and a measured runtime comparison | [Five-page paper](papers/random_rainbow.pdf) · [Methods and timings](results/inclusion_exclusion.md) · [Report and plot](projects/random-colorings/report.md) |
-| **Ladder matchings and weighted covers** | A color bound for every ladder with at least three columns; cover certificates on nine hosts; all 15 five-column extremizers | [Proof and classification](results/matching_covers.md) · [Nine-page matching report](papers/matching_foundations.pdf) |
+| **Ladder matchings and weighted covers** | A color bound for every ladder with at least three columns; cover certificates on nine hosts; a direct count of all 15 five-column extremizers | [Proof and classification](results/matching_covers.md) · [Twelve-page matching report](papers/matching_foundations.pdf) |
 | **Expansion and random walks** | Elementary cut formulas and exact examples separating periodicity from disconnection | [Three-page paper](papers/expansion_walks.pdf) · [Project report](projects/expansion-and-walks/report.md) |
 
 The cube study combines an [incidence proof](notes/cube_upper_bound.md), an

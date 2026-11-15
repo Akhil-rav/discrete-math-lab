@@ -6,7 +6,7 @@ and $A(P_k\square K_2)=3k-5$ for every $k\ge3$.
 The square is treated separately. The [finite report](matching_covers.md)
 records the certificate computations and L5 classification.
 
-Proof source SHA-256: `767de3039c4eb072120d64a7fa2ca9d543f1bfb67058f31cc4934d131e2abd9f`.
+Proof source SHA-256: `1eaa47f50db69d4380dfeb5fd19aca253e1e6a53268b2e086843e01fcf2d44e3`.
 
 ## Proof checks
 
@@ -67,3 +67,7 @@ The original twelve-edge partition solver and the earlier datasets are
 preserved. This run does not enumerate all L5 partitions or compute its
 random-coloring probabilities. The [literature record](../notes/literature/ladders.md)
 does not establish novelty.
+
+The L5 population now also has a [direct counting proof](../notes/l5_extremizers.md),
+with its own [proof checks](l5_extremizer_proof.md). The recorded search above
+is preserved as a separate finite check.

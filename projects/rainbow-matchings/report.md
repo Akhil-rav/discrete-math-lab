@@ -97,7 +97,8 @@ above remains unchanged; the ladder data is a separate reproducible study.
 The [weighted-cover extension](../../results/matching_covers.md) proves
 A(Lk)=3k-5 for every k>=3 by a tiling-incidence argument. A separate exact
 cover algorithm reproduces nine host maxima and supplies verifiable cost
-tables. On L5, all 15 extremizers form six symmetry classes. The full
+tables. On L5, a [direct counting proof](../../notes/l5_extremizers.md) now gives
+all fifteen extremizers and their six symmetry classes. The full
 deficit-three band is checked without increasing the old partition solver's
 12-edge limit.
 
