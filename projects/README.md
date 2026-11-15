@@ -36,6 +36,9 @@ probabilities from exhaustive partition histograms on six hosts. It includes
 moment bounds, direct named-color checks, a scientific plot, and the cube's
 large-palette limit. Only the plotting step needs an optional dependency.
 [Read the typeset report](../papers/random_rainbow.pdf).
+An [inclusion-exclusion implementation](../results/inclusion_exclusion.md)
+now independently checks every polynomial coefficient, adds Bonferroni bounds,
+and compares construction time with the partition search.
 
 ## Expansion and random walks
 

@@ -16,8 +16,9 @@ to the published results used.
 | Vertex color-coding for simple paths | [Read](color_coding.pdf) | [Source](color_coding.tex) | [Method](../notes/color_coding.md), [22,955 comparisons](../results/algorithm_demos.md) |
 
 The cube report combines its elementary seven-color bound with the complete
-nine-class atlas. The probability report combines the counting proofs, the
-six-host comparison, the figure, and the large-palette limit. The matching
+nine-class atlas. The probability report combines two exact counting methods,
+the six-host comparison, higher-order bounds, measured timings, the figure,
+and the large-palette limit. The matching
 foundations report collects the Hall corollary, 4,477 graph checks, known
 complete-bipartite thresholds, four K33 classes, and sparse-host coverage.
 The cycle paper proves A(G)=|E(G)|-2 for every nonempty union of even cycles

@@ -100,6 +100,26 @@ $$\frac{81}{176}\le\frac{4653}{8192}\le\frac{27}{32}.$$
 The expected number of rainbow matchings differs from the probability of
 finding one, because one coloring can contain several rainbow matchings.
 
+## A second exact method
+
+The [inclusion-exclusion implementation](../../src/rainbow_inclusion_exclusion.py)
+counts proper colorings of conflict graphs formed from selected matching
+families. It uses the matching targets directly and reads no avoiding histogram.
+Every coefficient agrees with the histogram-derived polynomial on all six
+hosts; all 144 saved probabilities agree as well.
+
+Higher-order intersections also give the second and third Bonferroni bounds.
+For the cube at q=4, they give the tighter interval
+
+$$\frac{63}{128}\le\frac{4653}{8192}\le\frac{75}{128}.$$
+
+The [method comparison](../../results/inclusion_exclusion.md) includes the
+proof links, direct coloring checks, and a measured runtime comparison. On
+the recorded machine, inclusion-exclusion is faster on the cycle examples,
+while the partition search is faster on K3,3 and the cube. Those timings
+include constructing counts and evaluating 24 palettes, not merely evaluating
+an already-saved histogram.
+
 ## How the 174 extremizers control the large-palette tail
 
 If A is the maximum avoiding color count, (q)_A is a monic polynomial of degree
@@ -123,6 +143,7 @@ term; those five examples illustrate the limit rather than establish it.
 
 ```sh
 python -m experiments.random_rainbow --check results/data/random_rainbow.json
+python -m experiments.rainbow_inclusion_exclusion --check results/data/rainbow_inclusion_exclusion.json
 python -m unittest discover -s tests -v
 ```
 

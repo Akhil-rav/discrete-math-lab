@@ -6,7 +6,7 @@ Proposed tasks are not certified open problems.
 
 | Direction | What is implemented | Evidence | Next bounded task |
 |---|---|---|---|
-| Independent random edge colors | Exact partition-weight probabilities and matching-overlap moment bounds | [Report and plot](random-colorings/report.md), [proofs](../notes/random_rainbow.md) | Check three-event intersections on one specified host to compare with pairwise bounds |
+| Independent random edge colors | Two exact polynomial methods, matching moments, and higher-order bounds | [Report and plot](random-colorings/report.md), [methods and timings](../results/inclusion_exclusion.md) | Compare cache growth under different fixed edge orders on the same hosts |
 | Rainbow perfect matchings | Sparse-host searches, nine cube classes, an incidence proof of the cube bound | [Report](rainbow-matchings/report.md), [cube atlas](../results/cube_classification.md), [cube proof](../notes/cube_upper_bound.md) | Compare the incidence method with other specified small hosts and precise literature statements |
 | Expansion and walks | Exact cuts and rational walk evolution on four regular graphs | [Report](expansion-and-walks/report.md), benchmark tests | Add an independent transition-matrix oracle before extending the graph domain |
 | Rainbow arithmetic progressions | Exact searches on small intervals and specified finite groups | [Results](../results/rainbow_progressions.md), [definitions](../notes/rainbow_progressions.md) | Compare one published theorem with its precise hypotheses and small examples |

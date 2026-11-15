@@ -28,3 +28,4 @@ jobs:
       - run: python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
       - run: python -m experiments.random_rainbow --check results/data/random_rainbow.json
       - run: python -m experiments.cycle_unions --check results/data/cycle_unions.json
+      - run: python -m experiments.rainbow_inclusion_exclusion --check results/data/rainbow_inclusion_exclusion.json
