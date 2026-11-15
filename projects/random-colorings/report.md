@@ -3,7 +3,8 @@
 **Status:** elementary counting identities and exact finite computations.
 No novelty claim.
 
-[Definitions and proofs](../../notes/random_rainbow.md) · [Exact data](../../results/data/random_rainbow.json)
+[Typeset report](../../papers/random_rainbow.pdf) · [LaTeX source](../../papers/random_rainbow.tex)
+· [Definitions and proofs](../../notes/random_rainbow.md) · [Exact data](../../results/data/random_rainbow.json)
 · [Implementation](../../src/rainbow_probability.py) · [Verification](../../results/random_rainbow_verification.md)
 
 ## Question and model

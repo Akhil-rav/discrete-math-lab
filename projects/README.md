@@ -35,6 +35,7 @@ computation. Detailed conventions, checks, and limits appear in the report.
 probabilities from exhaustive partition histograms on six hosts. It includes
 moment bounds, direct named-color checks, a scientific plot, and the cube's
 large-palette limit. Only the plotting step needs an optional dependency.
+[Read the typeset report](../papers/random_rainbow.pdf).
 
 ## Expansion and random walks
 
@@ -46,4 +47,6 @@ an expander construction.
 [Research guide](research-guide.md) maps completed work, literature connections,
 and bounded development tasks. Related experiments in additive combinatorics
 and color-coding are indexed in [the notes](../notes/README.md) and
-[results](../results/README.md).
+[results](../results/README.md). All completed mathematical studies have
+[PDFs and editable LaTeX sources](../papers/README.md), including matching
+foundations, rainbow progressions, and vertex color-coding.

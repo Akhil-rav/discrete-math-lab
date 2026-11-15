@@ -1,0 +1,134 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=1in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,xcolor,fancyhdr}
+\definecolor{ink}{HTML}{19354A}
+\usepackage[colorlinks=true,linkcolor=ink,urlcolor=ink,citecolor=ink]{hyperref}
+\hypersetup{pdftitle={Rainbow progressions in small intervals and groups},pdfauthor={Akhil Ravuri}}
+\newtheorem{proposition}{Proposition}
+\newcommand{\aw}{\operatorname{aw}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\textsc{Rainbow progressions}}
+\fancyhead[R]{\small Akhil Ravuri}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parskip}{0.2em}\setlength{\emergencystretch}{1em}
+\title{\vspace{-1.5em}\LARGE\bfseries Rainbow progressions\\in small intervals and groups}
+\author{Akhil Ravuri}\date{}
+\begin{document}
+\maketitle\vspace{-1.5em}
+\begin{abstract}
+We record exhaustive anti-van der Waerden threshold calculations for intervals
+and cyclic groups of orders three through nine, and three small product
+groups. Definitions follow the cited literature. The searches reproduce
+selected known benchmarks and illustrate why the ambient group matters.
+These are bounded finite computations, without a novelty claim.
+\end{abstract}
+
+\section{Definitions and the threshold convention}
+A nondegenerate three-term arithmetic progression is a set of three distinct
+elements $\{a,a+d,a+2d\}$. For an interval we require $d>0$; in a finite
+abelian group we use its addition and remove duplicate sets. Reversal gives
+the same set. A progression is rainbow if its three elements have distinct
+colors. The interval $[n]=\{1,\ldots,n\}$ is represented in code by
+$\{0,\ldots,n-1\}$, which is equivalent by translation.
+
+The threshold $\aw(S,3)$ is the smallest exact number of colors forcing a
+rainbow progression, with an exact coloring required to use every color.
+Definitions for intervals and cyclic groups follow Butler et al.~\cite{BE};
+the finite-abelian-group formulation follows Young~\cite{Y}.
+
+The search first maximizes the number of classes in an avoiding partition and
+then adds one. This translation is valid because merging classes cannot
+create a rainbow progression: a maximum avoiding coloring can be merged to
+any smaller positive color count. If no nondegenerate progression exists, we
+use the convention $\aw(S,3)=|S|+1$. This lies beyond feasible palette size;
+it does not assert a coloring with more than $|S|$ colors.
+
+\section{Exact interval and cyclic results}
+Each domain is searched separately over every partition, ignoring color names
+but keeping its elements fixed. Cyclic addition may wrap around.
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$n$ & Partitions per domain, $B_n$ & $\aw([n],3)$ & $\aw(\mathbb Z_n,3)$\\
+\midrule
+3 & 5 & 3 & 3\\
+4 & 15 & 4 & 3\\
+5 & 52 & 4 & 3\\
+6 & 203 & 4 & 4\\
+7 & 877 & 4 & 3\\
+8 & 4140 & 5 & 3\\
+9 & 21147 & 4 & 4\\
+\bottomrule
+\end{tabular}
+\end{center}
+For $3\le n\le8$, the interval values agree with~\cite[Theorem 1.1]{BE}.
+The threshold is not assumed monotone: the interval value drops from five
+at $n=8$ to four at $n=9$. These entries concern exact-color forcing, and
+should not be replaced by a monotonicity assumption about interval inclusion.
+
+\section{Products of cyclic groups}
+For $G=\mathbb Z_{m_1}\times\cdots\times\mathbb Z_{m_t}$, all coordinates are
+added modulo their own moduli. The generator enumerates every pair $(a,d)$
+and keeps the resulting three-element sets exactly once.
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Group & Partitions & Distinct 3-AP sets & $\aw(G,3)$\\
+\midrule
+$\mathbb Z_2\times\mathbb Z_2$ & 15 & 0 & 5\\
+$\mathbb Z_2\times\mathbb Z_4$ & 4140 & 16 & 5\\
+$\mathbb Z_2^3$ & 4140 & 0 & 9\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{proposition}
+For every integer $t\ge1$, $\mathbb Z_2^t$ has no nondegenerate three-term
+arithmetic progression. Under the stated convention,
+$\aw(\mathbb Z_2^t,3)=2^t+1$.
+\end{proposition}
+\begin{proof}
+Every $d\in\mathbb Z_2^t$ satisfies $2d=0$, so $a+2d=a$. Thus the first and
+third terms of any proposed progression agree. No three-element progression
+exists, and the threshold follows from the no-progression convention.
+\end{proof}
+This elementary known observation explains the zero-progression entries.
+Groups of order eight therefore need not behave alike: $\mathbb Z_8$,
+$\mathbb Z_2\times\mathbb Z_4$, and $\mathbb Z_2^3$ give thresholds three,
+five, and nine respectively. The product examples are direct enumerations,
+not implementations of Young's general group formulas or unitary colorings.
+
+\section{Coverage, checks, and reproduction}
+The implementation enumerates all restricted-growth strings of each domain
+size. Bell-number coverage is checked using an independent Stirling-number
+recurrence. Interval progressions are checked against all triples satisfying
+$a+c=2b$; cyclic progressions are checked against triples with some ordering
+satisfying that equation modulo $n$. Product-group tests independently check
+the coordinate equations. These checks audit the finite implementation;
+the general exponent-two observation above has its own proof.
+
+From the repository root, with Python 3.11+ and its standard library, run
+\begin{quote}\small\ttfamily
+python -m experiments.rainbow\_progressions\par
+python -m experiments.reproduce --check results/data/small\_cases.json
+\end{quote}
+The reference JSON saves counts and avoiding witnesses. Progression generation
+is in \path{src/arithmetic_progressions.py}. Partition enumeration grows
+rapidly; the recorded range is deliberately small and gives no fast general
+threshold algorithm. The
+\href{https://github.com/Akhil-rav/discrete-math-lab/blob/main/notes/literature/source_records.md}{source records}
+document the consulted versions, locators, and PDF internal-date discrepancies.
+No claim of a new theorem or currently open problem is made.
+
+\begin{thebibliography}{2}
+\bibitem{BE} S. Butler et al., \emph{Rainbow arithmetic progressions},
+\href{https://arxiv.org/abs/1404.7232v2}{arXiv:1404.7232v2}.
+Definitions, Theorem 1.1, Remark 1.4, and cyclic discussion checked.
+\bibitem{Y} M. Young, \emph{Rainbow Arithmetic Progressions in Finite Abelian Groups},
+\href{https://arxiv.org/abs/1603.08153v1}{arXiv:1603.08153v1}.
+Group definitions and Theorem 3 statement checked; general formulas are not
+implemented here.
+\end{thebibliography}
+\end{document}

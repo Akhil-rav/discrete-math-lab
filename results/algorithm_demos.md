@@ -5,6 +5,8 @@ Commands and contracts are in [experiments](../experiments/README.md).
 
 ## Vertex color-coding
 
+[Typeset report](../papers/color_coding.pdf) · [LaTeX source](../papers/color_coding.tex)
+
 On every labeled simple undirected graph on n=1,…,4 vertices, for each k=1,…,n,
 the experiment checks all k^n assignments of vertex colors: **22,955 cases**.
 The subset DP agrees with ordered-vertex path enumeration in every case.

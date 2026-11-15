@@ -1,5 +1,8 @@
 # Mathematical notes
 
+Every completed mathematical study also has a [LaTeX source and PDF](../papers/README.md).
+These Markdown notes remain convenient reading copies and links to evidence.
+
 | Topic | Writeup |
 |---|---|
 | Random edge colors | [Partition weights, matching overlap, moment bounds, and large palettes](random_rainbow.md) |
