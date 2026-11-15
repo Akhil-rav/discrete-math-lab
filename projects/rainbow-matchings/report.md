@@ -90,9 +90,16 @@ for k=2,3,4. Elementary incidence proofs give A(L2)=2, A(L3)=4, A(L4)=7.
 Exhausting all 116,867 partitions gives 1, 27, and 25 extremizers, respectively;
 the larger two hosts each have nine symmetry classes. Both exact probability
 methods agree coefficient by coefficient. The
-[six-page matching report](../../papers/matching_foundations.pdf) includes the
+[matching report](../../papers/matching_foundations.pdf) includes the
 proofs, complete orbit tables, and probabilities. The original six-host data
 above remains unchanged; the ladder data is a separate reproducible study.
+
+The [weighted-cover extension](../../results/matching_covers.md) proves
+A(Lk)=3k-5 for every k>=3 by a tiling-incidence argument. A separate exact
+cover algorithm reproduces nine host maxima and supplies verifiable cost
+tables. On L5, all 15 extremizers form six symmetry classes. The full
+deficit-three band is checked without increasing the old partition solver's
+12-edge limit.
 
 ## Search method and coverage argument
 

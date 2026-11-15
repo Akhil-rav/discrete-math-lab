@@ -84,7 +84,9 @@ The [classification report](../results/ladder_matchings.md) records every
 symmetry representative, the complete fixed-edge extremal populations, and
 the two exact probability computations. The maximum-color proposition above
 is proved; the extremizer counts and orbit lists are exhaustive finite
-computations. No formula for all ladder lengths is asserted.
+computations. The [family argument](matching_covers.md) now proves the maximum
+for every ladder with at least three columns; it is separate from these finite
+classifications.
 
 The [source comparison](literature/ladders.md) states the literature search's
 scope and access limits. Neither the elementary bounds nor these computed

@@ -124,7 +124,7 @@ class LadderTests(unittest.TestCase):
                 )
 
     def test_domain(self):
-        for value in (0, 1, 5, 2.5, "3", None):
+        for value in (0, 1, 6, 2.5, "3", None):
             with self.assertRaises(ValueError):
                 ladder_edges(value)
 

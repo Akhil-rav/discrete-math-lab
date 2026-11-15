@@ -26,6 +26,9 @@ symmetry classes. General matching thresholds quoted here are known results;
 the classifications are finite computations, without a novelty claim.
 For the first three ladders, we prove the maximum color counts and compute
 all extremizers and their exact random-coloring probabilities by two methods.
+We then give a weighted-cover formulation of color deficit, prove
+$A(P_k\square K_2)=3k-5$ for every $k\ge3$, and classify all fifteen
+extremizers of the five-column ladder.
 \end{abstract}
 
 \section{Hall's theorem and a regular-graph corollary}
@@ -225,7 +228,7 @@ All these incidence bounds can be read directly from the complete lists.
 Thus $A(L_3)\le7-3=4$ and $A(L_4)\le10-3=7$.
 \end{proof}
 The bounds are elementary proofs, independent of the coloring enumerator.
-They do not assert a formula for arbitrary ladder length.
+Section~\ref{sec:ladder-family} gives the family argument.
 
 \newpage
 \section{Complete finite ladder classifications}
@@ -332,6 +335,182 @@ For both larger ladders the avoidance probability is of order $q^{-3}$:
 $q^3(1-P_3(q))\to27$ and $q^3(1-P_4(q))\to25$ as $q\to\infty$.
 Indeed the highest nonzero histogram term has degree $m-3$, and each falling
 factorial is monic. These are limits derived from the finite polynomials.
+
+\newpage
+\section{Color collisions as weighted covers}
+Let $E$ be a finite set of $m\ge2$ positions and $\mathcal M$ a nonempty
+family of subsets, each of size at least two. Write $A(\mathcal M)$ for the
+maximum number of colors used while avoiding a rainbow member of $\mathcal M$.
+For a graph, take the positions to be edges and the targets to be its perfect
+matchings. A block $B\subseteq E$, with $|B|\ge2$, has cost and coverage
+\[
+ w(B)=|B|-1,\qquad
+ \Gamma(B)=\{M\in\mathcal M:|M\cap B|\ge2\}.
+\]
+Let $\tau$ be the minimum total cost of blocks whose coverage sets cover
+$\mathcal M$. Chosen blocks may overlap.
+
+\begin{theorem}
+$A(\mathcal M)=m-\tau$.
+\end{theorem}
+\begin{proof}
+The deficit of a coloring with classes $B$ is
+$m-|\text{colors}|=\sum_B(|B|-1)$. It avoids every rainbow target exactly
+when its nonsingleton classes cover $\mathcal M$, so its deficit is at
+least $\tau$.
+
+Conversely, start with any cover. Replace intersecting blocks $B,C$ by their
+union. Coverage is preserved and cost does not increase, because
+\[
+ |B\cup C|-1
+ =(|B|-1)+(|C|-1)-(|B\cap C|-1)
+ \le (|B|-1)+(|C|-1).
+\]
+Repeating leaves disjoint blocks. Add singleton classes at unused positions.
+This is an avoiding coloring of deficit at most the original cover cost.
+Apply this to a minimum cover to obtain equality.
+\end{proof}
+Overlapping covering blocks must therefore be merged in the coloring witness.
+The optimization does not by itself enumerate all extremizers.
+
+Number the $N=|\mathcal M|$ targets. For each nonempty coverage mask $T$,
+retain the least block cost $c_T$. Let $F(S)$ be the least additional cost
+needed after covering the target set $S$. Then
+\[
+ F(\mathrm{full})=0,\qquad
+ F(S)=\min_{T:\,S\cup T\ne S}
+       \bigl(c_T+F(S\cup T)\bigr).
+\]
+Each transition adds a target, so decreasing numerical mask order evaluates
+the table. The block $E$ ensures a finite continuation from every state.
+The answer is $\tau=F(0)$. A certificate contains all cheapest blocks, every
+cost state, an attaining cover, and its merged coloring. A separate checker
+reconstructs the blocks by combinations and verifies every recurrence.
+The inequalities $F(S)\le c_T+F(S\cup T)$ telescope along any cover to give
+a lower bound; the attaining witness gives the upper bound.
+
+Block generation examines at most $2^m$ masks. With $C$ distinct nonempty
+coverage masks, the table has $2^N$ states and at most $2^N C$ transitions.
+These bounds are exponential. The implementation supports at most thirteen
+positions and nine targets; the original partition solver retains its
+twelve-edge limit.
+
+\newpage
+\section{The maximum for every ladder}\label{sec:ladder-family}
+\begin{theorem}
+For every integer $k\ge3$, the ladder $L_k=P_k\mathbin{\square}K_2$ satisfies
+\[
+ A(L_k)=3k-5.
+\]
+The square has $A(L_2)=2$.
+\end{theorem}
+\begin{proof}
+For the construction, color $\{r_0,r_1,t_1\}$ alike and
+$\{t_0,b_0\}$ alike with a different color. Give every other edge a fresh
+color. If a matching omits $r_0$, its first column forces $t_0,b_0$.
+If it contains $r_0$, the next column uses $r_1$ or forces $t_1,b_1$.
+Each case gives a repeated color. The deficit is three, hence the coloring
+uses $3k-5$ colors.
+
+For the upper bound, view a perfect matching as a tiling of the columns by
+a one-column rung or a two-column pair of rail edges. Let $p_j$ count
+tilings of $j$ columns, with $p_0=p_1=1$ and
+$p_j=p_{j-1}+p_{j-2}$. Concatenation injects a pair of tilings into
+one tiling, so $p_a p_b\le p_{a+b}$ for nonnegative $a,b$.
+The same bound holds for a finite product.
+
+A fixed edge forces a tile of width one or two. Removing that tile leaves
+ladder segments of total width at most $k-1$. Their product of tiling counts
+is at most $p_{k-1}$. Two distinct compatible edges force tiles occupying
+at least two columns, leaving total width at most $k-2$; such a pair
+belongs to at most $p_{k-2}$ matchings. Incompatible pairs belong to none.
+Here we also use that the sequence $p_j$ is nondecreasing.
+
+If an avoiding coloring used at least $m-2$ colors, where $m=3k-2$,
+merge classes to obtain exactly $m-2$ colors. The nonsingleton classes are
+two pairs or one triple.
+
+Two pairs obstruct at most $2p_{k-2}<p_k$ matchings for $k\ge3$,
+since $p_{k-1}>p_{k-2}$. A triple has at most $3p_{k-1}$
+edge--matching incidences. For $k\ge4$,
+\[
+ p_{k-1}=p_{k-2}+p_{k-3}<2p_{k-2},
+ \qquad 3p_{k-1}<2p_k.
+\]
+But obstructing all $p_k$ matchings using that triple requires at least
+two incidences per matching, a contradiction.
+
+For $k=3$, there are three matchings. Only the two end rungs occur twice;
+each other edge occurs once. A triple has at most five incidences, fewer
+than the six required. Thus deficit two is impossible for every $k\ge3$.
+Together with the construction, this gives the formula.
+\end{proof}
+The argument is self-contained and does not depend on the finite searches.
+The tiling counts $2,3,5,8$ for $k=2,3,4,5$ give
+\[
+\begin{array}{c|rrrr}
+ k&2&3&4&5\\ \hline
+ A(L_k)&2&4&7&10\\
+ \text{fixed-edge extremizers}&1&27&25&15 .
+\end{array}
+\]
+Only the maximum-color row has been established for all lengths.
+The extremizer row records the four computed populations; no all-length
+classification or novelty claim is made.
+
+\newpage
+\section{Five-column classification and cover certificates}
+The five-column ladder has thirteen edges and eight perfect matchings.
+Its cover problem examines 8,178 nonsingleton blocks, which yield 139
+distinct nonempty coverage masks. The complete cost table has 256 states
+and gives $F(0)=3$, independently reproducing the ten-color maximum.
+The eight other saved host maxima are also reproduced by the cover method:
+the original six sparse hosts and the three- and four-column ladders.
+
+The full deficit-three partition band contains 39,325 candidates. Exactly
+fifteen avoid a rainbow perfect matching. Exchanging the rails and reversing columns generate
+the four-element automorphism group, recovered independently by checking
+all degree-preserving vertex bijections. The six complete orbit classes are
+\begin{center}\small
+\begin{tabular}{lrr}
+\toprule
+Representative & Orbit size & Stabilizer size\\
+\midrule
+\texttt{0012340564789} & 4 & 1\\
+\texttt{0012345674589} & 2 & 2\\
+\texttt{0123004506789} & 2 & 2\\
+\texttt{0123004567890} & 2 & 2\\
+\texttt{0123004567896} & 4 & 1\\
+\texttt{0123045674897} & 1 & 4\\
+\bottomrule
+\end{tabular}
+\end{center}
+Strings use the rung--top--bottom edge order from Section~5 and ignore
+color names. Orbit sizes sum to fifteen; all orbits are disjoint and cover
+the saved extremal population. Grouping by nonsingleton class sizes gives
+four quadruple patterns, eight triple-and-pair patterns, and three patterns
+with three pairs.
+
+For a separate upper-band check, the partition iterator visits
+\[
+\begin{array}{c|rrrr}
+\text{deficit}&0&1&2&3\\ \hline
+\text{partitions}&1&78&2431&39325\\
+\text{avoiding}&0&0&0&15 .
+\end{array}
+\]
+These are all 41,835 partitions of deficit at most three, not all $B_{13}$
+partitions. A separate block-shape enumerator recovers all fifteen extremizers.
+It examines a quadruple, a triple and a disjoint pair, or three disjoint pairs.
+
+Run \texttt{python -m experiments.matching\_covers} for a summary. All
+certificates, extremizers, and orbit representatives are in
+\path{results/data/matching_covers.json}. The contract, bounded execution
+record, proof-source hash, and test ranges are linked from
+\path{results/matching_cover_verification.md}.
+The source comparison in \path{notes/literature/ladders.md} records search
+and access limits. These elementary arguments and finite classifications
+are not presented as new results.
 
 \begin{thebibliography}{1}
 \bibitem{LTJ} X. Li, J. Tu, and Z. Jin,

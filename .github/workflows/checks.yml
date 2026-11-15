@@ -30,3 +30,4 @@ jobs:
       - run: python -m experiments.cycle_unions --check results/data/cycle_unions.json
       - run: python -m experiments.rainbow_inclusion_exclusion --check results/data/rainbow_inclusion_exclusion.json
       - run: python -m experiments.ladder_matchings --check results/data/ladder_matchings.json
+      - run: python -m experiments.matching_covers --check results/data/matching_covers.json

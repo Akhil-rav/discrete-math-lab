@@ -4,7 +4,7 @@ The [elementary proof](../notes/ladders.md) establishes $A(L_2)=2$,
 $A(L_3)=4$, and $A(L_4)=7$. The [classification report](ladder_matchings.md)
 separately records the computed extremizers and probabilities.
 
-Proof source SHA-256: `802651379d558af79efefd46f1985a22a4ce474450890f8130369e70171ada36`.
+Proof source SHA-256: `f37e42fa9bcf12f5253f7e92204c8c76e741af9eac04bf29bf55f0cd082aa529`.
 
 ## Proof checks
 
@@ -60,3 +60,7 @@ python -m tools.verify_repository
 The [literature comparison](../notes/literature/ladders.md) is limited.
 No conclusion for all ladder lengths, novelty assessment, or external review
 follows from these checks.
+
+The later [family formula and cover reduction](matching_covers.md) have a
+separate written proof and verification record. The three-host dataset above
+retains its original finite scope.

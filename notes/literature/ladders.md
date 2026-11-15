@@ -26,6 +26,13 @@ complete-graph and complete-bipartite context. A theorem on those hosts does
 not supply a fixed-ladder extremal classification. Likewise, a maximum over
 a planar graph family would not automatically give the value on each ladder.
 
+A further pass on November 15 searched for the weighted-cover formulation,
+“color deficit,” and the general ladder formula together with “anti-Ramsey”
+and “rainbow perfect matching.” No exact primary statement was authenticated.
+The [new note](../matching_covers.md) supplies its own elementary proofs of
+both the cover reduction and $A(L_k)=3k-5$ for $k\ge3$. The earlier cubic-host
+access limits remain; absence from these searches does not establish novelty.
+
 **Comparison status:** adjacent literature only; exact prior overlap is
 unverified. The bounds are supported by the self-contained elementary proof,
 and the classifications by the explicitly bounded computations. Systematic

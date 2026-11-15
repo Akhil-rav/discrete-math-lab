@@ -1,0 +1,215 @@
+{
+  "schema_version": 2,
+  "claim_id": "MATCHING_COVERS_2026_11_15",
+  "repository": {
+    "commit": "3c2417f6fcdbcd66727851298875cab04c748384",
+    "dirty": true
+  },
+  "command": [
+    "python",
+    "-m",
+    "experiments.matching_covers",
+    "--output",
+    "results/runs/matching-covers-2026-11-15/covers.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Compute minimum color deficits by weighted block covers on nine hosts; independently check every block table, all cost states, and coloring witnesses; compare eight maxima with saved partition searches; visit every L5 partition in deficit bands 0..3 and classify all 15 extremizers.",
+    "coefficient_domain": "Exact integers",
+    "conventions": "Arbitrary edge colorings; targets are perfect matchings. A block costs size minus one and covers targets meeting it at least twice. Overlapping covering blocks are merged. Fixed edges and color renaming for partitions; graph symmetry quotient separate.",
+    "inputs": [
+      "C4,C6,C8,two disjoint C4,K3,3,cube,L3,L4,L5"
+    ],
+    "bounds": {
+      "hosts": 9,
+      "max_edges": 13,
+      "max_targets": 9,
+      "L5_deficit_bands": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "L5_partitions_visited": 41835
+    },
+    "non_claims": [
+      "Not a full Bell-number enumeration on L5",
+      "General ladder formula is established by a separate written proof",
+      "No novelty or external review claim",
+      "No probability or timing result for L5"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-15T18:42:47.426639+00:00",
+    "runtime_seconds": 0.446829,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 60.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/matching_covers.py",
+    "src/matching_cover_certificate.py",
+    "src/ladders.py",
+    "src/color_patterns.py",
+    "src/cube_symmetry.py",
+    "src/edge_coloring.py",
+    "src/rainbow_constraints.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_inclusion_exclusion.py",
+    "experiments/matching_covers.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/sparse_rainbow.py",
+    "experiments/rainbow_inclusion_exclusion.py",
+    "results/data/sparse_rainbow.json",
+    "results/data/ladder_matchings.json"
+  ],
+  "input_artifacts": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/matching_covers.py",
+      "sha256": "ea463e7867ad1dfb58ac45ac5f3a07c6b6df7a23e33d5330f65fb5207241e0ba",
+      "sha256_after": "ea463e7867ad1dfb58ac45ac5f3a07c6b6df7a23e33d5330f65fb5207241e0ba"
+    },
+    {
+      "path": "src/matching_cover_certificate.py",
+      "sha256": "12f9cd249660800bfc5c832e9f27dae9d5f066400ff5fb78940c7ee14248330c",
+      "sha256_after": "12f9cd249660800bfc5c832e9f27dae9d5f066400ff5fb78940c7ee14248330c"
+    },
+    {
+      "path": "src/ladders.py",
+      "sha256": "cb95dcc2d242a0e0295295d660c94771d91faa0edff396b55bda29d29454f82f",
+      "sha256_after": "cb95dcc2d242a0e0295295d660c94771d91faa0edff396b55bda29d29454f82f"
+    },
+    {
+      "path": "src/color_patterns.py",
+      "sha256": "c0c7daf037775a521eea24512f2f73713736d0bca8262390d1b77ac49e5a8553",
+      "sha256_after": "c0c7daf037775a521eea24512f2f73713736d0bca8262390d1b77ac49e5a8553"
+    },
+    {
+      "path": "src/cube_symmetry.py",
+      "sha256": "288e0ceccffdf65b065e5856c43ced65d32041e4c34939c24610adfda333f624",
+      "sha256_after": "288e0ceccffdf65b065e5856c43ced65d32041e4c34939c24610adfda333f624"
+    },
+    {
+      "path": "src/edge_coloring.py",
+      "sha256": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0",
+      "sha256_after": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0"
+    },
+    {
+      "path": "src/rainbow_constraints.py",
+      "sha256": "a7ad45e0a273196491b71ec2eb2fa330b024c27f3f8fddcad8ceeed27293e5cc",
+      "sha256_after": "a7ad45e0a273196491b71ec2eb2fa330b024c27f3f8fddcad8ceeed27293e5cc"
+    },
+    {
+      "path": "src/rainbow_probability.py",
+      "sha256": "c65184702a9bd34a8dd70fb6853a5d59c0bda52a29db94a6db9458439039674e",
+      "sha256_after": "c65184702a9bd34a8dd70fb6853a5d59c0bda52a29db94a6db9458439039674e"
+    },
+    {
+      "path": "src/rainbow_inclusion_exclusion.py",
+      "sha256": "699876151048f54ee7ce98f9c76f3ffec1a56bc90ed618a9bb2e3cd672551491",
+      "sha256_after": "699876151048f54ee7ce98f9c76f3ffec1a56bc90ed618a9bb2e3cd672551491"
+    },
+    {
+      "path": "experiments/matching_covers.py",
+      "sha256": "e7e14ec050f25f8bd1f2fbac545602b497b616587c910c2964de1d2d42685362",
+      "sha256_after": "e7e14ec050f25f8bd1f2fbac545602b497b616587c910c2964de1d2d42685362"
+    },
+    {
+      "path": "experiments/rainbow_complete_bipartite.py",
+      "sha256": "b42444c2a1205561184dbc2ad17941a25654f7e6a924d726c8a72230db7d417c",
+      "sha256_after": "b42444c2a1205561184dbc2ad17941a25654f7e6a924d726c8a72230db7d417c"
+    },
+    {
+      "path": "experiments/sparse_rainbow.py",
+      "sha256": "7f727c192e0379dd99bb7566421529f50559a332fa1e8e5fe9efaf71c92118d6",
+      "sha256_after": "7f727c192e0379dd99bb7566421529f50559a332fa1e8e5fe9efaf71c92118d6"
+    },
+    {
+      "path": "experiments/rainbow_inclusion_exclusion.py",
+      "sha256": "1bdfbcd534e872bd051a33a2ae276e98ad5f33df1937b41320db95cb954756e8",
+      "sha256_after": "1bdfbcd534e872bd051a33a2ae276e98ad5f33df1937b41320db95cb954756e8"
+    },
+    {
+      "path": "results/data/sparse_rainbow.json",
+      "sha256": "8e97cd5269e7001bc79461f05e8818cd0efeef43b75cf5ea6c5db4cbeae3d9b0",
+      "sha256_after": "8e97cd5269e7001bc79461f05e8818cd0efeef43b75cf5ea6c5db4cbeae3d9b0"
+    },
+    {
+      "path": "results/data/ladder_matchings.json",
+      "sha256": "2f0dc53b7fc2cb3513b1aaf5ce24dc0606c132c84f4e795e4bb0ae9881ab9917",
+      "sha256_after": "2f0dc53b7fc2cb3513b1aaf5ce24dc0606c132c84f4e795e4bb0ae9881ab9917"
+    }
+  ],
+  "output_directory": "results/runs/matching-covers-2026-11-15",
+  "declared_results": [
+    "results/runs/matching-covers-2026-11-15/covers.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/matching-covers-2026-11-15/stdout.txt",
+      "sha256": "78777ec276cee7162069914aefedefd376be39e12603468fe5008793025a394c",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/matching-covers-2026-11-15/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/matching-covers-2026-11-15/covers.json",
+      "sha256": "26cb7151e5e5afb1c68aaefad784a7ff881d1cc348e0f590c8ef2ced549ad354",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}
