@@ -22,6 +22,7 @@ python -m experiments.classify_cube --check results/data/cube_classification.jso
 python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
 python -m experiments.random_rainbow --check results/data/random_rainbow.json
 python -m experiments.cycle_unions --check results/data/cycle_unions.json
+python -m experiments.rainbow_inclusion_exclusion --check results/data/rainbow_inclusion_exclusion.json
 ```
 
 To save fresh output without replacing the reference data:
@@ -40,6 +41,7 @@ python -m experiments.reproduce --output results/local-run.json
 | `experiments.classify_cube` | All S(12,7)=627,396 seven-color cube partitions, then all 174 avoiding partitions modulo graph symmetry | Nine classes; full 48-element action checked against all 8! vertex maps; matching-subset oracle |
 | `experiments.cube_collision_audit` | Every nonempty cube edge subset and all 174 extremizers | 4,095 subset checks, incidence constants, and the proved extremal balance U+O=1; separate bit-mask and color-counter oracles |
 | `experiments.random_rainbow` | Exact probabilities and moment bounds on six hosts for palettes 1..24, plus five cube tail examples | Weighted partition counts; direct named-color, cycle-formula, and overlap-event oracles |
+| `experiments.rainbow_inclusion_exclusion` | Exact counting polynomials and order-two/order-three Bonferroni bounds on the same six hosts | All coefficients agree with the histograms; 144 palette rows agree; matching families checked by edge subsets |
 | `experiments.rainbow_progressions` | Exact aw for intervals/cyclic orders 3..9 and three specified products | All Bn partitions; independent equations for interval/cyclic/product AP generators |
 | `experiments.color_coding_small_cases` | Color-mask DP on every graph of order ≤4 and every k-color assignment, 1≤k≤n | 22,955 permutation-oracle comparisons; exact probability and witness checks |
 | `experiments.expansion_small_cases` | Exact cuts and walks on K4, C6, K33, 2K3 | All nonempty subsets up to half order; rational arithmetic; complete/cycle benchmarks |
@@ -55,6 +57,17 @@ r=2..4 and d=2..6 (lazy), at every time 0..12. Run it with
 `python -m unittest discover -s tests -p test_walk_formulas.py -v`.
 
 ## Conventions and limits
+
+The optional timing comparison uses fresh count caches, three trials with
+alternating method order, and 24 exact probability evaluations per trial:
+
+```sh
+python -m experiments.benchmark_rainbow_methods --repeat 3 --output results/local-benchmark.json
+```
+
+Timings are machine-dependent and are not part of deterministic verification.
+The [method comparison](../results/inclusion_exclusion.md) links raw samples
+and describes the work included in each timed region.
 
 The probability figure is a separate optional presentation step:
 `python -m pip install -r requirements-figures.txt`, then

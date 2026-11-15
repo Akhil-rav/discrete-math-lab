@@ -39,7 +39,7 @@ not the nine symmetry-class count. The five large-q values illustrate the limit;
 they do not prove convergence or quantify an error bound.
 
 Reviewed proof source: [random_rainbow.md](../notes/random_rainbow.md).
-SHA-256: `f32bf992bfada4300413a440a3e73aec1d17609d450051bd1be4756c33e80ccb`.
+SHA-256: `622a45f4cbd10661dc0e84cd5637e0b1ca4aa148fc1bfc1e7d0b651a6e1672f1`.
 
 ## Finite checks
 
@@ -85,3 +85,17 @@ legibility, and agreement with the tabulated values. Shading shows the moment
 bounds, not a confidence interval. No visual observation supplies a proof.
 
 The model and tested range are described in the [project report](../projects/random-colorings/report.md).
+
+## Inclusion-exclusion extension
+
+The counting note also gives the conflict-graph bijection, inclusion-exclusion
+identity, addition/contraction recurrence, and order-two/order-three Bonferroni
+bounds. The recurrence partitions colorings by equality of two nonadjacent
+vertices. Unused host-edge positions remain isolated; complete graphs and the
+empty graph give the falling-factorial terminal values. Nonnegative binomial
+remainders give the bounds, including X=0 and families with fewer than three
+matchings. These arguments require no experimental premise.
+
+The [method comparison](inclusion_exclusion.md) records the separate finite
+checks, polynomial coefficient identities, and timings. The numerical
+applications use the six specified hosts.

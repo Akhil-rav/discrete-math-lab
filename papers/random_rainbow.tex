@@ -21,12 +21,12 @@
 \begin{document}
 \maketitle\vspace{-1.5em}
 \begin{abstract}
-We convert exhaustive edge-partition counts into exact probabilities under
-independent uniform edge colors. Matching intersections give first- and
-second-moment bounds, while the largest avoiding partitions determine a
-large-palette limit. Six fixed hosts illustrate the formulas. This note
-typesets the repository's existing counting arguments and finite results;
-no novelty is claimed.
+We count rainbow perfect matchings under independent uniform edge colors by
+two exact methods: weighting avoiding partitions and applying inclusion--exclusion
+to matching events through conflict graphs. Their counting polynomials agree
+coefficient by coefficient on six fixed hosts. Higher-order intersections give
+Bonferroni bounds, and a measured runtime comparison shows the trade-off between
+the implementations. These are elementary counting arguments and finite studies.
 \end{abstract}
 
 \section{Model and partition weights}
@@ -101,6 +101,64 @@ Rearrange. If the second moment is zero, the nonnegative integer $X$ is zero
 almost surely, so no division is needed.
 \end{proof}
 
+\section{Inclusion--exclusion through conflict graphs}
+Let $\mathcal M$ be the perfect-matching family. For each nonempty subfamily
+$F\subseteq\mathcal M$, form a simple graph $H_F$ on the \emph{entire} edge
+set of $G$: join two positions if they occur together in some matching of $F$.
+A proper $q$-coloring of $H_F$ is precisely an edge coloring making every
+matching of $F$ rainbow. Unused positions remain isolated, retaining their
+free color choices. If $P_H(q)$ denotes the chromatic polynomial, then
+\begin{proposition}\label{prop:ie}
+The number of assignments containing at least one rainbow perfect matching is
+\[
+ U_G(q)=\sum_{\varnothing\ne F\subseteq\mathcal M}
+ (-1)^{|F|+1}P_{H_F}(q),\qquad \Prob(X>0)=\frac{U_G(q)}{q^m}.
+\]
+\end{proposition}
+\begin{proof}
+For a coloring with $x>0$ rainbow matchings, the sum counts it
+$\sum_{j=1}^{x}(-1)^{j+1}\binom{x}{j}=1$ times. A coloring with $x=0$
+is counted zero times. Every assignment on the host has probability $q^{-m}$.
+\end{proof}
+The counting engine uses the matching family directly, without an avoiding
+histogram. It computes the chromatic polynomials by addition and contraction:
+for nonadjacent vertices $u,v$,
+\[
+ P_H(q)=P_{H+uv}(q)+P_{H/uv}(q).
+\]
+Proper colorings with different colors at $u,v$ are those of $H+uv$.
+Those with equal colors correspond bijectively to colorings of the graph
+obtained by identifying $u,v$ and removing duplicate edges. No loop is
+introduced because the vertices were nonadjacent. Repeated additions or
+contractions terminate: an addition reduces the missing-edge count at fixed
+order, and a contraction reduces the order. Complete graphs have value
+$(q)_{|V(H)|}$, including $P_{K_0}=1$. Disconnected components multiply and
+may reuse palette labels. A fresh cache reuses identical labeled subproblems
+within each host calculation.
+
+Comparing with Proposition~\ref{prop:weights} gives the exact identity
+\[
+ U_G(q)=q^m-\sum_k a_k(q)_k.
+\]
+All coefficients agree on the six hosts, as do all 144 saved probabilities.
+The matching families are independently recovered by edge-subset enumeration
+and compared with permutation generation. The coefficient comparison checks
+the polynomial identity directly alongside the palette grid. The implementation
+is capped at twelve positions and nine targets; it is not a polynomial-time
+algorithm for arbitrary hosts.
+
+\subsection*{Bonferroni bounds}
+Write $T_j=\sum_{|F|=j}\Prob(\bigcap_{M\in F}\{I_M=1\})$, with $T_j=0$
+for $j>N$. Then $T_j=\E\binom{X}{j}$, and
+\[
+ \max\{0,T_1-T_2\}\le\Prob(X>0)\le\min\{1,T_1-T_2+T_3\}.
+\]
+For $x\ge1$, the lower partial sum minus one is
+$-\binom{x-1}{2}$, and the upper partial sum minus one is
+$\binom{x-1}{3}$. For $x=0$ both sums vanish. Taking expectations proves
+the bounds without an independence assumption. The first two sums also
+satisfy $T_1=\E[X]$ and $2T_2=\E[X^2]-\E[X]$, checking the earlier moments.
+
 \section{Exact finite comparison}
 The saved partition histograms give the following values. The crossing column
 is the first positive integer palette size whose probability is at least
@@ -124,6 +182,11 @@ For example, on the cube with $q=4$,
 \[
  \E[X]=\frac{27}{32},\qquad \E[X^2]=\frac{99}{64},\qquad
  \frac{81}{176}\le\Prob(X>0)=\frac{4653}{8192}\le\frac{27}{32}.
+\]
+The conflict-graph computation gives $T_2=45/128$ and $T_3=3/32$, improving
+that interval at this palette to
+\[
+ \frac{63}{128}\le\frac{4653}{8192}\le\frac{75}{128}.
 \]
 Expectation differs from existence probability because a coloring can contain
 several rainbow matchings. An eight-color palette also does not force a
@@ -164,12 +227,52 @@ at $q=32$ and $1024$ are approximately $361.18$ and $180.72$; the limit need
 not be a good approximation for small palettes. The polynomial argument
 proves the limit; the numerical examples only illustrate it.
 
-\subsection*{Reproduction and scope}
-The implementation is \path{src/rainbow_probability.py}. From the repository
-root, run
+\section{Measured method comparison}
+The table gives milliseconds, taking the median of three trials per host on
+Python 3.13.7, Windows 11, Intel64 Family 6 Model 186. Both methods construct
+their counts from the host and evaluate all 24 palettes. Timed work includes
+matching generation and the new method's matching cross-check; imports,
+host definitions, and file I/O are excluded.
+Counting caches start empty on each call, and method order alternates by trial.
+\begin{center}\small
+\begin{tabular}{lrrr}
+\toprule
+Host & Event subsets & Partition search (ms) & Inclusion--exclusion (ms)\\
+\midrule
+$C_4$ & 3 & 0.122 & 0.109\\
+$C_6$ & 3 & 0.267 & 0.132\\
+$C_8$ & 3 & 3.633 & 0.193\\
+$C_4\sqcup C_4$ & 15 & 3.961 & 1.188\\
+$K_{3,3}$ & 63 & 3.548 & 22.688\\
+$Q_3$ & 511 & 1589.737 & 2790.843\\
+\bottomrule
+\end{tabular}
+\end{center}
+In this run, inclusion--exclusion was faster on the cycle hosts and disjoint
+squares; the partition search was faster on $K_{3,3}$ and the cube. Cycle
+hosts have only two matching events, whose conflict graphs split
+into complete graphs and isolated vertices. By contrast, overlapping families
+can generate many chromatic subproblems. The very
+small $C_4$ times do not support a useful speed distinction. The 511 cube
+event subsets required 156,885 cached chromatic subproblems, so event-subset
+counts alone are not work estimates. These measurements describe the stated
+implementations on one machine, not an asymptotic comparison or a confidence
+interval. They include count construction; evaluation from already-saved
+histograms is a different, cheaper task. Raw samples are retained in the
+repository's benchmark record.
+
+\newpage
+\section*{Reproduction and checks}
+The two implementations are:
+\begin{quote}\small
+\path{src/rainbow_probability.py}\\
+\path{src/rainbow_inclusion_exclusion.py}
+\end{quote}
+From the repository root, run
 \begin{quote}\small\ttfamily
 python -m experiments.random\_rainbow\par
-python -m unittest discover -s tests -v
+python -m experiments.rainbow\_inclusion\_exclusion\par
+python -m tools.verify\_repository
 \end{quote}
 The reference file \path{results/data/random_rainbow.json} contains 144
 main-grid rows: six hosts and $q=1,\ldots,24$, plus five larger cube palettes.
@@ -177,8 +280,33 @@ Checks use direct named-color enumeration on $C_4$, $C_6$, and two disjoint
 squares, the independent cycle formula, and four-position overlap-event
 oracles. All main-grid bounds are checked exactly. No sampling or numerical
 tolerance establishes these results. The figure alone uses floating-point
-conversion. The cube's coefficient depends on its finite classification;
+conversion. Additional tests check every simple graph through four vertices
+against named proper colorings, every nonempty family of two-position events
+on four positions, mixed target sizes, relabelings, and unused positions.
+The new polynomials and Bonferroni bounds are in
+\path{results/data/rainbow_inclusion_exclusion.json}.
+The cube's coefficient depends on its finite classification;
 no new graph-family threshold or literature novelty follows.
+
+The new chromatic-polynomial tests cover all 76 simple labeled graphs on
+zero through four vertices, comparing with named-color enumeration for
+$q=0,\ldots,4$. A separate rainbow-event oracle checks all 63 nonempty
+families of two-position events on four positions, at $q=1,\ldots,4$.
+Mixed target sizes and unused positions test the denominator and intersection
+sums beyond the six host graphs. Relabeling tests compare all permutations
+of a fixed four-vertex graph. These are finite implementation checks;
+Proposition~\ref{prop:ie} and the recurrence have separate counting proofs.
+
+To repeat the timings, use the optional command
+\begin{quote}\small\ttfamily
+python -m experiments.benchmark\_rainbow\_methods\par
+\hspace*{1em}--repeat 3 --output results/local-benchmark.json
+\end{quote}
+The two displayed lines form one command. The benchmark checks agreement
+of every timed probability, then saves the individual samples and medians.
+Its times are not expected to reproduce exactly and are excluded from the
+deterministic data comparison. Neither implementation uses an optional
+mathematics library. Only regeneration of the existing figure needs Matplotlib.
 
 \subsection*{Companion records}
 Definitions and proofs are also readable in
@@ -186,6 +314,8 @@ Definitions and proofs are also readable in
 The repository's
 \href{https://github.com/Akhil-rav/discrete-math-lab/blob/main/results/random_rainbow_verification.md}{verification record}
 states the original review and execution scope. The
+\href{https://github.com/Akhil-rav/discrete-math-lab/blob/main/results/inclusion_exclusion.md}{method comparison}
+records the new checks and raw timing samples. The
 \href{https://github.com/Akhil-rav/discrete-math-lab/blob/main/results/cube_classification.md}{cube classification}
 supplies the 174-partition count.
 \end{document}
