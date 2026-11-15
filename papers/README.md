@@ -10,7 +10,7 @@ publication is claimed.
 | Nine symmetry classes of extremal cube colorings | [Read](cube_classification.pdf) | [Source](cube_classification.tex) | [Classification and atlas](../results/cube_classification.md) |
 | Exact probabilities of rainbow perfect matchings | [Read](random_rainbow.pdf) | [Source](random_rainbow.tex) | [Study and plot](../projects/random-colorings/report.md), [verification](../results/random_rainbow_verification.md) |
 | Expansion and random walks: exact examples | [Read](expansion_walks.pdf) | [Source](expansion_walks.tex) | [Project](../projects/expansion-and-walks/report.md), [verification](../results/walk_paper_verification.md) |
-| Even cycles and two disjoint squares | [Read](cycle_extremizers.pdf) | [Source](cycle_extremizers.tex) | [Elementary proofs](../notes/cycle_extremizers.md) |
+| Disjoint unions of even cycles | [Read](cycle_extremizers.pdf) | [Source](cycle_extremizers.tex) | [General proof and equality cases](../notes/cycle_extremizers.md), [verification](../results/cycle_union_verification.md) |
 | Matching foundations and exact small-host studies | [Read](matching_foundations.pdf) | [Source](matching_foundations.tex) | [Hall corollary](../notes/halls_theorem.md), [K33 classes](../results/k33_classification.md), [sparse hosts](../projects/rainbow-matchings/report.md) |
 | Rainbow progressions in small intervals and groups | [Read](rainbow_progressions.pdf) | [Source](rainbow_progressions.tex) | [Definitions](../notes/rainbow_progressions.md), [finite results](../results/rainbow_progressions.md) |
 | Vertex color-coding for simple paths | [Read](color_coding.pdf) | [Source](color_coding.tex) | [Method](../notes/color_coding.md), [22,955 comparisons](../results/algorithm_demos.md) |
@@ -20,6 +20,9 @@ nine-class atlas. The probability report combines the counting proofs, the
 six-host comparison, the figure, and the large-palette limit. The matching
 foundations report collects the Hall corollary, 4,477 graph checks, known
 complete-bipartite thresholds, four K33 classes, and sparse-host coverage.
+The cycle paper proves A(G)=|E(G)|-2 for every nonempty union of even cycles
+and counts all fixed-edge extremizers as the sum of binomial(n_i,2)^2 over
+its components. It retains the cycle and two-square proofs as introductory cases.
 The progression and color-coding reports typeset their existing definitions,
 arguments, finite tables, references, and reproduction instructions.
 

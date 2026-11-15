@@ -22,11 +22,13 @@ DATASETS={
     'results/data/cube_classification.json':'results/runs/cube-classification-2026-11-14/classification.json',
     'results/data/cube_collisions.json':'results/runs/cube-collisions-2026-11-14/audit.json',
     'results/data/random_rainbow.json':'results/runs/random-rainbow-2026-11-14/probabilities.json',
+    'results/data/cycle_unions.json':'results/runs/cycle-unions-2026-11-15/cycle_unions.json',
 }
 PROOF_REVIEWS={
     'notes/cube_upper_bound.md':'results/cube_bound_review.md',
     'notes/random_rainbow.md':'results/random_rainbow_verification.md',
     'papers/expansion_walks.tex':'results/walk_paper_verification.md',
+    'notes/cycle_extremizers.md':'results/cycle_union_verification.md',
 }
 REPRODUCTIONS=(
     ('experiments.reproduce','results/data/small_cases.json'),
@@ -34,6 +36,7 @@ REPRODUCTIONS=(
     ('experiments.classify_cube','results/data/cube_classification.json'),
     ('experiments.cube_collision_audit','results/data/cube_collisions.json'),
     ('experiments.random_rainbow','results/data/random_rainbow.json'),
+    ('experiments.cycle_unions','results/data/cycle_unions.json'),
 )
 
 
@@ -151,7 +154,7 @@ def main():
             commands += [['-m',module,'--check',path] for module,path in REPRODUCTIONS]
             for command in commands:
                 subprocess.run([sys.executable,*command],cwd=ROOT,check=True,timeout=60)
-            print('PASS: all mathematical tests and five data reproductions.')
+            print(f'PASS: all mathematical tests and {len(REPRODUCTIONS)} data reproductions.')
     except (VerificationError,OSError,ValueError,KeyError,subprocess.SubprocessError) as error:
         print(f'FAIL: {error}',file=sys.stderr)
         raise SystemExit(1)

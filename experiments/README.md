@@ -21,6 +21,7 @@ python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 python -m experiments.classify_cube --check results/data/cube_classification.json
 python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
 python -m experiments.random_rainbow --check results/data/random_rainbow.json
+python -m experiments.cycle_unions --check results/data/cycle_unions.json
 ```
 
 To save fresh output without replacing the reference data:
@@ -34,6 +35,7 @@ python -m experiments.reproduce --output results/local-run.json
 | `experiments.regular_bipartite_matchings` | Every labeled d-regular bipartite graph, 1≤n≤5 and 1≤d≤n, has a perfect matching | 4,477 graphs; independent generator/matching checks through n=3 |
 | `experiments.rainbow_complete_bipartite` | Maximum avoiding colors for K22 and K33 | B4=15 and B9=21,147 partitions; independent edge-subset oracle |
 | `experiments.sparse_rainbow` | Exact avoidance histograms on six hosts through 12 edges | Counted rejected subtrees; independent small-host partition oracle |
+| `experiments.cycle_unions` | Ten specified even-cycle unions through 12 edges | Full partition search on six hosts through 10 edges; complete m-2, m-1, m color bands on all ten; subset-matching oracle and Stirling coverage checks |
 | `experiments.classify_k33` | Group the 87 extremizers by Aut(K33) and color renaming | Full 72-element vertex action; closure and orbit/stabilizer checks |
 | `experiments.classify_cube` | All S(12,7)=627,396 seven-color cube partitions, then all 174 avoiding partitions modulo graph symmetry | Nine classes; full 48-element action checked against all 8! vertex maps; matching-subset oracle |
 | `experiments.cube_collision_audit` | Every nonempty cube edge subset and all 174 extremizers | 4,095 subset checks, incidence constants, and the proved extremal balance U+O=1; separate bit-mask and color-counter oracles |

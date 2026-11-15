@@ -4,7 +4,7 @@
 
 | Interest | Reading route |
 |---|---|
-| Proofs | Start with the [cycle and disjoint-square paper](../papers/cycle_extremizers.pdf), then the [cube incidence proof](../notes/cube_upper_bound.md). The first uses only perfect matchings and counting; the second develops a bound from matching incidences. |
+| Proofs | Start with the [even-cycle-union paper](../papers/cycle_extremizers.pdf), then the [cube incidence proof](../notes/cube_upper_bound.md). The first develops from one cycle to a complete union classification; the second develops a bound from matching incidences. |
 | Computation | Open the [nine-class cube atlas](../results/cube_classification.md), then follow its [implementation](../src/README.md) and [verification record](../results/cube_verification.md). Distinguish fixed-edge partitions from classes under graph symmetry. |
 | Probability and TCS | Read the [random-coloring study](random-colorings/report.md) for exact counting and moment bounds, or the [walk paper](../papers/expansion_walks.pdf) for elementary expansion and mixing examples. |
 
@@ -18,7 +18,7 @@ The main project studies how many colors a fixed bipartite graph can use while
 avoiding every rainbow perfect matching.
 
 - [Project report: exact searches on small hosts](rainbow-matchings/report.md)
-- [Paper: even cycles and two disjoint squares](../papers/cycle_extremizers.pdf)
+- [Paper: arbitrary disjoint unions of even cycles](../papers/cycle_extremizers.pdf)
 - [LaTeX source](../papers/cycle_extremizers.tex)
 - [Extremal K33 classification](../results/k33_classification.md)
 - [Sparse-host data](../results/data/sparse_rainbow.json)

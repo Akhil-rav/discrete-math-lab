@@ -1,0 +1,153 @@
+{
+  "schema_version": 2,
+  "claim_id": "EVEN_CYCLE_UNIONS_2026_11_15",
+  "repository": {
+    "commit": "3dd7d068ba8e941c7ee53ec6424961b781ae3d05",
+    "dirty": true
+  },
+  "command": [
+    "python",
+    "-m",
+    "experiments.cycle_unions",
+    "--output",
+    "results/runs/cycle-unions-2026-11-15/cycle_unions.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "computation Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "For ten specified disjoint unions of even cycles through 12 edges, compare every avoiding partition in the m-2, m-1, and m color bands with the proved construction; fully enumerate all partitions for the six hosts through 10 edges.",
+    "coefficient_domain": "Exact integers and finite sets",
+    "conventions": "Fixed components and cyclically ordered edge positions; color names ignored; no quotient by graph automorphisms; no proper-coloring requirement.",
+    "inputs": [
+      "Half-length tuples (2), (3), (4), (2,2), (5), (2,3), (6), (2,4), (3,3), (2,2,2)"
+    ],
+    "bounds": {
+      "hosts": 10,
+      "max_edges": 12,
+      "full_enumeration_max_edges": 10
+    },
+    "non_claims": [
+      "No full Bell-number enumeration on the 12-edge hosts",
+      "The general theorem is established by the written proof, not these finite checks",
+      "No novelty or independent external review claim"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-15T00:12:25.513616+00:00",
+    "runtime_seconds": 0.788259,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 30.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/color_patterns.py",
+    "src/cube_symmetry.py",
+    "src/cycle_unions.py",
+    "src/edge_coloring.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/cycle_unions.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    },
+    {
+      "path": "src/color_patterns.py",
+      "sha256": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9",
+      "sha256_after": "ae4091f1ae7cde992e7e28f23854e9b99d7f591f19562acde2d23cc5f9f9f8c9"
+    },
+    {
+      "path": "src/cube_symmetry.py",
+      "sha256": "6d6ea4b671207b738357b6358c766caf17f2b0035aa27786be8d590e03612dc7",
+      "sha256_after": "6d6ea4b671207b738357b6358c766caf17f2b0035aa27786be8d590e03612dc7"
+    },
+    {
+      "path": "src/cycle_unions.py",
+      "sha256": "64c1bf045655322ec93de82433ac60df7713e7dcec722e8134a393bd06c5d852",
+      "sha256_after": "64c1bf045655322ec93de82433ac60df7713e7dcec722e8134a393bd06c5d852"
+    },
+    {
+      "path": "src/edge_coloring.py",
+      "sha256": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0",
+      "sha256_after": "60794eb5a6fa62ddf7cd8683632d151407f89eebaf9d2adb3f5620ac773d42e0"
+    },
+    {
+      "path": "experiments/rainbow_complete_bipartite.py",
+      "sha256": "61fda8e8a66041acb06f15bd869e9c4847993e531d1fec10acac1ad908df0a0a",
+      "sha256_after": "61fda8e8a66041acb06f15bd869e9c4847993e531d1fec10acac1ad908df0a0a"
+    },
+    {
+      "path": "experiments/cycle_unions.py",
+      "sha256": "3bb552e387c1c5fcdc92a0124f2dc7d6ce0709a8ff326726649f0ada76f2b5d1",
+      "sha256_after": "3bb552e387c1c5fcdc92a0124f2dc7d6ce0709a8ff326726649f0ada76f2b5d1"
+    }
+  ],
+  "output_directory": "results/runs/cycle-unions-2026-11-15",
+  "declared_results": [
+    "results/runs/cycle-unions-2026-11-15/cycle_unions.json"
+  ],
+  "outputs": [
+    {
+      "path": "results/runs/cycle-unions-2026-11-15/stdout.txt",
+      "sha256": "76b1edfa7d32999466c5236d378044bbd3ec1559033291d509852ab1c7647c15",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/cycle-unions-2026-11-15/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/cycle-unions-2026-11-15/cycle_unions.json",
+      "sha256": "52a69c27d95eadfe8f9a5d1a202173e00b2d56c161bf97f6a7b1a95fabaf71d3",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

@@ -27,3 +27,4 @@ jobs:
       - run: python -m experiments.classify_cube --check results/data/cube_classification.json
       - run: python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
       - run: python -m experiments.random_rainbow --check results/data/random_rainbow.json
+      - run: python -m experiments.cycle_unions --check results/data/cycle_unions.json
