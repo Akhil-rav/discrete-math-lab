@@ -2,6 +2,8 @@
 
 **Status:** exhaustive finite computations; selected known benchmarks reproduced.
 
+[Typeset report](../papers/rainbow_progressions.pdf) · [LaTeX source](../papers/rainbow_progressions.tex)
+
 Run `python -m experiments.rainbow_progressions`. Definitions and the no-progression
 convention are in [the note](../notes/rainbow_progressions.md). Counts and avoiding
 witnesses are in [the data](data/small_cases.json).

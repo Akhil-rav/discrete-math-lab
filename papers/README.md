@@ -1,67 +1,72 @@
-# Typeset notes
+# Typeset reports
 
-## Nine symmetry classes of extremal cube colorings
+All seven completed mathematical reports have editable LaTeX sources and
+compiled PDFs. The web reports, code, and evidence records remain linked below.
+These are expository notes and finite computational studies; no originality or
+publication is claimed.
 
-[Read the paper](cube_classification.pdf) · [LaTeX source](cube_classification.tex)
-· [Web report and diagram atlas](../results/cube_classification.md)
+| Report | PDF | LaTeX | Web report / evidence |
+|---|---|---|---|
+| Nine symmetry classes of extremal cube colorings | [Read](cube_classification.pdf) | [Source](cube_classification.tex) | [Classification and atlas](../results/cube_classification.md) |
+| Exact probabilities of rainbow perfect matchings | [Read](random_rainbow.pdf) | [Source](random_rainbow.tex) | [Study and plot](../projects/random-colorings/report.md), [verification](../results/random_rainbow_verification.md) |
+| Expansion and random walks: exact examples | [Read](expansion_walks.pdf) | [Source](expansion_walks.tex) | [Project](../projects/expansion-and-walks/report.md), [verification](../results/walk_paper_verification.md) |
+| Even cycles and two disjoint squares | [Read](cycle_extremizers.pdf) | [Source](cycle_extremizers.tex) | [Elementary proofs](../notes/cycle_extremizers.md) |
+| Matching foundations and exact small-host studies | [Read](matching_foundations.pdf) | [Source](matching_foundations.tex) | [Hall corollary](../notes/halls_theorem.md), [K33 classes](../results/k33_classification.md), [sparse hosts](../projects/rainbow-matchings/report.md) |
+| Rainbow progressions in small intervals and groups | [Read](rainbow_progressions.pdf) | [Source](rainbow_progressions.tex) | [Definitions](../notes/rainbow_progressions.md), [finite results](../results/rainbow_progressions.md) |
+| Vertex color-coding for simple paths | [Read](color_coding.pdf) | [Source](color_coding.tex) | [Method](../notes/color_coding.md), [22,955 comparisons](../results/algorithm_demos.md) |
 
-A four-page report gives an elementary proof of the seven-color maximum,
-a necessary equality condition, and all nine computed canonical representatives,
-orbit sizes, stabilizers, and labeled diagrams. The full dataset saves every
-one of the 174 fixed-edge partitions. No novelty is claimed.
+The cube report combines its elementary seven-color bound with the complete
+nine-class atlas. The probability report combines the counting proofs, the
+six-host comparison, the figure, and the large-palette limit. The matching
+foundations report collects the Hall corollary, 4,477 graph checks, known
+complete-bipartite thresholds, four K33 classes, and sparse-host coverage.
+The progression and color-coding reports typeset their existing definitions,
+arguments, finite tables, references, and reproduction instructions.
+
+## Build
+
+Reading the committed PDFs requires no dependencies. To rebuild, install
+Tectonic and run the relevant command from the repository root:
+
+```sh
+tectonic --outdir papers papers/cube_classification.tex
+tectonic --outdir papers papers/random_rainbow.tex
+tectonic --outdir papers papers/expansion_walks.tex
+tectonic --outdir papers papers/cycle_extremizers.tex
+tectonic --outdir papers papers/matching_foundations.tex
+tectonic --outdir papers papers/rainbow_progressions.tex
+tectonic --outdir papers papers/color_coding.tex
+```
+
+The reports use Latin Modern text and mathematics, theorem/proof environments,
+booktabs tables, and linked references. All sources are self-contained except
+for the probability report's committed image,
+[random_rainbow.png](../results/figures/random_rainbow.png). Keep the repository
+layout when building it. The other six sources can also be uploaded individually
+to a LaTeX editor and compiled with pdfLaTeX.
+
+The cube source and SVG are generated from the checked classification data:
 
 ```sh
 python -m experiments.render_cube_atlas
-tectonic --outdir papers papers/cube_classification.tex
 ```
 
-The renderer deterministically regenerates the SVG and LaTeX from the checked
-dataset. Mathematical verification belongs to the classification and its tests,
-not to the renderer.
+Edit that renderer when changing generated cube prose or diagrams. The other
+six `.tex` files are edited directly. Keep their corresponding Markdown
+arguments and saved-data summaries consistent. Figure regeneration has its own
+optional [Matplotlib dependency](../requirements-figures.txt); the mathematical
+checks remain standard-library-only.
 
-## Expansion and random walks: exact examples
+## Verification
 
-[Read the paper](expansion_walks.pdf) · [LaTeX source](expansion_walks.tex)
+The checked PDFs were built with Tectonic 0.17.0 and the official
+`tlextras-2022.0r0` bundle. Inspect the compilation log and every rendered page
+after an edit; typesetting checks do not replace mathematical verification.
+The [verification index](../results/verification_index.md) records the scopes of
+proof reviews, finite searches, source checks, and execution records.
 
-A three-page expository note proves complete-graph and cycle expansion formulas,
-exact ordinary/lazy walk formulas on K(d,d), and a disconnection obstruction on
-unions of cliques. No novelty is claimed. Formula checks and a scoped
-[self-review record](../results/walk_paper_verification.md) accompany the proofs.
+Run the current mathematical and evidence checks from the repository root:
 
 ```sh
-tectonic --outdir papers papers/expansion_walks.tex
-python -m unittest discover -s tests -p test_walk_formulas.py -v
+python -m tools.verify_repository
 ```
-
-## Rainbow perfect matchings
-
-- [Rainbow perfect matchings on even cycles and two disjoint squares](cycle_extremizers.pdf)
-- [Editable LaTeX source](cycle_extremizers.tex)
-- [Markdown reading copy](../notes/cycle_extremizers.md)
-
-The three-page paper contains the complete elementary proofs, a diagram of an
-avoiding six-coloring, and the small-case table. No novelty or publication is
-claimed.
-
-The PDF is compiled directly from the self-contained LaTeX source. It uses
-Latin Modern text and mathematics, theorem and proof environments, booktabs
-tables, and a vector diagram drawn in TikZ.
-
-Build from the repository root with Tectonic:
-
-```sh
-tectonic --outdir papers papers/cycle_extremizers.tex
-```
-
-Alternatively, upload `cycle_extremizers.tex` to a LaTeX editor such as Overleaf
-and compile it with pdfLaTeX. No external images, bibliography file, or local
-font files are required. The LaTeX file is the typesetting source; keep the
-Markdown reading copy mathematically consistent when editing.
-
-The computational experiments remain standard-library-only. LaTeX dependencies
-are needed only to rebuild the paper. Inspect the compilation log and all
-rendered pages before publishing.
-
-The checked PDF was built with Tectonic 0.17.0 using the official
-`tlextras-2022.0r0` bundle. The mathematical results and proof arguments are
-unchanged by the typesetting conversion.
