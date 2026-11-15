@@ -3,6 +3,8 @@
 **Status:** exhaustive finite classification under the specified equivalence;
 no novelty claim or extrapolation to larger hosts.
 
+[Typeset matching report](../papers/matching_foundations.pdf) · [LaTeX source](../papers/matching_foundations.tex)
+
 Run `python -m experiments.classify_k33` from the repository root.
 The complete data also appear in [small_cases.json](data/small_cases.json).
 

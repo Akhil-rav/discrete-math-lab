@@ -2,6 +2,8 @@
 
 **Status:** Reproduction of a known theorem.
 
+[Typeset matching report](../papers/matching_foundations.pdf) · [LaTeX source](../papers/matching_foundations.tex)
+
 The script
 `experiments/regular_bipartite_matchings.py`
 exhaustively generated every labeled $d$-regular bipartite graph with
