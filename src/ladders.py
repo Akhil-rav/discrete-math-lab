@@ -5,8 +5,8 @@ from itertools import permutations
 
 def ladder_edges(k):
     """Rungs first, then top and bottom rails; vertices are row*k + column."""
-    if not isinstance(k, int) or not 2 <= k <= 4:
-        raise ValueError("This finite study supports 2 <= k <= 4.")
+    if not isinstance(k, int) or not 2 <= k <= 5:
+        raise ValueError("This finite study supports 2 <= k <= 5.")
     return (
         tuple((i, k + i) for i in range(k))
         + tuple((i, i + 1) for i in range(k - 1))
@@ -41,7 +41,7 @@ def ladder_matchings(k):
 
 
 def ladder_actions(k):
-    """Full edge automorphism group: D4 for L2, two reflections for L3 and L4."""
+    """Full edge automorphism group: D4 for L2, two reflections for L3 through L5."""
     edges = ladder_edges(k)
     index = {frozenset(edge): i for i, edge in enumerate(edges)}
     if k == 2:

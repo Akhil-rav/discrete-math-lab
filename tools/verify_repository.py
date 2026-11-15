@@ -26,6 +26,7 @@ DATASETS = {
     "results/data/cycle_unions.json": "results/runs/cycle-unions-2026-11-15/cycle_unions.json",
     "results/data/rainbow_inclusion_exclusion.json": "results/runs/inclusion-exclusion-2026-11-15/counts.json",
     "results/data/ladder_matchings.json": "results/runs/ladder-matchings-2026-11-15/ladder_matchings.json",
+    "results/data/matching_covers.json": "results/runs/matching-covers-2026-11-15/covers.json",
 }
 PROOF_REVIEWS = {
     "notes/cube_upper_bound.md": "results/cube_bound_review.md",
@@ -33,6 +34,7 @@ PROOF_REVIEWS = {
     "papers/expansion_walks.tex": "results/walk_paper_verification.md",
     "notes/cycle_extremizers.md": "results/cycle_union_verification.md",
     "notes/ladders.md": "results/ladder_verification.md",
+    "notes/matching_covers.md": "results/matching_cover_verification.md",
 }
 REPRODUCTIONS = (
     ("experiments.reproduce", "results/data/small_cases.json"),
@@ -46,6 +48,7 @@ REPRODUCTIONS = (
         "results/data/rainbow_inclusion_exclusion.json",
     ),
     ("experiments.ladder_matchings", "results/data/ladder_matchings.json"),
+    ("experiments.matching_covers", "results/data/matching_covers.json"),
 )
 
 

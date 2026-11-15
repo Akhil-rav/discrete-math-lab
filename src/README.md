@@ -3,7 +3,7 @@
 These are small, inspectable implementations for the repository's finite
 experiments. They use Python 3.11+ and the standard library. Run examples from
 the repository root; no package installation is needed. The code is intended
-for the documented domains, rather than as a general graph library.
+for the input ranges stated in each module.
 
 ## Source map
 
@@ -14,7 +14,8 @@ for the documented domains, rather than as a general graph library.
 | [rainbow_constraints.py](rainbow_constraints.py) | Perfect-matching constraints and pruned edge-partition enumeration, through 12 edges | [Coverage argument](../projects/rainbow-matchings/report.md); [independent small-host checks](../tests/test_sparse_rainbow.py) |
 | [cube_symmetry.py](cube_symmetry.py) | Fixed cube edge order, exact-block partition iterator, and the 48 automorphisms | [Nine-class classification](../results/cube_classification.md); [symmetry tests](../tests/test_cube_classification.py) |
 | [cycle_unions.py](cycle_unions.py) | Fixed even-cycle unions and construction of every proved extremizer | [General proof](../notes/cycle_extremizers.md); [ten-host verification](../results/cycle_union_verification.md) |
-| [ladders.py](ladders.py) | Labeled ladders, column-recursive matchings, and full symmetry actions for 2–4 columns | [Bounds and classification](../results/ladder_matchings.md); [vertex-bijection and named-color tests](../tests/test_ladders.py) |
+| [ladders.py](ladders.py) | Labeled ladders, column-recursive matchings, and full symmetry actions for 2–5 columns | [Bounds and classification](../results/ladder_matchings.md); [vertex-bijection and named-color tests](../tests/test_ladders.py) |
+| [matching_covers.py](matching_covers.py), [matching_cover_certificate.py](matching_cover_certificate.py) | Weighted-cover minimum deficit and separate certificate checking | [Reduction and ladder theorem](../notes/matching_covers.md); [finite oracles](../tests/test_matching_covers.py) |
 | [rainbow_probability.py](rainbow_probability.py) | Exact partition-weight probabilities, matching moments, and bounds | [Counting proofs](../notes/random_rainbow.md); [named-color oracles](../tests/test_rainbow_probability.py) |
 | [rainbow_inclusion_exclusion.py](rainbow_inclusion_exclusion.py) | Matching-event inclusion-exclusion using conflict-graph coloring polynomials | [Method comparison](../results/inclusion_exclusion.md); [proper-coloring and event-family oracles](../tests/test_inclusion_exclusion.py) |
 | [arithmetic_progressions.py](arithmetic_progressions.py) | Distinct-term three-term progressions in intervals and products of cyclic groups | [Definitions](../notes/rainbow_progressions.md); [algorithm tests](../tests/test_algorithms.py) |

@@ -12,6 +12,7 @@ small-case searches to structural proofs and exact probabilities.
 |---|---|---|
 | **Extremal cube colorings** | A proof of the seven-color maximum; all 174 extremizers classified into nine symmetry classes | [Report](results/cube_classification.md) · [Four-page paper](papers/cube_classification.pdf) · [Labeled atlas](results/figures/cube_classes.svg) |
 | **Independent random edge colors** | Two exact counting methods on six hosts, moment and Bonferroni bounds, and a measured runtime comparison | [Five-page paper](papers/random_rainbow.pdf) · [Methods and timings](results/inclusion_exclusion.md) · [Report and plot](projects/random-colorings/report.md) |
+| **Ladder matchings and weighted covers** | A color bound for every ladder with at least three columns; cover certificates on nine hosts; all 15 five-column extremizers | [Proof and classification](results/matching_covers.md) · [Nine-page matching report](papers/matching_foundations.pdf) |
 | **Expansion and random walks** | Elementary cut formulas and exact examples separating periodicity from disconnection | [Three-page paper](papers/expansion_walks.pdf) · [Project report](projects/expansion-and-walks/report.md) |
 
 The cube study combines an [incidence proof](notes/cube_upper_bound.md), an
@@ -30,7 +31,6 @@ presentation of the saved data.
 | Topic | Artifact |
 |---|---|
 | Disjoint unions of even cycles | [General maximum and complete extremal classification](papers/cycle_extremizers.pdf) · [Proof and finite checks](results/cycle_union_verification.md) |
-| Small ladder graphs | [Proved bounds, 53 extremizers, and exact probabilities](results/ladder_matchings.md) · [Six-page matching report](papers/matching_foundations.pdf) |
 | Sparse bipartite hosts | [Six exact searches through twelve edges](projects/rainbow-matchings/report.md) |
 | Complete bipartite symmetry | [Four classes among 87 extremal K3,3 partitions](results/k33_classification.md) · [Typeset report](papers/matching_foundations.pdf) |
 | Matching theory | [Hall's theorem and 4,477 regular-graph checks](papers/matching_foundations.pdf) |
@@ -47,7 +47,7 @@ the reports and literature notes; computational results include their tested ran
 ## Reproduce
 
 Python **3.11+**; mathematical computations use the standard library. From the
-repository root, one command runs the integrity checks, tests, and all eight
+repository root, one command runs the integrity checks, tests, and all nine
 reference-data reproductions. To start from a fresh clone:
 
 ```sh
@@ -72,7 +72,3 @@ These projects grew out of several months of study. I organized the repository
 for public release in November 2026 and continue to extend the work here.
 
 Akhil Ravuri
-
-The repository develops elementary matching proofs, finite coloring
-classifications, and exact probability computations. Each report identifies
-the cited results, arguments, and finite computations supporting its conclusions.
