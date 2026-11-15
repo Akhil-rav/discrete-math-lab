@@ -40,9 +40,8 @@ presentation of the saved data.
 · [Implementation guide](src/README.md) · [References](references.bib)
 · [All results](results/README.md)
 
-The writeups distinguish elementary proofs, reproductions of published results,
-and exhaustive finite computations. No originality or publication is claimed.
-Review limitations and the exact tested ranges appear in the individual reports.
+Each study links its proofs, code, and data. Published results are cited in
+the reports and literature notes; computational results include their tested ranges.
 
 ## Reproduce
 
@@ -59,14 +58,16 @@ python -m tools.verify_repository
 Automated checks run on Linux with Python 3.11 and 3.13, and on Windows with
 Python 3.13. No package installation is required for this sequence.
 
-Use `--static-only` for links, JSON, recorded output hashes, and reviewed source
-checks without mathematical reruns. See [individual commands](experiments/README.md)
-and the [verification index](results/verification_index.md) for historical records
-and the limits of these checks.
+Use `--static-only` to check links and saved-file integrity without rerunning
+the mathematics. See the [experiment commands](experiments/README.md) and
+[test records](results/verification_index.md) for details.
 
 Plots need optional [Matplotlib requirements](requirements-figures.txt) only to
 regenerate their images. [Typeset notes](papers/README.md) include LaTeX sources
 and build instructions for all seven completed mathematical reports. Reading
 the committed figures and PDFs needs neither.
+
+These projects grew out of several months of study. I organized the repository
+for public release in November 2026 and continue to extend the work here.
 
 Akhil Ravuri

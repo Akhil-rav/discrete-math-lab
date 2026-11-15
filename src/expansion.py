@@ -21,7 +21,7 @@ def edge_expansion(adjacency):
     validate_graph(adjacency)
     n = len(adjacency)
     best, witness = None, None
-    for size in range(1, n//2+1):
+    for size in range(1, n // 2 + 1):
         for subset in combinations(range(n), size):
             chosen = set(subset)
             boundary = sum(v not in chosen for u in subset for v in adjacency[u])
@@ -39,15 +39,15 @@ def walk_total_variation(adjacency, steps, lazy=True):
         raise ValueError("Need steps >= 0 and a positive regular degree.")
     distribution = [Fraction(i == 0) for i in range(n)]
     distances = []
-    for time in range(steps+1):
+    for time in range(steps + 1):
         if sum(distribution) != 1:
             raise RuntimeError("Probability mass changed.")
-        distances.append(sum(abs(p-Fraction(1, n)) for p in distribution)/2)
+        distances.append(sum(abs(p - Fraction(1, n)) for p in distribution) / 2)
         if time == steps:
             break
-        next_distribution = [p/2 if lazy else Fraction(0) for p in distribution]
+        next_distribution = [p / 2 if lazy else Fraction(0) for p in distribution]
         for u, row in enumerate(adjacency):
             for v in row:
-                next_distribution[v] += distribution[u] / (2*d if lazy else d)
+                next_distribution[v] += distribution[u] / (2 * d if lazy else d)
         distribution = next_distribution
     return distances

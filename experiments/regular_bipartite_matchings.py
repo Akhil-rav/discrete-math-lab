@@ -1,15 +1,6 @@
-"""Exhaustive small-case verification for regular bipartite graphs.
+"""Check perfect matchings in all labeled regular bipartite graphs through n=5.
 
-Known theorem:
-Every finite d-regular bipartite graph with d >= 1 has a perfect matching.
-
-This script does NOT prove the theorem. It exhaustively generates every
-labeled d-regular bipartite graph with n vertices on each side for n <= 5
-and checks that the matching algorithm finds a perfect matching.
-
-Run from the repository root:
-
-    python -m experiments.regular_bipartite_matchings
+Run: python -m experiments.regular_bipartite_matchings.
 """
 
 from __future__ import annotations
@@ -21,9 +12,7 @@ from src.bipartite_graph import BipartiteGraph
 from src.matchings import has_perfect_matching
 
 
-def generate_regular_bipartite_graphs(
-    n: int, d: int
-) -> Iterable[BipartiteGraph]:
+def generate_regular_bipartite_graphs(n: int, d: int) -> Iterable[BipartiteGraph]:
     """Generate all labeled d-regular bipartite graphs with n+n vertices.
 
     Left vertices are 0, ..., n-1 and right vertices are n, ..., 2n-1.
@@ -48,10 +37,7 @@ def generate_regular_bipartite_graphs(
         if not all(degree == d for degree in right_degrees):
             continue
 
-        adjacency = {
-            u: {n + v for v in rows[u]}
-            for u in range(n)
-        }
+        adjacency = {u: {n + v for v in rows[u]} for u in range(n)}
 
         yield BipartiteGraph(
             left=set(left),
