@@ -5,7 +5,7 @@ the cycle and sparse-host studies through a small graph family. The maximum
 color counts below have [elementary incidence proofs](../notes/ladders.md).
 The extremizer populations and symmetry classes are complete finite computations.
 
-[Six-page LaTeX report](../papers/matching_foundations.pdf) ·
+[LaTeX report](../papers/matching_foundations.pdf) ·
 [LaTeX source](../papers/matching_foundations.tex) ·
 [All data and extremizers](data/ladder_matchings.json) ·
 [Verification and run](ladder_verification.md)
@@ -94,5 +94,7 @@ python -m unittest tests.test_ladders -v
 
 These commands use Python 3.11+ and the standard library. The
 [source comparison](../notes/literature/ladders.md) records nearby literature
-and access limits. This is a finite study with elementary bounds; no general
-ladder formula, novelty, or external refereeing is claimed.
+and access limits. These three-host computations are complemented by the
+[general ladder proof and five-column classification](matching_covers.md).
+The family formula has a separate written proof; the searches alone do not
+establish it.

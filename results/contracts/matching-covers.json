@@ -1,0 +1,58 @@
+{
+  "claim_id": "MATCHING_COVERS_2026_11_15",
+  "mathematics": {
+    "assertion_tested": "Compute minimum color deficits by weighted block covers on nine hosts; independently check every block table, all cost states, and coloring witnesses; compare eight maxima with saved partition searches; visit every L5 partition in deficit bands 0..3 and classify all 15 extremizers.",
+    "coefficient_domain": "Exact integers",
+    "conventions": "Arbitrary edge colorings; targets are perfect matchings. A block costs size minus one and covers targets meeting it at least twice. Overlapping covering blocks are merged. Fixed edges and color renaming for partitions; graph symmetry quotient separate.",
+    "inputs": [
+      "C4,C6,C8,two disjoint C4,K3,3,cube,L3,L4,L5"
+    ],
+    "bounds": {
+      "hosts": 9,
+      "max_edges": 13,
+      "max_targets": 9,
+      "L5_deficit_bands": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "L5_partitions_visited": 41835
+    },
+    "non_claims": [
+      "Not a full Bell-number enumeration on L5",
+      "General ladder formula is established by a separate written proof",
+      "No novelty or external review claim",
+      "No probability or timing result for L5"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/matching_covers.py",
+    "src/matching_cover_certificate.py",
+    "src/ladders.py",
+    "src/color_patterns.py",
+    "src/cube_symmetry.py",
+    "src/edge_coloring.py",
+    "src/rainbow_constraints.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_inclusion_exclusion.py",
+    "experiments/matching_covers.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/sparse_rainbow.py",
+    "experiments/rainbow_inclusion_exclusion.py",
+    "results/data/sparse_rainbow.json",
+    "results/data/ladder_matchings.json"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

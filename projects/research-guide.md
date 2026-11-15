@@ -1,13 +1,12 @@
 # Research guide
 
-This guide distinguishes completed work from possible extensions. It is a
-navigation aid for readers assessing the mathematics and its reproducibility.
-Proposed tasks are not certified open problems.
+Completed studies, reading links, and concrete extensions. The proposed tasks
+are project directions; their status as open problems has not been established.
 
 | Direction | What is implemented | Evidence | Next bounded task |
 |---|---|---|---|
 | Independent random edge colors | Two exact polynomial methods, matching moments, and higher-order bounds | [Report and plot](random-colorings/report.md), [methods and timings](../results/inclusion_exclusion.md) | Compare cache growth under different fixed edge orders on the same hosts |
-| Rainbow perfect matchings | Sparse-host searches, cube classification, and three small ladders with incidence proofs | [Report](rainbow-matchings/report.md), [cube atlas](../results/cube_classification.md), [ladder study](../results/ladder_matchings.md) | Formulate a certified obstruction-cover search for L5 before increasing the 12-edge solver limit; check precise literature overlap first |
+| Rainbow perfect matchings | Cycle and ladder family bounds, cube classification, weighted-cover certificates | [Report](rainbow-matchings/report.md), [cube atlas](../results/cube_classification.md), [ladder and cover study](../results/matching_covers.md) | Give a direct counting proof of the 15 five-column extremizers, using the three possible nonsingleton block shapes |
 | Expansion and walks | Exact cuts and rational walk evolution on four regular graphs | [Report](expansion-and-walks/report.md), benchmark tests | Add an independent transition-matrix oracle before extending the graph domain |
 | Rainbow arithmetic progressions | Exact searches on small intervals and specified finite groups | [Results](../results/rainbow_progressions.md), [definitions](../notes/rainbow_progressions.md) | Compare one published theorem with its precise hypotheses and small examples |
 | Color-coding | Colorful-path subset dynamic programming | [22,955 finite comparisons](../results/algorithm_demos.md) | Document runtime and memory scaling without confusing experiments with asymptotic proofs |
