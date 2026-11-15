@@ -1,0 +1,53 @@
+{
+  "claim_id": "LADDER_MATCHINGS_2026_11_15",
+  "mathematics": {
+    "assertion_tested": "Exhaust all edge partitions of L2, L3, L4; compare avoiding histograms with the pruned solver; save every extremizer and complete symmetry quotient; compare all rainbow-count polynomial coefficients by partition weighting and matching-event inclusion-exclusion, and 72 exact palette probabilities.",
+    "coefficient_domain": "Exact integers and rational numbers",
+    "conventions": "Lk = Pk square K2, with k columns; rungs, top rail, bottom rail edge order; fixed edges and color renaming for partition counts; full graph automorphisms only in orbit classification; arbitrary edge colors; independent uniform q-label colors for probabilities.",
+    "inputs": [
+      "The explicitly labeled ladders with k=2,3,4"
+    ],
+    "bounds": {
+      "columns": [
+        2,
+        3,
+        4
+      ],
+      "max_edges": 10,
+      "max_perfect_matchings": 5,
+      "palette_min": 1,
+      "palette_max": 24,
+      "partitions_visited": 116867
+    },
+    "non_claims": [
+      "No statement for arbitrary ladder length",
+      "No novelty or external refereeing claim",
+      "Maximum-color proofs are separate from this finite computation"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py",
+    "src/ladders.py",
+    "src/color_patterns.py",
+    "src/cube_symmetry.py",
+    "src/edge_coloring.py",
+    "src/rainbow_constraints.py",
+    "src/rainbow_probability.py",
+    "src/rainbow_inclusion_exclusion.py",
+    "experiments/rainbow_complete_bipartite.py",
+    "experiments/sparse_rainbow.py",
+    "experiments/rainbow_inclusion_exclusion.py",
+    "experiments/ladder_matchings.py"
+  ],
+  "software": [
+    {
+      "name": "computation Python",
+      "version": "3.13.7"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}
