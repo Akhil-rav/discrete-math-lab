@@ -8,6 +8,7 @@
 | Cube extremal colorings | Nine symmetry classes among all 174 seven-color extremizers | [Classification and atlas](cube_classification.md), [complete data](data/cube_classification.json) |
 | Expansion and random walks | Exact family formulas for cuts, periodicity, lazy mixing, and disconnection | [Expository paper](../papers/expansion_walks.pdf), [verification](walk_paper_verification.md) |
 | Disjoint unions of even cycles | A(G)=|E(G)|-2 and all extremizers, counted by sum binomial(n_i,2)^2 | [General proof](../papers/cycle_extremizers.pdf), [verification and ten-host checks](cycle_union_verification.md), [data](data/cycle_unions.json) |
+| Small ladders | A(L2)=2, A(L3)=4, A(L4)=7 by proof; 1, 27, 25 extremizers; two exact probability methods | [Classification](ladder_matchings.md), [six-page report](../papers/matching_foundations.pdf), [verification](ladder_verification.md) |
 | Sparse bipartite hosts | Six exact searches through 12 edges, including the cube | [Report](../projects/rainbow-matchings/report.md), [data](data/sparse_rainbow.json) |
 | Complete bipartite hosts | A(K22)=2 and A(K33)=4 | [Reproduction of published thresholds](rainbow_knn_small_cases.md) |
 | Extremal K33 colorings | Four symmetry classes among 87 extremizers | [Finite classification](k33_classification.md) |

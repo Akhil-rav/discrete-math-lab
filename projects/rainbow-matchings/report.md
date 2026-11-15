@@ -83,6 +83,17 @@ asserted theorem for all cubic bipartite graphs. The equality analysis and
 finite [collision audit](../../results/cube_collisions.md) further explain
 the obstruction structure of the 174 extremizers.
 
+## Three small ladders
+
+The [ladder study](../../results/ladder_matchings.md) fixes Lk = Pk square K2
+for k=2,3,4. Elementary incidence proofs give A(L2)=2, A(L3)=4, A(L4)=7.
+Exhausting all 116,867 partitions gives 1, 27, and 25 extremizers, respectively;
+the larger two hosts each have nine symmetry classes. Both exact probability
+methods agree coefficient by coefficient. The
+[six-page matching report](../../papers/matching_foundations.pdf) includes the
+proofs, complete orbit tables, and probabilities. The original six-host data
+above remains unchanged; the ladder data is a separate reproducible study.
+
 ## Search method and coverage argument
 
 An edge coloring up to color renaming is a set partition of the edge positions.
