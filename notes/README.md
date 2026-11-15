@@ -9,7 +9,7 @@ These Markdown notes remain convenient reading copies and links to evidence.
 | Cube matching incidences | [Elementary seven-color bound and extremal capacity balance](cube_upper_bound.md) |
 | Matching theory | [Hall's theorem and regular bipartite graphs](halls_theorem.md) |
 | Rainbow matchings | [Definitions and anti-Ramsey conventions](rainbow_matchings.md) |
-| Extremal partitions | [Even cycles and two disjoint squares](cycle_extremizers.md) |
+| Extremal partitions | [Disjoint unions of even cycles: maximum, classification, and count](cycle_extremizers.md) |
 | Additive combinatorics | [Rainbow arithmetic progressions](rainbow_progressions.md) |
 | Graph algorithms | [Vertex color-coding](color_coding.md) |
 | Discrete probability | [Expansion and random walks](expansion_and_walks.md) |

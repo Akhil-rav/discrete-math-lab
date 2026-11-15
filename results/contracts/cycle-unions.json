@@ -1,0 +1,22 @@
+{
+  "claim_id": "EVEN_CYCLE_UNIONS_2026_11_15",
+  "mathematics": {
+    "assertion_tested": "For ten specified disjoint unions of even cycles through 12 edges, compare every avoiding partition in the m-2, m-1, and m color bands with the proved construction; fully enumerate all partitions for the six hosts through 10 edges.",
+    "coefficient_domain": "Exact integers and finite sets",
+    "conventions": "Fixed components and cyclically ordered edge positions; color names ignored; no quotient by graph automorphisms; no proper-coloring requirement.",
+    "inputs": ["Half-length tuples (2), (3), (4), (2,2), (5), (2,3), (6), (2,4), (3,3), (2,2,2)"],
+    "bounds": {"hosts": 10, "max_edges": 12, "full_enumeration_max_edges": 10},
+    "non_claims": [
+      "No full Bell-number enumeration on the 12-edge hosts",
+      "The general theorem is established by the written proof, not these finite checks",
+      "No novelty or independent external review claim"
+    ]
+  },
+  "execution_artifacts": [
+    "src/__init__.py", "src/color_patterns.py", "src/cube_symmetry.py",
+    "src/cycle_unions.py", "src/edge_coloring.py",
+    "experiments/rainbow_complete_bipartite.py", "experiments/cycle_unions.py"
+  ],
+  "software": [{"name": "computation Python", "version": "3.13.7"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}
