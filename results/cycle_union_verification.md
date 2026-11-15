@@ -1,4 +1,4 @@
-# Even-cycle unions: proof and computation review
+# Even-cycle unions: checks
 
 **Claim:** for every nonempty fixed union G of cycles C(2n_i), with r>=1,
 all n_i>=2, and m=2 sum n_i, the maximum avoiding color count is m-2. Every
@@ -6,38 +6,33 @@ extremizer has two repeated pairs in one component, one inside each alternating
 matching, and all other classes singleton. Its fixed-edge partition count is
 sum_i binomial(n_i,2)^2.
 
-**Proof verdict: proved as written.** This is self-review of the elementary
-argument, not independent refereeing or a novelty determination. The
-authoritative argument is [Theorem 4 in the reading copy](../notes/cycle_extremizers.md),
+The complete argument is [Theorem 4 in the reading copy](../notes/cycle_extremizers.md),
 with a corresponding [LaTeX theorem](../papers/cycle_extremizers.tex).
 
-SHA-256: `8c92b8293cb77e98c6592e9b386f32cefecd86ac0539a3ae72e0c7c9adba2ef2`
+SHA-256: `0ef0cd6d24e052df601a99238ada689a37425ea37451151c64028c8e9f47e6bb`
 
-## Proof dependencies and obligations
+## Counting argument
 
-The chain is: two alternating matchings per cycle -> independent component
-choices -> edge/pair incidence counts -> extremal class-size alternatives ->
-complete classification -> fixed-edge count. All leaves are internal counting
-arguments and stated conventions. No finite computation or external theorem
-is a premise of the general result.
+Each cycle has two alternating matchings, and their choices are independent
+across components. Counting how often edges and pairs occur rules out a triple
+color class and forces the two repeated pairs into one component. Choosing
+the pair in each alternating matching then gives the fixed-edge count.
 
-| Obligation | Status | Decisive check |
-|---|---|---|
-| Domain and existence | Passed | Finite simple cycles, n_i>=2, r>=1; each local matching has a pair available |
-| Lower bound | Passed | Two merges in one component give m-2 classes and obstruct either local choice |
-| Upper bound | Passed | With m-1 classes only one pair repeats; omitting either chosen edge makes a global matching rainbow; m classes are also excluded |
-| Equality alternatives | Passed | Excess sum(|B|-1)=2 gives one triple or two doubletons |
-| Excluding a triple | Passed | Its 3*2^(r-1) appearances are fewer than the 2*2^r needed to repeat in every matching |
-| Pair capacities | Passed | Same component/same parity: 2^(r-1); opposite parity: zero; different components: 2^(r-2) only when r>=2 |
-| Equality in coverage | Passed | Two sets of size at most half can cover all matchings only if both attain half and are disjoint |
-| Location of the pairs | Passed | Different components or one common alternating set both permit a matching omitting both pairs |
-| Counting without overcount | Passed | Recover the unique chosen component and the pair in each fixed alternating set; no component or color-name permutation factor |
-| Boundary cases | Passed | r=1 and n_i=2 recover the cycle and square statements; empty unions and simple C2 are excluded |
+| Detail | Argument |
+|---|---|
+| Domain and existence | Finite simple cycles, n_i>=2, r>=1; each local matching has a pair available |
+| Lower bound | Two merges in one component give m-2 classes and obstruct either local choice |
+| Upper bound | With m-1 classes only one pair repeats; omitting either chosen edge makes a global matching rainbow; m classes are also excluded |
+| Equality alternatives | Excess sum(|B|-1)=2 gives one triple or two doubletons |
+| Excluding a triple | Its 3*2^(r-1) appearances are fewer than the 2*2^r needed to repeat in every matching |
+| Pair capacities | Same component/same parity: 2^(r-1); opposite parity: zero; different components: 2^(r-2) only when r>=2 |
+| Equality in coverage | Two sets of size at most half can cover all matchings only if both attain half and are disjoint |
+| Location of the pairs | Different components or one common alternating set both permit a matching omitting both pairs |
+| Counting without overcount | Recover the unique chosen component and the pair in each fixed alternating set; no component or color-name permutation factor |
+| Boundary cases | r=1 and n_i=2 recover the cycle and square statements; empty unions and simple C2 are excluded |
 
-There is no remaining gap identified in this self-review. The strongest
-statement supported is the quantified theorem above. A later independent
-proof review could test errors shared by the exposition and this review.
-The argument does not establish that the formula is absent from the literature.
+The general result follows from these counting steps. The finite searches
+below test its construction on the specified hosts.
 
 ## Finite assertion and coverage
 
@@ -103,7 +98,5 @@ python -m experiments.cycle_unions --check results/data/cycle_unions.json
 python -m unittest discover -s tests -p test_cycle_unions.py -v
 ```
 
-**Computation outcome:** implementation and finite assertion verified in the
-stated range. Passing this computation supports that range; the general
-formula relies on the written proof. Remaining limitations are self-review,
-the finite tested range, and the absence of a novelty certification.
+The computation checks the stated finite range. The general formula relies
+on the written proof.

@@ -1,8 +1,8 @@
 # Verification record — November 13, 2026
 
-**Outcome:** implementation and finite assertions verified in the stated ranges.
-This is not a proof of general thresholds, a full-paper proof audit, or a novelty
-certificate. Literature checks are scoped in [source records](../notes/literature/source_records.md).
+This records the commands, finite ranges, and results from the original run.
+The [source records](../notes/literature/source_records.md) identify the
+literature used by the mathematical notes.
 
 ## Local execution
 
@@ -70,9 +70,9 @@ The programs are educational exhaustive implementations and are not optimized
 for large instances. General theorems retain their cited hypotheses. The selected
 literature review does not establish global novelty or current open status.
 
-Self-review covered all added mathematical notes and changed statements, including
+The mathematical notes and changed statements were checked, including
 color-count shifts, distinct-term AP conventions, k-vertex versus k-edge indexing,
-and expansion normalization. It corrected the hand-transcribed Z2×Z4 AP-set count
-to 16 before publication; the computed threshold was unchanged. No unresolved
+and expansion normalization. The hand-transcribed Z2×Z4 AP-set count was
+corrected to 16 before the upload; the computed threshold was unchanged. No unresolved
 notation error was identified in that scope. Inaccessible source formulas and
 PDF internal-date discrepancies remain explicitly documented.

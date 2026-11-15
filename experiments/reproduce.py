@@ -19,21 +19,32 @@ from experiments.regular_bipartite_matchings import verify_case
 def run():
     regular = []
     for n in range(1, 6):
-        for d in range(1, n+1):
+        for d in range(1, n + 1):
             checked, failures = verify_case(n, d)
             if failures:
                 raise RuntimeError("Regular matching benchmark failed.")
-            regular.append({"n": n, "d": d, "graphs_checked": checked, "failures": failures})
+            regular.append(
+                {"n": n, "d": d, "graphs_checked": checked, "failures": failures}
+            )
     rainbow = {}
     for n in (2, 3):
         checked, best, count, histogram, witness = exhaustive_search(n)
-        rainbow[str(n)] = {"patterns_checked": checked, "maximum_avoiding_colors": best,
-                           "extremal_patterns": count, "avoiding_histogram": histogram,
-                           "witness": witness}
-    return {"schema_version": 1, "regular_bipartite": regular,
-            "rainbow_bipartite": rainbow, "k33_classification": classification(),
-            "progressions": progressions(), "color_coding": color_coding(),
-            "expansion": expansion()}
+        rainbow[str(n)] = {
+            "patterns_checked": checked,
+            "maximum_avoiding_colors": best,
+            "extremal_patterns": count,
+            "avoiding_histogram": histogram,
+            "witness": witness,
+        }
+    return {
+        "schema_version": 1,
+        "regular_bipartite": regular,
+        "rainbow_bipartite": rainbow,
+        "k33_classification": classification(),
+        "progressions": progressions(),
+        "color_coding": color_coding(),
+        "expansion": expansion(),
+    }
 
 
 def main():

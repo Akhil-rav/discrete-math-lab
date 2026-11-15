@@ -20,8 +20,8 @@ def square_orbit(colors, n):
     orbit = set()
     for rows in permutations(range(n)):
         for cols in permutations(range(n)):
-            orbit.add(normalize(colors[i*n+j] for i in rows for j in cols))
-            orbit.add(normalize(colors[j*n+i] for i in rows for j in cols))
+            orbit.add(normalize(colors[i * n + j] for i in rows for j in cols))
+            orbit.add(normalize(colors[j * n + i] for i in rows for j in cols))
     return orbit
 
 

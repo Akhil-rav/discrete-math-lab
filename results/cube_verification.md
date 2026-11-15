@@ -1,8 +1,7 @@
 # Cube classification: verification record
 
-**Outcome:** implementation and finite assertion verified in the stated domain.
-Review is a self-review with independent algorithms, not external refereeing.
-No novelty is claimed.
+This record describes the finite classification and the algorithms used to
+check its matching constraints, symmetry group, and orbit counts.
 
 **Proof extension, November 14, 2026:** the
 [incidence argument](../notes/cube_upper_bound.md) now proves the maximum of
@@ -61,7 +60,7 @@ The recorded classification ran with Python 3.13.7 on Windows 11, in exact
 integer arithmetic. Runtime: 1.247629 seconds. Wall limit: 30 seconds; log
 limit: 1 MiB. No memory or CPU hard cap was requested. Status: **completed**,
 exit code 0. All five declared input hashes were unchanged. Manifest validation
-passed against the current working tree. The tests ran separately; the manifest
+passed against the working tree at that checkpoint. The tests ran separately; the manifest
 records classification execution, not the test suite.
 
 - [Contract](contracts/cube-classification.json)

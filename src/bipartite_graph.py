@@ -1,8 +1,4 @@
-"""Minimal bipartite graph utilities for discrete-math experiments.
-
-The implementation is intentionally small and readable so that later
-experiments can be checked independently of a large graph library.
-"""
+"""A bipartite graph stored as left-to-right adjacency sets."""
 
 from __future__ import annotations
 
@@ -29,7 +25,9 @@ class BipartiteGraph:
             if u not in self.left:
                 raise ValueError("Adjacency keys must lie in the left vertex class.")
             if not neighbors <= self.right:
-                raise ValueError("Every neighbor of a left vertex must lie on the right.")
+                raise ValueError(
+                    "Every neighbor of a left vertex must lie on the right."
+                )
 
     def add_edge(self, u: Vertex, v: Vertex) -> None:
         if u not in self.left or v not in self.right:
