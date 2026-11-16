@@ -10,6 +10,7 @@ partitions, and probabilities under random edge colors.
 
 | Study | Main results | Read |
 |---|---|---|
+| **Testing a ladder for a rainbow matching** | At color deficit three, a fixed list of $\Theta(\log k)$ matchings suffices and this order is necessary. On five columns the unique minimum list has seven members. | [Proofs (PDF)](papers/ladder_tests.pdf) · [LaTeX](papers/ladder_tests.tex) · [Exact check](tests/test_ladder_test_families.py) |
 | **Fifteen extremal colorings of the ladder** | Every ladder with at least five columns has the same fifteen terminal patterns, in six symmetry classes. A square contraction reduces the classification to thirteen finite cases. | [Working note (PDF)](papers/ladder_stability.pdf) · [LaTeX](papers/ladder_stability.tex) · [Base cases](results/ladder_stability.md) |
 | **Matching bounds and classifications** | $A(P_k\square K_2)=3k-5$ for $k\ge3$; a direct count of the fifteen five-column extremizers; weighted-cover certificates on nine hosts | [PDF](papers/matching_foundations.pdf) · [LaTeX](papers/matching_foundations.tex) · [Results](results/matching_covers.md) |
 | **Extremal cube colorings** | A seven-color maximum; all 174 extremizers in nine symmetry classes | [PDF](papers/cube_classification.pdf) · [LaTeX](papers/cube_classification.tex) · [Atlas](results/figures/cube_classes.svg) |

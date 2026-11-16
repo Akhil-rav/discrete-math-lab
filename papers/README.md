@@ -7,6 +7,7 @@ to the published results used.
 
 | Report | PDF | LaTeX | Web report / evidence |
 |---|---|---|---|
+| How many perfect matchings test a ladder? | [Read](ladder_tests.pdf) | [Source](ladder_tests.tex) | [Five-column certificates and exhaustive check](../tests/test_ladder_test_families.py) |
 | Fifteen extremal colorings of the ladder | [Read](ladder_stability.pdf) | [Source](ladder_stability.tex) | [Finite base and reproduction](../results/ladder_stability.md) |
 | Nine symmetry classes of extremal cube colorings | [Read](cube_classification.pdf) | [Source](cube_classification.tex) | [Classification and atlas](../results/cube_classification.md) |
 | Exact probabilities of rainbow perfect matchings | [Read](random_rainbow.pdf) | [Source](random_rainbow.tex) | [Study and plot](../projects/random-colorings/report.md), [verification](../results/random_rainbow_verification.md) |
@@ -38,6 +39,7 @@ Tectonic and run the relevant command from the repository root:
 
 ```sh
 tectonic --outdir papers papers/ladder_stability.tex
+tectonic --outdir papers papers/ladder_tests.tex
 tectonic --outdir papers papers/cube_classification.tex
 tectonic --outdir papers papers/random_rainbow.tex
 tectonic --outdir papers papers/expansion_walks.tex

@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype,xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!50!black]{hyperref}
+\newtheorem{theorem}{Theorem}
+\hypersetup{pdftitle={How many perfect matchings test a ladder?}}
+\title{\LARGE\bfseries How many perfect matchings test a ladder?}
+\author{}
+\date{Working note \(\,\cdot\,\) November 16, 2026}
+\begin{document}
+\maketitle
+\noindent Choose a list of perfect matchings before seeing an edge coloring.
+How short can the list be if it must detect a rainbow perfect matching
+whenever one exists? For the ladder \(L_k=P_k\square K_2\) with \(k\ge5\)
+columns, let \(h(k)\) denote the minimum list size when the coloring uses
+exactly \(|E(L_k)|-3\) colors. A matching is rainbow if its edges have distinct
+colors. We show that \(h(5)=7\) and \(h(k)=\Theta(\log k)\).
+
+\section{Seven of the eight matchings}
+Write \(r_i\) for the rung in column \(i\), numbering from zero, and \(H_i\)
+for the pair of rails from column \(i\) to column \(i+1\), with upper rail
+\(u_i\). Every perfect matching is determined by its set \(J\) of horizontal
+gaps: select \(H_i\) for \(i\in J\) and fill uncovered columns with rungs.
+The possible \(J\) are exactly the subsets with no consecutive indices,
+as seen by examining the first free column.
+
+\begin{theorem}On five columns the unique minimum test family consists of
+all seven matchings with \(J\ne\varnothing\).\end{theorem}
+\begin{proof}
+The only matching omitted from this family uses all five rungs. Suppose it
+is rainbow. Keep one edge of each color, choosing all five rungs among the
+representatives. Exactly three edges are discarded. There are four disjoint
+rail pairs, so some \(H_i\) is entirely kept. Replacing the rungs at
+\(i,i+1\) by \(H_i\) produces a second rainbow matching.
+
+For necessity, the table gives colorings having exactly one rainbow matching.
+Each brace or rail pair in the right column is one color class. Every
+unlisted edge has its own color. Each row has deficit three.
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Only rainbow gap set \(J\) & Nonsingleton classes\\
+\midrule
+\(\{0\}\) & \(\{r_0,r_4,u_2\},\ H_3\)\\
+\(\{1\}\) & \(\{r_0,r_1,u_3\},\ H_0\)\\
+\(\{0,2\}\) & \(\{r_0,r_2,r_4,u_3\}\)\\
+\(\{0,3\}\) & \(\{r_0,r_1,u_1\},\ \{r_4,u_0\}\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+To check each row, \(u_i\) occurs exactly when \(i\in J\), and \(r_i\)
+occurs exactly when neither \(i-1\) nor \(i\) belongs to \(J\). Apply these
+rules to the empty set, the four singletons, and the three pairs
+\(\{0,2\},\{0,3\},\{1,3\}\). For example, in the first row gap 3 is
+forbidden. Without it \(r_4\) occurs, so both \(r_0\) and \(u_2\) must be
+absent. This forces gap 0 and excludes gaps 1 and 2. Reversing the first
+three rows supplies the other three witnesses. Every successful list must
+contain each of the seven matchings.
+\end{proof}
+
+\newpage
+\section{Logarithmically many tests suffice and are necessary}
+\begin{theorem}Let \(m=3k-2\) and \(k\ge5\). Then
+\[
+ \left\lceil\log_3\left\lfloor (k-1)/2\right\rfloor\right\rceil
+ \ \le\ h(k)\ \le\
+ \left\lfloor512\log\binom{m}{3}\right\rfloor+1 ,
+\]
+where the logarithm on the right is natural.\end{theorem}
+\begin{proof}
+For the lower bound, use the odd interior columns from 1 through \(k-2\).
+In each test matching such a column has three possible states: a rung, a
+horizontal tile extending left, or one extending right. A list of \(t\)
+matchings gives each column a word of length \(t\) on these three states.
+
+Suppose two chosen columns \(i<j\) have equal words. Give each of
+\[
+ \{r_i,r_j\},\qquad \{u_{i-1},u_{j-1}\},\qquad \{u_i,u_j\}
+\]
+its own repeated color, with fresh colors elsewhere. The spacing makes
+the three pairs disjoint. A matching contains a repeated color precisely
+when the two column states agree. Every test therefore fails, although
+the single tile at gap \(i-1\) with rungs elsewhere is a rainbow matching.
+Thus the \(\lfloor(k-1)/2\rfloor\) words must be distinct, proving the bound.
+
+For the upper bound, start with a coloring and a rainbow perfect matching
+\(M\). Keep one representative edge of every color, taking the edge in
+\(M\) whenever possible. The discarded set \(F\) has exactly three edges,
+and \(M\) avoids \(F\). Any matching avoiding \(F\) is rainbow.
+It suffices to find one list that simultaneously avoids every avoidable
+three-edge set in at least one of its tests.
+
+Take independent fair bits on the gaps and set bits outside the ladder to
+zero. Select precisely those gaps with bit one and both neighboring bits
+zero. The resulting gaps are nonconsecutive and specify a perfect matching.
+For each avoidable \(F\), fix one tiling avoiding it. For each forbidden
+rung, that tiling covers its column with a horizontal tile. Prescribe a one
+on that tile's gap and zeros on its neighbors. For each forbidden rail,
+prescribe zero on its gap. All prescriptions agree with the fixed tiling's
+gap word, including at the boundary. At most nine fair bits were prescribed.
+With probability at least \(2^{-9}\) they all agree, producing a tiling
+that avoids \(F\).
+
+For \(t\) independent tests, a union bound over the avoidable triples gives
+\[
+ \Pr(\text{some avoidable triple is missed})\le
+ \binom{m}{3}(1-2^{-9})^t\le\binom{m}{3}\exp(-t/512).
+\]
+For the stated upper bound this is less than one. A
+successful list exists, and any duplicate tests may be removed.
+\end{proof}
+
+\small\noindent
+\textbf{Method and verification.}
+Prescribing a few binary coordinates is related to the universal sets of
+Naor, Schulman and Srinivasan,
+\href{https://authors.library.caltech.edu/records/wq91j-3w168}{\emph{Splitters and Near-optimal Derandomization}}.
+The proof above gives its own probability estimate. Prior coverage of the
+ladder bounds is unverified. The
+\href{https://github.com/Akhil-rav/discrete-math-lab/blob/main/tests/test_ladder_test_families.py}{five-column check}
+tests the witness table and every candidate list against all deficit-three
+edge partitions.
+\end{document}

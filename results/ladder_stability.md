@@ -1,5 +1,14 @@
 # The finite base for the ladder classification
 
+The companion note [How many perfect matchings test a ladder?](../papers/ladder_tests.pdf)
+proves the logarithmic test-family bounds and gives the unique minimum list for
+five columns. To reproduce the check of all 39,325 deficit-three partitions and
+all 256 candidate lists, run
+
+```sh
+python -m unittest discover -s tests -p test_ladder_test_families.py -v
+```
+
 The [working note](../papers/ladder_stability.pdf) reduces the classification at
 every length above 17 to a shorter ladder. Both searches below keep edges fixed
 and ignore color names. They compare the actual repeated edge classes with the
