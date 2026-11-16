@@ -1,6 +1,7 @@
 # Rainbow 3-term arithmetic progressions
 
-**Status:** definitions from BE+16/Y16; exhaustive finite reproductions.
+Definitions follow BE+16 and Y16. The computations are exhaustive on the
+stated finite domains.
 See [source records](literature/source_records.md) for versions and access limits.
 
 A nondegenerate 3-term arithmetic progression is a set of three distinct terms

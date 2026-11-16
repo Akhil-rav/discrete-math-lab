@@ -1,6 +1,6 @@
 # Regular Bipartite Graphs: Small Cases
 
-**Status:** Reproduction of a known theorem.
+These computations reproduce the regular-bipartite corollary of Hall's theorem.
 
 [Typeset matching report](../papers/matching_foundations.pdf) · [LaTeX source](../papers/matching_foundations.tex)
 

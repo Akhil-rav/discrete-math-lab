@@ -1,10 +1,9 @@
 # Vertex color-coding: a combinatorics-to-algorithms bridge
 
-**Status:** implementation/reproduction of a standard method; no novelty claim.
+This note describes an implementation of the standard color-coding method.
 
 Alon, Yuster, and Zwick's [Color-coding](https://www.math.tau.ac.il/~nogaa/PDFS/col5.pdf),
-§3 and Lemma 3.1, motivates `src/color_coding.py`. Alon's author manuscript
-lists IAS and Tel Aviv University. These are **vertex** colors; the anti-Ramsey
+§3 and Lemma 3.1, motivates `src/color_coding.py`. These are **vertex** colors; the anti-Ramsey
 matching searches elsewhere in this lab color **edges**.
 
 Here k means a number of vertices, so the desired path has length k−1.

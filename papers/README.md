@@ -71,7 +71,7 @@ The checked PDFs were built with Tectonic 0.17.0 and the official
 `tlextras-2022.0r0` bundle. Inspect the compilation log and every rendered page
 after an edit; typesetting checks do not replace mathematical verification.
 The [verification index](../results/verification_index.md) records the scopes of
-proof reviews, finite searches, source checks, and execution records.
+proof sources, finite searches, source checks, and execution records.
 
 Run the current mathematical and evidence checks from the repository root:
 

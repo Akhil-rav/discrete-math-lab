@@ -6,7 +6,7 @@ and a disconnection obstruction on unions of cliques. The
 [verification record](../results/walk_paper_verification.md) distinguishes
 the proofs from the bounded implementation checks.
 
-**Status:** finite educational reproductions, inspired by
+The finite examples use the edge-expansion convention of
 [Hoory–Linial–Wigderson](https://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/HLW06/hlw06.pdf).
 
 Following their Definition 2.1, for a simple graph on N≥2 vertices define
@@ -35,9 +35,3 @@ These four graphs are not an infinite expander construction. The survey's
 Definition 2.2 requires growing graph orders, bounded fixed degree, and a
 uniform positive expansion lower bound. No eigenvalue computation, spectral
 inequality, Ramanujan certificate, or interlacing-family construction is claimed.
-
-For the next reading step, Wigderson's [March 2019 book draft](https://www.math.ias.edu/files/Website03-25-19.pdf),
-Chapters 7–8, gives randomness/pseudorandomness context. For an advanced
-existence result see [Marcus–Spielman–Srivastava](https://arxiv.org/abs/1304.4132v2).
-That paper and the IAS past-visitor link for Srivastava are recorded separately
-in the literature map; these small examples do not reproduce its proof.

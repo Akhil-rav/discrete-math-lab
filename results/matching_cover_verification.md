@@ -8,23 +8,8 @@ records the certificate computations and L5 classification.
 
 Proof source SHA-256: `1eaa47f50db69d4380dfeb5fd19aca253e1e6a53268b2e086843e01fcf2d44e3`.
 
-## Proof checks
-
-For the reduction, a color partition gives a cover of equal deficit.
-Merging intersecting cover blocks preserves coverage and does not increase
-cost; singleton completion produces an avoiding partition. Both directions
-are needed because covering blocks need not be disjoint.
-
-For the ladder formula, the triple-and-pair construction works from the
-first two columns. A forced tiling block splits the remaining columns into
-segments; concatenation bounds their product of tiling counts. Thus a pair
-occurs in at most $p_{k-2}$ matchings and an edge in at most $p_{k-1}$.
-The two possible deficit-two shapes are excluded by pair coverage and triple
-incidence. Strict Fibonacci inequalities apply from k=4; k=3 is checked
-directly, and the k=2 exception is explicit.
-
-These are internal checks of the written proofs. The universal formula does
-not follow from the finite tests, and external refereeing is not claimed.
+The reduction and general ladder formula have separate proofs in the note.
+The records below document their finite implementations and witnesses.
 
 ## Computation and independent checks
 

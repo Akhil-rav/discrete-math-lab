@@ -83,7 +83,7 @@ def render(data):
         )
         for v, bits in enumerate(BITS):
             x, y = coordinates(bits)
-            tikz.append(f"\\coordinate (v{v}) at ({x},{y});")
+            tikz.append(f"\\coordinate (v{v}) at ({x:g},{y:g});")
         for i, (u, v) in enumerate(edges):
             color = c["representative"][i]
             tikz.append(
