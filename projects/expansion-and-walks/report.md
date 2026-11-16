@@ -68,23 +68,16 @@ python -m unittest discover -s tests -v
 - [Conventions and sources](../../notes/expansion_and_walks.md).
 - [Historical execution records](../../results/verification.md).
 
-## Limits and follow-up work
+## Scope
 
 Four small graphs do not constitute an infinite expander family. Expansion here
 is not degree-normalized; comparisons between different degrees require care.
 No spectral gap, Cheeger inequality, high-dimensional expansion, or coding
 application is implemented or certified.
 
-Useful development tasks are to add independent transition-matrix checks, compare
-all starting vertices on irregular or asymmetric examples using the appropriate
-stationary distribution, and implement a separately verified spectral comparison.
-These are proposed implementation exercises, not open-problem or novelty claims.
+## Reference
 
-## Reading connection
-
-The foundation is Hoory, Linial, and Wigderson's
-[Expander graphs and their applications](https://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/HLW06/hlw06.pdf).
-Max Hopkins's [research page](https://cseweb.ucsd.edu/~nmhopkin/) provides lecture
-materials on high-dimensional expansion. That is a possible later reading
-direction; the experiment here concerns ordinary graphs and does not reproduce
-his research results. No supervision or endorsement is implied.
+The edge-expansion convention follows Hoory, Linial, and Wigderson,
+[*Expander graphs and their applications*](https://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/HLW06/hlw06.pdf),
+Definitions 2.1 and 2.2. The [source notes](../../notes/expansion_and_walks.md)
+give the convention and distinguish these finite examples from an expander family.

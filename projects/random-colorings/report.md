@@ -1,8 +1,7 @@
 # Exact probabilities of rainbow perfect matchings
 
-We compute exact probabilities and elementary bounds for independent uniform
-edge colors.
-No novelty claim.
+This study applies elementary counting identities to independent uniform
+edge colors, giving exact probabilities and moment bounds on six finite hosts.
 
 [Typeset report](../../papers/random_rainbow.pdf) · [LaTeX source](../../papers/random_rainbow.tex)
 · [Definitions and proofs](../../notes/random_rainbow.md) · [Exact data](../../results/data/random_rainbow.json)
