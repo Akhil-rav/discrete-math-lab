@@ -1,6 +1,6 @@
 # Checked algorithm demonstrations
 
-**Status:** reproductions of standard methods on bounded finite domains.
+The examples reproduce standard methods on the stated finite domains.
 Commands and contracts are in [experiments](../experiments/README.md).
 
 ## Vertex color-coding

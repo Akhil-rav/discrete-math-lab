@@ -1,6 +1,6 @@
 # Rainbow Perfect Matchings in Small Complete Bipartite Graphs
 
-**Status:** exhaustive computational small-case result; no novelty claim.
+These exhaustive small-case computations reproduce published matching thresholds.
 
 **Literature check, 2026-11-13:** these values reproduce Li–Tu–Jin,
 Theorems 2.3 and 2.5, after translating their forcing threshold rb to A=rb−1.

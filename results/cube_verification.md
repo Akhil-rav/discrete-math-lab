@@ -5,7 +5,7 @@ check its matching constraints, symmetry group, and orbit counts.
 
 **Proof extension, November 14, 2026:** the
 [incidence argument](../notes/cube_upper_bound.md) now proves the maximum of
-seven without enumeration. Its [proof review](cube_bound_review.md) and
+seven without enumeration. Its [incidence counts](cube_bound_review.md) and
 [collision audit](cube_collision_verification.md) are separate from the unchanged
 classification evidence below. The proof-extension checkpoint had 22 passing
 tests; the original classification checkpoint below had 20. The current suite
@@ -69,15 +69,8 @@ records classification execution, not the test suite.
 - [stdout](runs/cube-classification-2026-11-14/stdout.txt) and
   [stderr](runs/cube-classification-2026-11-14/stderr.txt)
 
-## Proof and interpretation checks
-
-The group-order argument is internal and proved as written: connected
-bipartiteness forces preservation or exchange of the parts; preserving maps
-must agree on the unique cross-part nonneighbor; all simultaneous permutations
-and their part swaps work. Completeness is also checked against all vertex maps.
-The classification is finite enumerative evidence rather than an asymptotic
-statement. The literature comparison remains limited as documented in the
-[source note](../notes/literature/cube_classification.md).
+The classification is finite enumerative evidence. Its literature comparison
+is documented in the [source note](../notes/literature/cube_classification.md).
 
 ## Presentation
 
@@ -87,6 +80,3 @@ The renderer only presents data; it is not part of the classification oracle.
 Numerical labels on all edges make color equality readable independently of
 palette. Nested-square drawings have no crossing edges. The drawing's binary
 coordinate model is isomorphic to the explicitly ordered bipartite host.
-The LaTeX was compiled, proofread for notation and references, and its rendered
-pages visually inspected. These presentation checks do not add mathematical
-independence to the review.

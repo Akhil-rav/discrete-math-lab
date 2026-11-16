@@ -7,8 +7,6 @@ the maximum number of colors avoiding a rainbow perfect matching and classify
 every extremal partition of the fixed edge set. The cycle and two-square cases
 introduce the general argument. The proofs are elementary and self-contained.
 
-**Status:** elementary exposition; no novelty claim.
-
 [Download the typeset paper](../papers/cycle_extremizers.pdf).
 [Edit the LaTeX source](../papers/cycle_extremizers.tex).
 

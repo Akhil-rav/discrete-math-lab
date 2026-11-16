@@ -1,6 +1,7 @@
 # Exact probabilities of rainbow perfect matchings
 
-**Status:** elementary counting identities and exact finite computations.
+We compute exact probabilities and elementary bounds for independent uniform
+edge colors.
 No novelty claim.
 
 [Typeset report](../../papers/random_rainbow.pdf) · [LaTeX source](../../papers/random_rainbow.tex)

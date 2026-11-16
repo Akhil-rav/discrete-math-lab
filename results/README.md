@@ -19,7 +19,7 @@
 
 ## Data and verification
 
-[Verification index](verification_index.md) collects the proof reviews, run
+[Verification index](verification_index.md) collects the proof sources, run
 records, reference datasets, and the portable integrity/reproduction command.
 
 - [Original deterministic dataset](data/small_cases.json)

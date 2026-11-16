@@ -23,8 +23,8 @@ It uses Python's standard library and works offline.
 | Matching-event inclusion-exclusion | [Coefficient checks and benchmark protocol](inclusion_exclusion.md) | [Counting polynomials and Bonferroni bounds](data/rainbow_inclusion_exclusion.json) |
 | Direct five-column classification | [Counting proof and checks](l5_extremizer_proof.md) | [Proved-family constructor](../src/l5_extremizers.py), compared with [saved extremizers](data/matching_covers.json) |
 | Weighted matching covers | [Reduction, general ladder proof, and certificate checks](matching_cover_verification.md) | [Nine certificates and all L5 extremizers](data/matching_covers.json) |
-| Small ladders | [Proof checks and exhaustive classification](ladder_verification.md) | [All extremizers and two probability methods](data/ladder_matchings.json) |
-| Random-walk formulas | [Proof and finite formula checks](walk_paper_verification.md) | [Walk examples](algorithm_demos.md) |
+| Small ladders | [Exhaustive classification checks](ladder_verification.md) | [All extremizers and two probability methods](data/ladder_matchings.json) |
+| Random-walk formulas | [Finite formula checks](walk_paper_verification.md) | [Walk examples](algorithm_demos.md) |
 
 Dates and test counts in the records describe those runs. The command above
 runs the current code.

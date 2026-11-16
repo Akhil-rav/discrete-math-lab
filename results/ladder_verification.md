@@ -1,4 +1,4 @@
-# Ladder verification
+# Small ladders: computation checks
 
 The [elementary proof](../notes/ladders.md) establishes $A(L_2)=2$,
 $A(L_3)=4$, and $A(L_4)=7$. The [classification report](ladder_matchings.md)
@@ -6,19 +6,8 @@ separately records the computed extremizers and probabilities.
 
 Proof source SHA-256: `f37e42fa9bcf12f5253f7e92204c8c76e741af9eac04bf29bf55f0cd082aa529`.
 
-## Proof checks
-
-The first-column split gives the complete lists of 2, 3, and 5 matchings.
-The lower-bound pairs are disjoint and cover those lists. Merging classes
-preserves avoidance, so ruling out deficit two suffices for the larger hosts.
-All deficit-two partitions have one triple or two doubletons; no other
-nonsingleton shapes are possible. The pair capacities and triple incidence
-bounds rule out both cases. The square is handled separately.
-
-This is an internal proof check of the stated three bounds. The matching
-incidences are also tested, but the proof can be read directly from the lists.
-The classification completeness comes from the finite computation below,
-rather than from the maximum-color proof.
+The maximum-color argument is given in the linked note. The classification
+and probabilities are checked by the finite computations below.
 
 ## Finite computation
 

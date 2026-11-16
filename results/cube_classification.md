@@ -1,6 +1,7 @@
 # Extremal cube colorings: nine symmetry classes
 
-**Status:** exhaustive finite classification. No novelty claim.
+This computation classifies all 174 extremal partitions under cube symmetries
+and color renaming.
 
 [Typeset report](../papers/cube_classification.pdf) · [LaTeX](../papers/cube_classification.tex)
 · [Complete dataset](data/cube_classification.json) · [Verification](cube_verification.md)
