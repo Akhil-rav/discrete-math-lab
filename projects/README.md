@@ -49,9 +49,7 @@ bipartite periodicity, and the effect of laziness on four small regular graphs.
 All walk probabilities are rational. This is an educational reproduction, not
 an expander construction.
 
-[Research guide](research-guide.md) maps completed work, literature connections,
-and bounded development tasks. Related experiments in additive combinatorics
-and color-coding are indexed in [the notes](../notes/README.md) and
-[results](../results/README.md). All completed mathematical studies have
+Related experiments in additive combinatorics and color-coding are indexed
+in [the notes](../notes/README.md) and [results](../results/README.md). All completed mathematical studies have
 [PDFs and editable LaTeX sources](../papers/README.md), including matching
 foundations, rainbow progressions, and vertex color-coding.

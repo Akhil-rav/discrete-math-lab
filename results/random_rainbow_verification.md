@@ -1,5 +1,7 @@
 # Exact random-coloring probabilities: verification
 
+Proof source SHA-256: `758f411073ff47541672d8a081bdeb35bfe54d5a06e085e01fd52b63a78f0393`.
+
 The computation checks exact probabilities and moment bounds on the six
 hosts below. The [counting note](../notes/random_rainbow.md) gives the proofs.
 
@@ -14,32 +16,9 @@ additional cube rows use q=32,64,128,256,1024 for the scaled avoidance example.
 Avoiding histograms are imported from the existing exhaustive sparse dataset;
 this command does not re-enumerate the underlying partitions.
 
-## Counting identities
-
-The numerical applications use the saved exhaustive partition histograms.
-
-| Detail | Argument |
-|---|---|
-| Sampling space | Each of the q^m labeled edge assignments has equal probability |
-| Partition weight | A k-block equality partition has exactly (q)_k injective block labelings; different blocks cannot share labels |
-| Single-matching event | (q)_n of q^n assignments have distinct colors |
-| Pair event | Conditional on one rainbow matching, shared colors are distinct; the other matching's new edges use mutually distinct labels avoiding only the shared colors |
-| Small palette | q<n makes every n-edge rainbow event impossible; the pair calculation bypasses potentially negative falling-factorial arguments |
-| Second moment | Diagonal indicators square to themselves; each unordered pair appears twice |
-| Upper bound | A nonnegative integer X has expectation at least Pr(X>0), clipped above by one |
-| Lower bound | Nonnegative conditional variance gives E[X^2] >= E[X]^2/Pr(X>0); zero second moment is handled separately |
-| Cycle check | Alternating matchings have disjoint edge sets, making the two events independent |
-| Large-palette limit | The highest falling factorial is monic; lower-degree terms vanish after scaling |
-
-The two-event formula does not assume that all matching events are mutually
-independent. Testing every overlap of two four-position events includes more
-general event sets than are necessary for two perfect matchings on one host.
-The cube's limit coefficient 174 uses the validated fixed-edge partition count,
-not the nine symmetry-class count. The five large-q values illustrate the limit;
-they do not prove convergence or quantify an error bound.
-
-Reviewed proof source: [random_rainbow.md](../notes/random_rainbow.md).
-SHA-256: `622a45f4cbd10661dc0e84cd5637e0b1ca4aa148fc1bfc1e7d0b651a6e1672f1`.
+The [counting note](../notes/random_rainbow.md) proves the identities used
+by the implementation. This record documents the model, test ranges, and
+executed computation.
 
 ## Finite checks
 
@@ -75,14 +54,12 @@ python -m experiments.random_rainbow --check results/data/random_rainbow.json
 python -m unittest discover -s tests -v
 ```
 
-## Figure and presentation
+## Figure
 
 The plot is rendered from the saved exact dataset with Matplotlib 3.10.7.
 The optional renderer converts fractions to floats only for display. The
 mathematical commands and tests require only the standard library. SVG and PNG
-are exported; the final chart was visually inspected for axes, legend placement,
-legibility, and agreement with the tabulated values. Shading shows the moment
-bounds, not a confidence interval. No visual observation supplies a proof.
+are exported. Shading shows the moment bounds, not a confidence interval.
 
 The model and tested range are described in the [project report](../projects/random-colorings/report.md).
 

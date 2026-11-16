@@ -28,7 +28,7 @@ DATASETS = {
     "results/data/ladder_matchings.json": "results/runs/ladder-matchings-2026-11-15/ladder_matchings.json",
     "results/data/matching_covers.json": "results/runs/matching-covers-2026-11-15/covers.json",
 }
-PROOF_REVIEWS = {
+PROOF_SOURCES = {
     "notes/cube_upper_bound.md": "results/cube_bound_review.md",
     "notes/random_rainbow.md": "results/random_rainbow_verification.md",
     "papers/expansion_walks.tex": "results/walk_paper_verification.md",
@@ -167,18 +167,18 @@ def static_checks(root):
             raise VerificationError(
                 f"Reference is linked to an unsuccessful run: {reference}"
             )
-    for source, review in PROOF_REVIEWS.items():
+    for source, record in PROOF_SOURCES.items():
         match = re.search(
-            r"SHA-256: `([a-f0-9]{64})`", (root / review).read_text(encoding="utf-8")
+            r"SHA-256: `([a-f0-9]{64})`", (root / record).read_text(encoding="utf-8")
         )
         if not match or match.group(1) != digest(root / source):
             raise VerificationError(
-                f"Proof changed since its recorded review: {source}"
+                f"Proof source differs from its recorded hash: {source}"
             )
     print(
         f"PASS: {links} local links; {len(json_files)} JSON files; "
         f'{len(manifests)} run records; {sum(s["outputs"] for s in summaries)} output hashes; '
-        f"{len(DATASETS)} reference datasets; {len(PROOF_REVIEWS)} reviewed source hashes.",
+        f"{len(DATASETS)} reference datasets; {len(PROOF_SOURCES)} proof source hashes.",
         flush=True,
     )
     changed = sum(s["historical_inputs"] for s in summaries)

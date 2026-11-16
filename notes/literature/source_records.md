@@ -1,7 +1,8 @@
 # Source records
 
-All checks below occurred on **2026-11-13**. “Verified” concerns the named
-statement and its stated application, not an audit of the entire paper's proof.
+Initial source checks: **November 13, 2026**. Later targeted checks are recorded
+at the end. Verification concerns the named statement and its application,
+not an audit of the entire cited paper.
 PDFs were read through web text extraction; full texts were not retained in Git.
 Local cache hashes: not recorded. No paper is represented as exhaustively read.
 
@@ -17,8 +18,7 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
   rb(K_{m,n},kK2)=m(k−2)+2 for m≥n≥k≥3.
 - **Translation:** local A(Knn)=f(Knn,nK2)=rb(Knn,nK2)−1. Thus A(K33)=4,
   and the exceptional k=2 theorem gives A(K22)=2.
-- **Checks:** author/title authentication, exact statement/hypotheses, application.
-  **Verdict: verified; overlap: known after translation of notation.**
+- **Application scope:** the stated thresholds match the local conventions.
   The two sides may be interchanged before imposing m≥n. No properness assumption.
   No full classification of extremal colorings is attributed to this theorem.
 
@@ -34,8 +34,8 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
 - **Verified metadata/context:** complete graph host; minimum forcing number of
   colors in an exact coloring; perfect matching target. Independently cited in
   OY13, reference [9].
-- **Verdict:** exact formula **unverified** here; application as a bipartite
-  threshold **inapplicable**. Overlap: partial or adjacent result only.
+- **Application scope:** the exact formula remains unverified here. The complete-graph
+  host differs from the bipartite hosts used in these experiments.
 
 ## OY13 — hypergraph matching lower-bound mechanism
 
@@ -49,9 +49,8 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
   extremal hypergraph distinctly, and all remaining edges with one new color.
   A rainbow k-matching could use at most one outside edge and would leave a
   forbidden (k−1)-matching inside. This explains the +2 threshold.
-- **Checks:** source authentication, statement extraction, construction inspected.
-  **Verdict: verified** for this lower-bound explanation; overlap: known after
-  translation of notation. No general hypergraph solver or reproduction claimed.
+- **Application scope:** only this lower-bound construction is used for context.
+  No general hypergraph solver or reproduction is implemented.
   Conjectures in the 2013 paper have **no current-open-status check** here.
 
 ## BE+16 — intervals and cyclic arithmetic progressions
@@ -70,9 +69,8 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
   addition; all terms must be distinct. Code computes the maximum avoiding count
   then adds one. This yields the same exact-color threshold because merging colors
   cannot create a rainbow AP.
-- **Checks:** authentication, selected statement extraction, finite application.
-  **Verdict: verified** for these conventions and benchmark values; overlap: known
-  after translation of notation. Finite searches do not prove asymptotic theorems.
+- **Application scope:** the definitions and selected benchmark values agree
+  after the notation translation above. Asymptotic results are not reproduced.
 
 ## Y16 — finite abelian groups
 
@@ -86,10 +84,8 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
 - **Application:** product coordinates in the implementation use componentwise
   modular addition. General product formulas and unitary colorings are **not**
   implemented or asserted from extraction; the selected groups are enumerated.
-- **Checks:** source authentication, definitions and Theorem 3 statement extraction,
-  translation of definitions. **Verdict: verified** for definition alignment;
-  general theorem implementation **not attempted**. Overlap: partial or adjacent
-  result only for the broader group classification.
+- **Application scope:** definitions agree after translation. The general
+  product theorem is background; its implementation is not attempted.
 
 ## DS+18 — multiplicity is a different optimization
 
@@ -100,8 +96,8 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
   internal January 3, 2018 date (introduction checked). These are separate versions.
 - **Extracted/context:** fixed-palette extremization of the proportion of rainbow
   copies, rather than the maximum number of colors avoiding one copy.
-- **Verdict:** verified topic/definition context; individual results and proof
-  dependencies **unverified** here. Overlap: partial or adjacent result only.
+- **Application scope:** only the topic and definitions were checked;
+  individual theorem statements remain unverified here.
   No multiplicity theorem is used in the computations.
 
 ## AYZ95 — vertex color-coding
@@ -115,8 +111,8 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
   masks encode color sets. This concerns vertex colors, unlike the edge-colored
   anti-Ramsey experiments. No independence assumptions are inferred from arbitrary
   graph colorings: all k^n assignments are enumerated for the finite probability check.
-- **Checks:** source authentication, extraction, DP recurrence and probability
-  application. **Verdict: verified; overlap: known after translation of notation.**
+- **Application scope:** the dynamic program and fixed-path probability
+  match the cited method after translating path length to vertex count.
   Perfect-hash derandomization and cycle algorithms are not implemented.
 
 ## HLW06 — edge expansion
@@ -130,8 +126,7 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
   family of bounded-degree regular graphs with uniform positive expansion.
 - **Translation:** `edge_expansion` returns this unnormalized edge quantity, not
   conductance or vertex expansion. Exact Fraction arithmetic is used.
-- **Checks:** authentication, definition extraction, normalization/application.
-  **Verdict: verified; overlap: known after translation of notation.** Walk examples
+- **Application scope:** the expansion convention agrees. Walk examples
   use the explicitly derived transition rule in our note; no spectral estimate or
   construction theorem is claimed reproduced. Finite examples do not establish
   an expander family.
@@ -148,7 +143,20 @@ Local cache hashes: not recorded. No paper is represented as exhaustively read.
   [arXiv:1304.4132v2](https://arxiv.org/abs/1304.4132v2), March 3, 2014 revision;
   abstract in [v2 PDF](https://arxiv.org/pdf/1304.4132v2) checked. It establishes
   existence of infinite families of d-regular bipartite Ramanujan graphs for d>2.
-- **Verdict:** authenticated orientation references; no proof audit, theorem
-  implementation, or project implication beyond context. Overlap: partial or
-  adjacent result only. Existence is not a claim that our finite examples implement
-  their method.
+- **Application scope:** these are background references. Their proofs and
+  constructions are not implemented by the finite walk examples.
+
+## November 15, 2026: targeted source checks
+
+- **LTJ09:** Theorems 2.3 and 2.5 were rechecked in the primary preprint,
+  including the square exception and the hypotheses on part and matching sizes.
+- **BE+16:** Theorem 1.1 explicitly gives aw([8],3)=5. The drop to four
+  at n=9 is compatible with the exact-color convention.
+- **AYZ95:** Section 3 and Lemma 3.1 were rechecked in the
+  [alternate author-hosted copy](https://www.tau.ac.il/~nogaa/PDFS/col5.pdf),
+  including the fixed-path probability and directed/undirected scope.
+- **HLW06:** Definitions 2.1 and 2.2 were rechecked in the linked published
+  author copy: the unnormalized edge ratio and the uniform bound for a graph family.
+
+These checks confirm the cited applications above. They do not widen the
+scope of the sources whose full statements remain unavailable.

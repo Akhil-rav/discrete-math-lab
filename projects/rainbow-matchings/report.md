@@ -1,8 +1,7 @@
 # Exact rainbow-matching avoidance on small bipartite hosts
 
-**Status:** computational study and elementary exposition. Known facts, finite
-observations, and future development tasks are separated below. No novelty is
-claimed.
+The study combines elementary matching proofs with exact finite classifications.
+Known thresholds are cited, and each search records its domain and coverage.
 
 [Typeset small-host and matching-foundations report](../../papers/matching_foundations.pdf)
 · [LaTeX source](../../papers/matching_foundations.tex)
@@ -147,11 +146,3 @@ python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
 
 The original suite and its historical evidence record remain unchanged.
 The new execution provenance is linked from [the sparse verification record](../../results/sparse_verification.md).
-
-## Further work
-
-Compare the fixed-host proof and classification with precise published
-sparse-host results before proposing general statements. The cube upper bound
-and finite symmetry classification are complete in the linked notes. Further
-host comparisons are project-development directions; their current status in the
-literature has not been established here.
