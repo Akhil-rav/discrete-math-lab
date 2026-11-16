@@ -1,0 +1,14 @@
+{
+  "claim_id": "LADDER_STABILITY_BASE",
+  "mathematics": {
+    "assertion_tested": "At each length from 5 through 17, the deficit-three avoiding partitions equal the fifteen listed terminal constructions.",
+    "coefficient_domain": "Exact integers and finite sets",
+    "conventions": "Edges stay fixed and color names are ignored. Rungs precede the top and bottom rails.",
+    "inputs": ["All edge partitions of deficit three on the two-row ladder at each stated length"],
+    "bounds": {"min_columns": 5, "max_columns": 17},
+    "non_claims": ["The extension above 17 requires the contraction argument."]
+  },
+  "execution_artifacts": ["experiments/ladder_stability.py", "src/l5_extremizers.py", "src/color_patterns.py", "src/__init__.py"],
+  "software": [{"name": "Python", "version": "3.13.7"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

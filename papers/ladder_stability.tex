@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype,xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!50!black,linkcolor=black]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\repo}{https://github.com/Akhil-rav/discrete-math-lab}
+\hypersetup{pdftitle={Fifteen extremal colorings of the ladder}}
+\title{\LARGE\bfseries Fifteen extremal colorings of the ladder}
+\author{}
+\date{Working note \(\,\cdot\,\) November 16, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+How many ways can a ladder be colored with as many colors as possible while
+every perfect matching repeats a color? From five columns onward there are
+exactly fifteen edge partitions. All repeated colors occur at the ends.
+The proof contracts an interior square and checks a finite list of base cases
+by exhaustive computation. A separate argument bounds the number of horizontal
+tiles needed to witness a rainbow matching.
+\end{abstract}
+
+\section{The fifteen partitions}
+Write \(L_k=P_k\square K_2\) and put \(s=k-1\). Label the rungs
+\(r_0,\ldots,r_s\), and let \(H_i\) be the pair of horizontal edges between
+columns \(i\) and \(i+1\). A perfect matching tiles the columns by single
+rungs and disjoint horizontal pairs. The leftmost free column forces one of
+these two choices, after which the same argument applies to the remaining
+columns. A matching is rainbow if its edges have distinct colors.
+
+\begin{theorem}
+For every \(k\ge5\), the following list gives exactly the colorings with
+\(3k-5\) colors and no rainbow perfect matching, up to renaming colors.
+Edges are fixed. There are fifteen partitions and six orbits under graph
+automorphisms.
+\end{theorem}
+Each table entry lists the nonsingleton color classes. Every other edge
+gets its own color. Reversal interchanges the ends of the ladder.
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Classes & Choices & Count\\
+\midrule
+\(\{r_0,r_s,x,y\}\) & \(x\in H_0,\ y\in H_{s-1}\) & 4\\
+\(\{r_0,r_1,x\},\,H_0\) & \(x\in H_1\), also reverse & 4\\
+\(\{r_0,r_s,x\},\,H_{s-1}\) & \(x\in H_0\), also reverse & 4\\
+\(\{r_0,r_1\},\,H_0,\,H_1\) & also reverse & 2\\
+\(\{r_0,r_s\},\,H_0,\,H_{s-1}\) & & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+For the first row, a matching takes either \(r_0\) or \(H_0\), and either
+\(r_s\) or \(H_{s-1}\). Thus it uses two edges of the quadruple. In rows two
+and four, a matching omitting \(H_0\) uses \(r_0\), followed by either
+\(r_1\) or \(H_1\). In row three, omitting \(H_{s-1}\) forces \(r_s\) and
+the left end supplies another edge of the triple. In the last row, omitting
+both end rail pairs forces both end rungs. Every listed partition works.
+
+\newpage
+\section{Why the list is exhaustive}
+The \href{\repo/blob/main/notes/matching_covers.md}{ladder bound} gives the
+maximum \(3k-5\) for \(k\ge3\). Since the ladder has \(3k-2\) edges,
+an extremizer has deficit three: the sum of \(|B|-1\) over its color
+classes \(B\) is three. The possible nonsingleton sizes are \(4\), \(3+2\),
+and \(2+2+2\). Call the edges in those classes marked. There are at most six.
+
+\begin{lemma}
+If the square between columns \(q,q+1\) has four unmarked edges, its two
+columns can be merged into one, preserving all marked classes. If the
+original coloring avoids rainbow perfect matchings, so does the shorter one.
+\end{lemma}
+\begin{proof}
+Delete gap \(q\), merge its two rungs into a single fresh singleton rung,
+and keep all other edges in order on their respective rails or rung line.
+The shortened coloring has the same deficit. A tiling is specified by its
+binary word on gaps: a one selects both rails, and consecutive ones are
+forbidden. In any shortened tiling insert a zero at position \(q\).
+This gives a legal original tiling. Outside the square, rail choices agree
+and each rung sees the same incident gap choices. Inside the square only
+singleton colors can enter. Hence a rainbow tiling on the shorter ladder
+would give a rainbow tiling on the original.
+\end{proof}
+For \(k\ge18\), consider the \(k-5\) gaps \(2\le q\le k-4\).
+Each marked edge touches at most two of their squares, so at most twelve
+squares contain a marked edge. There is a square to which the lemma applies.
+After contraction, apply the classification at \(k-1\). The first two gaps,
+last two gaps, first two rungs, and last two rungs of the shorter ladder
+correspond to those of the original. All marked edges survived. The shorter
+table therefore determines the original partition uniquely for this gap.
+
+\paragraph{Finite base.}
+For each \(5\le k\le17\) the
+\href{\repo/blob/main/experiments/ladder_stability.py}{exact enumeration}
+compares the full set of surviving partitions with the table. It lists the
+matchings by choosing all subsets of nonconsecutive gaps. For a quadruple
+it checks every four-edge subset. For a triple it intersects all matchings
+containing at most one of its edges. Any completing pair must lie in that
+intersection and outside the triple, and every such pair works. For three
+pairs, one pair \(P\) must lie in the all-rung matching. Choose any matching
+that omits at least one edge of \(P\). Some second pair \(Q\) must lie in it.
+The third pair is found by intersecting all matchings containing neither
+whole pair. Disjointness is required throughout, and duplicate partitions
+are removed. These loops exhaust the three shapes. At every length the
+three counts are \(4,8,3\), with exact agreement of edge positions.
+This supplies the base of the induction.
+
+Choosing the image of one corner forces its neighbors by degree, then
+forces successive columns. The four automorphisms are rail exchange, end
+reversal, their product and the identity. Row one splits by whether the
+selected rails lie on the same side. Each other row is one orbit, giving six.
+
+\newpage
+\section{How far away is a rainbow matching?}
+The finite check used every tiling. There is also a uniform way to see why
+few horizontal pairs suffice when the deficit is small.
+
+\begin{theorem}
+Let a finite simple graph have a fixed perfect matching \(R\) and an edge
+coloring using \(|E|-d\) colors. If it has a rainbow
+perfect matching, it has one obtained from \(R\) by flipping at most \(d\)
+vertex-disjoint alternating cycles.
+\end{theorem}
+\begin{proof}
+Take a rainbow perfect matching \(M\). In each color class keep
+the edge used by \(M\), if present, and otherwise keep any one edge. Call
+the remaining \(d\) edges forbidden. All kept edges have distinct colors.
+The symmetric difference \(R\mathbin{\triangle}M\) splits into disjoint
+even cycles alternating between the two matchings: every vertex incident
+to the difference has one edge of each matching. Flip precisely the cycles
+containing a forbidden edge of \(R\). Every forbidden edge of \(R\) lies on
+one of them because \(M\) avoids it. At most \(d\) cycles are flipped.
+All newly used edges belong to \(M\), and all retained edges avoid the
+forbidden set. The resulting matching is perfect and rainbow.
+\end{proof}
+
+On the ladder take \(R\) to be all rungs. Each horizontal tile in \(M\)
+gives exactly one alternating square of the symmetric difference.
+Consequently, if a deficit-three coloring admits a rainbow matching,
+there is one with at most three horizontal tiles. Two do not always
+suffice. On eight columns, give the rung pairs
+\[
+ \{r_0,r_1\},\quad \{r_3,r_4\},\quad \{r_6,r_7\}
+\]
+three different repeated colors, with fresh colors elsewhere. A rainbow
+matching must omit a rung from each pair. A horizontal tile can hit at
+most one pair, and tiles across gaps \(0,3,6\) achieve the bound.
+
+\paragraph{Reproduction.}
+From the repository root run
+\begin{center}\texttt{python -m experiments.ladder\_stability}\end{center}
+The thirteen base cases range from 8 to 2,584 perfect matchings.
+A \href{\repo/blob/main/tests/test_ladder_stability.py}{second search}
+generates matchings by pairing vertices. Starting with distinct colors, it
+merges two colors present in a surviving rainbow matching at each step.
+Every avoiding partition can be reached this way: at each step that
+matching contains two colors that coincide in the final partition. At the
+last step the merged colors must both occur in every survivor. This check
+returns exactly the same partitions throughout the base range.
+The earlier \href{\repo/blob/main/notes/l5_extremizers.md}{five-column proof}
+also derives that case by hand.
+
+\paragraph{Related work.}
+Haas and Young study a
+\href{https://doi.org/10.1016/j.disc.2011.10.017}{complete-graph perfect-matching threshold}.
+The published abstract of
+\href{https://doi.org/10.1016/j.dam.2023.11.049}{\emph{Anti-Ramsey number of matchings in outerplanar graphs}}
+reports an extremum over a family of Hamiltonian bipartite outerplanar hosts.
+The classification here fixes one host at each length and retains edge
+positions. Prior coverage of this exact classification remains unverified.
+\end{document}

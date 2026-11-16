@@ -42,3 +42,13 @@ unverified. The bounds are supported by the self-contained elementary proof,
 and the classifications by the explicitly bounded computations. Systematic
 MathSciNet, zbMATH, and forward-citation searches were not completed. No
 novelty or currently-open-problem claim is made.
+
+On November 16, a further search for fixed ladder hosts, edge-color
+partitions, perfect matchings and extremal colorings located the publisher's
+abstract of [*Anti-Ramsey number of matchings in outerplanar graphs*](https://doi.org/10.1016/j.dam.2023.11.049),
+*Discrete Applied Mathematics* 345 (2024), 125–135. Its stated parameter
+maximizes over a family of Hamiltonian maximal bipartite outerplanar graphs.
+Such a family maximum alone does not classify partitions of a specified host.
+The full text was unavailable in this search, so its subsidiary results have
+not been ruled out as prior work on ladders. The [ladder classification](../../papers/ladder_stability.pdf)
+uses the earlier ladder bound, square contraction, and explicit finite bases.

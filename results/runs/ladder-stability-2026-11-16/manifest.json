@@ -1,0 +1,123 @@
+{
+  "schema_version": 2,
+  "claim_id": "LADDER_STABILITY_BASE",
+  "repository": {
+    "commit": "e9511ca836983b1c80a0a757f620d9fd39b55fd4",
+    "dirty": true
+  },
+  "command": [
+    "python",
+    "-m",
+    "experiments.ladder_stability"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.13.7"
+      },
+      {
+        "name": "Python",
+        "version": "3.13.7"
+      }
+    ],
+    "hardware": "Windows-11-10.0.26200-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "At each length from 5 through 17, the deficit-three avoiding partitions equal the fifteen listed terminal constructions.",
+    "coefficient_domain": "Exact integers and finite sets",
+    "conventions": "Edges stay fixed and color names are ignored. Rungs precede the top and bottom rails.",
+    "inputs": [
+      "All edge partitions of deficit three on the two-row ladder at each stated length"
+    ],
+    "bounds": {
+      "min_columns": 5,
+      "max_columns": 17
+    },
+    "non_claims": [
+      "The extension above 17 requires the contraction argument."
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-11-16T22:31:04.315131+00:00",
+    "runtime_seconds": 2.398499,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 60,
+    "max_output_bytes": 4194304,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "experiments/ladder_stability.py",
+    "src/l5_extremizers.py",
+    "src/color_patterns.py",
+    "src/__init__.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "experiments/ladder_stability.py",
+      "sha256": "deca89b2d8f3ed52e620cb93b238186d6859b6502fced3fc5e6a770afeb61f04",
+      "sha256_after": "deca89b2d8f3ed52e620cb93b238186d6859b6502fced3fc5e6a770afeb61f04"
+    },
+    {
+      "path": "src/l5_extremizers.py",
+      "sha256": "cac224c294f26c40c58f32898c32c8ce5eb6efd4e367a11b1732195dcc64bc50",
+      "sha256_after": "cac224c294f26c40c58f32898c32c8ce5eb6efd4e367a11b1732195dcc64bc50"
+    },
+    {
+      "path": "src/color_patterns.py",
+      "sha256": "c0c7daf037775a521eea24512f2f73713736d0bca8262390d1b77ac49e5a8553",
+      "sha256_after": "c0c7daf037775a521eea24512f2f73713736d0bca8262390d1b77ac49e5a8553"
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7",
+      "sha256_after": "aa31b2ad594b9585bad159d035b801f43ff46d8b10fbb42b1e7884ae40a2e3a7"
+    }
+  ],
+  "output_directory": "results/runs/ladder-stability-2026-11-16",
+  "declared_results": [],
+  "outputs": [
+    {
+      "path": "results/runs/ladder-stability-2026-11-16/stdout.txt",
+      "sha256": "fe75040d0889b0fe467411af08057e9e567ca8d9c619dbd3ed76f8fed5593e6e",
+      "kind": "log"
+    },
+    {
+      "path": "results/runs/ladder-stability-2026-11-16/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}
