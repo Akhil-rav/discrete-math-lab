@@ -1,7 +1,7 @@
 # The 87 extremal K33 patterns: four symmetry classes
 
-**Status:** exhaustive finite classification under the specified equivalence;
-no novelty claim or extrapolation to larger hosts.
+This finite computation classifies all 87 extremal partitions under the
+specified equivalence relation.
 
 [Typeset matching report](../papers/matching_foundations.pdf) · [LaTeX source](../papers/matching_foundations.tex)
 

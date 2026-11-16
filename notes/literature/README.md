@@ -1,22 +1,9 @@
-# Literature map and verification record
+# Literature
 
-Checked **2026-11-13**. This is a selected reading map, not a complete bibliography
-or a novelty survey. Institutional pages establish affiliations; papers establish
-mathematical statements. Search snippets were used for discovery only.
-
-## People and the connection to this repository
-
-| Researcher | Verified institutional connection | Relevant reading |
-|---|---|---|
-| Michael Young | [CMU Mathematical Sciences faculty](https://www.cmu.edu/math/people/faculty/); earlier papers list Iowa State | HY12, OY13, BE+16, Y16, DS+18 |
-| Avi Wigderson | [IAS mathematics faculty](https://www.ias.edu/math/people/faculty) | HLW06; W19 |
-| Noga Alon | Historical IAS member/visitor, including [2008–09 CSDM](https://www.ias.edu/math/csdm/08-09/members); AYZ's title page also lists IAS | AYZ95 |
-| Nikhil Srivastava | [IAS past visitor](https://www.ias.edu/scholars/nikhil-srivastava) | MSS14 |
-
-Young is included for the direct subject connection, not an asserted IAS
-appointment. A historical visit does not imply a present faculty appointment.
-These links do not imply supervision, collaboration with this repository, or
-endorsement.
+Selected references for matching thresholds, arithmetic progressions,
+color-coding, and expansion. The table distinguishes checked theorem statements
+from metadata and abstracts. [Source records](source_records.md) give versions,
+locators, verification dates, and access limits.
 
 ## Selected sources
 
@@ -43,15 +30,6 @@ orbit classification carries no novelty claim.
 The [ladder source comparison](ladders.md), checked November 15, records the
 fixed-host question, adjacent regular-bipartite literature, and access limits.
 It does not authenticate an external ladder classification or assert novelty.
-
-## Suggested order
-
-1. [Hall's theorem](../halls_theorem.md), then [rainbow conventions](../rainbow_matchings.md).
-2. [LTJ09 comparison and Young's matching papers](young_and_matchings.md).
-3. [Progressions and groups](../rainbow_progressions.md), then BE+16 and Y16.
-4. [Color-coding](../color_coding.md), then AYZ95 §3.
-5. [Expansion and walks](../expansion_and_walks.md), then HLW06 §§2–4;
-   W19 Chapters 7–8 supply complexity context. MSS14 is a later advanced step.
 
 ## Search limits
 

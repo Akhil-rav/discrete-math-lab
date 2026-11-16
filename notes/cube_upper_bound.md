@@ -1,7 +1,7 @@
 # An incidence proof of the cube's seven-color bound
 
-**Status:** elementary proof; no novelty claim. The nine-orbit classification
-remains a separate exhaustive computation.
+An elementary incidence argument proves the seven-color maximum.
+The nine-orbit classification remains a separate exhaustive computation.
 
 Let $Q$ be the cube, represented by $K_{4,4}$ minus its diagonal matching. A coloring
 is arbitrary, not necessarily proper. Let $A(Q)$ be the largest number of colors

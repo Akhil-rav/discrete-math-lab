@@ -1,6 +1,6 @@
 # Even-cycle unions: checks
 
-**Claim:** for every nonempty fixed union G of cycles C(2n_i), with r>=1,
+For every nonempty fixed union G of cycles C(2n_i), with r>=1,
 all n_i>=2, and m=2 sum n_i, the maximum avoiding color count is m-2. Every
 extremizer has two repeated pairs in one component, one inside each alternating
 matching, and all other classes singleton. Its fixed-edge partition count is
@@ -9,30 +9,10 @@ sum_i binomial(n_i,2)^2.
 The complete argument is [Theorem 4 in the reading copy](../notes/cycle_extremizers.md),
 with a corresponding [LaTeX theorem](../papers/cycle_extremizers.tex).
 
-SHA-256: `0ef0cd6d24e052df601a99238ada689a37425ea37451151c64028c8e9f47e6bb`
+SHA-256: `b77c5598b5527277c47ef72050a395a3e3241c80a7a285fdbfe0b7c434c59d8b`
 
-## Counting argument
-
-Each cycle has two alternating matchings, and their choices are independent
-across components. Counting how often edges and pairs occur rules out a triple
-color class and forces the two repeated pairs into one component. Choosing
-the pair in each alternating matching then gives the fixed-edge count.
-
-| Detail | Argument |
-|---|---|
-| Domain and existence | Finite simple cycles, n_i>=2, r>=1; each local matching has a pair available |
-| Lower bound | Two merges in one component give m-2 classes and obstruct either local choice |
-| Upper bound | With m-1 classes only one pair repeats; omitting either chosen edge makes a global matching rainbow; m classes are also excluded |
-| Equality alternatives | Excess sum(|B|-1)=2 gives one triple or two doubletons |
-| Excluding a triple | Its 3*2^(r-1) appearances are fewer than the 2*2^r needed to repeat in every matching |
-| Pair capacities | Same component/same parity: 2^(r-1); opposite parity: zero; different components: 2^(r-2) only when r>=2 |
-| Equality in coverage | Two sets of size at most half can cover all matchings only if both attain half and are disjoint |
-| Location of the pairs | Different components or one common alternating set both permit a matching omitting both pairs |
-| Counting without overcount | Recover the unique chosen component and the pair in each fixed alternating set; no component or color-name permutation factor |
-| Boundary cases | r=1 and n_i=2 recover the cycle and square statements; empty unions and simple C2 are excluded |
-
-The general result follows from these counting steps. The finite searches
-below test its construction on the specified hosts.
+The complete proof is in the linked note and paper. The experiment below
+checks the construction and compares all extremizers on the specified hosts.
 
 ## Finite assertion and coverage
 

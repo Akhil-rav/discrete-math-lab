@@ -1,6 +1,6 @@
-# Young's matching papers and the existing experiments
+# Rainbow matchings: thresholds and related literature
 
-**Status:** literature-derived facts and a reproduction of known small cases.
+Known matching thresholds are compared with the repository's small cases.
 Source versions and access limits are in the [source records](source_records.md).
 
 ## A convention dictionary
@@ -55,14 +55,3 @@ paper is not automatically a currently open problem.
 anti-Ramsey multiplicity: optimizing the number/proportion of rainbow copies
 with a fixed palette. That is a separate objective from avoiding every rainbow
 perfect matching. It is included as a reading direction, not an implemented result.
-
-## Bounded next tasks, without novelty claims
-
-- Extend the finite orbit classification to a specified small sparse host with
-  a proved search-space bound and an explicit automorphism group.
-- Study a published extremal-coloring classification before proposing a general
-  structural statement. The K33 orbit list alone supplies no general classification.
-- Reproduce a small complete-graph matching case only after extracting HY12's
-  precise conventions and exceptions from primary full text.
-
-These are repository development tasks, not claims of open mathematical problems.

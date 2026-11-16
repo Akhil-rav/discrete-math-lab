@@ -1,47 +1,35 @@
-# Contributing and recording claims
+# Contributing
 
-Use Python 3.11+ and the standard library. Run from the root:
+Use Python 3.11+ and run the complete check from the repository root:
 
 ```sh
 python -m tools.verify_repository
 ```
 
-This includes integrity checks and the following mathematical commands:
+The [experiment guide](experiments/README.md) lists individual commands and
+input limits. The [verification index](results/verification_index.md) links
+the saved data and execution records.
 
-```sh
-python -m unittest discover -s tests -v
-python -m experiments.reproduce --check results/data/small_cases.json
-python -m experiments.sparse_rainbow --check results/data/sparse_rainbow.json
-python -m experiments.classify_cube --check results/data/cube_classification.json
-python -m experiments.cube_collision_audit --check results/data/cube_collisions.json
-python -m experiments.random_rainbow --check results/data/random_rainbow.json
-python -m experiments.cycle_unions --check results/data/cycle_unions.json
-python -m experiments.rainbow_inclusion_exclusion --check results/data/rainbow_inclusion_exclusion.json
-python -m experiments.ladder_matchings --check results/data/ladder_matchings.json
-python -m experiments.matching_covers --check results/data/matching_covers.json
-```
+## Mathematical changes
 
-State each mathematical change's domain, conventions, and tested range.
-Record the command, raw data or digest, revision, interpreter version,
-and whether inputs changed during execution. Separate machine-dependent run
-provenance from deterministic result data.
+State definitions, hypotheses, conventions, and the exact range covered.
+Separate a written proof from a finite computation or a cited result.
+For a source-dependent claim, give the precise version, theorem, and
+notation translation. Record unavailable statements rather than infer them
+from an abstract.
 
-A known result needs a checked primary source and hypotheses. A computation
-needs coverage checks and a meaningful independent oracle or invariant.
-A conjecture needs precise quantifiers and evidence; do not describe it as new
-or currently open without a scoped literature check. Supply a verifiable witness
-when an example disproves a precise statement.
+For code changes, include an independent oracle, invariant, or known example
+appropriate to the change. Keep deterministic result data separate from
+machine-dependent timings and execution metadata.
 
-Keep full third-party papers out of Git. Record consulted versions, unavailable
-statements, and version discrepancies. Distinguish metadata checks, theorem
-extraction, proof audits, and implementations.
+## Preserving results
 
-Do not replace historical results silently. Add a dated correction and update
-dependent summaries when an interpretation changes. Preserve old experiments
-as regression checks when extending the code.
+Retain earlier datasets and raw run records. Add a dated correction when
+an interpretation changes, and update the affected reports and links.
+Document enough information to reproduce new computations: commands,
+input hashes, software versions, bounds, and output hashes.
 
-Keep the public presentation focused on mathematical writeups, implementations,
-data, and reproducibility. The main README should provide a short route to the
-paper, project report, and experiments. Keep personal study plans and editorial
-conversation notes outside the public repository; avoid duplicating result
-summaries or retaining completed tasks as future work.
+Keep third-party papers outside Git; cite the consulted versions in the
+[source records](notes/literature/source_records.md). A conjecture or proposed
+extension needs clear quantifiers and evidence. Its novelty or open status
+requires a separate literature check.

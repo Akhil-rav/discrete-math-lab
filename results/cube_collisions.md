@@ -1,9 +1,9 @@
 # The cube bound: incidence, capacity, and overlap
 
-**Status:** elementary proof plus finite implementation checks. No novelty claim.
+An elementary balance identity is combined with exact finite checks.
 
 [Complete proof](../notes/cube_upper_bound.md) · [Typeset report](../papers/cube_classification.pdf)
-· [Audit data](data/cube_collisions.json) · [Proof review](cube_bound_review.md)
+· [Audit data](data/cube_collisions.json) · [Incidence checks](cube_bound_review.md)
 
 The cube has nine perfect matchings. Each edge belongs to three, and each
 pair of distinct edges belongs together to at most two. These statements have

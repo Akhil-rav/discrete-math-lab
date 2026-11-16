@@ -1,6 +1,7 @@
 # Expansion, periodicity, and random walks
 
-**Status:** implemented educational study with exact finite computations.
+This study uses exact finite computations to illustrate expansion and
+random walks.
 This report organizes the existing experiment; it introduces no new computed
 results or expander construction.
 

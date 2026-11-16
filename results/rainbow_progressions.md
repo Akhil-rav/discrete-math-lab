@@ -1,6 +1,7 @@
 # Small rainbow-progression thresholds
 
-**Status:** exhaustive finite computations; selected known benchmarks reproduced.
+The tables give exhaustive finite computations and reproduce selected
+published benchmarks.
 
 [Typeset report](../papers/rainbow_progressions.pdf) · [LaTeX source](../papers/rainbow_progressions.tex)
 

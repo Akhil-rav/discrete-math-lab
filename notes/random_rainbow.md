@@ -1,6 +1,7 @@
 # Counting rainbow-matching probabilities exactly
 
-**Status:** elementary identities with finite applications. No novelty claim.
+These elementary counting identities connect avoiding partitions with exact
+random-coloring probabilities.
 
 All graphs are finite, and colors on different edges are independent and
 uniform on the labeled palette $\{1,\ldots,q\}$, where $q$ is a positive integer.
