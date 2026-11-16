@@ -18,27 +18,26 @@ and proof were not authenticated. No formula from that paper is imported here.
 In particular, a maximum over a graph family cannot be substituted for the
 fixed cube's complete orbit list without a further argument.
 
-**Overlap label:** partial or adjacent result only. The exact classification
-comparison is **unverified**, not a claim that the present computation is new.
+This is adjacent literature. Its relationship to the exact orbit classification
+remains unverified.
 
 ## Search scope
 
 Discovery queried combinations of “anti-Ramsey,” “cube,” “perfect matching,”
 “Q_3,” “3-regular bipartite,” “extremal coloring classification,” and
 “rainbow 174,” followed by a second pass using the fixed-host and orbit-count
-descriptions. Both passes used the same searcher. No source authenticating the
-exact nine-class list was retrieved. That outcome is inconclusive about novelty.
+descriptions. No source establishing the exact nine-class list was retrieved.
+That outcome is inconclusive about novelty.
 
 The existing [matching literature note](young_and_matchings.md) supplies broader
 Young-related and complete-bipartite context. A complete-graph theorem or a
 complete-bipartite threshold does not directly classify the cube's colorings.
 
 MathSciNet, zbMATH, and systematic forward/backward citation coverage were not
-completed. No material claim of apparent novelty is made. The computation and
-its internal coverage argument are the evidence for the finite classification;
-literature searches are not part of that proof.
+completed. The finite classification is supported by the exhaustive computation
+and its coverage argument.
 
-The repository now also includes an internal [incidence proof](../cube_upper_bound.md)
-of the fixed cube's seven-color bound and an extremal capacity identity. Neither
-uses this external paper as a premise. Their originality has not been determined
+The [incidence proof](../cube_upper_bound.md) establishes the fixed cube's
+seven-color bound and derives an extremal capacity identity. These arguments
+do not rely on the external paper. Their originality has not been determined
 by this limited search, and no novelty claim is made.
