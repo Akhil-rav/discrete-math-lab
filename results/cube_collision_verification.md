@@ -1,7 +1,8 @@
 # Cube collision audit: execution record
 
-**Outcome:** implementation and finite assertion verified in the stated domain.
-The elementary proof is reviewed separately; enumeration is not a proof premise.
+The computation checks the cube incidence bound and capacity identity on the
+finite domains below. The [incidence proof](../notes/cube_upper_bound.md)
+establishes the bound independently of enumeration.
 
 - All 4,095 nonempty subsets of the twelve cube edges were checked for
   b(B)<=2(|B|-1), with obstruction histograms retained at every size.
@@ -41,7 +42,6 @@ was verified before the recorded successful run.
 
 The balance identity is proved for all avoiding seven-colorings. The 150/24
 counts, class-7 identification, and sharp per-size maxima are finite observations.
-All are labeled accordingly in [the report](cube_collisions.md). No novelty
-claim or external refereeing is asserted. The revised four-page cube report
-includes the proof, the unchanged atlas, and a consistent separation between
-mathematical proof and exhaustive classification.
+The [collision report](cube_collisions.md) records these counts, and the
+[four-page cube paper](../papers/cube_classification.pdf) gives the incidence
+proof and complete symmetry atlas.
