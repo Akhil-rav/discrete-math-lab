@@ -74,3 +74,14 @@ and perfect matching complexes of the $2\times n$ grid
 ([arXiv:2407.05809](https://arxiv.org/abs/2407.05809)). None of these defines
 $h_d(k)$ or states the results of the note. MathSciNet and zbMATH were not
 searched; a specialist's opinion is still needed before any novelty claim.
+
+OEIS lookup, November 16, 2026 (done by hand in a browser). The count of
+optimal three-test families on the ladder, 1, 1, 3, 5, 11, 21, 43, is the
+Jacobsthal sequence [A001045](https://oeis.org/A001045); its comments include
+"counts walks between adjacent vertices of a triangle", which is the counting
+step of the proof, and nothing about ladder matchings, rainbow matchings or
+test families. The searches for 4, 16, 20, 48, 98, 220, 472 (prism triples),
+3, 5, 13, 25, 57, 117, 253, 529, 1121 (ladder pairs), 6, 24, 30, 78, 140, 316,
+642 (prism pairs) and 5, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8 (deficit-three minima)
+each returned no match. Absence from the OEIS is weak evidence and does not
+establish novelty.
