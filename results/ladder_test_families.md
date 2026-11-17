@@ -65,3 +65,22 @@ tests, and the window system is the same for every $k\ge 10$
 (`experiments/ladder_end_windows.py`, Proposition 6 of the note). Together
 with the families above this gives $h_3(15)=h_3(16)=8$, and $h_3(k)\ge 8$ for
 every $k\ge 8$.
+
+## Seventeen columns (November 17, 2026)
+
+Indices 494 873 901 1118 1580 1603 1917 2400 in the enumeration order of
+`experiments/ladder_verify_family.cpp` (compiled with a bitset width of 4096):
+
+- {1, 3, 6, 9, 12}
+- {0, 4, 6, 11, 13}
+- {2, 8, 11, 13}
+- {4, 7, 9, 14}
+- {0, 2, 5, 8, 10, 12, 14}
+- {0, 3, 15}
+- {2, 4, 6, 8, 11, 15}
+- {1, 5, 7, 10, 13, 15}
+
+229,037,941 colourings with a rainbow perfect matching; none defeats the
+family. The faster checker `experiments/ladder_defeating_colourings.cpp`
+agrees. With Proposition 6 this gives $h_3(17)=8$. The family was found by
+`experiments/ladder_family_search.py` after about 33,500 learned constraints.
