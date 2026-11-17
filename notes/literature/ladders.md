@@ -63,3 +63,14 @@ publisher's abstract of
 bipartite hosts on $2m$ vertices. This equals $A(L_k)$ numerically, but ladders
 have degree-two corners and are outside that family; the full text was not
 read. The search used open web sources only and does not establish novelty.
+
+A second pass the same day searched for the deletion form of the question
+(a fixed family of perfect matchings one of which survives any $d$ edge
+failures), for non-adaptive families guaranteed to contain a rainbow copy,
+and for Jacobsthal counts of matching triples on ladders. The nearest topics
+found were the matching preclusion number, robust matching augmentation
+([*How to Secure Matchings Against Edge Failures*](https://arxiv.org/abs/1805.01299)),
+and perfect matching complexes of the $2\times n$ grid
+([arXiv:2407.05809](https://arxiv.org/abs/2407.05809)). None of these defines
+$h_d(k)$ or states the results of the note. MathSciNet and zbMATH were not
+searched; a specialist's opinion is still needed before any novelty claim.
