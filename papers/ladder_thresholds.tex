@@ -25,7 +25,9 @@ nondecreasing in \(d\) and passes through three regimes. For \(d\le 2\) it
 equals \(d+1\) for every \(k\ge3\), and the optimal families for \(d=2\) are
 counted by the Jacobsthal number \(J_{k-2}=(2^{k-2}-(-1)^{k})/3\). For each
 fixed \(d\ge3\) it has order \(\log k\). For \(k-1\le d\le 2k-2\), and for no
-smaller \(d\), every perfect matching must be tested.
+smaller \(d\), every perfect matching must be tested. For the prism
+\(C_k\square K_2\) three tests again suffice at deficit two, and the number
+of optimal families is \(J_{k-1}+kJ_{k-2}\) for odd \(k\).
 \end{abstract}
 
 \section{Setting}
@@ -153,10 +155,103 @@ The lower bound \(h_2(k)\ge3\) is the last part of Lemma~\ref{criterion}.
 \end{proof}
 
 \begin{remark}
+On a ladder, condition (b) of Lemma~\ref{criterion} follows from (a). Indeed
+the proof above uses (b) only to exclude a common edge of \(M_A\) and
+\(M_B\). Such an edge would be a rung \(r_c\) of an interior column free in
+both; by (a) column \(c\) is covered in \(M_C\), and every other interior
+column is covered exactly twice. The number of covered (column, matching)
+incidences would then be \(2(k-3)+1+2=2k-3\), which is odd, while each gap
+contributes two. Section~\ref{prism} shows that (b) is needed on the prism.
+
 In an optimal family every rail and every interior rung is tested exactly
 once, and each end rung exactly twice. For \(d=1\) the optimal pairs are the
 pairs with at most one common edge; there are \(3,5,13,25,57,117,253\) of
 them for \(k=3,\dots,9\) (computed).
+\end{remark}
+
+\section{The prism}\label{prism}
+Lemma~\ref{criterion} is not special to ladders: it holds, with the same
+proof, in any graph whose perfect matchings have at least three edges and in
+which every colouring of deficit two has a rainbow perfect matching. We apply
+it to the prism \(C_k\square K_2\), \(k\ge3\), obtained from \(L_k\) by adding
+a gap \(k-1\) with rails \(u_{k-1},\ell_{k-1}\) between columns \(k-1\) and
+\(0\); gaps are now indexed modulo \(k\). Deleting the two rails of any one
+gap leaves a copy of \(L_k\), and deleting edges does not increase the
+deficit, so every colouring of the prism of deficit at most two has a rainbow
+perfect matching.
+
+The perfect matchings of the prism are of two kinds. A \emph{gap matching}
+\(M_J\) is given by a set \(J\) of pairwise non-adjacent gaps of the cycle,
+as before. If a perfect matching uses a rung, the top and bottom paths
+between consecutive rungs are matched identically, so it is a gap matching.
+A perfect matching without rungs exists only for even \(k\); then, besides
+two gap matchings, there are exactly two \emph{twisted} matchings
+\[
+X_1=\{u_g: g\text{ even}\}\cup\{\ell_g: g\text{ odd}\},\qquad
+X_2=\{u_g: g\text{ odd}\}\cup\{\ell_g: g\text{ even}\}.
+\]
+
+\begin{theorem}\label{prismthm}
+For every \(k\ge3\) the minimum size of a test family for deficit two on the
+prism \(C_k\square K_2\) is three, and the number of test families of size
+three is
+\[
+  J_{k-1}+k\,J_{k-2}+\varepsilon_k,\qquad
+  \varepsilon_k=\begin{cases}0,&k\text{ odd},\\ k+1,&k\ge6\text{ even},\\ 9,&k=4,\end{cases}
+\]
+that is \(4,16,20,48,98,220,472,\dots\) for \(k=3,4,5,\dots\).
+\end{theorem}
+\begin{proof}
+Two matchings never suffice, by the last part of Lemma~\ref{criterion}.
+
+\emph{Three gap matchings.} Let the gap sets be \(A,B,C\). By (a) they are
+disjoint, and common edges are rungs of commonly free columns. The two gaps
+beside a column are adjacent, hence in different sets or unused, so a column
+is covered in at most two of the matchings. Let \(n_i\) be the number of
+columns covered in exactly \(i\) of them. A column counted by \(n_0\) puts its
+rung in all three pairwise intersections, and a column counted by \(n_1\) puts
+its rung in exactly one.
+
+If \(n_0\ge1\), then by (a) \(n_0=1\) and \(n_1=0\), so the number of covered
+incidences is \(2(k-1)\) and \(k-1\) gaps are used; but the two gaps beside
+the uncovered column are unused, a contradiction. So \(n_0=0\). By (a) and
+(b) at most two pairwise intersections are non-empty, so \(n_1\le2\), and
+\(2k-n_1\) is even, so \(n_1\in\{0,2\}\).
+
+If \(n_1=0\), all \(k\) gaps are used and \(A,B,C\) are the colour classes of
+a proper colouring of the cycle of gaps with at most three colours.
+Conversely every such colouring gives pairwise disjoint matchings. There are
+\(2^k+2(-1)^k\) proper colourings with three named colours, each uses at
+least two colours, and so the number of triples is
+\((2^k+2(-1)^k)/6=J_{k-1}\).
+
+If \(n_1=2\), exactly one gap \(g\) is unused, and the columns covered once
+are \(g\) and \(g+1\). Their rungs must lie in different pairwise
+intersections, which means that gaps \(g-1\) and \(g+1\) lie in different
+sets. So \(A,B,C\) properly colour the path of the remaining \(k-1\) gaps
+with differently coloured ends; conversely any such colouring satisfies (a)
+and (b), since the third pairwise intersection is empty. For each of the
+\(k\) choices of \(g\) this is the count of Theorem~\ref{three}, giving
+\(k\,J_{k-2}\) triples. These are exactly the optimal families of the \(k\)
+ladders inside the prism.
+
+\emph{Triples containing a twisted matching} (\(k\) even). We have
+\(X_1\cap X_2=\varnothing\) and \(|X_i\cap M_J|=|J|\). A triple
+\(\{X_1,X_2,M_J\}\) satisfies (a) exactly when \(|J|\le1\), and then (b)
+holds because \(X_1\cap X_2\) is empty; this gives \(k+1\) triples. A triple
+\(\{X_i,M_A,M_B\}\) needs \(|A|,|B|\le1\), and then \(M_A\) and \(M_B\) share
+at least \(k-4\) rungs, so \(k\le5\) and hence \(k=4\). For \(k=4\), (a) and (b) force
+\(|A|=|B|=1\) with \(M_A\cap M_B=\varnothing\), that is \(\{A,B\}\) is
+\(\{\{0\},\{2\}\}\) or \(\{\{1\},\{3\}\}\), giving four more triples.
+\end{proof}
+
+\begin{remark}
+For \(k=4\) the matchings \(M_{\{2\}}=\{r_0,r_1,u_2,\ell_2\}\),
+\(M_{\{1\}}=\{r_0,r_3,u_1,\ell_1\}\) and \(X_2=\{\ell_0,\ell_2,u_1,u_3\}\)
+show how (b) can fail while (a) holds: they
+pairwise share one edge, and the colour class
+\(\{r_0,\ell_2,u_1\}\) defeats all three. The counts in
+Theorem~\ref{prismthm} agree with an exhaustive search for \(3\le k\le9\).
 \end{remark}
 
 \section{Fixed deficit at least three: order \texorpdfstring{\(\log k\)}{log k}}
@@ -260,15 +355,14 @@ The bounds in Theorem~\ref{log} are far apart: the table suggests that
 \(d\) in the range \(3\le d\le k-2\)? For \(k=5,6\) the table gives
 \(h_{k-2}(k)=F_{k+1}-1\); whether this persists is open.
 Finally, the definitions make sense for any graph with a perfect matching;
-the cycle ladder (prism) and the grid \(P_k\square P_3\) are natural next
-cases.
+for larger deficit on the prism, and for the grid \(P_k\square P_3\), nothing is known.
 
 \bigskip\small\noindent
 \textbf{Status, method and related work.}
 This is a working note that has not been externally refereed. The statements
 were found and proved with substantial assistance from AI systems and were
 checked by the computations described above; the accompanying script
-\texttt{experiments/ladder\_thresholds.py} re-derives the counts in
+\texttt{experiments/ladder\_thresholds.py} (with \texttt{experiments/prism\_tests.py} for the prism) re-derives the counts in
 Theorem~\ref{three} by brute force over all deficit-two colourings for
 \(k\le7\) and checks the colourings used in Theorems~\ref{log}
 and~\ref{sat} for \(k\le12\). The upper bound in Theorem~\ref{log} is a
