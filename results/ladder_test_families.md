@@ -56,3 +56,12 @@ Two routes to $h_3(15)\ge 8$ were tried and neither succeeded.
    decision after 53 minutes on two cores.
 
 The proven statement for $k=15$ is therefore $7\le h_3(15)\le 8$.
+
+## Resolution (later on November 16, 2026)
+
+The lower bound was obtained by a different route. Colourings confined to
+two windows of four gaps, one at each end of the ladder, already force eight
+tests, and the window system is the same for every $k\ge 10$
+(`experiments/ladder_end_windows.py`, Proposition 6 of the note). Together
+with the families above this gives $h_3(15)=h_3(16)=8$, and $h_3(k)\ge 8$ for
+every $k\ge 8$.

@@ -328,6 +328,44 @@ By Stirling's formula the lower bound is
 \(h_3(k)\le 48\ln\binom{3k-2}{3}+1\).
 \end{remark}
 
+\begin{proposition}\label{windows}
+For every \(k\ge8\) and \(3\le d\le2k-2\) we have \(h_d(k)\ge8\). Consequently
+\(h_3(k)=8\) for \(8\le k\le16\).
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{mono} take \(d=3\). For \(k=8,9\) this is the exact computation
+of Section~\ref{exact}. Let \(k\ge10\). The \emph{left window} consists of
+the rails of gaps \(0,\dots,3\) and the rungs of columns \(0,\dots,3\); the
+\emph{right window} consists of the rails of gaps \(k-5,\dots,k-2\) and the
+rungs of columns \(k-4,\dots,k-1\). Whether a perfect matching \(M_J\)
+contains a given window edge depends only on the \emph{trace}
+\((J\cap\{0,\dots,3\},\,J\cap\{k-5,\dots,k-2\})\). Since \(k-5\ge5\), every
+pair of sets without consecutive gaps, one in each window, is the trace of a
+perfect matching; there are \(8\cdot8=64\) traces.
+
+Consider a colouring of the \(24\) window edges of deficit three for which
+some trace is rainbow, and colour all other edges of \(L_k\) distinctly with
+new colours. This is a colouring of \(L_k\) of deficit three with a rainbow
+perfect matching, and a perfect matching is rainbow exactly when its trace
+is. So the traces of a test family meet the set of rainbow traces of every
+such window colouring. An exhaustive enumeration of the window colourings
+followed by an exact minimum hitting-set computation shows that at least
+eight traces are needed; a second, solver-free implementation confirms
+that no seven traces suffice. The window system does not depend on \(k\).
+
+The upper bounds for \(k\le14\) are in Section~\ref{exact}, and for
+\(k=15,16\) explicit test families of size eight were verified against every
+colouring.
+\end{proof}
+
+\begin{remark}
+The same computation with windows of three gaps at each end gives the bound
+\(7\). A window at one end only gives \(7\) for windows of up to ten columns,
+so both ends are needed. Deleting an end column does not in general turn a
+test family for \(L_{k+1}\) into one for \(L_k\); we do not know whether
+\(h_3(k)\) is nondecreasing in \(k\).
+\end{remark}
+
 \section{Large deficit: every matching is needed}
 \begin{theorem}\label{sat}
 For \(k\ge3\), \(h_d(k)=F_{k+1}\) if and only if \(k-1\le d\le 2k-2\).
@@ -353,38 +391,19 @@ rails, and there are \(k-1>d\) gaps, so some gap \(g\) keeps both rails.
 Then \(M_{\{g\}}\) consists of kept edges and is rainbow. If \(M_\varnothing\) is not rainbow, every rainbow perfect matching is already in the family.
 \end{proof}
 
-\section{Exact values for short ladders}
+\section{Exact values for short ladders}\label{exact}
 An exhaustive search over all colourings of the given deficit, followed by
 an exact minimum hitting-set computation, gives the following. For
 \(k\ge10\) the hitting-set step was solved to proven optimality with the
-CP-SAT solver of OR-Tools. For \(k=15\) and \(k=16\) explicit test families of size eight were
-found by local search and verified against every colouring, so
-\(h_3(15),h_3(16)\le8\); matching lower bounds were not obtained.
-\begin{center}\small
-\begin{tabular}{@{}rrrrrrrr@{}}
-\toprule
-\(k\) & \(F_{k+1}\) & \(d=0\) & \(1\) & \(2\) & \(3\) & \(4\) & \(5\)\\
-\midrule
-3 & 3  & 1 & 2 & 3 & 3 & 3 & --\\
-4 & 5  & 1 & 2 & 3 & 5 & 5 & 5\\
-5 & 8  & 1 & 2 & 3 & 7 & 8 & 8\\
-6 & 13 & 1 & 2 & 3 & 7 & 12 & 13\\
-7 & 21 & 1 & 2 & 3 & 7 & 15 &\\
-8 & 34 & 1 & 2 & 3 & 8 & &\\
-9 & 55 & 1 & 2 & 3 & 8 & &\\
-10--14 & & & & & 8 & &\\
-\bottomrule
-\end{tabular}
-\end{center}
+CP-SAT solver of OR-Tools. For \(k=15,16\) the value comes from Proposition~\ref{windows}.
 Blank entries were not computed. The table agrees with Theorems~\ref{three} and~\ref{sat} and with
 monotonicity. The number of optimal families at \(d=2\) found by the search
 is \(1,1,3,5,11,21,43\) for \(k=3,\dots,9\).
 
 \section{Questions}
-The exact value \(h_3(k)=8\) holds for every \(8\le k\le14\), and eight
-tests still suffice for \(k=15,16\), while
-Theorem~\ref{log} only forces \(h_3(k)\ge9\) from \(k=73\) on. Where does
-\(h_3\) first exceed \(8\)? Is \(h_3(k)=\log_2 k+O(\log\log k)\), and what is
+We have \(h_3(k)=8\) for \(8\le k\le16\) and \(h_3(k)\ge8\) for all larger
+\(k\), while Theorem~\ref{log} forces \(h_3(k)\ge9\) only from \(k=73\) on.
+Where in between does \(h_3\) first exceed \(8\)? Is \(h_3(k)=\log_2 k+O(\log\log k)\), and what is
 the dependence of \(h_d(k)\) on \(d\) in the range \(3\le d\le k-2\)?
 For \(k=5,6\) the table gives
 \(h_{k-2}(k)=F_{k+1}-1\); whether this persists is open.
