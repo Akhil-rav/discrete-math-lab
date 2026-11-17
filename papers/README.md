@@ -7,6 +7,7 @@ to the published results used.
 
 | Report | PDF | LaTeX | Web report / evidence |
 |---|---|---|---|
+| Testing a ladder for a rainbow perfect matching: three regimes | [Read](ladder_thresholds.pdf) | [Source](ladder_thresholds.tex) | [Brute-force checks](../experiments/ladder_thresholds.py), [exact search](../experiments/ladder_test_exact.cpp) |
 | How many perfect matchings test a ladder? | [Read](ladder_tests.pdf) | [Source](ladder_tests.tex) | [Five-column certificates and exhaustive check](../tests/test_ladder_test_families.py) |
 | Fifteen extremal colorings of the ladder | [Read](ladder_stability.pdf) | [Source](ladder_stability.tex) | [Finite base and reproduction](../results/ladder_stability.md) |
 | Nine symmetry classes of extremal cube colorings | [Read](cube_classification.pdf) | [Source](cube_classification.tex) | [Classification and atlas](../results/cube_classification.md) |
