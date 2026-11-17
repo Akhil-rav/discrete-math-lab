@@ -82,23 +82,43 @@ def check_saturation(k):
 
 
 def check_lower_bound(k):
+    """If T_i were inside T_j, the three classes below defeat the list."""
     sets = gap_sets(k)
     ms = {s: matching(k, s) for s in sets}
-
-    def state(s, c):
-        if c and (s >> (c - 1)) & 1:
-            return "L"
-        return "R" if (s >> c) & 1 else "F"
-
-    for i in range(1, k - 1, 2):
-        for j in range(i + 2, k - 1, 2):
-            classes = [frozenset({("r", i), ("r", j)}),
-                       frozenset({("u", i - 1), ("u", j - 1)}),
-                       frozenset({("u", i), ("u", j)})]
-            assert rainbow(ms[1 << (i - 1)], classes)
+    for i in range(1, k - 1):
+        for j in range(1, k - 1):
+            if i == j:
+                continue
+            classes = [frozenset({("u", i - 1), ("l", i - 1)}),
+                       frozenset({("u", i), ("l", i)}),
+                       frozenset({("r", i), ("r", j)})]
+            g = j if j > i else j - 1
+            assert rainbow(ms[1 << g], classes)
             for s in sets:
-                if state(s, i) == state(s, j):
-                    assert not rainbow(ms[s], classes)
+                if rainbow(ms[s], classes):
+                    # every surviving matching has column i free and column j covered
+                    assert ("r", i) in ms[s] and ("r", j) not in ms[s]
+
+
+def check_markov_bound(k, d=3):
+    """Exact least avoidance probability under the chain of Theorem 5."""
+    from fractions import Fraction
+    sets = gap_sets(k)
+    weight = {}
+    for s in sets:
+        p = Fraction(1, 3) if s & 1 else Fraction(2, 3)
+        for g in range(1, k - 1):
+            if not (s >> (g - 1)) & 1:
+                p *= Fraction(1, 2)
+        weight[s] = p
+    assert sum(weight.values()) == 1
+    edges = sorted(set().union(*(matching(k, s) for s in sets)))
+    least = min(
+        total for f in combinations(edges, d)
+        if (total := sum(w for s, w in weight.items() if not matching(k, s) & set(f)))
+    )
+    assert least >= Fraction(4, 3) / 4 ** d
+    return least
 
 
 if __name__ == "__main__":
@@ -113,6 +133,8 @@ if __name__ == "__main__":
     for k in range(3, 13):
         check_saturation(k)
     print("saturation colourings verified for k=3..12")
-    for k in range(5, 13):
+    for k in range(4, 13):
         check_lower_bound(k)
-    print("lower-bound colourings verified for k=5..12")
+    print("antichain colourings verified for k=4..12")
+    for k in range(4, 10):
+        print(f"k={k}: least avoidance probability {check_markov_bound(k)} >= 1/48")
