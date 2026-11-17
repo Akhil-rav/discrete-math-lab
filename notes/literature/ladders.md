@@ -52,3 +52,14 @@ Such a family maximum alone does not classify partitions of a specified host.
 The full text was unavailable in this search, so its subsidiary results have
 not been ruled out as prior work on ladders. The [ladder classification](../../papers/ladder_stability.pdf)
 uses the earlier ladder bound, square contraction, and explicit finite bases.
+
+On November 16, a further pass covered the [test-family note](../../papers/ladder_thresholds.pdf).
+Searches for a fixed list of perfect matchings guaranteed to contain a rainbow
+one, combined with "ladder", "anti-Ramsey", "universal set" and "prism", found
+no statement of the parameter $h_d(k)$ or of the three-regime result. The
+publisher's abstract of
+[*Anti-Ramsey number for perfect matchings in 3-regular bipartite graphs*](https://www.sciencedirect.com/science/article/abs/pii/S0012365X24001420),
+*Discrete Mathematics* 347 (2024), gives $3m-5$ for 3-edge-connected cubic
+bipartite hosts on $2m$ vertices. This equals $A(L_k)$ numerically, but ladders
+have degree-two corners and are outside that family; the full text was not
+read. The search used open web sources only and does not establish novelty.

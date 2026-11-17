@@ -1,0 +1,286 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype,xcolor}
+\usepackage[colorlinks=true,urlcolor=blue!50!black,linkcolor=blue!50!black]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\hypersetup{pdftitle={Testing a ladder for a rainbow perfect matching: three regimes}}
+\title{\LARGE\bfseries Testing a ladder for a rainbow perfect matching:\\ three regimes}
+\author{}
+\date{Working note \(\,\cdot\,\) November 16, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}\noindent
+Fix a list of perfect matchings of the ladder \(L_k=P_k\square K_2\) before
+seeing an edge colouring. The list is a \emph{test family for deficit \(d\)}
+if, for every colouring with exactly \(|E(L_k)|-d\) colours that has a
+rainbow perfect matching, some matching in the list is rainbow. Let
+\(h_d(k)\) be the least size of such a list. We show that \(h_d(k)\) is
+nondecreasing in \(d\) and passes through three regimes. For \(d\le 2\) it
+equals \(d+1\) for every \(k\ge3\), and the optimal families for \(d=2\) are
+counted by the Jacobsthal number \(J_{k-2}=(2^{k-2}-(-1)^{k})/3\). For each
+fixed \(d\ge3\) it has order \(\log k\). For \(k-1\le d\le 2k-2\), and for no
+smaller \(d\), every perfect matching must be tested.
+\end{abstract}
+
+\section{Setting}
+The ladder \(L_k\) has columns \(0,\dots,k-1\), a rung \(r_i\) in column
+\(i\), and for each \emph{gap} \(g\in\{0,\dots,k-2\}\) an upper rail \(u_g\)
+and a lower rail \(\ell_g\) joining columns \(g\) and \(g+1\). It has
+\(m=3k-2\) edges. A perfect matching is determined by its set \(J\) of gaps:
+it contains both rails of each gap in \(J\) and the rungs of the columns
+those gaps leave uncovered. The sets \(J\) that occur are exactly the sets
+with no two consecutive gaps, so there are \(F_{k+1}\) perfect matchings
+(\(F_1=F_2=1\)). Write \(M_J\) for the matching with gap set \(J\). Column
+\(c\) is \emph{free} in \(M_J\) if \(r_c\in M_J\), that is, if neither
+\(c-1\) nor \(c\) lies in \(J\).
+
+A colouring of deficit \(d\) is an edge colouring with exactly \(m-d\)
+colours; equivalently its colour classes \(C\) satisfy \(\sum(|C|-1)=d\). A
+matching is rainbow when it meets every class at most once. Since a perfect
+matching has \(k\) edges, a rainbow perfect matching can exist only when
+\(d\le 2k-2\), and we assume \(k\ge3\) and \(0\le d\le 2k-2\) throughout. We
+use one earlier result from this repository, proved in the note
+\emph{matching foundations}: the anti-Ramsey value \(A(L_k)=3k-5\) for
+\(k\ge3\). In the present language, every colouring of deficit at most two
+has a rainbow perfect matching.
+
+\begin{lemma}[Monotonicity]\label{mono}
+If \(d<2k-2\) then \(h_d(k)\le h_{d+1}(k)\).
+\end{lemma}
+\begin{proof}
+Let a list fail at deficit \(d\): some colouring has a rainbow perfect
+matching \(M\) and no rainbow matching in the list. It has
+\(m-d>k\) colours, so some class contains no edge of \(M\). Merge that class
+with any other class. The deficit becomes \(d+1\), \(M\) is still rainbow,
+and no matching has become rainbow. So the list fails at deficit \(d+1\).
+\end{proof}
+
+\section{Small deficit: \texorpdfstring{\(h_d(k)=d+1\)}{h = d+1}}
+Clearly \(h_0(k)=1\). For \(d=1\) a single matching \(M\) fails on a
+colouring whose only repeated colour lies on two edges of \(M\), while two
+matchings with at most one common edge succeed; for instance
+\(M_\varnothing\) and \(M_{\{0,2,4,\dots\}}\). So \(h_1(k)=2\).
+
+\begin{lemma}\label{criterion}
+Three distinct perfect matchings \(M_1,M_2,M_3\) of \(L_k\) form a test
+family for deficit two if and only if
+\begin{enumerate}\itemsep0pt
+\item[\textup{(a)}] \(|M_i\cap M_j|\le1\) for all \(i\neq j\), and
+\item[\textup{(b)}] there are no three distinct edges \(a\in M_1\cap M_2\),
+\(b\in M_1\cap M_3\), \(c\in M_2\cap M_3\).
+\end{enumerate}
+No family of two matchings is a test family for deficit two.
+\end{lemma}
+\begin{proof}
+A colouring of deficit two has either one class \(\{a,b,c\}\) of size three
+or two disjoint classes \(P,Q\) of size two. It always has a rainbow perfect
+matching, so the family fails exactly when all its members are non-rainbow
+for some such colouring.
+
+If (a) fails, say \(P\subseteq M_1\cap M_2\) with \(|P|=2\). If
+\(P\subseteq M_3\) take any pair \(Q\) disjoint from \(P\); otherwise
+\(M_3\setminus P\) has at least \(k-1\ge2\) edges and we take \(Q\) inside
+it. Every \(M_i\) contains \(P\) or \(Q\). If (b) fails, the class
+\(\{a,b,c\}\) meets each \(M_i\) twice.
+
+Conversely assume (a) and (b). With classes \(P,Q\), two of the three
+matchings would contain the same pair, against (a). With a class
+\(\{a,b,c\}\), each \(M_i\) contains at least two of the three edges; by (a)
+no two matchings contain the same two, so up to renaming
+\(M_1\supseteq\{a,b\}\), \(M_2\supseteq\{a,c\}\), \(M_3\supseteq\{b,c\}\),
+against (b).
+
+For two matchings \(M_1\ne M_2\), choose \(e\in M_1\setminus M_2\) and
+another \(f\in M_1\), put \(P=\{e,f\}\), and take \(Q\) inside
+\(M_2\setminus P\), which has at least \(k-1\) edges. Both matchings fail.
+\end{proof}
+
+\begin{theorem}\label{three}
+For every \(k\ge3\), \(h_2(k)=3\). The test families of size three for
+deficit two are exactly the triples \(\{M_A,M_B,M_C\}\) in which \(A,B,C\)
+partition the set of all gaps and the first and last gap lie in different
+parts. Their number is the Jacobsthal number
+\[
+  J_{k-2}=\frac{2^{k-2}-(-1)^{k-2}}{3}\qquad(1,1,3,5,11,21,43,\dots\ \text{for }k=3,4,5,\dots).
+\]
+\end{theorem}
+\begin{proof}
+Let \(A,B,C\) be the gap sets of a test family of size three. Two matchings
+that share a gap share its two rails, so by (a) the sets are pairwise
+disjoint, and the only possible common edges are rungs of columns free in
+both.
+
+Column \(0\) is covered only by gap \(0\), which lies in at most one set, so
+it is free in at least two of the matchings; likewise column \(k-1\). If
+column \(0\) were free in all three, then \(r_0\) would lie in every
+pairwise intersection, and a pair in which column \(k-1\) is free would
+share two rungs. So gap \(0\) lies in exactly one set, and similarly gap
+\(k-2\). They lie in different sets: otherwise the other two matchings share
+\(r_0\) and \(r_{k-1}\). Name the sets so that \(0\in A\) and \(k-2\in B\).
+
+Now \(r_0\in M_B\cap M_C\) and \(r_{k-1}\in M_A\cap M_C\). An edge of
+\(M_A\cap M_B\) would differ from both, since \(r_0\notin M_A\) and
+\(r_{k-1}\notin M_B\), and (b) would fail. Hence \(M_A\cap M_B=\varnothing\),
+and by (a) the other two intersections are exactly \(\{r_0\}\) and
+\(\{r_{k-1}\}\). In terms of columns: no interior column is free in two of
+the matchings. So each of the \(k-2\) interior columns is covered in at
+least two of the matchings, and columns \(0\) and \(k-1\) are covered once
+each. Counting covered (column, matching) incidences,
+\[
+  2\bigl(|A|+|B|+|C|\bigr)\ \ge\ 2(k-2)+2 .
+\]
+As the sets are disjoint subsets of the \(k-1\) gaps, equality holds and
+they partition the gaps.
+
+Conversely, let \(A,B,C\) partition the gaps, each without consecutive gaps,
+with \(0\in A\) and \(k-2\in B\). The two gaps beside an interior column lie
+in different parts, so that column is free in exactly one matching. The
+pairwise intersections are therefore \(\varnothing\), \(\{r_0\}\) and
+\(\{r_{k-1}\}\), and (a), (b) hold.
+
+Such partitions are the proper colourings of the path on the \(k-1\) gaps
+with three colours and differently coloured ends, taken up to renaming the
+colours. Renaming acts freely, and the number of proper colourings with
+prescribed distinct end colours is the number of walks of length \(k-2\)
+between two given vertices of a triangle, which is \((2^{k-2}-(-1)^{k-2})/3\).
+The lower bound \(h_2(k)\ge3\) is the last part of Lemma~\ref{criterion}.
+\end{proof}
+
+\begin{remark}
+In an optimal family every rail and every interior rung is tested exactly
+once, and each end rung exactly twice. For \(d=1\) the optimal pairs are the
+pairs with at most one common edge; there are \(3,5,13,25,57,117,253\) of
+them for \(k=3,\dots,9\) (computed).
+\end{remark}
+
+\section{Fixed deficit at least three: order \texorpdfstring{\(\log k\)}{log k}}
+\begin{theorem}\label{log}
+Let \(k\ge5\) and \(3\le d\le 2k-2\). Then
+\[
+  \Bigl\lceil\log_3\bigl\lfloor (k-1)/2\bigr\rfloor\Bigr\rceil\ \le\ h_d(k)
+  \ \le\ \Bigl\lfloor 8^{d}\ln\tbinom{3k-2}{d}\Bigr\rfloor+1 .
+\]
+In particular \(h_d(k)=\Theta_d(\log k)\) for each fixed \(d\ge3\), in
+contrast with \(h_2(k)=3\).
+\end{theorem}
+\begin{proof}
+\emph{Lower bound.} By Lemma~\ref{mono} it is enough to treat \(d=3\). Use
+the odd columns from \(1\) to \(k-2\). In a perfect matching such a column
+is in one of three states: free, covered by the gap on its left, or covered
+by the gap on its right. A list of \(t\) matchings gives each column a word
+of length \(t\). If odd interior columns \(i<j\) have the same word, give
+each of
+\[
+ \{r_i,r_j\},\qquad\{u_{i-1},u_{j-1}\},\qquad\{u_i,u_j\}
+\]
+its own repeated colour and colour all other edges distinctly. Since
+\(j\ge i+2\) the three pairs are disjoint. A listed matching puts columns
+\(i\) and \(j\) in the same state and so contains one of the pairs, while
+\(M_{\{i-1\}}\) contains only \(u_{i-1}\) and \(r_j\) among the six edges
+and is rainbow. Hence the \(\lfloor(k-1)/2\rfloor\) words are distinct and
+\(3^t\ge\lfloor(k-1)/2\rfloor\).
+
+\emph{Upper bound.} Given a colouring of deficit \(d\) with a rainbow
+perfect matching \(M\), keep one edge of each colour, taking the edge of
+\(M\) when there is one. The set \(F\) of discarded edges has size \(d\),
+\(M\) avoids it, and every perfect matching avoiding \(F\) is rainbow. So it
+suffices that for every \(d\)-set \(F\) avoided by some perfect matching, a
+listed matching avoids \(F\).
+
+Choose independent fair bits on the gaps. Select the gaps with bit one whose
+neighbouring bits are both zero; these are pairwise nonconsecutive. Fix
+\(F\) and a matching \(M_J\) avoiding it. For a rung \(r_c\in F\), column
+\(c\) is covered by a gap of \(J\): ask for bit one there and zero on its
+neighbours. For a rail in \(F\), its gap is not in \(J\): ask for bit zero
+there. These at most \(3d\) requirements agree with the indicator of \(J\),
+so they hold together with probability at least \(8^{-d}\), and then the
+random matching avoids \(F\). With \(t\) independent matchings the expected
+number of missed sets \(F\) is at most
+\(\binom{3k-2}{d}(1-8^{-d})^t<\binom{3k-2}{d}e^{-t/8^d}\), which is less
+than one for the stated \(t\).
+\end{proof}
+
+\section{Large deficit: every matching is needed}
+\begin{theorem}\label{sat}
+For \(k\ge3\), \(h_d(k)=F_{k+1}\) if and only if \(k-1\le d\le 2k-2\).
+\end{theorem}
+\begin{proof}
+Let \(d=k-1\) and fix a gap set \(J\). For each gap \(g\in J\) make
+\(\{r_g,r_{g+1}\}\) a colour class, for each gap \(g\notin J\) make
+\(\{u_g,\ell_g\}\) a class, and colour the other edges distinctly. The
+\(k-1\) classes are disjoint, so the deficit is \(k-1\), and \(M_J\) meets
+none of them twice. Let \(J'\ne J\). If \(J'\) has a gap outside \(J\), then
+\(M_{J'}\) contains both rails of it. Otherwise \(J'\subsetneq J\); take
+\(g\in J\setminus J'\). Gaps \(g-1\) and \(g+1\) are not in \(J\), hence not
+in \(J'\), so columns \(g\) and \(g+1\) are free in \(M_{J'}\) and it
+contains \(r_g,r_{g+1}\). Thus \(M_J\) is the only rainbow perfect matching
+and must be in every test family. This holds for all \(J\), so
+\(h_{k-1}(k)=F_{k+1}\), and Lemma~\ref{mono} extends it to
+\(k-1\le d\le2k-2\).
+
+Let \(d\le k-2\). We claim the \(F_{k+1}-1\) matchings other than
+\(M_\varnothing\) form a test family. If \(M_\varnothing\) is rainbow, keep
+one edge of each colour including all rungs. The \(d\) discarded edges are
+rails, and there are \(k-1>d\) gaps, so some gap \(g\) keeps both rails.
+Then \(M_{\{g\}}\) consists of kept edges and is rainbow. If \(M_\varnothing\) is not rainbow, every rainbow perfect matching is already in the family.
+\end{proof}
+
+\section{Exact values for short ladders}
+An exhaustive search over all colourings of the given deficit, followed by
+an exact minimum hitting-set computation, gives the following.
+\begin{center}\small
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+\(k\) & \(F_{k+1}\) & \(d=0\) & \(1\) & \(2\) & \(3\) & \(4\) & \(5\)\\
+\midrule
+3 & 3  & 1 & 2 & 3 & 3 & 3 & --\\
+4 & 5  & 1 & 2 & 3 & 5 & 5 & 5\\
+5 & 8  & 1 & 2 & 3 & 7 & 8 & 8\\
+6 & 13 & 1 & 2 & 3 & 7 & 12 & 13\\
+7 & 21 & 1 & 2 & 3 & 7 & 15 &\\
+8 & 34 & 1 & 2 & 3 & 8 & &\\
+9 & 55 & 1 & 2 & 3 & 8 & &\\
+\bottomrule
+\end{tabular}
+\end{center}
+Blank entries were not computed. The table agrees with Theorems~\ref{three} and~\ref{sat} and with
+monotonicity. The number of optimal families at \(d=2\) found by the search
+is \(1,1,3,5,11,21,43\) for \(k=3,\dots,9\).
+
+\section{Questions}
+The bounds in Theorem~\ref{log} are far apart: the table suggests that
+\(h_3(k)\) is larger than the lower bound and grows slowly. Is
+\(h_3(k)/\log_2 k\) convergent, and what is the dependence of \(h_d(k)\) on
+\(d\) in the range \(3\le d\le k-2\)? For \(k=5,6\) the table gives
+\(h_{k-2}(k)=F_{k+1}-1\); whether this persists is open.
+Finally, the definitions make sense for any graph with a perfect matching;
+the cycle ladder (prism) and the grid \(P_k\square P_3\) are natural next
+cases.
+
+\bigskip\small\noindent
+\textbf{Status, method and related work.}
+This is a working note that has not been externally refereed. The statements
+were found and proved with substantial assistance from AI systems and were
+checked by the computations described above; the accompanying script
+\texttt{experiments/ladder\_thresholds.py} re-derives the counts in
+Theorem~\ref{three} by brute force over all deficit-two colourings for
+\(k\le7\) and checks the colourings used in Theorems~\ref{log}
+and~\ref{sat} for \(k\le12\). The upper bound in Theorem~\ref{log} is a
+standard random-restriction argument in the spirit of the universal sets of
+Naor, Schulman and Srinivasan (\emph{Splitters and near-optimal
+derandomization}, FOCS 1995). Anti-Ramsey numbers of matchings have been
+determined for complete graphs (Haas and Young; \"Ozkahya and Young), for
+3-regular bipartite hosts (Jin 2017; a 2024 paper in \emph{Discrete
+Mathematics} obtains \(3m-5\) for 3-edge-connected cubic bipartite graphs on
+\(2m\) vertices, the same value as \(A(L_k)\) although ladders are not
+cubic), and for outerplanar families. A search on November 16, 2026 did not
+find the test-family parameter \(h_d\) or the results above in the
+literature, but that search was limited to open web sources and does not
+establish novelty.
+\end{document}
