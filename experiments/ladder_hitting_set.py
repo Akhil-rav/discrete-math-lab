@@ -5,7 +5,8 @@
   python experiments/ladder_hitting_set.py sets12.txt 900     # needs: pip install ortools
 
 Recorded on 2026-11-16 for deficit three: k = 8,...,14 all give 8 (status OPTIMAL).
-For k = 15 a family of size 9 was found; size 8 was not decided within the time limit.
+For k = 15 this solver proved only a lower bound of 7; families of size 8 for k = 15, 16
+are recorded in results/ladder_test_families.md.
 """
 import sys
 from ortools.sat.python import cp_model
