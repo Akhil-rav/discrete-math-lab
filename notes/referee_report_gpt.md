@@ -77,3 +77,26 @@ Reviewed main revision `10cae2357be09f41a5eae4459e879d025ce99d67`.
    second rainbow witness. Both endpoints are included correctly.
 
 The current manuscript extends Proposition 6 through 17 columns. The trace argument above does not on its own certify the minimum hitting set or the upper witnesses through 17.
+
+## Independent computations
+
+Both programs enumerate perfect matchings by pairing vertices directly. Neither imports the manuscript's experiments. The prism program enumerates the two possible deficit-two collision patterns (a triple or two disjoint pairs), discards colorings without a rainbow witness, and counts unordered triples that hit every remaining witness set. It also checks that no pair suffices. For the ladder, a hitting-set solver minimizes the family: at small sizes a separate coloring solver supplies counterexamples, and at sizes 7 and 8 all deficit-three collision shapes are generated explicitly. The returned family is a witness for the upper bound; infeasibility of a smaller hitting set gives the lower bound.
+
+| Graph and quantity | Consecutive column counts | Independent output |
+|---|---|---|
+| Prism: number of optimal three-test families | 3, 4, 5, 6, 7 | 4, 16, 20, 48, 98 |
+| Ladder: minimum family size at deficit three | 4, 5, 6, 7, 8 | 5, 7, 7, 7, 8 |
+
+No disagreement in either requested range. Run `python experiments/referee_gpt/triples.py` and `python experiments/referee_gpt/small.py` (the latter requires `python-sat` with CaDiCaL 1.9.5). The eight-column run is a computation on the full graph, not the 64-trace computation. No literature priority assessment was undertaken.
+
+## Verdicts
+
+- Lemma 1, monotonicity: confirmed
+- Lemma 2, criterion including transfer to the prism: confirmed
+- Theorem 3, ladder triples and parity remark: confirmed
+- Theorem 4, prism classification and count: confirmed
+- Theorem 5, fixed-deficit bounds: confirmed
+- Proposition 6, trace dependence and extension: confirmed
+- Proposition 6, numerical conclusion (statement starts at 8): confirmed for k <= 8 only
+- Proposition 6, minimum on the 64-trace system in this pass: not checked
+- Theorem 7, saturation threshold: confirmed
