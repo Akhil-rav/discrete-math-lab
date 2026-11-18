@@ -60,4 +60,6 @@ PDFs and figures requires no installation.
 These projects grew out of several months of study and were organized for
 public release in November 2026.
 
+The results in the [ladder test-family note](papers/ladder_thresholds.pdf) were found and proved with substantial assistance from AI systems.
+
 Akhil Ravuri
