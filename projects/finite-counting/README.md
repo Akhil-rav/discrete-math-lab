@@ -18,3 +18,5 @@ Run `python examples.py` from this directory to reproduce the first such witness
 - **Factorization lengths.** Count unordered representations of 60 using 6, 9 and 20. In 6a+9b+20c=60, reducing modulo 3 forces c=0 or 3. The latter gives length 3. The former gives 2a+3b=20, hence b=0,2,4,6 and lengths 10,9,8,7. Each length occurs once. An accessible next question is when gaps between consecutive lengths first exceed one for other targets.
 
 The last three counts are independently enumerated by `examples.py`. All scripts use only the Python standard library.
+
+[General formulas and their finite checks](extensions.md) extend all four examples.
