@@ -1,0 +1,9 @@
+# Rainbow tests and representative families
+
+A concrete connection to established literature is **one-way**. Let G have a perfect matching of size k. Regard its perfect matchings as k-element subsets of the edge ground set. A d-representative subfamily for disjointness preserves the existence of a matching avoiding each forbidden edge set of size at most d. This is the uniform-matroid representative-family condition with rank k+d (for feasible deficits, k+d is at most the ground-set size). See Fomin, Lokshtanov, Panolan and Saurabh, [Efficient Computation of Representative Families with Applications in Parameterized and Exact Algorithms](https://sites.cs.ucsb.edu/~daniello/papers/efficientRepSetJ.pdf).
+
+**Sufficiency.** Given a coloring of deficit d with a rainbow witness, keep the witness edge of each color it uses and any one edge of every other color. The discarded set has exactly d elements. The witness avoids it, so a representative subfamily contains a matching avoiding it too. The kept edges have distinct colors. This recovers the paper's sufficient forbidden-edge condition and gives the classical general upper bound choose(k+d,d) on the number of rainbow tests. It does not explain the logarithmic ladder bound.
+
+**Strictness, even on a ladder.** On three columns take the all-rung matching and the matching using both rails of the left gap plus the right rung. They share exactly one edge. At deficit one the only obstruction is a single equal-color pair; that pair cannot be contained in both matchings. Thus the two are rainbow tests. But both contain the right rung, and the matching using the right gap omits it. They fail disjointness representativity for the singleton forbidden set consisting of that rung. This separates the family properties; it does not assert a separation of their optimum sizes.
+
+This connection is a literature comparison, not evidence of priority. The proof and example do not depend on private correspondence.

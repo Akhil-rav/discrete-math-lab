@@ -22,3 +22,5 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 [General formulas and their finite checks](extensions.md) extend all four examples.
 
 [Finite-horizon laws for straight and twisted ladders](horizon.md) compares whole sequences of open-pair counts with the support of the terminal edge count.
+
+[Five further derivations](five-directions.md) and [the representative-family comparison](representative-families.md). Run python check_five.py for finite checks.
