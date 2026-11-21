@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype}
+\usepackage[colorlinks=true,urlcolor=blue!50!black,linkcolor=black]{hyperref}
+\usepackage{xcolor}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\fl}[1]{\lfloor #1\rfloor}
+\newcommand{\ce}[1]{\lceil #1\rceil}
+\hypersetup{pdftitle={Minimizing a mixed star in a tournament}}
+\title{\bfseries Minimizing a mixed star in a tournament}
+\author{}
+\date{Working note \(\cdot\) November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}\noindent
+How few stars with two arrows entering the center and one leaving it can
+an \(n\)-vertex tournament contain? An optimal construction puts a nearly
+regular tournament above a transitive tournament on
+\(\fl{(n-1)/2}\) vertices. Its count is
+\((31/768)n^4+O(n^3)\) when the two incoming leaves are unordered.
+The same degree comparison gives an exact finite optimization rule for
+every cubic function of tournament scores.
+\end{abstract}
+
+\section*{The construction and the count}
+Put \(N=n-1\). For \(0\le b\le N\), take a transitive tournament on \(b\)
+vertices, and direct every edge from the remaining \(n-b\) vertices
+towards these \(b\). Make the upper tournament regular if its order is
+odd, and nearly regular (internal degrees differing by one) otherwise.
+Odd regular tournaments exist by the cyclic construction; deleting one
+vertex of the next odd regular tournament gives the even case.
+Write \(D_b\) for the resulting multiset of outdegrees. It consists of
+\(0,\ldots,b-1\), followed by \(n-b\) values with mean \(v=(b+N)/2\).
+They all equal \(v\) when it is integral, and otherwise half equal
+\(\fl v\) and half \(\ce v\).
+
+\begin{theorem}\label{th:star}
+For every \(n\ge4\), the minimum number of mixed stars with one outgoing
+leaf and two unordered incoming leaves is
+\[
+   \sum_{x\in D_b}x\binom{N-x}{2},\qquad b=\fl{N/2}.
+\]
+Edges among the leaves are unrestricted. Reversing every edge gives the
+same minimum for the opposite orientation.
+\end{theorem}
+
+A vertex of outdegree \(x\) contributes exactly \(x\binom{N-x}{2}\)
+choices. For \(n=7\) the construction has degrees \(0,1,2,4,4,5,5\)
+and gives 30 stars. Minimizing the number of possible centers gives a
+different answer: the three-center hosts have at least 31 stars, as the
+separate exhaustive seven-vertex calculation confirms.
+
+On dividing by \(n^4\), the lower degrees give a Riemann sum and the
+upper half concentrate at normalized degree \(3/4\). The limiting count is
+\[
+ \frac12\left(\int_0^{1/2}x(1-x)^2\,dx
+       +\tfrac12\cdot\tfrac34(1-\tfrac34)^2\right)=\frac{31}{768}.
+\]
+The rounding of the cutoff and of the upper degrees contributes \(O(n^3)\)
+to the unnormalized count. Labeling the two incoming leaves doubles it.
+
+\newpage
+\section*{A lower bound with equality}
+For a multiset \(D\) of tournament degrees write
+\(S_f(D)=\sum_{x\in D} f(x)\). The next observation is the elementary
+majorization inequality for scores, included to specify its direction.
+\begin{lemma}\label{lem:major}
+For concave \(g\) on \([0,N]\),
+\(S_g(D)\ge\sum_{i=0}^{N} g(i)\).
+\end{lemma}
+\begin{proof}
+For the \(j\) smallest scores, the sum is at least \(\binom j2\) by
+counting edges among those vertices. The full sum is \(\binom n2\).
+Thus for each integer \(t\), \(\sum_{x\in D}(t-x)_+\) is at most
+\(\max_{0\le j\le n}(jt-\binom j2)=\sum_{i=0}^{N}(t-i)_+\).
+On the integer grid a concave function is an affine function minus a
+nonnegative combination of these hinges: the coefficient at \(t\) is
+\(2g(t)-g(t-1)-g(t+1)\), for \(1\le t<N\). Summing proves the claim.
+\end{proof}
+
+\begin{lemma}\label{lem:cert}
+Let \(f_s(x)=x^3-sx^2\), with integer \(N\le s\le3N\). Put
+\[
+ b=\ce{(s-N)/2},\quad u=s-N-b,\quad
+ p=\fl{(N+b)/2},\quad q=\ce{(N+b)/2}.
+\]
+Then \(D_b\) minimizes \(S_{f_s}\).
+\end{lemma}
+\begin{proof}
+We have \(u=b-1\) or \(u=b\), and \(0\le u\le p\le q\).
+Since \(p+q=N+b\), the polynomial
+\[
+   L(x)=f_s(x)-(x-u)(x-p)(x-q)
+\]
+is affine. Define \(g=f_s\) up to \(u\) and \(g=L\) from \(u\) onward.
+On the left \(f_s''(x)=6x-2s\le0\) since \(s=u+p+q\ge3u\).
+At the join \(f_s'(u)-L'(u)=(u-p)(u-q)\ge0\), so \(g\) is concave.
+For integer \(x\ge u\), the factors \(x-p\) and \(x-q\) have
+nonnegative product because \(q-p\le1\). Thus \(g(x)\le f_s(x)\)
+at every integer score, including the rounding case \(p\ne q\).
+Lemma~\ref{lem:major} gives
+\[
+ S_{f_s}(D)\ \ge\ S_g(D)\ \ge\ \sum_{i=0}^N g(i).
+\]
+For \(D_b\) both inequalities are equalities. Every score either lies
+at or below \(u\), or equals \(p\) or \(q\). Moreover replacing
+\(b,\ldots,N\) by the upper degrees preserves both their number and sum,
+and \(g\) is affine on that interval. The lower degrees are unchanged.
+\end{proof}
+
+\noindent\emph{Proof of Theorem~\ref{th:star}.}
+Twice the cost at \(x\) is \(f_{2N-1}(x)+N(N-1)x\). The last term has
+constant total. Lemma~\ref{lem:cert} gives
+\(b=\ce{(N-1)/2}=\fl{N/2}\).
+\hfill\(\square\)
+
+\newpage
+\section*{Arbitrary cubic objectives}
+\begin{theorem}
+For any real \(s\) and \(n\ge2\), the minimum of \(S_{f_s}\) is the
+least of its values on \(D_0,\ldots,D_N\). Consequently any cubic
+polynomial of the scores with positive leading coefficient attains its
+minimum in this list. With negative leading coefficient the same holds
+after reversing all arcs.
+\end{theorem}
+\begin{proof}
+For \(s\le N\), take \(b=0,\ u=s-N\le0,\ p=\fl{N/2},\
+q=\ce{N/2}\). The same affine \(L\) lies below \(f_s\) at each integer
+in \([0,N]\), with equality at \(p,q\). The affine totals agree for all
+tournaments, so \(D_0\) attains the minimum. For \(s\ge3N\), \(f_s\) is
+concave throughout \([0,N]\), and Lemma~\ref{lem:major} gives \(D_N\).
+
+Between consecutive integers in \([N,3N]\), it suffices to find one
+construction optimal at both endpoints: every difference between two
+constructions' objective values is affine in \(s\), as is the difference
+with any other tournament. Write the left endpoint as \(N+j\). If \(j\)
+is odd, Lemma~\ref{lem:cert} chooses the same \(b\) at both endpoints.
+If \(j=2b\), the two prescribed prefixes have lengths \(b,b+1\).
+At both endpoints the break \(u\) in the certificate equals \(b\).
+Write \(v=(N+b)/2\).
+\begin{enumerate}
+\item If \(v\) is an integer, use \(D_b\). Its upper score \(v\) is the
+lower contact integer for \(D_{b+1}\), whose upper mean is \(v+1/2\).
+\item If \(v\) is a half-integer, use \(D_{b+1}\). Its extra lower
+score \(b\) is the break itself and its upper score \(v+1/2\) is the
+upper contact integer for \(D_b\).
+\end{enumerate}
+In either case the alternative construction also gives equality in both
+inequalities of the certificate, because the replacement above \(b\)
+preserves the sum on the affine part. This proves interpolation.
+Constant and linear terms have fixed totals. For a negative leading
+coefficient replace every degree \(x\) by \(N-x\).
+\end{proof}
+
+\paragraph{Checks and context.}
+Independent score enumeration checks the cubic minimum on a grid of
+slopes spaced \(1/3\) through \(n=10\); a score-sequence optimization
+checks the star count through \(n=24\).
+The majorization of tournament scores is classical. Th\"ornblad studies
+the corresponding limiting degree distributions
+(\href{https://arxiv.org/abs/1611.09579}{arXiv:1611.09579}).
+Fox, Himwich, Mani and Zhou classify which star orientations have
+asymptotic densities maximized or minimized by random tournaments
+(\href{https://arxiv.org/abs/2402.08418}{Theorem 1.11}).
+The present calculation concerns the opposite extremum for this mixed
+star. Pooling an upper interval using an affine bound also occurs in
+the continuous optimization of Kolotilin, Mylovanov and Zapechelnyuk
+(\href{https://doi.org/10.3982/TE4071}{Theoretical Economics, 2022}).
+The scope of prior finite integer-score results remains to be established.
+\end{document}
