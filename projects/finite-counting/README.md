@@ -24,3 +24,11 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 [Finite-horizon laws for straight and twisted ladders](horizon.md) compares whole sequences of open-pair counts with the support of the terminal edge count.
 
 [Five further derivations](five-directions.md) and [the representative-family comparison](representative-families.md). Run python check_five.py for finite checks.
+
+## Further calculations
+
+- [Straight versus twisted ladders: an explicit distinguishing event](maximal-loss.md); [exact joint-law enumerator](path_counts.py).
+- [Cycle losses, mixed-star centers and stability, and cactus coloring laws](further-results.md); [direct checks](check_further.py).
+- [Recovering parallel path lengths](theta-inverse.md); [inverse tests](theta_inverse.py).
+- [Independent correspondence-conflict events](correspondence.md) and [random assignments on theta graphs](random-correspondence.md); [five-vertex checks](correspondence_checks.py).
+- [Sharp bounds on runs of missing factorization lengths](residue-gaps.md); [direct dynamic-programming checks](residue_gaps.py).
