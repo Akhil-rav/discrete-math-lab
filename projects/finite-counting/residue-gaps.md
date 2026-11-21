@@ -25,3 +25,17 @@ Each p-jd is strictly positive, so choose M large enough that each separation ex
 **Why the lattice matters.** For 4,10,25 all generators are 1 modulo 3. At N=20t, replacing five 4s by two 10s repeatedly realizes the t+1 lengths 5t,5t-3,...,2t. Every attainable length is congruent to 5t modulo 3, so on the ordinary integer line there are at least t internal gap blocks. There is no corresponding uniform ordinary-gap bound here.
 
 **Relation to literature.** This proof uses overlapping slices of an integer cone. [Moskowitz and O'Neill](https://arxiv.org/abs/2311.05786) give an eventual structure theorem for general numerical semigroups using derived semigroups and Apery sets. [Chapman, Hoyer and Kaplan](https://www.math.uci.edu/~nckaplan/research_files/deltasetsperiodic.pdf) study eventual delta-set periodicity; the delta set records sizes of jumps, not their number of occurrences. A complete comparison with gluing-specific all-target bounds is still needed before any novelty claim. The proof here establishes the bound regardless of priority.
+
+### Per-semigroup refinement: earliest attainment, not just a uniform bound
+
+Let P be the residue period above, B=bP and A=aP. Assume B is representable using p,p+d (this holds automatically for p=2,d=1 since b>3a>=6). For representable s let m(s), M(s) be the smallest and largest number of summands in representations of s by p,p+d; both are zero at s=0. Define
+
+    delta_j = m((j+1)B) - A - M(jB),   j>=0.
+
+These differences are multiples of d. They are nonincreasing: add any fixed representation of B, of length h, to obtain m((j+2)B)<=m((j+1)B)+h and M((j+1)B)>=M(jB)+h. Eventually the real intervals in the proof above overlap, so the two rounded endpoints differ by at most d in the forward direction. Let K count the initial indices with delta_j>=2d. The exact maximum number of internal gap blocks on one residue class, over all targets in this semigroup, is K. For 1<=j<=K, **the least target with j or more such blocks is j*a*b*P**.
+
+Proof: fix an arbitrary target and residue class and start at its first nonempty slice, with reduced target s0 and number of b-summands c0. All subsequent candidate slices at spacing P are nonempty because B is representable. The jth slice uses c0-jA copies of b and has grid endpoints c0-jA+m(s0+jB) and c0-jA+M(s0+jB). Choose any factorization length h0 of s0. By addition, its next join has separation at most delta_j: use m(s0+(j+1)B)<=h0+m((j+1)B) and M(s0+jB)>=h0+M(jB). Thus there are at most K gap blocks. (Even if rounded endpoints tie, a separation exceeding d gives exactly one block; endpoints are nondecreasing on the common grid.) To have j joins requires c0>=jA, hence target >=jAb. Conversely at target jAb take the residue of the pure-b factorization. Its slices correspond exactly to 0,B,...,jB and have those first j separations. For j<=K all are gaps. This proves equality and earliest attainment simultaneously.
+
+For p=2,d=1 this gives a particularly short classification. With b>3a, any gap occurs iff ceil(b/3)-a>=2, first at ab. Two occur iff ceil(2b/3)-a-floor(b/2)>=2, first at 2ab. More than two are impossible. For a=3,b=20 this gives one possible block and first target 60; a=2,b=25 gives two and first double-gap target 100. No assumption is made that the refinement holds when B is not representable.
+
+The independent generator-addition check in [earliest_gaps.py](earliest_gaps.py) tests the first attainment for 551 parameter choices.

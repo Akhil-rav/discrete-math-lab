@@ -27,6 +27,8 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 
 ## Further calculations
 
+[Minimizing a mixed star in a tournament](tournament-scores.pdf) gives the exact minimum for every order and a proof for general cubic objectives. [LaTeX source](tournament-scores.tex) · [score-sequence checks](cubic_scores.py).
+
 - [Straight versus twisted ladders: an explicit distinguishing event](maximal-loss.md); [exact joint-law enumerator](path_counts.py).
 - [Cycle losses, mixed-star centers and stability, and cactus coloring laws](further-results.md); [direct checks](check_further.py).
 - [Recovering parallel path lengths](theta-inverse.md); [inverse tests](theta_inverse.py).
