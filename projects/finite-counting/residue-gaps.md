@@ -39,3 +39,17 @@ Proof: fix an arbitrary target and residue class and start at its first nonempty
 For p=2,d=1 this gives a particularly short classification. With b>3a, any gap occurs iff ceil(b/3)-a>=2, first at ab. Two occur iff ceil(2b/3)-a-floor(b/2)>=2, first at 2ab. More than two are impossible. For a=3,b=20 this gives one possible block and first target 60; a=2,b=25 gives two and first double-gap target 100. No assumption is made that the refinement holds when B is not representable.
 
 The independent generator-addition check in [earliest_gaps.py](earliest_gaps.py) tests the first attainment for 551 parameter choices.
+
+### Arbitrary strides, including empty slices
+
+There is a finite formula for the first target for *every* attainable gap count without the representability assumption on B. Write A=aP, B=bP as above and set
+
+    J = max(ceil(p/d), ceil((p−1)(p+d−1)/B)).
+
+For each t=0,...,B−1 form slices for s=t+hB, h=0,...,J. Drop empty slices. Subtract hA from both endpoints m(s), M(s) of the others. Count a gap each time the new lower endpoint exceeds the preceding nonempty upper endpoint by at least 2d. If the ith gap first occurs at h, retain a(t+hB) as a candidate for threshold i. For each i, take the minimum over t. An absent i is unattainable. In particular the least target exhibiting a given positive number of gaps or more on one residue class is **always divisible by a**.
+
+To prove this, fix a target and one residue progression. Its reduced targets are t+hB, with t=u+b*j0 and 0<=j0<P, 0<=u<b. Their lengths differ from the algorithm's shifted endpoints by a single additive constant, the number of b summands in the first candidate slice. Rounding on the common grid preserves monotonicity of both endpoints, so a newly appended nonempty slice adds either zero or one gaps and leaves old gaps intact. A target that includes reduced target s is at least as large as a*s. Conversely at N=a(t+hB), writing t=u+b*j0 as above, the maximum admissible number of b summands is a(j0+hP): the residual au is less than ab. The progression j0,j0+P,...,j0+hP therefore realizes exactly the desired prefix of slices. This proves that each candidate is attained at its stated target and that no smaller target can beat the minimum.
+
+It remains to justify the stopping rule. For h>=ceil(p/d), the real intervals for consecutive terms overlap by the bound above (the underlying slice index is j0+hP). At h>=ceil((p−1)(p+d−1)/B), all t+hB are representable. Indeed for any s at least the stated conductor choose 0<=y<p such that (p+d)y is congruent to s modulo p. Then s−(p+d)y is a multiple of p strictly greater than −p, hence nonnegative. From J onward, all slices are nonempty and consecutive overlapping real intervals on the common grid have rounded separation at most d. They cannot create another gap.
+
+For example, generators 12,14,29 have p=6, d=1, a=2 and B=29, which cannot be formed from 6 and 7. The first one-, two- and three-gap targets are 70, 128 and 186. The simpler representable-stride formula does not apply. [all_gap_thresholds.py](all_gap_thresholds.py) implements the finite formula and compares it with direct generator addition for 2,280 choices of generators, including 355 with unrepresentable B. The finite check scans through the last predicted threshold plus 30, or through 380 if larger; the stopping proof covers larger targets.

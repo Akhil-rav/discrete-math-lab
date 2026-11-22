@@ -34,3 +34,8 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 - [Recovering parallel path lengths](theta-inverse.md); [inverse tests](theta_inverse.py).
 - [Independent correspondence-conflict events](correspondence.md) and [random assignments on theta graphs](random-correspondence.md); [five-vertex checks](correspondence_checks.py).
 - [Sharp bounds on runs of missing factorization lengths](residue-gaps.md); [direct dynamic-programming checks](residue_gaps.py).
+
+
+- [First detectable moment of a binary path twist](binary-path-law.md) and [single-reversal traps for mixed stars](star-descent.md).
+- [Recovering a strip seam from closed walks](strip-spectrum.md) and [factorization gaps on residue classes](residue-gaps.md).
+- [An intersection criterion for one repeated color](one-repeat.md) and [recovery of mixed cycle lengths](mixed-cycle-recovery.md).
