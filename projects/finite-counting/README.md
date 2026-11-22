@@ -39,3 +39,6 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 - [First detectable moment of a binary path twist](binary-path-law.md) and [single-reversal traps for mixed stars](star-descent.md).
 - [Recovering a strip seam from closed walks](strip-spectrum.md) and [factorization gaps on residue classes](residue-gaps.md).
 - [An intersection criterion for one repeated color](one-repeat.md) and [recovery of mixed cycle lengths](mixed-cycle-recovery.md).
+
+
+[Identifying signed paths with a single probe (two-page PDF)](single-probe.pdf) starts with the six-edge example and proves the sharp probe length. [LaTeX source](single-probe.tex) and [reproducible check](check_single_probe.py).
