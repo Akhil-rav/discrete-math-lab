@@ -5,3 +5,6 @@ For a tournament on n vertices let S count stars with one outgoing and two unord
 On vertices 0,...,5 orient every pair from smaller to larger except 04 and 13. This tournament has value 15; the optimum is 12. No single reversal strictly decreases its value.
 
 The [exhaustive check](star_descent.py) finds no such counterexample at orders four or five (below four there are no such stars). At order six there are 384 labeled nonoptimal tournaments without a strictly improving move. Allowing ties changes the picture: every tournament of orders four through six reaches an optimum along a nonincreasing path. To test this, start at all minimizers and traverse single reversals backwards, allowing only nondecreasing values. No conclusion for larger orders follows.
+
+
+For the displayed tournament, ten reversals leave the count at 15, four raise it to 24, and reversing 45 raises it to 21. A shortest escape reverses 01 (still 15), then 04 (now 12).

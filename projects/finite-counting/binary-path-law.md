@@ -11,3 +11,6 @@ Indeed, for endpoint signs U,V in {-1,1} a single factor is ((z+1)+(z-1)(-1)^b U
 **First detectable moment.** Start with all bits zero and flip one edge on path i. For at least two paths, let h be l_i plus the shortest other path length, and let a count the other paths attaining that shortest length. In the difference (untwisted minus twisted), only even subsets containing i contribute, each with multiplier two. The shortest such subsets are exactly the a path pairs. At z=1 the difference thus vanishes to order exactly h, with leading coefficient a times 2^(1-h). Hence the binomial moments E[choose(X,j)] agree for every j<h and differ by exactly a times 2^(1-h) at j=h. This is a distributional statement for a fixed assignment, not a minimum over assignments.
 
 Example: lengths 2,3,4, twisting the longest path. The first five moments agree, although the distributions differ. The sixth binomial moment drops by 1/32. [Direct enumeration](binary_path_law.py) compares every coefficient for 72 signed path systems.
+
+
+[Recovery from the entire distribution](twist-recovery.md) compares two arbitrary sign assignments, including when several paths have the same length.
