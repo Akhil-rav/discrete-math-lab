@@ -18,3 +18,6 @@ The finite collision search in [single_probe_search.py](single_probe_search.py) 
 
 
 [Independent enumeration](check_single_probe.py) constructs distributions by conditioning on terminal colors instead of comparing even-subset polynomials. It distinguishes all 4,164 signed types across fixed totals m=6 through 16 and verifies the exhibited counterexamples for every shorter admissible probe in that range. For the forward calculation, see Alan D. Sokal, [Chromatic Roots are Dense in the Whole Complex Plane](https://arxiv.org/abs/cond-mat/0012369), section 2.3, equations (2.31)-(2.32), on terminal-restricted Potts partition functions of generalized theta graphs. That calculation is established background; it does not by itself state this inverse cutoff.
+
+
+[Comparison with binary coset weight enumerators and the two-terminal Potts formula](probe-literature.md).
