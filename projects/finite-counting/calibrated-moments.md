@@ -26,3 +26,6 @@ Could one long path masquerade as two? This would require P=3, since the one-pat
 For a single remaining path, its sign is visible directly unless P<=4. The possible short lengths are (1,2), (1,3), and (2,2). With (1,3) the interaction with the unit path is visible in E at m-3. With (1,2) or (2,2) every interaction of the long path with an odd short subset first occurs after m-3, and the long singleton also lies beyond the observed O range. These are precisely the listed pairs. Their short signs were already recovered, so the pairs do not merge into larger equivalence classes.
 
 [Exhaustive prefix check](check_calibrated_cutoff.py): for each m=12 through 24, generate every signed length multiset on at least three paths, at most one unit path, and total length m. The full m-2 signatures are distinct and dropping one order reduces their number by seven each time. The integer packing uses a base larger than twice the largest possible signed coefficient, so equality modulo a power of the base detects exact coefficient-prefix equality.
+
+
+[What changes when count parity is recorded?](parity-cutoff.md) gives a sharp smaller moment cutoff and a sampling lower bound.
