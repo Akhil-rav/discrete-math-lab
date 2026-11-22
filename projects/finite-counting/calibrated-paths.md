@@ -8,7 +8,7 @@ The host consists of at least two internally disjoint paths between known termin
 
     E(x) = (1-x)^m G((1+x)/(1-x)).
 
-This sums the signed monomials indexed by even subsets of paths. Write O for the same sum on odd subsets. Apply the transform to the second law using m+2 in place of m. The result is E(x)+x?O(x): the added path is either absent or present, and in the second case must be paired with an odd subset of original paths. Subtraction and division by x? recover O.
+This sums the signed monomials indexed by even subsets of paths. Write O for the same sum on odd subsets. Apply the transform to the second law using m+2 in place of m. The result is E(x)+x^2O(x): the added path is either absent or present, and in the second case must be paired with an odd subset of original paths. Subtraction and division by x^2 recover O.
 
 **Reading lengths and signs.** If the unknown signs are s_i, put A=E+O and B=E-O. Then
 
@@ -25,3 +25,6 @@ At the shortest remaining length l, the coefficient of degree 2l in AB is minus 
 
 
 [A sharp moment cutoff](calibrated-moments.md) determines how much of the two laws is needed when there are at least three paths and at least twelve edges.
+
+
+[Shortest universal single probe](single-probe.md) sharpens the long-path construction to an exact minimum for three or more original paths of known total length.

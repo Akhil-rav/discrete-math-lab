@@ -2,7 +2,7 @@
 
 In [the calibrated experiment](calibrated-paths.md), restrict the original simple host to **at least three paths** with total length m >= 12. Knowing the binomial moments through order **m-2**, in both experiments, always suffices. This common cutoff is sharp at every such m. Neither the individual lengths nor the number of paths need be supplied. This result concerns exact moments, not statistical estimation.
 
-**Translate the data.** The mean gives m. Knowing moments through order T means knowing the probability generating polynomial at z=1 through order T. The substitution z=(1+x)/(1-x) has nonzero linear term in z-1 and the normalization is a known unit. Thus one knows E and the probed polynomial E+x?O through degree T at x=0. For T=m-2 this gives O and A=E+O through m-4. It gives AB=E?-O? through m-3, since O has zero constant term.
+**Translate the data.** The mean gives m. Knowing moments through order T means knowing the probability generating polynomial at z=1 through order T. The substitution z=(1+x)/(1-x) has nonzero linear term in z-1 and the normalization is a known unit. Thus one knows E and the probed polynomial E+x^2O through degree T at x=0. For T=m-2 this gives O and A=E+O through m-4. It gives AB=E^2-O^2 through m-3, since O has zero constant term.
 
 **Peel the short paths.** Put u=floor((m-3)/2). Read counts and signs for lengths at most u by division as in the full decoder: 2u<=m-3 and u<=m-4. Remove the corresponding factors from A. All divisions have constant term one and require no higher coefficients. Let P be the sum of the removed lengths and R=m-P. If R=0 we are done. There are at most two remaining paths: each has length at least floor((m-1)/2), and three such lengths exceed m for m>=12.
 
