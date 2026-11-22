@@ -22,3 +22,6 @@ If O_D is zero, flipping D preserves the counts of both signs at every length; t
 
 
 On all 100,976 unordered pairs of assignments with different laws in this range the same independent distributions also confirm the first differing moment order and its signed difference.
+
+
+[Recovering lengths as well as signs](calibrated-paths.md) uses a second observation after adding a calibrated two-edge path.
