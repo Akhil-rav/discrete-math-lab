@@ -22,3 +22,6 @@ At the shortest remaining length l, the coefficient of degree 2l in AB is minus 
 **One measurement with a longer path.** If an upper bound M on the original total length is available before modifying the graph, add a positive path of length M+1 instead. In the transformed law E+x^(M+1)O the two coefficient ranges are disjoint. Thus this single modified-host law suffices, at the price of a larger modification. This is an upper bound on a sufficient probe length, not a minimality result.
 
 **Source context and checks.** The separation into two terminal states is standard in the [two-terminal Potts partition-function framework](https://discovery.ucl.ac.uk/id/eprint/1399078/1/Sokal_130930133.pdf). The previous note already treats the unsigned four-path reflection, so that ambiguity is not a discovery here. The inverse procedure above is derived directly; priority has not been established. [calibrated_paths.py](calibrated_paths.py) constructs the two laws by conditioning on the terminal bits and then feeds only their coefficients to the decoder. It checks 564 assignments on two to four paths of lengths one through four, with at most one unit path. No random sampling or rounding is involved.
+
+
+[A sharp moment cutoff](calibrated-moments.md) determines how much of the two laws is needed when there are at least three paths and at least twelve edges.
