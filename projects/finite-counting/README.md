@@ -24,6 +24,15 @@ For a fixed history through time six, each compatible seven-move path has the sa
 
 In fact four is the minimum sufficient history length for time-dependent one-step prediction on six vertices (use the entire available history at earlier times). The lower bound follows from the table. For the upper bound, [open_pair_memory.py](open_pair_memory.py) enumerates every positive-probability history and groups the exact conditional distributions by time and suffix. The longest suffix giving unequal forecasts has length three. At a terminal count of zero the process can be held at zero deterministically. Nine moves exhaust the possible range by the six-vertex triangle-free edge bound. These finite findings make no assertion for other graph orders.
 
+On seven vertices the minimum increases to **six**. For example, compare the two histories
+
+    21, 20, 18, 15, 14, 11, 9, 5, 4
+    21, 20, 18, 16, 14, 11, 9, 5, 4.
+
+They agree on the last five counts, yet the conditional probabilities of seeing three choices next are 5/7 and 5/6 respectively. Exhaustive enumeration finds no pair with six common final counts at the same time and different forecasts.
+
+Run [open_pair_orbits.py](open_pair_orbits.py) to reproduce the search. Each state stores a graph up to vertex relabeling and its entire observed history. For each successor graph type the recurrence multiplies by the number of actual open edges leading to that type. This retains the multiplicity of labeled paths because graph isomorphisms biject the available moves. The script checks every six-vertex history distribution against the labeled computation before running the seven-vertex case.
+
 ## Three short counting exercises
 
 - **Oriented Ramsey example.** Exactly two of the eight labeled tournaments on three vertices avoid an outward-directed two-leaf star: the directed cycles. On four vertices every tournament contains the star, since its six edges give average outdegree 3/2. This is an elementary starting point for the bounded-degree question on [Xiaoyu He's problem list](https://alkjash.github.io/problems/), not progress on that open problem.
