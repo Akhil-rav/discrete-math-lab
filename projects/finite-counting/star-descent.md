@@ -8,3 +8,6 @@ The [exhaustive check](star_descent.py) finds no such counterexample at orders f
 
 
 For the displayed tournament, ten reversals leave the count at 15, four raise it to 24, and reversing 45 raises it to 21. A shortest escape reverses 01 (still 15), then 04 (now 12).
+
+
+[A nonoptimal plateau on ten vertices](star-plateaus.md) shows that neutral moves do not suffice at all orders.
