@@ -21,3 +21,17 @@ On the a-side an internal pair is open if no occupied type contains both its end
 | 8 | 8/135135 | 8766996399857300777/1230747867207658800000 |
 
 Run [terminal_bicliques.py](terminal_bicliques.py) to regenerate the table. Independent propagation on all labeled graphs agreed for every bipartition size at n=3 through 6. These finite probabilities and elementary recurrence carry no priority claim.
+
+## A lower bound from common-neighbor counts
+
+Fix any labeled maximal triangle-free graph H. For each nonedge uv let c(uv) be the number of common neighbors of u and v in H. Then the probability of terminating at this particular H is at least
+
+    product over nonedges uv of [1 - (2c(uv))!! / (2c(uv)+1)!!].
+
+To see this, assign independent uniform arrival times in [0,1] to all pairs. Inspect pairs in increasing order and accept each legal pair. At every acceptance, all currently open pairs remain unexamined and their remaining order is uniform, so this gives the uniform-open-pair process. For a nonedge uv, define B(uv) as the earliest time at which a two-edge path in H from u to v has arrived, namely the minimum over common neighbors w of max(time(uw),time(wv)). The output equals H precisely when every nonedge arrives later than its B. Necessity follows from the triangle that blocked it. For sufficiency, induct through the arrival order: edges of H remain legal, and each nonedge has an earlier blocking path in H.
+
+Conditional on the arrival times of H, the exact probability is the product of 1-B(uv) over its nonedges. These nonnegative factors are coordinatewise decreasing in independent arrival times, so their expected product is at least the product of their expectations. For completeness the two-function inequality in one variable follows from the nonnegative product of differences evaluated at two independent copies. Conditioning on one coordinate and inducting proves the inequality for product measures, and iterating handles any number of factors.
+
+For fixed uv the c blocking paths use disjoint edge pairs. Thus Pr(B(uv)>x)=(1-x^2)^c, and integrating from zero to one gives E[B(uv)]=(2c)!!/(2c+1)!! by integration by parts. This proves the bound. For a fixed K(a,b) cut, the two types of nonedges have common-neighbor counts b and a respectively. For C5 every nonedge has one common neighbor, so the probability of a specified labeled pentagon is at least (1/3)^5. The product bound need not give the exact probability.
+
+The uniform-open-pair model is the one studied by [Bohman, The triangle-free process](https://www.math.cmu.edu/~tbohman/papers/r3t.pdf). The bound above applies the elementary product-measure correlation inequality to that model. No priority claim is made.
