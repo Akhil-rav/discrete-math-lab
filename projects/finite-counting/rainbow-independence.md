@@ -47,3 +47,13 @@ Each factor is symmetric and nondecreasing in the distance of p from one half, b
 For the three-column ladder, success has probability 133/324 with weights (1/2,1/3,1/6), compared with 386/729 under the uniform three-color palette. The argument concerns the event that at least one target succeeds. It also applies to families with targets of different sizes. Priority has not been established.
 
 The same optimization fails for simultaneous success. Take five positions, one center and four leaves, and use the four center-leaf pairs as targets. With two colors, every target succeeds precisely when all leaves have the color opposite to the center. This has probability p(1-p)^4+(1-p)p^4, which is 52/625 at p=1/5 and only 1/16 at p=1/2.
+
+### Equality and uniqueness
+
+Suppose the family is nonempty and its smallest target has size k at least two. A strict move toward equality between red and blue increases the success probability **strictly** if and only if at least k-2 other labels have positive mass. With fewer such labels even after balancing there are fewer than k usable colors, so success is impossible.
+
+For sufficiency, fix a smallest target T. In the partial observation from the proof, expose k-2 specified positions of T in distinct colors outside red and blue, and mark every other position in the ground set. This observation has positive probability, including when k=2. No target can already succeed with at most one marked position, since it would contain at most k-1 positions. But T survives with exactly two marked positions, so the graph in the proof has an edge. Its component has size at least two; its monochromatic probability strictly decreases under balancing. All remaining factors are positive and nonincreasing. Thus conditional success strictly increases on an observation of positive probability.
+
+In particular, if q is at least k, the uniform distribution is the unique maximizing vector on q labels. A distribution supported on fewer than k labels has zero success probability while uniform gives T positive probability. Any other nonuniform distribution has at least k positive labels, so balancing any unequal pair strictly improves it. A target of size at most one makes success certain and is excluded from this conclusion.
+
+[check_palette_balancing.py](check_palette_balancing.py) checks the strict and equality cases by enumeration on every nonempty family formed from the eleven subsets of sizes two through four on four positions. It tests six palette transfers per family, including initially unused colors, for 12,282 exact comparisons.
