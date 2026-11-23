@@ -31,3 +31,19 @@ For just one shared edge let its color be i with probability w_i. Then f(i)=(k-1
 Here e_0=1. The support assumption makes the symmetric sum strictly positive. Unequal weights therefore give two different conditional success probabilities. This proves the claim since edge-disjoint matchings depend on independent inputs. When the support has fewer than k colors all indicators are constant zero.
 
 For the three-column ladder with color probabilities (1/2,1/3,1/6), a single matching succeeds with probability 1/6. The covariance of two matchings sharing one edge is 1/162. The probabilities of exactly zero, one, two and three rainbow matchings are respectively 191/324, 53/162, 25/324 and 1/162. The count consequently has a different law from the uniform-palette binomial example.
+
+## Balancing two colors increases the chance of finding a rainbow matching
+
+Fix any finite family of targets (for instance, all perfect matchings in a graph). Color each position independently from one common palette distribution. Keeping the sum of two color probabilities fixed and moving them closer together can only increase the probability that at least one target is rainbow. In particular the uniform palette maximizes this probability on every fixed number of labels.
+
+**Proof.** Call the two colors red and blue. Reveal all colors except that each red or blue position is marked without revealing which one it is. The law of this partial observation depends only on their total probability. If the total is positive, each marked position is independently red with probability p equal to the red share of the total.
+
+Discard every target already having a repeated unmarked color or at least three marked positions. If any remaining target has at most one marked position, success is certain. Otherwise every surviving target has exactly two marked positions and succeeds precisely when their colors differ. Form a graph on the marked positions by joining the two in each surviving target. Failure now means that every connected component is monochromatic. Its conditional probability is therefore
+
+    product over components C of [p^|C| + (1-p)^|C|].
+
+Each factor is symmetric and nondecreasing in the distance of p from one half, by differentiation (and is constant for singleton components). This proves the two-color statement after averaging over the partial observation. Zero total mass needs no change. To reach the uniform distribution in finitely many such steps, take one weight above the mean and one below, and transfer the smaller of their deviations from the mean. At least one additional weight reaches the mean at each step.
+
+For the three-column ladder, success has probability 133/324 with weights (1/2,1/3,1/6), compared with 386/729 under the uniform three-color palette. The argument concerns the event that at least one target succeeds. It also applies to families with targets of different sizes. Priority has not been established.
+
+The same optimization fails for simultaneous success. Take five positions, one center and four leaves, and use the four center-leaf pairs as targets. With two colors, every target succeeds precisely when all leaves have the color opposite to the center. This has probability p(1-p)^4+(1-p)p^4, which is 52/625 at p=1/5 and only 1/16 at p=1/2.
