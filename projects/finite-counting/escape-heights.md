@@ -63,3 +63,9 @@ Otherwise a vertex has deviation -h, every other negative deviation contributes 
 Hence every unrestricted escape has height at least H(h). The explicit upper-arc path gives equality for every t at least two. In particular the heights in this family grow cubically in t.
 
 These are statements about the specified star count and single-arc moves. Their priority in the literature is undetermined.
+
+## Independent finite check of the unrestricted bound
+
+[check_escape_sublevel.py](check_escape_sublevel.py) searches sorted degree lists starting at the constructed tournament. It allows a transfer of one win between any two distinct vertices and discards a list only if it violates the degree bounds, a necessary prefix inequality, or the proposed cost cap. The prefix inequality holds because any k vertices have k(k-1)/2 internal wins. Every actual reversal path therefore maps to a walk in this search. Sorting can identify different tournaments and the search ignores arc directions, both of which can introduce extra walks. Exhausting even this larger space rules out an actual escape below the cap.
+
+For t=2 through 10, respectively, the search reached 2, 4, 8, 12, 24, 44, 76, 165 and 337 degree lists below the claimed peak, with no cheaper state. A separate construction materialized all tournament arcs and reversed them along the proposed path. Recomputing the star count from the resulting degrees gave peaks 6, 12, 20, 30, 45, 63, 84, 112 and 144, each followed by a strict net decrease. These two checks bound the unrestricted height from opposite sides.
