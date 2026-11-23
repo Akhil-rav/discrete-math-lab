@@ -17,3 +17,17 @@ Indeed the numerator is the trace of the r-th power of the q-by-q matrix with ze
 **Three-column ladder.** Its three matchings can be written 012, 034 and 256 in edge labels. Their incidence graph is a tree. The number of rainbow perfect matchings therefore has the full Binomial(3,p) law, including at q=3 where p=2/9. In contrast, the three matchings of K4,4 given by the column permutations 0123, 0231 and 1203 are pairwise independent but have a cycle with r=3. At q=4 exactly 192 of the 4^9 assignments on their union make all three rainbow. Direct enumeration checks this count and the entire ladder distribution for q=1 through 5 in [check_rainbow_independence.py](check_rainbow_independence.py).
 
 **Literature context.** Simultaneous rainbow events are strong hypergraph colorings. Replacing each target by a clique on its positions gives the usual chromatic-polynomial formulation, also recorded in [Foissy, Hopf algebraic structures on hypergraphs and multi-complexes, Proposition 2.1](https://doi.org/10.1016/j.aam.2026.103067). The independence argument above uses elementary conditioning and the cycle polynomial. Priority of the criterion has not been established.
+
+## Biased colors change the criterion
+
+Now give every edge the same finite color distribution, still independently, and discard labels of probability zero. Suppose the support has at least k colors, k is at least two, and two positive probabilities differ. A family of size-k matchings then has mutually independent rainbow indicators exactly when its members are edge-disjoint. In fact every overlapping pair has strictly positive covariance.
+
+To prove this, condition on the colors Z of the shared edges of two matchings. The private colors are independent, and each matching has the same conditional success probability f(Z). Thus the covariance equals Var(f(Z)). For at least two shared edges the event that two shared colors agree has positive probability and forces f=0. A distinct assignment to all shared positions also has positive probability and admits a successful completion. The variance is therefore positive.
+
+For just one shared edge let its color be i with probability w_i. Then f(i)=(k-1)! times the elementary symmetric sum of degree k-1 in all the weights except w_i: the remaining positions must receive different labels other than i. Compare colors i and j. Terms using neither cancel, so
+
+    f(i)-f(j) = (k-1)! (w_j-w_i) e_(k-2)(weights outside i,j).
+
+Here e_0=1. The support assumption makes the symmetric sum strictly positive. Unequal weights therefore give two different conditional success probabilities. This proves the claim since edge-disjoint matchings depend on independent inputs. When the support has fewer than k colors all indicators are constant zero.
+
+For the three-column ladder with color probabilities (1/2,1/3,1/6), a single matching succeeds with probability 1/6. The covariance of two matchings sharing one edge is 1/162. The probabilities of exactly zero, one, two and three rainbow matchings are respectively 191/324, 53/162, 25/324 and 1/162. The count consequently has a different law from the uniform-palette binomial example.
