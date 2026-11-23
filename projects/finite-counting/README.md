@@ -11,6 +11,19 @@ Both graphs are reachable: every prefix of any ordering of their edges is triang
 
 Run `python examples.py` from this directory to reproduce the first such witness by number of edges. The search is over labeled reachable states, not graph isomorphism classes. Run `python six.py` for the exact two-edge drift (-191/91), transition checks against a separate common-neighbor test on all 5,789 states, and a seeded simulation.
 
+## How many past counts help predict the next one?
+
+On six vertices, starting from the empty graph, even the last **three** open-pair counts can give different forecasts at the same time. After six moves, consider the following complete observation histories.
+
+| Open-pair counts from time zero | Ordered seven-move paths ending with zero choices | Paths ending with one choice | Chance the next move ends the process |
+|---|---:|---:|---:|
+| 15, 14, 12, 9, 8, 5, 2 | 8640 | 4320 | 2/3 |
+| 15, 14, 12, 10, 8, 5, 2 | 57600 | 11520 | 5/6 |
+
+For a fixed history through time six, each compatible seven-move path has the same probability, the reciprocal of the product of those seven observed counts. Dividing within each row therefore gives the conditional probability. This tests the observed process with one prescribed starting graph. Comparing individual graph states alone would leave open whether the histories mix those states in the same proportions.
+
+In fact four is the minimum sufficient history length for time-dependent one-step prediction on six vertices (use the entire available history at earlier times). The lower bound follows from the table. For the upper bound, [open_pair_memory.py](open_pair_memory.py) enumerates every positive-probability history and groups the exact conditional distributions by time and suffix. The longest suffix giving unequal forecasts has length three. At a terminal count of zero the process can be held at zero deterministically. Nine moves exhaust the possible range by the six-vertex triangle-free edge bound. These finite findings make no assertion for other graph orders.
+
 ## Three short counting exercises
 
 - **Oriented Ramsey example.** Exactly two of the eight labeled tournaments on three vertices avoid an outward-directed two-leaf star: the directed cycles. On four vertices every tournament contains the star, since its six edges give average outdegree 3/2. This is an elementary starting point for the bounded-degree question on [Xiaoyu He's problem list](https://alkjash.github.io/problems/), not progress on that open problem.
