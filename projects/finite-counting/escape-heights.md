@@ -27,6 +27,18 @@ For each integer t at least two, take a transitive lower part of size 4t and a r
 
 Indeed, an upper arc reversal costs t+1. A lower reversal between consecutive ranks interchanges them at zero cost. For every other lower reversal the first factor a-b-1 is at least one and the second factor 4N-2-3(a+b) is at least 16t+7. For a cross arc these factors are respectively at least 3t and 7t+1. After any sequence of zero-cost reversals the same bounds apply, since only the lower order has been permuted. Thus the first move of positive cost already reaches height at least t+1.
 
-To see explicitly that escape is possible, reverse h outgoing upper arcs of a single vertex toward distinct original heads. At step j+1 the change is (j+1)(2t+2-3j)/2. Summing from j=0 to h-1 gives h(h+1)(t+2-h)/2 above the initial cost. Taking h=t+3 makes this negative, and there are 3t outgoing upper arcs available. The largest value of this expression over 0 through t+3 gives a constructive upper bound. Its optimality is unknown here.
+To see explicitly that escape is possible, reverse h outgoing upper arcs of a single vertex toward distinct original heads. At step j+1 the change is (j+1)(2t+2-3j)/2. Summing from j=0 to h-1 gives h(h+1)(t+2-h)/2 above the initial cost. Taking h=t+3 makes this negative, and there are 3t outgoing upper arcs available. The largest value of this expression over 0 through t+3 gives a constructive upper bound. For unrestricted paths its optimality is unknown here.
+
+## Exact height when only upper arcs can change
+
+Under this restriction the preceding upper bound is sharp. Write x_i for the change in upper vertex i's outdegree from 7t. Since the total upper outdegree stays fixed, the x_i sum to zero. Expanding the cubic score and cancelling its linear part shows that the increase in cost equals
+
+    sum_i x_i^2 (t+1+x_i)/2.
+
+To reach a cheaper tournament some x_i must drop below -(t+1). For each integer h from 1 through t+1, consider the first time the minimum deviation reaches -h. Such a time exists because one reversal changes each affected score by one. A vertex of deviation -h contributes h^2(t+1-h)/2. Every other negative deviation contributes a nonnegative amount. Each positive integer deviation x contributes at least x(t+2)/2, and the positive deviations sum to at least h. Hence the cost increase at that moment is at least
+
+    [h^2(t+1-h) + h(t+2)]/2 = h(h+1)(t+2-h)/2.
+
+The single-vertex construction attains this bound for every h along one path. The only other steps on that path, h=0, t+2 and t+3, have nonpositive increase. Thus the restricted escape height is precisely the maximum of the displayed expression over 1 through t+1. For example, at t=2 the restricted height is 6, while the proved unrestricted lower bound is 3.
 
 These are statements about the specified star count and single-arc moves. Their priority in the literature is undetermined.
