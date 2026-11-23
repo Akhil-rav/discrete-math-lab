@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,amsmath,amssymb,booktabs}
+\usepackage{lmodern,amsmath,amssymb,booktabs,url}
 \usepackage[margin=1in]{geometry}
 \newcommand{\bin}[2]{\binom{#1}{#2}}
 \begin{document}
@@ -95,6 +95,17 @@ When $q=n$, both candidates admit closed forms. The balanced inventory
 has success probability $2^n/\bin{2n}{n}$, while the optimal inventory
 has probability $6\cdot2^{n-2}/\bin{2n}{n}$. For every $n$, introducing
 one triple therefore increases success by a factor of $3/2$.
+
+\paragraph{Connection to shuffled decks.}
+Deal the first $n$ cards of a shuffled multiset to one hand and the remainder
+to the other. The event that the first hand is rainbow is the no-collision
+event $T_1\ge n$ in the notation of He and Ottolini.\footnote{J.~He and
+A.~Ottolini, \emph{Card guessing and the birthday problem for sampling
+without replacement}, Theorem~1.6 in the 2021 preprint,
+\url{https://arxiv.org/abs/2108.07355}.}
+Their theorem approximates a prefix collision probability under hypotheses
+on the deck. Here the two hands are complementary, and the exact intersection
+term $J(c)$ enters the optimization over decks.
 
 \paragraph{Verification.}
 The accompanying program \texttt{check\_cycle\_inventory.py} enumerates
