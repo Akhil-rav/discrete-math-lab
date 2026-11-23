@@ -65,3 +65,28 @@ The independent draws assumption matters even for perfect matchings. On the cycl
 Indeed, distinguish the tokens even when their colors agree. The first alternating matching receives a uniform n-subset of the 2n tokens. With multiplicities (3,1,2,...,2), exactly 3 times 2^(n-2) subsets make that matching rainbow. Both alternating matchings cannot be rainbow, since three copies of one color must be split between them. Thus success has probability 6 times 2^(n-2) divided by binom(2n,n). With two tokens of every color, either both matchings are rainbow or neither is. Exactly 2^n subsets give success, yielding two thirds of the previous probability.
 
 More generally, for positive multiplicities c summing to 2n, the number of successful subsets is 2 e_n(c) minus the number that make both matchings rainbow. The elementary symmetric sum counts the ways to take one token of each of n colors. The intersection count vanishes if any color has more than two tokens. Otherwise, with d doubled colors, it is 2^d binom(2n-2d,n-d): split every doubled color and choose the remaining tokens from the singletons. Divide by binom(2n,n) for the probability. [check_cycle_inventory.py](check_cycle_inventory.py) checks every multiplicity partition on cycles with 4, 6, 8, 10 and 12 edges by direct subset enumeration.
+
+### Which inventory is best on a cycle?
+
+Fix exactly q used labels on the 2n-cycle. For q<n success is impossible. For n<=q<=2n put d=2n-q and l=q-n. Up to renaming, the only possible maximizers are the balanced inventory B (d doubles and 2l singles) and, when d>=2, the inventory T obtained by changing two doubles to a triple and a single.
+
+| Condition | Maximizers |
+|---|---|
+| d=0 or 1 | B |
+| d>=2 and l=0 | T |
+| l>=1 and d=2 or 3 | T |
+| d=4 and 1<=l<=6 | T |
+| d=5 and l=1 | T |
+| d=6 and l=1 | B and T |
+| All remaining cases | B |
+
+**Reduction.** If every multiplicity is at most two the inventory is B. Otherwise the intersection count is zero and success is proportional to the elementary symmetric sum e_n(c). A transfer from entries a,b with a>=b+2 to a-1,b+1 increases e_n by (a-b-1)e_(n-2) of the other entries, which is positive since q>=n. Reduce a largest entry to three whenever it exceeds three, transferring the excess to singles (there must be a single while any entry exceeds two since the mean is at most two). Hold that triple fixed and balance the remaining entries. Their mean is strictly below two, so the result is T. Every transfer strictly improves success while retaining a triple.
+
+**Comparison.** Assume d>=2. The intersection count for B is 2^d binom(2l,l). Moving from T to B increases e_n by e_(n-2) of the remaining d-2 doubles and 2l singles. Write
+
+    R = sum over i=0,...,min(d-2,l) of
+        binom(d-2,i) 2^(-i) binom(2l,l+i) / binom(2l,l).
+
+Selecting all but i of the remaining doubles gives exactly this expression after dividing e_(n-2) by 2^(d-2) binom(2l,l). Consequently T wins for R<2, B wins for R>2, and equality gives the tie.
+
+For l=0 the sum is one. For l>=1 it is nondecreasing in d and l: each binomial ratio is the product of (l-j)/(l+j+1) over j=0,...,i-1 for i<=l, and is zero before then. For d<=3 the sum is below two. For d=4 its sign relative to two is the sign of l(l-1)-4(l+2), which changes between six and seven. For d=5 it is below two at l=1 and above two at l=2. At l=1 it equals 1+(d-2)/4, and for d>=3 the i=1 term strictly increases with l. These comparisons give all rows of the table. The inventory checker also exhausts all maximizing types for n from two through fifteen.

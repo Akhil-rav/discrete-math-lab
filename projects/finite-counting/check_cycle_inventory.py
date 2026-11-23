@@ -40,3 +40,34 @@ if __name__ == "__main__":
         for counts in cases:
             assert formula(counts) == direct(counts)
         print(2*n, len(cases))
+
+
+def predicted_maxima(n, q):
+    d = 2*n-q
+    l = q-n
+    balanced = (2,)*d + (1,)*(2*l)
+    if d < 2:
+        return {balanced}
+    triple = (3,) + (2,)*(d-2) + (1,)*(2*l+1)
+    if l == 0 or d <= 3 or (d == 4 and l <= 6) or (d == 5 and l == 1):
+        return {triple}
+    if (d, l) == (6, 1):
+        return {balanced, triple}
+    return {balanced}
+
+
+if __name__ == "__main__":
+    for n in range(2, 16):
+        best = {}
+        for c in inventories(2*n, 2*n):
+            q = len(c)
+            if q < n:
+                continue
+            score = formula(c)
+            if q not in best or score > best[q][0]:
+                best[q] = (score, {c})
+            elif score == best[q][0]:
+                best[q][1].add(c)
+        for q in range(n, 2*n+1):
+            assert best[q][1] == predicted_maxima(n, q)
+    print("All maximizing inventories checked for 2 <= n <= 15.")
