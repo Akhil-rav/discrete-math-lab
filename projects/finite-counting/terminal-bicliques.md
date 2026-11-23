@@ -35,3 +35,9 @@ Conditional on the arrival times of H, the exact probability is the product of 1
 For fixed uv the c blocking paths use disjoint edge pairs. Thus Pr(B(uv)>x)=(1-x^2)^c, and integrating from zero to one gives E[B(uv)]=(2c)!!/(2c+1)!! by integration by parts. This proves the bound. For a fixed K(a,b) cut, the two types of nonedges have common-neighbor counts b and a respectively. For C5 every nonedge has one common neighbor, so the probability of a specified labeled pentagon is at least (1/3)^5. The product bound need not give the exact probability.
 
 The uniform-open-pair model is the one studied by [Bohman, The triangle-free process](https://www.math.cmu.edu/~tbohman/papers/r3t.pdf). The bound above applies the elementary product-measure correlation inequality to that model. No priority claim is made.
+
+## Exact verification by counting arrival orders
+
+Fix the relative order of the m edges of H. For each nonedge compute the earliest rank at which a witness path has both edges present. Sort these thresholds in decreasing order as b_0,...,b_(s-1), breaking ties in any fixed order. Insert the corresponding labeled nonedges in that order. At insertion j every previous insertion lies after target edge b_j, so exactly m-b_j+1+j slots are legal. Deleting the inserted edges in reverse order recovers all choices uniquely. Multiply the slot counts, sum over all m! target orders, and divide by the factorial of the total number of pairs.
+
+[check_terminal_orders.py](check_terminal_orders.py) implements this integer count independently of the open-pair recurrence. It agrees for every complete bipartite type on three through six vertices. For a specified labeled pentagon it gives 31/2835, above the common-neighbor bound of 1/243. The twelve labeled pentagons together have mass 124/945. Adding this to the two bipartite masses on five vertices gives exactly one.
