@@ -52,6 +52,7 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 ## Further calculations
 
 - [Escape heights for tournament star counts](escape-heights.md) determines the first order where neutral reversals cannot reach a cheaper tournament, and proves the exact barrier for an infinite family.
+- [Optimal color inventories on an even cycle (two-page PDF)](cycle-inventories.pdf) classifies the best fixed multiplicities for every cycle length and palette size. [LaTeX source](cycle-inventories.tex).
 - [Independence of rainbow matching events](rainbow-independence.md) characterizes when the full set of indicators is independent under uniform and biased edge colors.
 
 [Minimizing a mixed star in a tournament](tournament-scores.pdf) gives the exact minimum for every order and a proof for general cubic objectives. [LaTeX source](tournament-scores.tex) · [score-sequence checks](cubic_scores.py).
