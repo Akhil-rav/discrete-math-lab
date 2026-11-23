@@ -33,6 +33,8 @@ They agree on the last five counts, yet the conditional probabilities of seeing 
 
 Run [open_pair_orbits.py](open_pair_orbits.py) to reproduce the search. Each state stores a graph up to vertex relabeling and its entire observed history. For each successor graph type the recurrence multiplies by the number of actual open edges leading to that type. This retains the multiplicity of labeled paths because graph isomorphisms biject the available moves. The script checks every six-vertex history distribution against the labeled computation before running the seven-vertex case.
 
+The same process also gives exact probabilities for reaching a specified terminal graph. The [terminal graph calculation](terminal-bicliques.md) derives a closed formula for stars and checks small complete bipartite graphs by two counting methods.
+
 ## Three short counting exercises
 
 - **Oriented Ramsey example.** Exactly two of the eight labeled tournaments on three vertices avoid an outward-directed two-leaf star: the directed cycles. On four vertices every tournament contains the star, since its six edges give average outdegree 3/2. This is an elementary starting point for the bounded-degree question on [Xiaoyu He's problem list](https://alkjash.github.io/problems/), not progress on that open problem.
@@ -49,6 +51,9 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 
 ## Further calculations
 
+- [Escape heights for tournament star counts](escape-heights.md) determines the first order where neutral reversals cannot reach a cheaper tournament, and proves the exact barrier for an infinite family.
+- [Independence of rainbow matching events](rainbow-independence.md) characterizes when the full set of indicators is independent under uniform and biased edge colors.
+
 [Minimizing a mixed star in a tournament](tournament-scores.pdf) gives the exact minimum for every order and a proof for general cubic objectives. [LaTeX source](tournament-scores.tex) · [score-sequence checks](cubic_scores.py).
 
 - [Straight versus twisted ladders: an explicit distinguishing event](maximal-loss.md); [exact joint-law enumerator](path_counts.py).
@@ -59,7 +64,7 @@ The last three counts are independently enumerated by `examples.py`. All scripts
 
 
 - [First detectable moment of a binary path twist](binary-path-law.md) and [single-reversal traps for mixed stars](star-descent.md).
-- [Recovering a strip seam from closed walks](strip-spectrum.md) and [factorization gaps on residue classes](residue-gaps.md).
+- [Recovering a strip seam from closed walks](strip-spectrum.md).
 - [An intersection criterion for one repeated color](one-repeat.md) and [recovery of mixed cycle lengths](mixed-cycle-recovery.md).
 
 
