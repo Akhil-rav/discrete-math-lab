@@ -33,6 +33,8 @@ They agree on the last five counts, yet the conditional probabilities of seeing 
 
 Run [open_pair_orbits.py](open_pair_orbits.py) to reproduce the search. Each state stores a graph up to vertex relabeling and its entire observed history. For each successor graph type the recurrence multiplies by the number of actual open edges leading to that type. This retains the multiplicity of labeled paths because graph isomorphisms biject the available moves. The script checks every six-vertex history distribution against the labeled computation before running the seven-vertex case.
 
+On eight vertices, at least seven past counts can be necessary. The histories (28,27,25,22,21,18,16,12,11,6) and (28,27,25,23,21,18,16,12,11,6) have the same last six counts. The next count is five with conditional probabilities 5/9 and 5/7 respectively. This witness gives a lower bound only. The [labeled history checker](check_forecast_history.py) follows just the specified histories, updating open pairs by inspecting triangles containing the chosen edge. It also independently reproduces the seven-vertex witness above.
+
 The same process also gives exact probabilities for reaching a specified terminal graph. The [terminal graph calculation](terminal-bicliques.md) derives a closed formula for stars and checks small complete bipartite graphs by two counting methods.
 
 ## Three short counting exercises
