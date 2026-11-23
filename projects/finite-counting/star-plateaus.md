@@ -20,4 +20,4 @@ Every neutral move therefore stays in the same construction, with the same cut a
 
     f(k)+f(k+1)+(r-2)f(v+1)-r*f(v) = -8t^3-2t^2+3t+1 < 0.
 
-This gives nonoptimal plateaus with no nonincreasing route out at infinitely many orders. It does not settle the smallest such order (in particular orders eight and nine) or the minimum height one must climb to escape. Priority in the literature has not been established.
+This gives nonoptimal plateaus with no nonincreasing route out at infinitely many orders. The [escape-height analysis](escape-heights.md) identifies the first such order, determines the height of this family, and gives another family with unbounded height. Priority in the literature has not been established.
