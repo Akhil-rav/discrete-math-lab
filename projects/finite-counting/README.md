@@ -33,7 +33,12 @@ They agree on the last five counts, yet the conditional probabilities of seeing 
 
 Run [open_pair_orbits.py](open_pair_orbits.py) to reproduce the search. Each state stores a graph up to vertex relabeling and its entire observed history. For each successor graph type the recurrence multiplies by the number of actual open edges leading to that type. This retains the multiplicity of labeled paths because graph isomorphisms biject the available moves. The script checks every six-vertex history distribution against the labeled computation before running the seven-vertex case.
 
-On eight vertices, at least seven past counts can be necessary. The histories (28,27,25,22,21,18,16,12,11,6) and (28,27,25,23,21,18,16,12,11,6) have the same last six counts. The next count is five with conditional probabilities 5/9 and 5/7 respectively. This witness gives a lower bound only. The [labeled history checker](check_forecast_history.py) follows just the specified histories, updating open pairs by inspecting triangles containing the chosen edge. It also independently reproduces the seven-vertex witness above.
+On eight vertices the minimum sufficient history length is **ten**. After twelve moves consider the histories
+
+    28, 27, 26, 25, 22, 21, 18, 15, 12, 9, 6, 5, 4
+    28, 27, 26, 24, 22, 21, 18, 15, 12, 9, 6, 5, 4.
+
+They agree on the last nine counts. The probabilities that the next move ends the process are respectively 11/2864 and 11/4764. The [labeled history checker](check_forecast_history.py) counts compatible move orders directly and independently verifies both fractions. For the upper bound, run `python open_pair_orbits.py --order 8` from this directory. It compares all reachable histories at each time through termination. Its graph labels are canonical: vertices are grouped by degree and the sorted degrees of their neighbors, and the least adjacency encoding among orders respecting those groups is used. Permutations within a group whose vertices have identical neighbor sets leave the encoding unchanged. The longest ambiguous suffixes at times 4 through 12 have lengths 1 through 9 respectively; no later time has ambiguous forecasts even with just the current count.
 
 The same process also gives exact probabilities for reaching a specified terminal graph. The [terminal graph calculation](terminal-bicliques.md) derives a closed formula for stars and checks small complete bipartite graphs by two counting methods.
 

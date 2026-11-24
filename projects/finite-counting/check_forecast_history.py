@@ -51,3 +51,9 @@ if __name__ == "__main__":
         counts = next_counts(8, history)
         assert counts[5]*denominator == numerator*sum(counts.values()) > 0
         print(history, sorted(counts.items()))
+
+    for fourth, denominator in [(25, 2864), (24, 4764)]:
+        history = (28, 27, 26, fourth, 22, 21, 18, 15, 12, 9, 6, 5, 4)
+        counts = next_counts(8, history)
+        assert counts[0] * denominator == 11 * sum(counts.values()) > 0
+        print(history, sorted(counts.items()))
