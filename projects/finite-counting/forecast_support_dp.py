@@ -22,7 +22,7 @@ def relabel(adj):
                  for u in order)
 
 
-def path_tables(history):
+def path_states(history):
     states = {(): 1}
     for old, target in zip(history, history[1:]):
         following = Counter()
@@ -50,6 +50,11 @@ def path_tables(history):
                     child[j] |= 1 << i
                     following[relabel(child)] += count * comb(size, size-s)
         states = following
+        yield states
+
+
+def path_tables(history):
+    for states in path_states(history):
         totals = Counter()
         for graph, count in states.items():
             totals[len(graph)] += count

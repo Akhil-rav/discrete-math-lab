@@ -4,7 +4,7 @@ Write h(n) for the minimum number of past open-pair counts needed to predict the
 
     liminf h(n)/n >= 1/2.
 
-The argument extends a pair of ambiguous histories by arbitrarily many moves that each reduce the number of open pairs by exactly one. It uses the [finite witnesses and centered-count convention](forecast-transfer.md). It gives no finite threshold beyond which the asymptotic estimates hold.
+The argument extends a pair of ambiguous histories by arbitrarily many moves that each reduce the number of open pairs by exactly one. It uses the [finite witnesses and centered-count convention](forecast-transfer.md). The last section supplies an exact certificate valid at every order from eight onward.
 
 ## Extending a witness
 
@@ -35,3 +35,15 @@ Multiplying each path summand by this polynomial and adding gives a polynomial A
 For the two prefixes compare A_1 P_2 with A_2 P_1. Their difference is a polynomial nonzero at t=0 by the original witness. It has only finitely many integer roots. The denominators stay positive by the explicit disjoint-edge construction and the availability of a legal move on the original vertices. This proves h(k+2t)>=r+t+1 for all sufficiently large t.
 
 The eight-vertex witness has r=9, and the seven-vertex witness has r=5. They give h(n)>=n/2+6 for sufficiently large even n and h(n)>=(n+5)/2 for sufficiently large odd n. The claimed limit inferior follows. Priority has not been established.
+
+## Removing the asymptotic qualifier
+
+For every integer n>=8 the following explicit lower bound holds:
+
+    h(n) >= floor(n/2) + 6.
+
+Use the two twelve-move centered histories from the eight-vertex witness and ask for a next loss of four. Use the same centered histories at k=9 for the odd orders. In both cases the common suffix length is nine. Writing n=k+2t, it suffices to prove that the extended forecasts differ for every t>=0.
+
+[check_unit_loss_padding.py](check_unit_loss_padding.py) implements the polynomial construction above with exact rational arithmetic. It first groups prefixes on a fixed support by their final graph. For each internal unit-loss continuation of depth j, let b=t-j, and let c=k-s+2j be the number of remaining isolates. If c<0 the term contributes nothing. For fixed c, the number of ways to realize a specified next loss has the form U+V b+W binom(b,2), obtained by the component counts above. The program accumulates the coefficients by j, expanding only moves on the core graph. It exhausts all internal continuations because each adds an edge to a fixed finite vertex set.
+
+For each parity the resulting cross-product difference has degree at most 18 (the sum of the two maximum internal depths plus two). It is nonzero by direct evaluation at t=0,1,2. At t=3 its value is nonzero, and all its forward differences through order 18 are either zero or have the sign of that value. Newton's forward formula proves it has that same strict sign for every t>=3. Thus ten plus t observations are necessary for all n=8+2t and n=9+2t, giving the formula. As an implementation check the program also computes the unnormalized path counts by direct support growth for t=0,1,2 in both parities and for both histories.
