@@ -59,6 +59,25 @@ def seek(n):
                 return ha + suffix, hb + suffix, forecasts
 
 
+def prescribed_forecast(n, history):
+    successors = orbit_successors(n)
+    states = Counter({0: 1})
+    if history[0] != n*(n-1)//2:
+        raise ValueError("expected an empty initial graph")
+    for observed in history[1:]:
+        following = Counter()
+        for graph, weight in states.items():
+            for child, ways in successors(graph).items():
+                if sum(successors(child).values()) == observed:
+                    following[child] += weight*ways
+        states = following
+    result = Counter()
+    for graph, weight in states.items():
+        for child, ways in successors(graph).items():
+            result[sum(successors(child).values())] += weight*ways
+    return {q: Fraction(w, sum(result.values())) for q, w in result.items()}
+
+
 if __name__ == "__main__":
     from forecast_coefficients import evaluate
     from forecast_support_dp import path_tables
@@ -66,10 +85,16 @@ if __name__ == "__main__":
     from argparse import ArgumentParser
 
     parser = ArgumentParser(description=__doc__)
-    parser.add_argument("--order", type=int, choices=(9, 10), default=9)
+    parser.add_argument("--order", type=int, choices=(9, 10, 11), default=9)
     n = parser.parse_args().order
     total = n*(n-1)//2
-    first, second, (next_count, a, b) = seek(n)
+    if n == 11:
+        first, second = [(55,54,53,u,49,45,41,36,33,29,27,25,23,22,21,20,19,18,
+                          17,16,15,8,4,3,2) for u in (52,51)]
+        next_count = 0
+        a, b = [prescribed_forecast(n, h).get(0, 0) for h in (first, second)]
+    else:
+        first, second, (next_count, a, b) = seek(n)
     for observed, prob in ((first, a), (second, b)):
         centered = tuple(total-q for q in observed) + (total-next_count,)
         prefix, full = list(path_tables(centered, max_support=n))[-2:]
@@ -77,4 +102,4 @@ if __name__ == "__main__":
         assert checked == prob
         print(observed, next_count, checked)
     assert first[4:] == second[4:] and a != b
-    assert len(first[4:])+1 == (n-1)**2//4-2
+    assert len(first[4:])+1 == {9: 14, 10: 18, 11: 22}[n]

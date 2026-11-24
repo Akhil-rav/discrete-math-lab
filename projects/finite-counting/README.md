@@ -74,6 +74,20 @@ The cutoff above is exact for every n at least six, even when the whole current 
 
 For completeness, a nonbipartite graph at D edges is already terminal or every legal move reaches the nonbipartite edge bound D+1 and terminates. A bipartite graph with no open internal pair loses exactly one choice at its next move, if any. In the remaining case the argument above forces equality in m<=(a-1)b<=D for an open internal pair. Equality makes every other vertex in its part adjacent to the entire opposite part; the two exceptional neighborhoods partition that part. They are both nonempty in the first construction, and an empty neighborhood gives the second. This exhausts the possibilities. [Direct next-step checks](check_last_random_step.py) cover both choices of part and every split size for orders 6 through 24. Sharpness here concerns the time of the last genuinely random transition from a specified graph; the minimum observable history length is a separate question.
 
+### A sharper bound at odd orders
+
+Let n=2s+1 with s>=3. If s has no representation i(i+1)+2 for an integer i>=0, the history bound improves to h(n)<=s^2-3. Indeed the forecast at time D=s^2 depends only on the current open count Q.
+
+First, in any triangle-free state where every legal move ends the process, Q<=2. Otherwise take three open pairs. Each two must conflict, meaning they meet and the edge joining their other endpoints is present. Three pairwise intersecting pairs form a triangle or a star. In the triangle case the required third edge is itself open. In the star case the three required edges form a present triangle. Both are impossible. In particular a nonbipartite state at time D has Q<=2 and next count zero.
+
+For a bipartite state with no internal open pair, parts of sizes s-i and s+1+i give Q=s-i(i+1), since all missing cross edges are open. The next count is max(Q-1,0). Its forecast agrees with the nonbipartite rule for Q<=1, and Q=2 is excluded by hypothesis. The remaining bipartite states are the two split constructions above. Their respective counts s+1 and 2s are distinct and exceed the maximum s for the no-internal-pair case. Each has the previously derived next-count law determined by Q. This exhausts the cases. At earlier times through D-1 it suffices to remember observations starting at time three, at most D-3 counts. At later times the deterministic rule applies.
+
+In particular **h(11)=22**. Here s=5 satisfies the hypothesis. The following two histories attain the lower bound, with the only differing observation in parentheses:
+
+    55, 54, 53, (52 or 51), 49, 45, 41, 36, 33, 29, 27, 25, 23, 22, 21, 20, 19, 18, 17, 16, 15, 8, 4, 3, 2.
+
+After 52 the next move cannot end the process. After 51 it ends with probability 1/21. The common suffix has twenty-one observations. Run the paired-history checker with option `--order 11` to verify these probabilities by two exact recurrences.
+
 The same process also gives exact probabilities for reaching a specified terminal graph. The [terminal graph calculation](terminal-bicliques.md) derives a closed formula for stars and checks small complete bipartite graphs by two counting methods.
 
 ## Three short counting exercises
