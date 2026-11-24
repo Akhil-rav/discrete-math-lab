@@ -50,6 +50,15 @@ At any time m>D the next count is max(Q-1,0). To prove this, first consider a no
 
 For a bipartite state fix parts of sizes a,b. If two vertices in the first part formed an open pair, they would have disjoint neighborhoods, so their combined degree would be at most b. The entire graph would then have at most (a-1)b<=D edges. Interchanging the parts gives the same contradiction. Thus the open pairs are exactly the missing cross edges, and a legal addition reduces their count by one. This proves the asserted late-time rule, including the terminal case.
 
+### The last step with a random next count
+
+The cutoff above is exact for every n at least six, even when the whole current graph is known. At m=D, every state with two possible next counts has one of the following forms. Write x+y=n-1 with |x-y|<=1, so xy=D.
+
+- **Split a vertex of K(x,y).** Replace one vertex on the x-side by two vertices with disjoint, nonempty neighborhoods partitioning its y former neighbors. The open pairs are the pair of split vertices and the y missing cross edges. Joining the split vertices leaves zero choices: every missing cross edge now has a two-edge blocking path through the other split vertex. Any missing cross edge instead gives the split vertices a common neighbor and leaves y-1 cross edges open. Thus the next counts 0 and y-1 have probabilities 1/(y+1) and y/(y+1). Every such state is reachable by adding its edges in any order.
+- **An isolated vertex alongside K(x,y).** Here all x+y pairs incident to the isolate are open. Joining it to a vertex on the x-side leaves x-1 choices; joining it to the y-side leaves y-1. Their probabilities are x/(x+y) and y/(x+y). These counts differ exactly when n is even.
+
+For completeness, a nonbipartite graph at D edges is already terminal or every legal move reaches the nonbipartite edge bound D+1 and terminates. A bipartite graph with no open internal pair loses exactly one choice at its next move, if any. In the remaining case the argument above forces equality in m<=(a-1)b<=D for an open internal pair. Equality makes every other vertex in its part adjacent to the entire opposite part; the two exceptional neighborhoods partition that part. They are both nonempty in the first construction, and an empty neighborhood gives the second. This exhausts the possibilities. [Direct next-step checks](check_last_random_step.py) cover both choices of part and every split size for orders 6 through 24. Sharpness here concerns the time of the last genuinely random transition from a specified graph; the minimum observable history length is a separate question.
+
 The same process also gives exact probabilities for reaching a specified terminal graph. The [terminal graph calculation](terminal-bicliques.md) derives a closed formula for stars and checks small complete bipartite graphs by two counting methods.
 
 ## Three short counting exercises
