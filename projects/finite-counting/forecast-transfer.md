@@ -17,3 +17,22 @@ Choose z witnessing a discrepancy for histories D and E at k. The polynomial
 is nonzero at k. Its degree is at most 4(m+1), so it can vanish at no more than that many larger integers. At every other order the conditional next-count probabilities still differ. This proves the transfer statement. It bounds the number of exceptional orders without locating them.
 
 **Consequences.** The [eight-vertex witness](README.md#how-many-past-counts-help-predict-the-next-one) at m=12 agrees on nine counts. Hence h(n) is at least ten for all sufficiently large n, with at most 52 exceptions above eight for that translated witness. More generally h(n) converges to its supremum in the positive integers extended by infinity. For any integer r below that supremum, some order witnesses that r observations do not suffice, and transfer makes h(n)>r at all sufficiently large orders. In particular a bounded sequence of these minimum history lengths must eventually be constant. Whether the lengths are bounded is undetermined here.
+
+## An example with no exceptional orders
+
+Four observations are necessary at every n at least six. Consider the two centered histories (0,1,3,u,7,10,13), where u is 6 or 5, and ask whether the next centered count is 15. Their final three observations agree. Let P count paths with the given prefix and A count paths continuing to 15. In the binomial basis the nonzero coefficients are as follows.
+
+| u | Path count | s=6 | s=7 | s=8 |
+|---:|---|---:|---:|---:|
+| 6 | P | 6480 | 30240 | 0 |
+| 6 | A | 8640 | 90720 | 967680 |
+| 5 | P | 34560 | 120960 | 0 |
+| 5 | A | 57600 | 443520 | 3870720 |
+
+The conditional probability is A divided by P times the common final open count in the denominator, that is, A/[P (binom(n,2)-13)]. Set x=n-6. Substitution in the table gives
+
+    (A_6 P_5 - A_5 P_6) / binom(n,6)^2 = 12441600 (8x^2 - 17x - 6).
+
+The discriminant 481 lies strictly between 21^2 and 22^2. Hence the forecasts differ at every integer n>=6. Their ordering can change: the probability for u=6 is smaller at n=8 and larger at n=9.
+
+[forecast_coefficients.py](forecast_coefficients.py) enumerates the table directly. At each step a new edge has zero, one, or two previously unused endpoints. Assign fresh names in order of first appearance and branch once for an edge joining two fresh vertices. A completed path shape on s vertices with t such simultaneous pairs contributes s!/2^t to the coefficient of binom(n,s): permuting the s support labels gives every realization, with two equivalent name choices at each simultaneous arrival across the enumeration. Equivalently, an actual labeled path determines 2^t possible histories of fresh-name assignments, each with its own final bijection. The deficit after a legal edge addition is the number of edges plus the number of vertex pairs with a common neighbor. This test uses only vertices touched so far. At n=6 the table reproduces the independently counted forecasts 2/3 and 5/6.
