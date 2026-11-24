@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 from collections import Counter, defaultdict
 from fractions import Fraction
 from functools import cache
-from itertools import combinations, permutations, product
+from itertools import combinations
 
 from open_pair_memory import observations
 
@@ -18,26 +18,32 @@ def orbit_successors(n):
             if mask & (1 << i):
                 neighbors[u].add(v)
                 neighbors[v].add(u)
-        groups = defaultdict(list)
-        for v, adjacent in enumerate(neighbors):
-            key = (len(adjacent), tuple(sorted(len(neighbors[w]) for w in adjacent)))
-            groups[key].append(v)
-        orders = []
-        for key in sorted(groups):
-            group = groups[key]
-            # Permuting false twins leaves every adjacency unchanged.
-            if all(neighbors[v] == neighbors[group[0]] for v in group):
-                orders.append([group])
-            else:
-                orders.append(permutations(group))
-        best = None
-        for blocks in product(*orders):
-            order = [v for block in blocks for v in block]
-            code = sum(1 << i for i, (u, v) in enumerate(edges)
-                       if order[v] in neighbors[order[u]])
-            if best is None or code < best:
-                best = code
-        return best
+        def canonical(cells):
+            while True:
+                refined = []
+                for cell in cells:
+                    groups = defaultdict(list)
+                    for v in cell:
+                        key = tuple(len(neighbors[v].intersection(other)) for other in cells)
+                        groups[key].append(v)
+                    refined.extend(groups[key] for key in sorted(groups))
+                if len(refined) == len(cells):
+                    break
+                cells = refined
+            # Identical neighborhoods are interchangeable in every completion.
+            unresolved = [(len(cell), i) for i, cell in enumerate(cells)
+                          if any(neighbors[v] != neighbors[cell[0]] for v in cell)]
+            if not unresolved:
+                order = [v for cell in cells for v in cell]
+                return sum(1 << i for i, (u, v) in enumerate(edges)
+                           if order[v] in neighbors[order[u]])
+            _, i = min(unresolved)
+            cell = cells[i]
+            choices = {frozenset(neighbors[v]): v for v in cell}
+            return min(canonical(cells[:i] + [[v], [w for w in cell if w != v]]
+                                 + cells[i+1:]) for v in choices.values())
+
+        return canonical([list(range(n))])
 
     @cache
     def successors(mask):

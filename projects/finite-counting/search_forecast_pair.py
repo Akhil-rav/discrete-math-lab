@@ -63,11 +63,18 @@ if __name__ == "__main__":
     from forecast_coefficients import evaluate
     from forecast_support_dp import path_tables
 
-    first, second, (next_count, a, b) = seek(9)
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--order", type=int, choices=(9, 10), default=9)
+    n = parser.parse_args().order
+    total = n*(n-1)//2
+    first, second, (next_count, a, b) = seek(n)
     for observed, prob in ((first, a), (second, b)):
-        centered = tuple(36-q for q in observed) + (36-next_count,)
-        prefix, full = list(path_tables(centered, max_support=9))[-2:]
-        checked = Fraction(evaluate(full, 9), observed[-1]*evaluate(prefix, 9))
+        centered = tuple(total-q for q in observed) + (total-next_count,)
+        prefix, full = list(path_tables(centered, max_support=n))[-2:]
+        checked = Fraction(evaluate(full, n), observed[-1]*evaluate(prefix, n))
         assert checked == prob
         print(observed, next_count, checked)
-    assert first[-13:] == second[-13:] and a != b
+    assert first[4:] == second[4:] and a != b
+    assert len(first[4:])+1 == (n-1)**2//4-2

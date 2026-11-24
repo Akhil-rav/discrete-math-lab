@@ -38,7 +38,7 @@ On eight vertices the minimum sufficient history length is **ten**. After twelve
     28, 27, 26, 25, 22, 21, 18, 15, 12, 9, 6, 5, 4
     28, 27, 26, 24, 22, 21, 18, 15, 12, 9, 6, 5, 4.
 
-They agree on the last nine counts. The probabilities that the next move ends the process are respectively 11/2864 and 11/4764. The [labeled history checker](check_forecast_history.py) counts compatible move orders directly and independently verifies both fractions. For the upper bound, run `python open_pair_orbits.py --order 8` from this directory. It compares all reachable histories at each time through termination. Its graph labels are canonical: vertices are grouped by degree and the sorted degrees of their neighbors, and the least adjacency encoding among orders respecting those groups is used. Permutations within a group whose vertices have identical neighbor sets leave the encoding unchanged. The longest ambiguous suffixes at times 4 through 12 have lengths 1 through 9 respectively; no later time has ambiguous forecasts even with just the current count.
+They agree on the last nine counts. The probabilities that the next move ends the process are respectively 11/2864 and 11/4764. The [labeled history checker](check_forecast_history.py) counts compatible move orders directly and independently verifies both fractions. For the upper bound, run `python open_pair_orbits.py --order 8` from this directory. It compares all reachable histories at each time through termination. To label graphs canonically, the program repeatedly splits vertex classes by their neighbor counts in each class. If a class still contains distinguishable vertices, it tries each possible first vertex up to identical neighborhoods and retains the least encoding across branches. The longest ambiguous suffixes at times 4 through 12 have lengths 1 through 9 respectively; no later time has ambiguous forecasts even with just the current count.
 
 A [counting argument using the vertices touched by each path](forecast-transfer.md) shows that the eight-vertex discrepancy persists at every order n>=8. Appending common observations strengthens this to [a lower bound of floor(n/2)+6 for every n>=8](forecast-linear.md).
 
@@ -49,9 +49,15 @@ On nine vertices the minimum is **fourteen**. Two histories after sixteen moves 
 
 They agree in all thirteen counts from time four onward. With the first history the next move ends the process with certainty. With the second history it ends with probability 4/9. The general upper bound below gives fourteen. The [paired history search](search_forecast_pair.py) grows both histories through identical observed counts and drops pairs as soon as their posterior distributions on graph types agree. A separate support-based path recurrence verifies both reported probabilities.
 
+On ten vertices the minimum is **eighteen**. In the two histories below, the value in parentheses is the only difference:
+
+    45, 44, 43, (42 or 41), 39, 35, 31, 26, 23, 19, 17, 15, 13, 12, 11, 10, 9, 8, 7, 6, 5.
+
+The last seventeen observations agree. After 42 the next move cannot end the process; after 41 it ends the process with probability 4/6455. The same upper bound supplies sufficiency. Run the paired search with the option `--order 10` for both the witness search and an independent path-count comparison.
+
 ### A general upper bound on the number of past counts
 
-For n at least six, let D=floor((n-1)^2/4). Knowing the move number, the last **D-2** open-pair counts suffice to determine the conditional distribution of the next count. For six, eight and nine vertices this proves the upper bounds of four, ten and fourteen without enumerating histories.
+For n at least six, let D=floor((n-1)^2/4). Knowing the move number, the last **D-2** open-pair counts suffice to determine the conditional distribution of the next count. For six, eight, nine and ten vertices this proves the upper bounds of four, ten, fourteen and eighteen without enumerating histories.
 
 At time three the open-pair count determines the entire graph up to relabeling. The three edges form either a matching, a two-edge path and a disjoint edge, a three-edge path, or a three-leaf star, together with isolated vertices. These have respectively zero, one, two and three closed nonedges. Given the time-three count, all compatible labeled states thus have the same future count law by symmetry. Conditioning further on any subsequent count history preserves this equality. At times from three through D inclusive it therefore suffices to remember the counts starting at time three, at most D-2 observations. At earlier times the whole history fits within the bound.
 
