@@ -40,7 +40,7 @@ On eight vertices the minimum sufficient history length is **ten**. After twelve
 
 They agree on the last nine counts. The probabilities that the next move ends the process are respectively 11/2864 and 11/4764. The [labeled history checker](check_forecast_history.py) counts compatible move orders directly and independently verifies both fractions. For the upper bound, run `python open_pair_orbits.py --order 8` from this directory. It compares all reachable histories at each time through termination. Its graph labels are canonical: vertices are grouped by degree and the sorted degrees of their neighbors, and the least adjacency encoding among orders respecting those groups is used. Permutations within a group whose vertices have identical neighbor sets leave the encoding unchanged. The longest ambiguous suffixes at times 4 through 12 have lengths 1 through 9 respectively; no later time has ambiguous forecasts even with just the current count.
 
-A [counting argument using the vertices touched by each path](forecast-transfer.md) shows that the eight-vertex discrepancy persists at every sufficiently large order: at least ten observations are eventually necessary.
+A [counting argument using the vertices touched by each path](forecast-transfer.md) shows that the eight-vertex discrepancy persists at every order n>=8. Exact path polynomials exclude all exceptional orders, so at least ten observations are necessary throughout this range.
 
 ### A general upper bound on the number of past counts
 
