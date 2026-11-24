@@ -42,9 +42,16 @@ They agree on the last nine counts. The probabilities that the next move ends th
 
 A [counting argument using the vertices touched by each path](forecast-transfer.md) shows that the eight-vertex discrepancy persists at every order n>=8. Appending common observations strengthens this to [a lower bound of floor(n/2)+6 for every n>=8](forecast-linear.md).
 
+On nine vertices the minimum is **fourteen**. Two histories after sixteen moves are
+
+    36, 35, 34, 33, 30, 26, 22, 19, 15, 12, 10, 8, 6, 5, 4, 3, 2
+    36, 35, 34, 32, 30, 26, 22, 19, 15, 12, 10, 8, 6, 5, 4, 3, 2.
+
+They agree in all thirteen counts from time four onward. With the first history the next move ends the process with certainty. With the second history it ends with probability 4/9. The general upper bound below gives fourteen. The [paired history search](search_forecast_pair.py) grows both histories through identical observed counts and drops pairs as soon as their posterior distributions on graph types agree. A separate support-based path recurrence verifies both reported probabilities.
+
 ### A general upper bound on the number of past counts
 
-For n at least six, let D=floor((n-1)^2/4). Knowing the move number, the last **D-2** open-pair counts suffice to determine the conditional distribution of the next count. For six and eight vertices this proves the computed upper bounds of four and ten without enumerating histories.
+For n at least six, let D=floor((n-1)^2/4). Knowing the move number, the last **D-2** open-pair counts suffice to determine the conditional distribution of the next count. For six, eight and nine vertices this proves the upper bounds of four, ten and fourteen without enumerating histories.
 
 At time three the open-pair count determines the entire graph up to relabeling. The three edges form either a matching, a two-edge path and a disjoint edge, a three-edge path, or a three-leaf star, together with isolated vertices. These have respectively zero, one, two and three closed nonedges. Given the time-three count, all compatible labeled states thus have the same future count law by symmetry. Conditioning further on any subsequent count history preserves this equality. At times from three through D inclusive it therefore suffices to remember the counts starting at time three, at most D-2 observations. At earlier times the whole history fits within the bound.
 

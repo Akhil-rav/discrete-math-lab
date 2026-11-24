@@ -8,7 +8,7 @@ from itertools import combinations, permutations, product
 from open_pair_memory import observations
 
 
-def orbit_laws(n):
+def orbit_successors(n):
     edges = list(combinations(range(n), 2))
 
     @cache
@@ -49,7 +49,12 @@ def orbit_laws(n):
         return Counter(representative(mask | (1 << i)) for i, (u, v) in enumerate(edges)
                        if v not in neighbors[u] and neighbors[u].isdisjoint(neighbors[v]))
 
-    states = {(0, (len(edges),)): 1}
+    return successors
+
+
+def orbit_laws(n):
+    successors = orbit_successors(n)
+    states = {(0, (n*(n-1)//2,)): 1}
     while states:
         paths = defaultdict(Counter)
         following = Counter()

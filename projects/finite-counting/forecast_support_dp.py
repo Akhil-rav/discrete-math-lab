@@ -22,7 +22,7 @@ def relabel(adj):
                  for u in order)
 
 
-def path_states(history):
+def path_states(history, max_support=None):
     states = {(): 1}
     for old, target in zip(history, history[1:]):
         following = Counter()
@@ -31,6 +31,8 @@ def path_states(history):
             adj = graph + (0, 0)
             for i in range(s+1):
                 for j in range(i+1, s+1 if i < s else s+2):
+                    if max_support is not None and j >= max_support:
+                        continue
                     if adj[i] & adj[j] or adj[i] & (1 << j):
                         continue
                     # Count open pairs newly blocked by the inserted edge.
@@ -53,8 +55,8 @@ def path_states(history):
         yield states
 
 
-def path_tables(history):
-    for states in path_states(history):
+def path_tables(history, max_support=None):
+    for states in path_states(history, max_support):
         totals = Counter()
         for graph, count in states.items():
             totals[len(graph)] += count
