@@ -40,6 +40,16 @@ On eight vertices the minimum sufficient history length is **ten**. After twelve
 
 They agree on the last nine counts. The probabilities that the next move ends the process are respectively 11/2864 and 11/4764. The [labeled history checker](check_forecast_history.py) counts compatible move orders directly and independently verifies both fractions. For the upper bound, run `python open_pair_orbits.py --order 8` from this directory. It compares all reachable histories at each time through termination. Its graph labels are canonical: vertices are grouped by degree and the sorted degrees of their neighbors, and the least adjacency encoding among orders respecting those groups is used. Permutations within a group whose vertices have identical neighbor sets leave the encoding unchanged. The longest ambiguous suffixes at times 4 through 12 have lengths 1 through 9 respectively; no later time has ambiguous forecasts even with just the current count.
 
+### A general upper bound on the number of past counts
+
+For n at least six, let D=floor((n-1)^2/4). Knowing the move number, the last **D-2** open-pair counts suffice to determine the conditional distribution of the next count. For six and eight vertices this proves the computed upper bounds of four and ten without enumerating histories.
+
+At time three the open-pair count determines the entire graph up to relabeling. The three edges form either a matching, a two-edge path and a disjoint edge, a three-edge path, or a three-leaf star, together with isolated vertices. These have respectively zero, one, two and three closed nonedges. Given the time-three count, all compatible labeled states thus have the same future count law by symmetry. Conditioning further on any subsequent count history preserves this equality. At times from three through D inclusive it therefore suffices to remember the counts starting at time three, at most D-2 observations. At earlier times the whole history fits within the bound.
+
+At any time m>D the next count is max(Q-1,0). To prove this, first consider a nonbipartite state. The classical nonbipartite triangle-free edge bound gives m<=D+1. Any legal addition would leave the graph nonbipartite and violate the bound, so Q=0. The edge bound and its attribution to Erdős–Gallai and independently Andrásfai are recalled in [Ren, Wang, Wang and Yang](https://arxiv.org/abs/2404.07486).
+
+For a bipartite state fix parts of sizes a,b. If two vertices in the first part formed an open pair, they would have disjoint neighborhoods, so their combined degree would be at most b. The entire graph would then have at most (a-1)b<=D edges. Interchanging the parts gives the same contradiction. Thus the open pairs are exactly the missing cross edges, and a legal addition reduces their count by one. This proves the asserted late-time rule, including the terminal case.
+
 The same process also gives exact probabilities for reaching a specified terminal graph. The [terminal graph calculation](terminal-bicliques.md) derives a closed formula for stars and checks small complete bipartite graphs by two counting methods.
 
 ## Three short counting exercises
