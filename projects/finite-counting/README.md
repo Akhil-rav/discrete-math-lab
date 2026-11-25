@@ -55,6 +55,17 @@ On ten vertices the minimum is **eighteen**. In the two histories below, the val
 
 The last seventeen observations agree. After 42 the next move cannot end the process; after 41 it ends the process with probability 4/6455. The same upper bound supplies sufficiency. Run the paired search with the option `--order 10` for both the witness search and an independent path-count comparison.
 
+### How often does the extra observation matter?
+
+Compare the full-history forecast with the conditional distribution obtained by pooling histories that share the last h(n)-1 observations at the same time. The pooled forecast weights each history by its probability under the process from the empty graph. The table averages total variation distance (half the sum of absolute probability differences) over all runs, including absorbed runs with distance zero.
+
+| Vertices | Counts retained | Move number | Probability forecast changes | Mean distance | Largest distance |
+|---:|---:|---:|---:|---:|---:|
+| 6 | 3 | 6 | 0.344516 | 0.033927 | 0.342026 |
+| 7 | 5 | 8 | 0.391282 | 0.008701 | 0.512717 |
+
+At other move numbers the forecasts agreed for these two orders and suffix lengths. On seven vertices, losing one observation thus changes the forecast on about 39% of runs at move eight, even though the average distance is below 0.009. [forecast_discrepancy.py](forecast_discrepancy.py) computes the entries as exact fractions, checks probability mass at each step and compares the six-vertex results with a separate labeled enumeration.
+
 ### A general upper bound on the number of past counts
 
 For n at least six, let D=floor((n-1)^2/4). Knowing the move number, the last **D-2** open-pair counts suffice to determine the conditional distribution of the next count. For six, eight, nine and ten vertices this proves the upper bounds of four, ten, fourteen and eighteen without enumerating histories.
