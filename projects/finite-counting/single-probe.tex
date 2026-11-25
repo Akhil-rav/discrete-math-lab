@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\newtheorem*{theorem}{Theorem}
+\newcommand{\type}{\mathcal T}
+\begin{document}
+\begin{center}
+{\Large\bfseries Identifying signed paths with a single probe}\\[5pt]
+Akhil Ravuri \quad$\cdot$\quad Working note
+\end{center}
+
+Take two terminals joined by internally disjoint paths of lengths $2,1,3$.
+Compare signs $(-,+,+)$ with $(-,-,-)$ in that order. Add a positive
+path of length two to each graph:
+\[
+\begin{array}{c|rrrr}
+\text{length}&2&1&3&2\\\midrule
+\text{first graph}&-&+&+&+\\
+\text{second graph}&-&-&-&+
+\end{array}
+\]
+Negate the first row of signs, then exchange its two length-two paths.
+The second row results. The observation defined below is invariant under
+both operations. A positive probe of length two therefore fails on this
+six-edge example. We will see why a probe of length four always works
+on six edges.
+
+\paragraph{The observation.}
+Give each edge $uv$ a sign $b_{uv}\in\{1,-1\}$. Independently give each
+vertex a uniform sign $U_v$. Count a conflict when
+$U_u U_v=b_{uv}$. A path sign is the product of its edge signs.
+The unknown type is the multiset of (length, path sign) pairs; the
+individual edge signs along a path are not part of the target.
+Add one positive path between the terminals, with fresh internal vertices.
+Observe only the exact law of the total conflict count $X$ on this augmented
+graph. Negating the vertex color at one terminal preserves its uniform law
+and switches the effective signs of all paths.
+
+\begin{theorem}
+Suppose the original total length $m\ge6$ is known, there are at least
+three paths, and at most one has length one. Among probe lengths $p\ge2$,
+the shortest that identifies every original signed type is $m-2$.
+\end{theorem}
+
+\paragraph{What the law encodes.}
+For an original path $i$ write $l_i$ for its length and $s_i$ for its sign.
+Let $E(x)$ sum $\prod_{i\in I}s_i\,x^{\sum_{i\in I}l_i}$ over even-cardinality
+subsets $I$ of paths (including the empty set); define $O(x)$ using odd
+subsets. With $N=m+p$ and $G(z)=\mathbb E[z^X]$, the observable is
+equivalently
+\[
+ C(x)=(1-x)^N G\!\left(\frac{1+x}{1-x}\right)=E(x)+x^p O(x).
+\]
+Indeed each edge contributes $1+x b_{uv}U_uU_v$ after normalization.
+Averaging their product kills exactly the terms having an odd vertex degree.
+Internal vertices thus require whole paths and the terminals require an
+even number of paths. Including the probe leaves an odd original subset.
+This derivation also shows that redistributing edge signs along a path
+without changing their product preserves the law.
+
+\paragraph{Return to the example.}
+For the two original triples, subtract the second polynomial from the first:
+$\Delta E=-2x^3-2x^5$ and $\Delta O=2x+2x^3$. At $p=2$ the terms cancel
+exactly. At $p=4$ their sum $\Delta E+x^4\Delta O=-2x^3+2x^7$ is
+nonzero: this probe tells the two graphs apart. The next argument shows
+it works for \emph{every} six-edge pair, not just this one.
+
+\newpage
+\paragraph{Why $m-2$ suffices.}
+Take two types giving the same $C$ and write $\Delta$ for their difference.
+Since $\deg E\le m$ and $O(0)=0$, the only ambiguity when $p=m-2$ is
+\[
+ \Delta O=ax+bx^2,\qquad \Delta E=-a x^{m-1}-b x^m.
+\]
+There is at most one unit path, so $|a|\le2$. The coefficient of
+$x^{m+p}$ in $C$ is $O_m$: it vanishes for an even number of paths and
+is the product $\sigma$ of all path signs otherwise. Thus the two types
+agree on the parity of their path counts.
+
+If both counts are odd then $E_m=0$, forcing $b=0$. If both are even,
+$E_{m-1}=\sigma E_1=0$: complementation preserves even cardinality, and
+no even subset has length one. Hence $a=0$ and $|b|\le2$, since
+$E_m=\sigma$. In either case at most one coefficient survives. But
+\[
+ (E-O)(1)=\prod_i(1-s_i)
+\]
+is divisible by eight for each type, since there are at least three paths.
+The difference is $-2(a+b)$, of absolute value at most four. It must be
+zero, so $E$ and $O$ agree separately.
+
+To recover the paths, form
+\[
+ A=E+O=\prod_i(1+s_i x^{l_i}),\qquad
+ D=(E+O)(E-O)=\prod_i(1-x^{2l_i}).
+\]
+At the shortest remaining length $l$ (half the first positive degree in
+$D$), $-[x^{2l}]D$ counts its multiplicity, while $[x^l]A$ gives its
+positive count minus its negative count. Divide both products by the
+identified factors and repeat until $D=1$.
+
+\paragraph{Why shorter probes fail.}
+For each $2\le p\le m-3$, take lengths $(p,1,m-p-1)$ with signs
+$(-,+,+)$ and $(-,-,-)$. Both graphs are simple and their original
+types differ. After adding the positive length-$p$ path, the same negation
+and exchange as in the opening example identifies the augmented laws.
+This supplies a counterexample at every shorter admissible length.\hfill$\square$
+
+\paragraph{Checks and context.}
+A separate \href{https://github.com/Akhil-rav/discrete-math-lab/blob/0fb11c1/projects/finite-counting/check_single_probe.py}{enumeration}
+conditions on the two terminal colors. At each fixed $m=6,\ldots,16$
+all types give distinct laws for $p=m-2$ (4,164 types in total).
+The normalized transform is binary coset Fourier duality: see A.~Goodall,
+\href{https://iuuk.mff.cuni.cz/~andrew/dwajgApr06.pdf}{\emph{Fourier analysis on finite Abelian groups}},
+eq.~(8), with the cut space as code and the edge signs as shift.
+For the classical forward partition function on generalized theta graphs,
+see A.~D.~Sokal, \href{https://arxiv.org/abs/cond-mat/0012369}{\emph{Chromatic
+roots are dense in the whole complex plane}}, \S2.3. The question here is
+inverse and assumes the host class and its original total length are known.
+\end{document}

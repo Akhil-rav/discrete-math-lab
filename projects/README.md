@@ -38,6 +38,8 @@ probabilities from exhaustive partition histograms on six hosts. It includes
 moment bounds, direct named-color checks, a scientific plot, and the cube's
 large-palette limit. Only the plotting step needs an optional dependency.
 [Read the typeset report](../papers/random_rainbow.pdf).
+
+For the effect of overlapping matchings on independence, see [uniform and biased edge colors](finite-counting/rainbow-independence.md).
 The [inclusion-exclusion implementation](../results/inclusion_exclusion.md)
 independently checks every polynomial coefficient, adds Bonferroni bounds,
 and compares construction time with the partition search.

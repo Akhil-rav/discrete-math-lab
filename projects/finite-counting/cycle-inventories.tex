@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,url}
+\usepackage[margin=1in]{geometry}
+\newcommand{\bin}[2]{\binom{#1}{#2}}
+\begin{document}
+\begin{center}
+{\Large\bfseries How many copies of each color?}\\[4pt]
+{\large Rainbow perfect matchings in a randomly colored even cycle}\\[5pt]
+Discrete Math Lab \quad$\cdot$\quad Working note
+\end{center}
+
+Fix $q$ colors and choose their positive multiplicities before shuffling the
+color tokens uniformly over the edges of $C_{2n}$, $n\ge2$. Which
+multiplicities maximize the probability of a rainbow perfect matching?
+Already on a square, two red and two blue tokens succeed with probability
+$2/3$, while three red and one blue always succeed.
+
+\paragraph{Classification.}
+If $q<n$, success is impossible. For $n\le q\le 2n$ put
+$d=2n-q$ and $\ell=q-n$. The balanced inventory $B$ consists of
+$d$ doubles and $2\ell$ singles. When $d\ge2$, let $T$ be obtained from
+$B$ by replacing two doubles with a triple and a single. The table lists
+all maximizing inventories up to color names.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Doubles in $B$ & Range & Maximizer\\
+\midrule
+$0,1$ & all & $B$\\
+$2,3$ & all & $T$\\
+$4$ & $\ell\le6$ / $\ell\ge7$ & $T$ / $B$\\
+$5$ & $\ell\le1$ / $\ell\ge2$ & $T$ / $B$\\
+$6$ & $\ell=0$ / $\ell=1$ / $\ell\ge2$ & $T$ / both / $B$\\
+$\ge7$ & $\ell=0$ / $\ell\ge1$ & $T$ / $B$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Counting successful assignments.}
+Distinguish equally colored tokens. One alternating matching receives a
+uniform $n$-subset of the $2n$ tokens, and the other receives its complement.
+For a multiplicity vector $c$, the elementary symmetric sum $e_n(c)$ counts
+subsets with distinct colors. By inclusion--exclusion the success probability is
+\[
+\frac{2e_n(c)-J(c)}{\bin{2n}{n}},
+\qquad
+J(c)=
+\begin{cases}
+0 & \max c_i\ge3,\\
+2^d\bin{2\ell}{\ell} & c=B .
+\end{cases}
+\]
+Indeed, for both halves to be rainbow each double must split, while half
+the singles go to each side. A triple cannot split between two rainbow halves.
+
+\paragraph{Reduction to two candidates.}
+Among inventories with a triple or larger entry, maximize $e_n(c)$.
+Moving one unit from $a$ to $b$ with $a\ge b+2$ gains
+$(a-b-1)e_{n-2}$ of the remaining entries, strictly positive because
+$q\ge n$. Reduce a largest entry to three by transfers to singles, which
+exist whenever the mean is at most two and a larger entry occurs.
+Keep that triple fixed and balance the rest. Their mean is below two, so
+the result is $T$. Every changed inventory strictly improves along this path.
+
+\newpage
+\paragraph{Comparing the two candidates.}
+Assume $d\ge2$. Moving from $T$ to $B$ increases $e_n$ by $E$, the
+elementary symmetric sum of degree $n-2$ on $d-2$ doubles and $2\ell$
+singles. It also incurs the intersection penalty $J(B)$. Define
+\[
+R=\frac{E}{2^{d-2}\bin{2\ell}{\ell}}
+=\sum_{i=0}^{\min(d-2,\ell)}
+\bin{d-2}{i}2^{-i}
+\frac{\bin{2\ell}{\ell+i}}{\bin{2\ell}{\ell}} .
+\]
+Here $i$ counts omitted doubles and $\ell+i$ singles must be selected.
+Consequently $2E-J(B)$ has the sign of $R-2$. A positive sign favors $B$.
+
+For $\ell=0$, $R=1$. For $\ell\ge1$, $R$ is nondecreasing in $d$ and $\ell$:
+in the binomial ratio, each factor $(\ell-j)/(\ell+j+1)$ for
+$0\le j<i$ increases with $\ell$, with a zero term until $\ell\ge i$.
+For $d=2,3$ the sum stays below two. For $d=4$ direct simplification gives
+\[
+R-2=\frac{\ell(\ell-1)-4(\ell+2)}{4(\ell+1)(\ell+2)},
+\]
+which changes sign between six and seven. For $d=5$ one has
+$R(5,1)=7/4$ and $R(5,2)=17/8$. Finally
+$R(d,1)=1+(d-2)/4$, and the term for $i=1$ increases strictly with
+$\ell$ for $d\ge3$. These comparisons give the table, including its
+single tie at $(n,q)=(7,8)$.
+
+\paragraph{Size of the effect.}
+When $q=n$, both candidates admit closed forms. The balanced inventory
+has success probability $2^n/\bin{2n}{n}$, while the optimal inventory
+has probability $6\cdot2^{n-2}/\bin{2n}{n}$. For every $n$, introducing
+one triple therefore increases success by a factor of $3/2$.
+
+\paragraph{Connection to shuffled decks.}
+Deal the first $n$ cards of a shuffled multiset to one hand and the remainder
+to the other. The event that the first hand is rainbow is the no-collision
+event $T_1\ge n$ in the notation of He and Ottolini.\footnote{J.~He and
+A.~Ottolini, \emph{Card guessing and the birthday problem for sampling
+without replacement}, Theorem~1.6 in the 2021 preprint,
+\url{https://arxiv.org/abs/2108.07355}.}
+Their theorem approximates a prefix collision probability under hypotheses
+on the deck. Here the two hands are complementary, and the exact intersection
+term $J(c)$ enters the optimization over decks.
+
+\paragraph{Verification.}
+The accompanying program \texttt{check\_cycle\_inventory.py} enumerates
+individual token subsets for every multiplicity partition through twelve
+edges. It also compares the table with exact counts for every partition
+with $n\le q\le2n$ through thirty edges. These finite checks supplement
+the proof. Priority has not been established.
+\end{document}

@@ -1,0 +1,144 @@
+# What does the open-pair count remember?
+
+In [Bohman's triangle-free process](https://www.math.cmu.edu/~tbohman/papers/r3t.pdf), choose uniformly from the absent edges that would not complete a triangle. Write Q for the number of choices. On six vertices, even the pair (number of edges, Q) does not determine the expected change in Q at the next step.
+
+| Four-edge graph | Open pairs | Distribution of the loss of open pairs on the next move | Expected change |
+|---|---:|---|---:|
+| Three-leaf star plus a separate edge | 8 | 2 choices lose 5; 6 lose 3 | -7/2 |
+| Five-vertex path plus an isolated vertex | 8 | 4 choices lose 2; 4 lose 3 | -5/2 |
+
+Both graphs are reachable: every prefix of any ordering of their edges is triangle-free. For the star, every open pair joins the two components. Joining the center to either end of the separate edge costs the selected pair, the three pairs from its leaves to that end, and the pair from the center to the opposite end. Joining a leaf instead costs three pairs. For the path, number its vertices 1 through 5 and call the isolate 6. The eight choices are 14, 15, 25 and the five pairs incident to 6. Pairs 14, 25, 16, 56 each cost two; the other four each cost three. This shows why simply tracking the number of choices loses information. It is a finite worked example, not an asymptotic result or a claim of novelty.
+
+Run `python examples.py` from this directory to reproduce the first such witness by number of edges. The search is over labeled reachable states, not graph isomorphism classes. Run `python six.py` for the exact two-edge drift (-191/91), transition checks against a separate common-neighbor test on all 5,789 states, and a seeded simulation.
+
+## How many past counts help predict the next one?
+
+On six vertices, starting from the empty graph, even the last **three** open-pair counts can give different forecasts at the same time. After six moves, consider the following complete observation histories.
+
+| Open-pair counts from time zero | Ordered seven-move paths ending with zero choices | Paths ending with one choice | Chance the next move ends the process |
+|---|---:|---:|---:|
+| 15, 14, 12, 9, 8, 5, 2 | 8640 | 4320 | 2/3 |
+| 15, 14, 12, 10, 8, 5, 2 | 57600 | 11520 | 5/6 |
+
+For a fixed history through time six, each compatible seven-move path has the same probability, the reciprocal of the product of those seven observed counts. Dividing within each row therefore gives the conditional probability. This tests the observed process with one prescribed starting graph. Comparing individual graph states alone would leave open whether the histories mix those states in the same proportions.
+
+In fact four is the minimum sufficient history length for time-dependent one-step prediction on six vertices (use the entire available history at earlier times). The lower bound follows from the table. For the upper bound, [open_pair_memory.py](open_pair_memory.py) enumerates every positive-probability history and groups the exact conditional distributions by time and suffix. The longest suffix giving unequal forecasts has length three. At a terminal count of zero the process can be held at zero deterministically. Nine moves exhaust the possible range by the six-vertex triangle-free edge bound. These finite findings make no assertion for other graph orders.
+
+On seven vertices the minimum increases to **six**. For example, compare the two histories
+
+    21, 20, 18, 15, 14, 11, 9, 5, 4
+    21, 20, 18, 16, 14, 11, 9, 5, 4.
+
+They agree on the last five counts, yet the conditional probabilities of seeing three choices next are 5/7 and 5/6 respectively. Exhaustive enumeration finds no pair with six common final counts at the same time and different forecasts.
+
+Run [open_pair_orbits.py](open_pair_orbits.py) to reproduce the search. Each state stores a graph up to vertex relabeling and its entire observed history. For each successor graph type the recurrence multiplies by the number of actual open edges leading to that type. This retains the multiplicity of labeled paths because graph isomorphisms biject the available moves. The script checks every six-vertex history distribution against the labeled computation before running the seven-vertex case.
+
+On eight vertices the minimum sufficient history length is **ten**. After twelve moves consider the histories
+
+    28, 27, 26, 25, 22, 21, 18, 15, 12, 9, 6, 5, 4
+    28, 27, 26, 24, 22, 21, 18, 15, 12, 9, 6, 5, 4.
+
+They agree on the last nine counts. The probabilities that the next move ends the process are respectively 11/2864 and 11/4764. The [labeled history checker](check_forecast_history.py) counts compatible move orders directly and independently verifies both fractions. For the upper bound, run `python open_pair_orbits.py --order 8` from this directory. It compares all reachable histories at each time through termination. To label graphs canonically, the program repeatedly splits vertex classes by their neighbor counts in each class. If a class still contains distinguishable vertices, it tries each possible first vertex up to identical neighborhoods and retains the least encoding across branches. The longest ambiguous suffixes at times 4 through 12 have lengths 1 through 9 respectively; no later time has ambiguous forecasts even with just the current count.
+
+A [counting argument using the vertices touched by each path](forecast-transfer.md) shows that the eight-vertex discrepancy persists at every order n>=8. Appending common observations strengthens this to [a lower bound of floor(n/2)+6 for every n>=8](forecast-linear.md).
+
+On nine vertices the minimum is **fourteen**. Two histories after sixteen moves are
+
+    36, 35, 34, 33, 30, 26, 22, 19, 15, 12, 10, 8, 6, 5, 4, 3, 2
+    36, 35, 34, 32, 30, 26, 22, 19, 15, 12, 10, 8, 6, 5, 4, 3, 2.
+
+They agree in all thirteen counts from time four onward. With the first history the next move ends the process with certainty. With the second history it ends with probability 4/9. The general upper bound below gives fourteen. The [paired history search](search_forecast_pair.py) grows both histories through identical observed counts and drops pairs as soon as their posterior distributions on graph types agree. A separate support-based path recurrence verifies both reported probabilities.
+
+On ten vertices the minimum is **eighteen**. In the two histories below, the value in parentheses is the only difference:
+
+    45, 44, 43, (42 or 41), 39, 35, 31, 26, 23, 19, 17, 15, 13, 12, 11, 10, 9, 8, 7, 6, 5.
+
+The last seventeen observations agree. After 42 the next move cannot end the process; after 41 it ends the process with probability 4/6455. The same upper bound supplies sufficiency. Run the paired search with the option `--order 10` for both the witness search and an independent path-count comparison.
+
+### How often does the extra observation matter?
+
+Compare the full-history forecast with the conditional distribution obtained by pooling histories that share the last h(n)-1 observations at the same time. The pooled forecast weights each history by its probability under the process from the empty graph. The table averages total variation distance (half the sum of absolute probability differences) over all runs, including absorbed runs with distance zero.
+
+| Vertices | Counts retained | Move number | Probability forecast changes | Mean distance | Largest distance |
+|---:|---:|---:|---:|---:|---:|
+| 6 | 3 | 6 | 0.344516 | 0.033927 | 0.342026 |
+| 7 | 5 | 8 | 0.391282 | 0.008701 | 0.512717 |
+
+At other move numbers the forecasts agreed for these two orders and suffix lengths. On seven vertices, losing one observation thus changes the forecast on about 39% of runs at move eight, even though the average distance is below 0.009. [forecast_discrepancy.py](forecast_discrepancy.py) computes the entries as exact fractions, checks probability mass at each step and compares the six-vertex results with a separate labeled enumeration.
+
+### A general upper bound on the number of past counts
+
+For n at least six, let D=floor((n-1)^2/4). Knowing the move number, the last **D-2** open-pair counts suffice to determine the conditional distribution of the next count. For six, eight, nine and ten vertices this proves the upper bounds of four, ten, fourteen and eighteen without enumerating histories.
+
+At time three the open-pair count determines the entire graph up to relabeling. The three edges form either a matching, a two-edge path and a disjoint edge, a three-edge path, or a three-leaf star, together with isolated vertices. These have respectively zero, one, two and three closed nonedges. Given the time-three count, all compatible labeled states thus have the same future count law by symmetry. Conditioning further on any subsequent count history preserves this equality. At times from three through D inclusive it therefore suffices to remember the counts starting at time three, at most D-2 observations. At earlier times the whole history fits within the bound.
+
+At any time m>D the next count is max(Q-1,0). To prove this, first consider a nonbipartite state. The classical nonbipartite triangle-free edge bound gives m<=D+1. Any legal addition would leave the graph nonbipartite and violate the bound, so Q=0. The edge bound and its attribution to Erdős–Gallai and independently Andrásfai are recalled in [Ren, Wang, Wang and Yang](https://arxiv.org/abs/2404.07486).
+
+For a bipartite state fix parts of sizes a,b. If two vertices in the first part formed an open pair, they would have disjoint neighborhoods, so their combined degree would be at most b. The entire graph would then have at most (a-1)b<=D edges. Interchanging the parts gives the same contradiction. Thus the open pairs are exactly the missing cross edges, and a legal addition reduces their count by one. This proves the asserted late-time rule, including the terminal case.
+
+### The last step with a random next count
+
+The cutoff above is exact for every n at least six, even when the whole current graph is known. At m=D, every state with two possible next counts has one of the following forms. Write x+y=n-1 with |x-y|<=1, so xy=D.
+
+- **Split a vertex of K(x,y).** Replace one vertex on the x-side by two vertices with disjoint, nonempty neighborhoods partitioning its y former neighbors. The open pairs are the pair of split vertices and the y missing cross edges. Joining the split vertices leaves zero choices: every missing cross edge now has a two-edge blocking path through the other split vertex. Any missing cross edge instead gives the split vertices a common neighbor and leaves y-1 cross edges open. Thus the next counts 0 and y-1 have probabilities 1/(y+1) and y/(y+1). Every such state is reachable by adding its edges in any order.
+- **An isolated vertex alongside K(x,y).** Here all x+y pairs incident to the isolate are open. Joining it to a vertex on the x-side leaves x-1 choices; joining it to the y-side leaves y-1. Their probabilities are x/(x+y) and y/(x+y). These counts differ exactly when n is even.
+
+For completeness, a nonbipartite graph at D edges is already terminal or every legal move reaches the nonbipartite edge bound D+1 and terminates. A bipartite graph with no open internal pair loses exactly one choice at its next move, if any. In the remaining case the argument above forces equality in m<=(a-1)b<=D for an open internal pair. Equality makes every other vertex in its part adjacent to the entire opposite part; the two exceptional neighborhoods partition that part. They are both nonempty in the first construction, and an empty neighborhood gives the second. This exhausts the possibilities. [Direct next-step checks](check_last_random_step.py) cover both choices of part and every split size for orders 6 through 24. Sharpness here concerns the time of the last genuinely random transition from a specified graph; the minimum observable history length is a separate question.
+
+### A sharper bound at odd orders
+
+Let n=2s+1 with s>=3. If s has no representation i(i+1)+2 for an integer i>=0, the history bound improves to h(n)<=s^2-3. Indeed the forecast at time D=s^2 depends only on the current open count Q.
+
+First, in any triangle-free state where every legal move ends the process, Q<=2. Otherwise take three open pairs. Each two must conflict, meaning they meet and the edge joining their other endpoints is present. Three pairwise intersecting pairs form a triangle or a star. In the triangle case the required third edge is itself open. In the star case the three required edges form a present triangle. Both are impossible. In particular a nonbipartite state at time D has Q<=2 and next count zero.
+
+For a bipartite state with no internal open pair, parts of sizes s-i and s+1+i give Q=s-i(i+1), since all missing cross edges are open. The next count is max(Q-1,0). Its forecast agrees with the nonbipartite rule for Q<=1, and Q=2 is excluded by hypothesis. The remaining bipartite states are the two split constructions above. Their respective counts s+1 and 2s are distinct and exceed the maximum s for the no-internal-pair case. Each has the previously derived next-count law determined by Q. This exhausts the cases. At earlier times through D-1 it suffices to remember observations starting at time three, at most D-3 counts. At later times the deterministic rule applies.
+
+The arithmetic exception is sharp for predicting from the current count **uniformly over graph states at time D**. Suppose s=i(i+1)+2 with i>=1. Begin with the complete bipartite graph of part sizes s-i and s+1+i, which has s^2+2 edges. Delete two disjoint edges. Both sides have size at least three, so any two vertices on one side still have a common neighbor. Exactly the two missing cross edges are open; choosing either leaves one.
+
+For a different graph at the same time, start with K(s-1,s) and call its larger side Y. Add vertices u,v and the edge uv. Leave one vertex y of Y adjacent to neither u nor v. Partition the other s-1 vertices of Y into two nonempty classes, joining the first to u and the second to v. The result has s^2 edges and no triangle. The only open pairs are uy and vy: every ordinary vertex on the smaller side shares a neighbor with u and with v, any two vertices of Y share an ordinary neighbor, and a missing pair from u or v to a vertex of Y other than y is blocked by uv. Adding either open pair closes the other. Thus at Q=2 the next count is zero here and one in the bipartite example.
+
+At every even order n=2s>=6, uniform prediction from Q alone at D=s(s-1) also fails. In K(s,s) with a perfect matching deleted, every within-part pair has at least s-2 common neighbors. Exactly s pairs are open and the next count is s-1. The nonempty split construction above with x=s and y=s-1 also has Q=s, but terminates at the next move with probability 1/s. All these graphs are reachable since any ordering of the edges of a triangle-free graph gives a legal path. A difference between specified states does not itself establish a difference between the forecasts conditional on observed histories from the empty graph.
+
+In particular **h(11)=22**. Here s=5 satisfies the hypothesis. The following two histories attain the lower bound, with the only differing observation in parentheses:
+
+    55, 54, 53, (52 or 51), 49, 45, 41, 36, 33, 29, 27, 25, 23, 22, 21, 20, 19, 18, 17, 16, 15, 8, 4, 3, 2.
+
+After 52 the next move cannot end the process. After 51 it ends with probability 1/21. The common suffix has twenty-one observations. Run the paired-history checker with option `--order 11` to verify these probabilities by two exact recurrences.
+
+The same process also gives exact probabilities for reaching a specified terminal graph. The [terminal graph calculation](terminal-bicliques.md) derives a closed formula for stars and checks small complete bipartite graphs by two counting methods.
+
+## Three short counting exercises
+
+- **Oriented Ramsey example.** Exactly two of the eight labeled tournaments on three vertices avoid an outward-directed two-leaf star: the directed cycles. On four vertices every tournament contains the star, since its six edges give average outdegree 3/2. This is an elementary starting point for the bounded-degree question on [Xiaoyu He's problem list](https://alkjash.github.io/problems/), not progress on that open problem.
+- **Random coloring.** Under independent fair binary vertex colors on a triangle, each edge is monochromatic with probability 1/2. Two specified edges are both monochromatic with probability 1/4, but all three are monochromatic with probability 1/4 rather than 1/8. Thus the indicators are pairwise independent but not jointly independent. Enumerating the eight vertex colorings gives six with one monochromatic edge and two with three. A next exercise is to identify which edge subsets in a larger graph yield independent indicators.
+- **Factorization lengths.** Count unordered representations of 60 using 6, 9 and 20. In 6a+9b+20c=60, reducing modulo 3 forces c=0 or 3. The latter gives length 3. The former gives 2a+3b=20, hence b=0,2,4,6 and lengths 10,9,8,7. Each length occurs once. An accessible next question is when gaps between consecutive lengths first exceed one for other targets.
+
+The last three counts are independently enumerated by `examples.py`. All scripts use only the Python standard library.
+
+[General formulas and their finite checks](extensions.md) extend all four examples.
+
+[Finite-horizon laws for straight and twisted ladders](horizon.md) compares whole sequences of open-pair counts with the support of the terminal edge count.
+
+[Five further derivations](five-directions.md) and [the representative-family comparison](representative-families.md). Run python check_five.py for finite checks.
+
+## Further calculations
+
+- [Escape heights for tournament star counts](escape-heights.md) determines the first order where neutral reversals cannot reach a cheaper tournament, and proves the exact barrier for an infinite family.
+- [Optimal color inventories on an even cycle (two-page PDF)](cycle-inventories.pdf) classifies the best fixed multiplicities for every cycle length and palette size. [LaTeX source](cycle-inventories.tex).
+- [Independence of rainbow matching events](rainbow-independence.md) characterizes when the full set of indicators is independent under uniform and biased edge colors.
+
+[Minimizing a mixed star in a tournament](tournament-scores.pdf) gives the exact minimum for every order and a proof for general cubic objectives. [LaTeX source](tournament-scores.tex) · [score-sequence checks](cubic_scores.py).
+
+- [Straight versus twisted ladders: an explicit distinguishing event](maximal-loss.md); [exact joint-law enumerator](path_counts.py).
+- [Cycle losses, mixed-star centers and stability, and cactus coloring laws](further-results.md); [direct checks](check_further.py).
+- [Recovering parallel path lengths](theta-inverse.md); [inverse tests](theta_inverse.py).
+- [Independent correspondence-conflict events](correspondence.md) and [random assignments on theta graphs](random-correspondence.md); [five-vertex checks](correspondence_checks.py).
+- [Sharp bounds on runs of missing factorization lengths](residue-gaps.md); [direct dynamic-programming checks](residue_gaps.py).
+
+
+- [First detectable moment of a binary path twist](binary-path-law.md) and [single-reversal traps for mixed stars](star-descent.md).
+- [Recovering a strip seam from closed walks](strip-spectrum.md).
+- [An intersection criterion for one repeated color](one-repeat.md) and [recovery of mixed cycle lengths](mixed-cycle-recovery.md).
+
+
+[Identifying signed paths with a single probe (two-page PDF)](single-probe.pdf) starts with the six-edge example and proves the sharp probe length. [LaTeX source](single-probe.tex) and [reproducible check](check_single_probe.py).

@@ -1,0 +1,31 @@
+# How many moments does the two-path experiment need?
+
+In [the calibrated experiment](calibrated-paths.md), restrict the original simple host to **at least three paths** with total length m >= 12. Knowing the binomial moments through order **m-2**, in both experiments, always suffices. This common cutoff is sharp at every such m. Neither the individual lengths nor the number of paths need be supplied. This result concerns exact moments, not statistical estimation.
+
+**Translate the data.** The mean gives m. Knowing moments through order T means knowing the probability generating polynomial at z=1 through order T. The substitution z=(1+x)/(1-x) has nonzero linear term in z-1 and the normalization is a known unit. Thus one knows E and the probed polynomial E+x^2O through degree T at x=0. For T=m-2 this gives O and A=E+O through m-4. It gives AB=E^2-O^2 through m-3, since O has zero constant term.
+
+**Peel the short paths.** Put u=floor((m-3)/2). Read counts and signs for lengths at most u by division as in the full decoder: 2u<=m-3 and u<=m-4. Remove the corresponding factors from A. All divisions have constant term one and require no higher coefficients. Let P be the sum of the removed lengths and R=m-P. If R=0 we are done. There are at most two remaining paths: each has length at least floor((m-1)/2), and three such lengths exceed m for m>=12.
+
+The data even determine how many paths remain. If two remain then P<=2. If one remains then at least two paths were removed and their total P is at least three, since at most one path has length one. These alternatives are disjoint.
+
+**Finish with two remaining paths.** Both lengths are at most m-floor((m-1)/2)<=m-4. If the truncated remaining A has a first positive-degree nonzero coefficient, at the shorter length, it gives that length and its signed count. With unequal lengths its value is +1 or -1; R determines the longer length and dividing out the first factor gives the second sign. With equal lengths and equal signs it is +2 or -2. If the coefficients vanish through m-4, the lengths must be equal with opposite signs: distinct lengths or equal signs would have yielded a visible first term. In this opposite-sign case a product term at the sum of the lengths is beyond m-4 because P<=2.
+
+**Finish with one remaining path.** Its length L=R is known. If L<=m-4 read its sign from A after division. Otherwise P<=3, so P=3 and the short paths must have lengths 1 and 2. In E the contribution involving the long path is its sign times x^L times the odd-subset polynomial of the two short paths. The latter's degree-one coefficient is the known unit-path sign. This reveals the long sign at degree L+1=m-2 after subtracting the known even polynomial of the short paths.
+
+**Sharpness.** Take paths of lengths 2,2,m-4, assign opposite signs to the short paths and compare the two choices of long sign. The short odd polynomial is zero. Thus their original E polynomials agree exactly. Their O polynomials differ by 2x^(m-4)(1-x^4), up to overall sign. Their probed laws first differ at order m-2. This also explains why the longest path can be hard to see even though the probe fixes the sign convention.
+
+The assumption of at least three paths matters: a path of length one alongside a path of length m-1 can hide a change of the long sign until degree m in the original law and degree m in the probed law. No assertion is made here for small m or for hosts with attached trees.
+
+
+**Exactly what is lost one order earlier?** Up to reordering paths, at T=m-3 there are exactly seven indistinguishable pairs for each m>=12. Four use lengths (1,2,m-3), with arbitrary signs on the two short paths. Three use (2,2,m-4), with zero, one, or two negative short signs. In each pair only the long sign changes. No other two signed types have the same truncated data.
+
+To check exhaustiveness, repeat the peeling argument with u=floor((m-4)/2): O and A are known through m-5 and AB through m-4. Every unpeeled path has length at least five, and at most two remain (three times u+1 exceeds m). If there are two, P<=3, and both lengths are at most m-5. As above, the remaining A through m-5 therefore distinguishes all two-path alternatives given their total. This includes equal opposite signs: their first product term is at degree R=m-P>m-5, but the known total determines their common length.
+
+Could one long path masquerade as two? This would require P=3, since the one-path alternative needs at least two short paths. A single length R=m-3 is invisible in the truncated remaining A. Thus the two competing paths would have to be equal with opposite signs. They contribute -x^R times the short even polynomial to E beyond the short-only contribution, whereas a single long path contributes its sign times x^R times the short odd polynomial. At degree R the former coefficient is -1 and the latter zero. This degree is observed.
+
+For a single remaining path, its sign is visible directly unless P<=4. The possible short lengths are (1,2), (1,3), and (2,2). With (1,3) the interaction with the unit path is visible in E at m-3. With (1,2) or (2,2) every interaction of the long path with an odd short subset first occurs after m-3, and the long singleton also lies beyond the observed O range. These are precisely the listed pairs. Their short signs were already recovered, so the pairs do not merge into larger equivalence classes.
+
+[Exhaustive prefix check](check_calibrated_cutoff.py): for each m=12 through 24, generate every signed length multiset on at least three paths, at most one unit path, and total length m. The full m-2 signatures are distinct and dropping one order reduces their number by seven each time. The integer packing uses a base larger than twice the largest possible signed coefficient, so equality modulo a power of the base detects exact coefficient-prefix equality.
+
+
+[What changes when count parity is recorded?](parity-cutoff.md) gives a sharp smaller moment cutoff and a sampling lower bound.
